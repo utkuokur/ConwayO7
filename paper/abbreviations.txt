@@ -1,0 +1,5 @@
+CDCL = Conflict-Driven Clause Learning
+DPLL = Davis–Putnam–Logemann–Loveland
+
+https://en.wikipedia.org/wiki/DPLL_algorithm
+

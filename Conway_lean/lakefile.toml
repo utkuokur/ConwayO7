@@ -1,0 +1,19 @@
+name = "Conway_lean"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["ConwayO7"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+autoImplicit = false
+relaxedAutoImplicit = false
+
+# mathlib is pinned to the same revision as the prebuilt cache in
+# .lake/packages (copied from CDC_lean), so builds are fully offline.
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "1b045b9df0234f94876438b0a9078755ba0dc0a0"
+
+[[lean_lib]]
+name = "ConwayO7"
