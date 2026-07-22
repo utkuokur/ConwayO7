@@ -109,10 +109,6 @@ theorem cycleRelabelVal_cycle (σ : Equiv.Perm (Fin 14)) (i : Fin 14) :
 
 /-! ### The relabeled graph -/
 
-noncomputable instance (σ : Equiv.Perm (Fin 14)) (ω : Nat → Bool) :
-    DecidableRel ((graphOfOrbits ω).comap (cycleRelabel σ).toEmbedding).Adj :=
-  fun u v ↦ inferInstanceAs (Decidable ((graphOfOrbits ω).Adj _ _))
-
 theorem comap_invariant (σ : Equiv.Perm (Fin 14)) (ω : Nat → Bool) :
     ∀ u v, ((graphOfOrbits ω).comap (cycleRelabel σ).toEmbedding).Adj
         (sigma0 u) (sigma0 v)
