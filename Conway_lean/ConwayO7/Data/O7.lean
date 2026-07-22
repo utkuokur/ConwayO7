@@ -1,8 +1,8 @@
 /-
-The concrete data layer: `o7.cnf` and `cubes.txt`, embedded byte-for-byte.
+The concrete data layer: `o7.cnf`, embedded byte-for-byte.
 
 `include_str` copies the artifact files into this module at compile time, so `o7cnf`
-and `o7cubes` are terms built from the *exact bytes* of the files whose SHA-256 hashes
+is a term built from the *exact bytes* of the file whose SHA-256 hash
 are pinned below (and recorded in the artifact's `SHA256SUMS`) — the same files
 `verify_final.sh` / `check_one.sh` feed to the LRAT checkers.
 
@@ -27,19 +27,9 @@ Recompute with `sha256sum artifact/o7.cnf` and compare with `artifact/SHA256SUMS
 def o7DimacsSha256 : String :=
   "0cfe0a7e5d673989bfaf25cfdd8d88028bd792bd35406e248f480cde1655e908"
 
-/-- The bytes of `artifact/cubes.txt` (SHA-256 `cubesTxtSha256`, pinned in `SHA256SUMS`). -/
-def cubesTxt : String := include_str "../../../artifact/cubes.txt"
-
-/-- SHA-256 of `artifact/cubes.txt`. -/
-def cubesTxtSha256 : String :=
-  "6fe176479e05c1917cdcbff2e14893f11d91799bccfad9a569fae48eed909694"
-
 /-- **The formula.**  `o7.cnf` as a `Std.Sat.CNF Nat`, clause `i` of the file at
 index `i-1` — the clause numbering the LRAT certificates refer to. -/
 def o7cnf : Std.Sat.CNF Nat := Dimacs.parseDimacs o7Dimacs
-
-/-- The 4096 first-round cubes of `cubes.txt`, in file order. -/
-def o7cubes : List Cube := Dimacs.parseCubes cubesTxt
 
 /-! ### Byte-identity and header sanity (the "glue", machine-checked) -/
 
@@ -51,11 +41,5 @@ theorem o7cnf_bytes : Dimacs.serializeDimacs 432882 1131708 o7cnf = o7Dimacs := 
 
 /-- The header's clause count matches the parsed term. -/
 theorem o7cnf_size : o7cnf.clauses.size = 1131708 := by native_decide
-
-/-- **Byte identity for the cubes**: re-serializing `o7cubes` reproduces `cubes.txt`
-exactly. -/
-theorem o7cubes_bytes : Dimacs.serializeCubes o7cubes = cubesTxt := by native_decide
-
-theorem o7cubes_length : o7cubes.length = 4096 := by native_decide
 
 end ConwayO7

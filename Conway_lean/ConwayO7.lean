@@ -13,7 +13,6 @@ import ConwayO7.Pipeline
 import ConwayO7.Dimacs
 import ConwayO7.Data.O7
 import ConwayO7.Data.Sample
-import ConwayO7.Data.Tiling
 import ConwayO7.Data.FullTiling
 import ConwayO7.Encoder
 import ConwayO7.SatFrame

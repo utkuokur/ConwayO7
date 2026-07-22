@@ -17,7 +17,7 @@ verified checker, carrying `Lean.ofReduceBool`), as in `bv_decide`'s own LRAT re
 This is the calibration sample; bulk coverage of all 98,536 cubes stays with the
 external checkers on the hash-pinned files.
 -/
-import ConwayO7.Data.O7
+import ConwayO7.Data.FullTiling
 import Std.Tactic.BVDecide.LRAT.Checker
 import Std.Tactic.BVDecide.LRAT.Parser
 
@@ -34,9 +34,10 @@ def sampleProof4093 : Array LRAT.IntAction :=
   | .ok a => a
   | .error _ => #[]
 
-/-- `F_4093 = o7.cnf + cube 4093`, exactly as `check_one.sh` rebuilds it: base clauses
-in file order, then one unit clause per cube literal in line order. -/
-def F4093 : Std.Sat.CNF Nat := withCube o7cnf (o7cubes.getD 4093 [])
+/-- `F_4092 = o7.cnf + tiling cube 4092` (historically cube 4093 of the first-round
+split), exactly as `check_one.sh` rebuilds it: base clauses in file order, then one
+unit clause per cube literal in line order. -/
+def F4093 : Std.Sat.CNF Nat := withCube o7cnf (tilingCubes.getD 4092 [])
 
 /-- **Sample certificate, verified inside Lean**: cube 4093 of the artifact is
 genuinely UNSAT, by the Lean-verified LRAT checker on the embedded bytes. -/

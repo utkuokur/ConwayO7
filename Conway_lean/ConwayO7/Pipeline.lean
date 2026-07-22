@@ -29,9 +29,6 @@ open Std.Sat
 
 namespace ConwayO7
 
-variable {V : Type*} [Fintype V] [DecidableEq V]
-variable (G : SimpleGraph V) [DecidableRel G.Adj]
-
 /-- **The L4/L5 obligation**: whenever a σ₀-invariant
 srg(99,14,1,2) exists on `Fin 99`, the formula `F` is satisfiable.
 For `F = o7.cnf` this is the encoder-faithfulness theorem for
@@ -67,8 +64,8 @@ theorem no_aut_seven_of_certificates (F : CNF Nat) (order : List Nat) (S : List 
     (hpf : PrefixFree S)
     (hkraft : kraftWeight order.length S = 2 ^ order.length)
     (hcubes : ∀ s ∈ S, CNF.Unsat (withCube F (cubeOfSigns order s)))
-    (henc : EncodesInvariantSRG F)
-    (hG : G.IsSRGWith 99 14 1 2) :
+    (henc : EncodesInvariantSRG F) {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (hG : G.IsSRGWith 99 14 1 2) :
     ¬7 ∣ Nat.card (G ≃g G) :=
   no_aut_seven_of_unsat henc (unsat_of_prefix_cover F order S hlen hpf hkraft hcubes) G hG
 
@@ -79,8 +76,8 @@ theorem no_aut_seven_of_checked_certificates (F : CNF Nat) (order : List Nat)
     (S : List (List Bool))
     (hchk : checkCover order.length S = true)
     (hcubes : ∀ s ∈ S, CNF.Unsat (withCube F (cubeOfSigns order s)))
-    (henc : EncodesInvariantSRG F)
-    (hG : G.IsSRGWith 99 14 1 2) :
+    (henc : EncodesInvariantSRG F) {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (hG : G.IsSRGWith 99 14 1 2) :
     ¬7 ∣ Nat.card (G ≃g G) :=
   no_aut_seven_of_unsat henc (unsat_of_checked_cover F order S hchk hcubes) G hG
 
