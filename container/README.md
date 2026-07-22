@@ -6,7 +6,7 @@ re-verify all 98,536 certificates of the order-7 non-existence artifact.
 
 ## Contents
 
-- `cake_lpr.def` — Apptainer definition (mirrored in `../artifact/`): Ubuntu 24.04
+- `../artifact/cake_lpr.def` — Apptainer definition (single source): Ubuntu 24.04
   base, builds cake_lpr from the upstream repository after checking
   `cake_lpr.S` against the upstream-pinned SHA-256
   `2f3af32d55083839b3fa0e693afd817679c0b8944bef41def05a8b0ec72b7d4a`.
