@@ -1,13 +1,11 @@
 /-
-**The capstone.**  With encoder faithfulness (`encodes_o7`, layers L4/L5) proved,
-the only remaining obligation of the whole development is one `Unsat` fact per
-certified cube — exactly what the hash-pinned LRAT certificates deliver through
-cake_lpr (with `cube4093_unsat` replayed inside Lean as a sample).
-
-Given those facts, no strongly regular graph with parameters (99, 14, 1, 2) — on
-any vertex type — admits an automorphism-group order divisible by 7.  In
-particular a Conway 99-graph, if one exists, has no automorphism of order 7.
+With encoder faithfulness (`encodes_o7`) proved,
+the only remaining obligation of the whole development is one `Unsat`
+fact per certified cube — delivered by the hash-pinned LRAT
+certificates through cake_lpr
+(with `cube4093_unsat` replayed inside Lean as a sample).
 -/
+
 import ConwayO7.Data.FullTiling
 import ConwayO7.Complete
 

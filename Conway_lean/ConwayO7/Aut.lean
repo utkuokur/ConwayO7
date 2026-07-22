@@ -1,8 +1,8 @@
 /-
 The automorphism group of a graph and the Cauchy reduction.
 
-`G ≃g G` is a group via mathlib's `RelIso` instance; `autToPerm` forgets an automorphism
-to a vertex permutation.
+`G ≃g G` is a group via mathlib's `RelIso` instance; `autToPerm` forgets
+an automorphism to a vertex permutation.
 
 Cauchy's theorem (`exists_prime_orderOf_dvd_card`) turns
 `7 ∣ |Aut Γ|` into a single order-7 automorphism, to which the layer-L3 cycle-type lemma
@@ -12,8 +12,7 @@ Cauchy's theorem (`exists_prime_orderOf_dvd_card`) turns
               ⟹  cycle type [1, 7¹⁴]           (`cycleType_autToPerm`)
 
 so ruling out one order-7 automorphism — the job of L4/L5 + T1, via the canonical
-σ₀ of `tools/conway_o7.py` — rules out all of `7 ∣ |Aut Γ|`
-(`seven_not_dvd_card_aut`).
+σ₀ of `tools/conway_o7.py` — rules out all of `7 ∣ |Aut Γ|`.
 
 -/
 import ConwayO7.CycleType
@@ -35,21 +34,14 @@ variable [Fintype V]
 instance : Finite (G ≃g G) :=
   Finite.of_injective (autToPerm G) (autToPerm_injective G)
 
-/-- **L2, Cauchy step**: if 7 divides the order of the automorphism group, some
-automorphism has order exactly 7. -/
+/-- **L2, Cauchy step**: if 7 divides the order of the automorphism group,
+some automorphism has order exactly 7. -/
 theorem exists_aut_orderOf_eq_seven (h : 7 ∣ Nat.card (G ≃g G)) :
     ∃ σ : G ≃g G, orderOf σ = 7 := by
   haveI : Fact (Nat.Prime 7) := ⟨by decide⟩
   haveI := Fintype.ofFinite (G ≃g G)
   rw [Nat.card_eq_fintype_card] at h
   exact exists_prime_orderOf_dvd_card 7 h
-
-/-- **T2 outer reduction**: to refute `7 ∣ |Aut Γ|` it suffices to refute a single
-order-7 automorphism — the hypothesis L4/L5 + T1 will discharge. -/
-theorem seven_not_dvd_card_aut (hno : ∀ σ : G ≃g G, orderOf σ ≠ 7) :
-    ¬7 ∣ Nat.card (G ≃g G) := fun h ↦
-  let ⟨σ, hσ⟩ := exists_aut_orderOf_eq_seven G h
-  hno σ hσ
 
 variable [DecidableEq V] [DecidableRel G.Adj]
 

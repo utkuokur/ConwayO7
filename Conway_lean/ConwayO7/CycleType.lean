@@ -386,9 +386,9 @@ theorem card_filter_fixed_eq_one
     · rintro rfl; exact ⟨mem_univ _, hxfix⟩
   rw [this, card_singleton]
 
-/-- **L3, cycle type**: an order-7 adjacency-preserving permutation of an srg(99,14,1,2)
-has cycle type `[7¹⁴]` — one fixed vertex and fourteen 7-cycles, the canonical shape
-encoded by `tools/conway_o7.py`. -/
+/-- **cycle type**: an order-7 adjacency-preserving permutation of
+an srg(99,14,1,2) has cycle type `[7¹⁴]`
+the canonical shape encoded by `tools/conway_o7.py`. -/
 theorem cycleType_eq_replicate (hG : G.IsSRGWith 99 14 1 2) (hord : orderOf π = 7) :
     π.cycleType = Multiset.replicate 14 7 := by
   obtain ⟨n, hn⟩ := Equiv.Perm.cycleType_prime_order (by rw [hord]; decide : (orderOf π).Prime)

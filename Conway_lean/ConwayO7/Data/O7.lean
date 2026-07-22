@@ -11,9 +11,8 @@ embedded strings *exactly*.  So the only remaining translation trust is the ~60-
 convention in `ConwayO7/Dimacs.lean`, which a referee reads directly.
 
 These theorems are established by `native_decide` — the check runs as compiled code,
-so they carry the `Lean.ofReduceBool` axiom (trusting Lean's compiler for these
-computations), exactly as Lean's own `bv_decide` does for its LRAT replay.  The rest
-of the development (T1, L2, L3, Step 5, pipeline) remains on the three standard axioms.
+so they carry the `Lean.ofReduceBool` axiom, exactly as Lean's own `bv_decide` does
+for its LRAT replay.
 -/
 import ConwayO7.Dimacs
 

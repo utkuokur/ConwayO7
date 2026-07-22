@@ -24,8 +24,7 @@ namespace ConwayO7
 
 /-! ### Sign-prefix cubes -/
 
-/-- The cube of a sign string `s` along the branching `order` — literally the zip,
-since `Std.Sat.Literal Nat = Nat × Bool`. -/
+/-- The cube of a sign string `s` along the branching `order`. -/
 def cubeOfSigns (order : List Nat) (s : List Bool) : Cube := order.zip s
 
 /-- A cube of signs is satisfied by `a` iff its sign string is a prefix of the
@@ -179,8 +178,7 @@ theorem kraftWeight_le (D : Nat) : ∀ S : List (List Bool),
       have hpow : 2 ^ (D + 1) = 2 ^ D + 2 ^ D := by rw [Nat.pow_succ]; omega
       omega
 
-/-- **Kraft-mass coverage** (the mathematical heart of T1, replacing
-`check_coverage.py`): a prefix-free family of sign strings of length ≤ D with
+/-- **Kraft-mass coverage**: a prefix-free family of sign strings of length ≤ D with
 full Kraft mass `2 ^ D` covers every length-D string. -/
 theorem covers_of_prefixFree_kraft (S : List (List Bool)) (D : Nat)
     (hlen : ∀ s ∈ S, s.length ≤ D)

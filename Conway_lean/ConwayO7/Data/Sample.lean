@@ -9,7 +9,7 @@ pinned in `SHA256SUMS`; manifest line: `proofs/4093.lrat  cubes.txt  4093`).
 `cube4093_unsat` replays that certificate through Lean's own formally verified LRAT
 checker (`Std.Tactic.BVDecide.LRAT.check_sound`) against `withCube o7cnf (cube 4093)`
 — the formula built from the byte-identical embedded data by the same `withCube` the
-T1 pipeline uses.  A sign-flip, off-by-one, or clause-order mismatch anywhere in the
+T1 pipeline uses. A sign-flip, off-by-one, or clause-order mismatch anywhere in the
 conventions would make this check fail loudly.
 
 The `check … = true` fact is computed by `native_decide` (compiled execution of the

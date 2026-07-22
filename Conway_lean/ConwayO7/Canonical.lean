@@ -170,8 +170,9 @@ theorem seven_not_dvd_card_aut_of_no_sigma0_invariant
     ∀ _ : DecidableRel H.Adj, H.IsSRGWith 99 14 1 2 →
       ¬∀ u v, H.Adj (sigma0 u) (sigma0 v) ↔ H.Adj u v)
     (hG : G.IsSRGWith 99 14 1 2) : ¬7 ∣ Nat.card (G ≃g G) := by
-  refine seven_not_dvd_card_aut G fun σ hord ↦ ?_
-  obtain ⟨H, instH, hH, hinv⟩ := exists_sigma0_invariant hG σ hord
+  intro h
+  let ⟨σ, hσ⟩ := exists_aut_orderOf_eq_seven G h
+  obtain ⟨H, instH, hH, hinv⟩ := exists_sigma0_invariant hG σ hσ
   exact hno H instH hH hinv
 
 end ConwayO7
