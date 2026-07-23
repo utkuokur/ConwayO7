@@ -1,3 +1,0 @@
-3088f36151c3d1d8af3c0910448482716605b541263c4f953385fcaba353b7fd  cake_lpr.sif
-built: 2026-07-22, Apptainer 1.5.3, base docker://ubuntu:24.04, WSL2 (Ubuntu 24.04)
-cake_lpr.S upstream pin: 2f3af32d55083839b3fa0e693afd817679c0b8944bef41def05a8b0ec72b7d4a (verified during %post)
