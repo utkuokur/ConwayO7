@@ -40,7 +40,7 @@ If $7 \mid |\Aut\Gamma|$ then $\Aut\Gamma$ contains an element of order $7$.
 \begin{lemma}[Fixed points of an order-seven automorphism]\label{lem:fixed}
 Let $\Gamma$ be an $\mathrm{srg}(99,14,1,2)$ and let $\pi$ be an automorphism
 of order $7$.  Then $\pi$ has exactly one fixed vertex, and its cycle type is
-$1 + 7 \cdot 14$: one fixed point and fourteen $7$-cycles.
+$[7^{14}]$.
 \lean{ConwayO7.card_filter_fixed_eq_one, ConwayO7.cycleType_eq_replicate}\leanok
 \uses{def:srg, lem:cauchy}
 \end{lemma}
@@ -50,14 +50,14 @@ Since $\ord\pi = 7$ is prime, every cycle of $\pi$ has length $1$ or $7$, so
 $|\Fix\pi| \equiv 99 \equiv 1 \pmod 7$.  A counting argument on common
 neighbours excludes $|\Fix\pi| \ge 2$: the fixed set induces a subgraph in
 which the strong regularity parameters $(\lambda,\mu) = (1,2)$ force
-contradictory neighbour counts modulo $7$.  Hence exactly one fixed vertex,
+contradictory neighbour counts modulo $7$. Hence exactly one fixed vertex,
 and $99 = 1 + 7\cdot 14$ determines the cycle type.
 \end{proof}
 
 \begin{definition}[The canonical permutation]\label{def:sigma0}
 Let $\sigma_0$ be the permutation of $\{0,\dots,98\}$ fixing $0$ and acting on
 each block $\{1+7i,\dots,7+7i\}$ ($0 \le i \le 13$) as the cyclic rotation
-$1+7i+j \mapsto 1+7i+(j+1 \bmod 7)$.  Its cycle type is $1+7\cdot 14$.
+$1+7i+j \mapsto 1+7i+(j+1 \bmod 7)$. Its cycle type is $[7^{14}]$.
 \lean{ConwayO7.sigma0, ConwayO7.sigma0_cycleType}\leanok
 \end{definition}
 

@@ -17,3 +17,7 @@ rev = "1b045b9df0234f94876438b0a9078755ba0dc0a0"
 
 [[lean_lib]]
 name = "ConwayO7"
+
+[[require]]
+name = "checkdecls"
+git = "https://github.com/PatrickMassot/checkdecls.git"

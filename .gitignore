@@ -2,3 +2,4 @@ artifact/proofs/
 artifact/cake_lpr.sif
 artifact/cake_report.txt
 lean/.lake/
+/.lake
