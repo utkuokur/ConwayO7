@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The orbit quotient and the propositional encoding</title>
+<link rel="next" href="sec-lex.html" title="Completeness of the normalisation" />
+<link rel="prev" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
+<link rel="up" href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Strongly regular graphs and the statement</span></a>
+ </li>
+<li class="">
+  <a href="sec-group.html"><span class="toc_ref">2</span> <span class="toc_entry">From an order-seven automorphism to a canonical one</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-encoding.html"><span class="toc_ref">3</span> <span class="toc_entry">The orbit quotient and the propositional encoding</span></a>
+ </li>
+<li class="">
+  <a href="sec-lex.html"><span class="toc_ref">4</span> <span class="toc_entry">Completeness of the normalisation</span></a>
+ </li>
+<li class="">
+  <a href="sec-coverage.html"><span class="toc_ref">5</span> <span class="toc_entry">The partition of the valuation space</span></a>
+ </li>
+<li class="">
+  <a href="sec-certificates.html"><span class="toc_ref">6</span> <span class="toc_entry">Certificates</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref"></span> <span class="toc_entry">Trusted base</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="sec:encoding">3 The orbit quotient and the propositional encoding</h1>
+
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:orbits">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">7</span>
+    <span class="lemma_thmtitle">Orbit structure of pairs</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-encoding.html#lem:orbits">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-group.html#def:sigma0">Definition 5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.orbitOf" class="lean_decl">ConwayO7.orbitOf</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.numOrbits_eq" class="lean_decl">ConwayO7.numOrbits_eq</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> The cyclic group \(\langle \sigma _0\rangle \cong \mathbb {Z}/7\) acts on the \(\binom {99}{2} = 4851\) unordered pairs of vertices with exactly \(693\) orbits, each of size \(7\).  </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:orbitfun">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">8</span>
+    <span class="proposition_thmtitle">Invariant graphs are orbit functions</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-encoding.html#prop:orbitfun">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-encoding.html#lem:orbits">Lemma 7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.invariant_iff_exists_orbitFun" class="lean_decl">ConwayO7.invariant_iff_exists_orbitFun</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p> A graph \(G\) on \(\{ 0,\dots ,98\} \) is \(\sigma _0\)-invariant if and only if its edge indicator descends to the orbit space: there is \(\omega \colon \{ 0,\dots ,692\}  \to \{ 0,1\} \) with \(u \sim _G v \iff \omega (\mathrm{orb}(u,v)) = 1\) for all \(u \neq v\).  </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:phi">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">9</span>
+    <span class="definition_thmtitle">The formula \(\Phi \)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-encoding.html#def:phi">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.mkO7Cnf" class="lean_decl">ConwayO7.Encoder.mkO7Cnf</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p> \(\Phi \) is a propositional formula in conjunctive normal form over variables \(x_1,\dots ,x_{693}\) (one per pair-orbit) together with auxiliary counter variables, whose clauses express, for the graph \(G_\omega \) associated to a valuation \(\omega \) of \(x_1,\dots ,x_{693}\): </p>
+<ol class="enumerate">
+  <li><p><em>regularity</em>: every vertex has exactly \(14\) neighbours; </p>
+</li>
+  <li><p><em>common-neighbour counts</em>: for each orbit representative pair \((u,v)\), the number of common neighbours of \(u,v\) equals \(2\) minus the adjacency bit of \((u,v)\) (i.e. \(\lambda = 1\), \(\mu = 2\)); </p>
+</li>
+  <li><p><em>normalisation</em>: the neighbourhood of the fixed vertex \(0\) is the union of the first two \(7\)-blocks; </p>
+</li>
+  <li><p><em>minimality</em>: the word \(\omega \in \{ 0,1\} ^{693}\) is lexicographically minimal in its orbit under the \(101\) relabelling generators of Definition&#160;<a href="sec-lex.html#def:relabel">12</a>. </p>
+</li>
+</ol>
+<p> The cardinality conditions are rendered as clauses through two standard counting networks (a sequential counter and a modulo-\(9\) totalizer); the minimality conditions through chained comparisons. \(\Phi \) has \(432{,}882\) variables and \(1{,}131{,}708\) clauses. </p>
+
+  </div>
+</div>
+<div class="fact_thmwrapper theorem-style-definition" id="fact:bytes">
+  <div class="fact_thmheading">
+    <span class="fact_thmcaption">
+    Computed Fact
+    </span>
+    <span class="fact_thmlabel">10</span>
+    <span class="fact_thmtitle">Byte identity</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-encoding.html#fact:bytes">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-encoding.html#def:phi">Definition 9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="fact_thmcontent">
+  <p> The formula generated inside Lean equals, byte for byte, the distributed file <span class="ttfamily">o7.cnf</span> against which all certificates are checked.  </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:counters">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">11</span>
+    <span class="proposition_thmtitle">Soundness of the counting networks</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-encoding.html#prop:counters">#</a>
+    
+    <a class="icon proof" href="sec-encoding.html#a0000000006"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-encoding.html#def:phi">Definition 9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.preLex_sat" class="lean_decl">ConwayO7.Encoder.preLex_sat</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.lex_section_trip" class="lean_decl">ConwayO7.Encoder.lex_section_trip</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p> For every valuation of the orbit variables satisfying the arithmetic conditions (1)–(2) of Definition&#160;<a href="sec-encoding.html#def:phi">9</a>, the auxiliary counter variables can be extended so that all counting clauses are satisfied.  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000006">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof sketch
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> Each counting network is verified by a Hoare-style invariant on its constructed clauses: the sequential counter maintains the running count of true inputs; the totalizer maintains, for each internal node, a unary representation of the number of true leaves below it, split modulo \(9\) into quotient and remainder registers. Witness valuations for the auxiliary variables are constructed by structural induction over the emission of the clauses. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-lex.html" title="Completeness of the normalisation"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

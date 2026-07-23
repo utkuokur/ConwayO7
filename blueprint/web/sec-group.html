@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>From an order-seven automorphism to a canonical one</title>
+<link rel="next" href="sec-encoding.html" title="The orbit quotient and the propositional encoding" />
+<link rel="prev" href="sect0001.html" title="Strongly regular graphs and the statement" />
+<link rel="up" href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Strongly regular graphs and the statement</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-group.html"><span class="toc_ref">2</span> <span class="toc_entry">From an order-seven automorphism to a canonical one</span></a>
+ </li>
+<li class="">
+  <a href="sec-encoding.html"><span class="toc_ref">3</span> <span class="toc_entry">The orbit quotient and the propositional encoding</span></a>
+ </li>
+<li class="">
+  <a href="sec-lex.html"><span class="toc_ref">4</span> <span class="toc_entry">Completeness of the normalisation</span></a>
+ </li>
+<li class="">
+  <a href="sec-coverage.html"><span class="toc_ref">5</span> <span class="toc_entry">The partition of the valuation space</span></a>
+ </li>
+<li class="">
+  <a href="sec-certificates.html"><span class="toc_ref">6</span> <span class="toc_entry">Certificates</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref"></span> <span class="toc_entry">Trusted base</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="sec:group">2 From an order-seven automorphism to a canonical one</h1>
+
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:cauchy">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">3</span>
+    <span class="lemma_thmtitle">Cauchy step</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-group.html#lem:cauchy">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/exists_prime_orderOf_dvd_card" class="lean_decl">exists_prime_orderOf_dvd_card</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> If \(7 \mid |\operatorname {Aut}\Gamma |\) then \(\operatorname {Aut}\Gamma \) contains an element of order \(7\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:fixed">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">4</span>
+    <span class="lemma_thmtitle">Fixed points of an order-seven automorphism</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-group.html#lem:fixed">#</a>
+    
+    <a class="icon proof" href="sec-group.html#a0000000004"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+          <li><a href="sec-group.html#lem:cauchy">Lemma 3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_eq_one" class="lean_decl">ConwayO7.card_filter_fixed_eq_one</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_eq_replicate" class="lean_decl">ConwayO7.cycleType_eq_replicate</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> Let \(\Gamma \) be an \(\mathrm{srg}(99,14,1,2)\) and let \(\pi \) be an automorphism of order \(7\). Then \(\pi \) has exactly one fixed vertex, and its cycle type is \(1 + 7 \cdot 14\): one fixed point and fourteen \(7\)-cycles.  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000004">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof sketch
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> Since \(\operatorname {ord}\pi = 7\) is prime, every cycle of \(\pi \) has length \(1\) or \(7\), so \(|\operatorname {Fix}\pi | \equiv 99 \equiv 1 \pmod7\). A counting argument on common neighbours excludes \(|\operatorname {Fix}\pi | \ge 2\): the fixed set induces a subgraph in which the strong regularity parameters \((\lambda ,\mu ) = (1,2)\) force contradictory neighbour counts modulo \(7\). Hence exactly one fixed vertex, and \(99 = 1 + 7\cdot 14\) determines the cycle type. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:sigma0">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">5</span>
+    <span class="definition_thmtitle">The canonical permutation</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-group.html#def:sigma0">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0" class="lean_decl">ConwayO7.sigma0</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_cycleType" class="lean_decl">ConwayO7.sigma0_cycleType</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p> Let \(\sigma _0\) be the permutation of \(\{ 0,\dots ,98\} \) fixing \(0\) and acting on each block \(\{ 1+7i,\dots ,7+7i\} \) (\(0 \le i \le 13\)) as the cyclic rotation \(1+7i+j \mapsto 1+7i+(j+1 \bmod 7)\). Its cycle type is \(1+7\cdot 14\). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:reduction">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">6</span>
+    <span class="theorem_thmtitle">Reduction to \(\sigma _0\)</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-group.html#thm:reduction">#</a>
+    
+    <a class="icon proof" href="sec-group.html#a0000000005"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-group.html#lem:fixed">Lemma 4</a></li>
+          
+          <li><a href="sec-group.html#def:sigma0">Definition 5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.exists_sigma0_invariant" class="lean_decl">ConwayO7.exists_sigma0_invariant</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.seven_not_dvd_card_aut_of_no_sigma0_invariant" class="lean_decl">ConwayO7.seven_not_dvd_card_aut_of_no_sigma0_invariant</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p> If some \(\mathrm{srg}(99,14,1,2)\) has an automorphism of order \(7\), then some \(\mathrm{srg}(99,14,1,2)\) on the vertex set \(\{ 0,\dots ,98\} \) is invariant under \(\sigma _0\). Consequently, if no \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) exists, then \(7 \nmid |\operatorname {Aut}\Gamma |\) for every \(\mathrm{srg}(99,14,1,2)\) \(\Gamma \).  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000005">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof sketch
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> Transport \(\Gamma \) to \(\{ 0,\dots ,98\} \) along any bijection. By Lemma&#160;<a href="sec-group.html#lem:fixed">4</a> the resulting automorphism \(\pi \) has the same cycle type as \(\sigma _0\); two permutations of equal cycle type are conjugate in the symmetric group, say \(\tau \pi \tau ^{-1} = \sigma _0\). The relabelled graph \(\tau (\Gamma )\) is again an \(\mathrm{srg}(99,14,1,2)\) and is \(\sigma _0\)-invariant. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0001.html" title="Strongly regular graphs and the statement"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-encoding.html" title="The orbit quotient and the propositional encoding"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

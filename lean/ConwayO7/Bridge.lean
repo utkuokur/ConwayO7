@@ -1,5 +1,5 @@
 /-
-L4 — the bridge from a σ₀-invariant srg to the generator's semantic invariants.
+The bridge from a σ₀-invariant srg to the generator's semantic invariants.
 
 `assignOfOrbits ω` places the orbit booleans on DIMACS variables `1 … 693`.  If
 `graphOfOrbits ω` is an srg(99,14,1,2), then

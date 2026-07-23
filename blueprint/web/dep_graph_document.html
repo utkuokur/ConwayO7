@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependency graph</title>
+  <meta name="generator" content="plasTeX" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/theme-white.css" />
+  <link rel="stylesheet" href="styles/dep_graph.css" />
+  
+  <script type="text/x-mathjax-config">
+  
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">  </script>
+
+
+<link rel="stylesheet" href="styles/extra_styles.css" />
+
+</head>
+
+<body>
+<header>
+  <a class="toc" href="index.html">Home</a>
+  <h1 id="doc_title">Dependencies</h1>
+</header>
+<div class="wrapper">
+<div class="content">
+  <div id="Legend">
+    <span id="legend_title" class="title">Legend
+    <div class="btn">
+       <div class="bar"></div>
+       <div class="bar"></div>
+       <div class="bar"></div>
+    </div></span> 
+    <dl class="legend">
+      
+      <dt>Boxes</dt><dd>definitions</dd>
+      
+      <dt>Ellipses</dt><dd>theorems and lemmas</dd>
+      
+      <dt>Blue border</dt><dd>the <em>statement</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Orange border</dt><dd>the <em>statement</em> of this result is not ready to be formalized; the blueprint needs more work</dd>
+      
+      <dt>Blue background</dt><dd>the <em>proof</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Green border</dt><dd>the <em>statement</em> of this result is formalized</dd>
+      
+      <dt>Green background</dt><dd>the <em>proof</em> of this result is formalized</dd>
+      
+      <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
+      
+      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      
+    </dl>
+  </div>
+    <div id="graph"></div>
+<div id="statements">
+
+    
+    <div class="dep-modal-container" id="def:lrat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:lrat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">20</span><span class="definition_thmtitle">Clausal derivations</span></div>
+    <div class="thm_thmcontent"><p> A <em>clausal derivation</em> from a CNF \(F\) is a sequence of clauses, each of which follows from \(F\) and the preceding clauses by reverse unit propagation (a restricted form of resolution), ending in the empty clause; such a derivation witnesses unsatisfiability of \(F\). The LRAT format additionally annotates each step with the indices needed to check it in linear time. </p>
+</div>
+
+    <a class="latex_link" href="sec-certificates.html#def:lrat">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:phi_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:phi" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">9</span><span class="definition_thmtitle">The formula \(\Phi \)</span></div>
+    <div class="thm_thmcontent"><p> \(\Phi \) is a propositional formula in conjunctive normal form over variables \(x_1,\dots ,x_{693}\) (one per pair-orbit) together with auxiliary counter variables, whose clauses express, for the graph \(G_\omega \) associated to a valuation \(\omega \) of \(x_1,\dots ,x_{693}\): </p>
+<ol class="enumerate">
+  <li><p><em>regularity</em>: every vertex has exactly \(14\) neighbours; </p>
+</li>
+  <li><p><em>common-neighbour counts</em>: for each orbit representative pair \((u,v)\), the number of common neighbours of \(u,v\) equals \(2\) minus the adjacency bit of \((u,v)\) (i.e. \(\lambda = 1\), \(\mu = 2\)); </p>
+</li>
+  <li><p><em>normalisation</em>: the neighbourhood of the fixed vertex \(0\) is the union of the first two \(7\)-blocks; </p>
+</li>
+  <li><p><em>minimality</em>: the word \(\omega \in \{ 0,1\} ^{693}\) is lexicographically minimal in its orbit under the \(101\) relabelling generators of Definition&#160;<a href="sec-lex.html#def:relabel">12</a>. </p>
+</li>
+</ol>
+<p> The cardinality conditions are rendered as clauses through two standard counting networks (a sequential counter and a modulo-\(9\) totalizer); the minimality conditions through chained comparisons. \(\Phi \) has \(432{,}882\) variables and \(1{,}131{,}708\) clauses. </p>
+</div>
+
+    <a class="latex_link" href="sec-encoding.html#def:phi">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.mkO7Cnf">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:prefix_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:prefix" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">16</span><span class="definition_thmtitle">Sign prefixes</span></div>
+    <div class="thm_thmcontent"><p> Fix the sequence of variables \(x_{15}, x_{16}, \dots , x_{214}\). A <em>cell</em> is specified by a word \(s \in \{ 0,1\} ^{\le 200}\): the set of valuations assigning \(x_{14+j+1} = s_j\) for \(1 \le j \le |s|\). A family \(S\) of words is <em>prefix-free</em> if no member is a proper initial segment of another. </p>
+</div>
+
+    <a class="latex_link" href="sec-coverage.html#def:prefix">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cubeOfSigns" class="lean_decl">ConwayO7.cubeOfSigns</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.PrefixFree" class="lean_decl">ConwayO7.PrefixFree</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:relabel_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:relabel" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">12</span><span class="definition_thmtitle">Relabelling generators</span></div>
+    <div class="thm_thmcontent"><p> Let \(N \le S_{99}\) be generated by: the block transposition exchanging \(7\)-blocks \(0,1\); the transpositions of adjacent blocks \(i,i{+}1\) for \(2 \le i \le 12\); the rotations of each block; and the five multiplier permutations \(j \mapsto aj \bmod 7\) (\(2 \le a \le 6\)) applied simultaneously to all blocks. Each \(\rho \in N\) normalises \(\langle \sigma _0\rangle \), hence acts on the orbit space and thus on words \(\{ 0,1\} ^{693}\) by \((\rho \cdot \omega )(o) = \omega (\rho ^{-1}o)\). The encoding uses \(101\) fixed generators of this action.  </p>
+</div>
+
+    <a class="latex_link" href="sec-lex.html#def:relabel">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.lexPerms" class="lean_decl">ConwayO7.Encoder.lexPerms</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.orbitPerm" class="lean_decl">ConwayO7.Encoder.orbitPerm</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:sigma0_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:sigma0" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">5</span><span class="definition_thmtitle">The canonical permutation</span></div>
+    <div class="thm_thmcontent"><p> Let \(\sigma _0\) be the permutation of \(\{ 0,\dots ,98\} \) fixing \(0\) and acting on each block \(\{ 1+7i,\dots ,7+7i\} \) (\(0 \le i \le 13\)) as the cyclic rotation \(1+7i+j \mapsto 1+7i+(j+1 \bmod 7)\). Its cycle type is \(1+7\cdot 14\). </p>
+</div>
+
+    <a class="latex_link" href="sec-group.html#def:sigma0">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0" class="lean_decl">ConwayO7.sigma0</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_cycleType" class="lean_decl">ConwayO7.sigma0_cycleType</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:srg_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:srg" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1</span><span class="definition_thmtitle">Strongly regular graph</span></div>
+    <div class="thm_thmcontent"><p> A finite graph \(\Gamma \) on \(n\) vertices is <em>strongly regular with parameters \((n,k,\lambda ,\mu )\)</em> if it is \(k\)-regular, any two adjacent vertices have exactly \(\lambda \) common neighbours, and any two distinct non-adjacent vertices have exactly \(\mu \) common neighbours. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#def:srg">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/SimpleGraph.IsSRGWith">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:cauchy_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:cauchy" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">3</span><span class="lemma_thmtitle">Cauchy step</span></div>
+    <div class="thm_thmcontent"><p> If \(7 \mid |\operatorname {Aut}\Gamma |\) then \(\operatorname {Aut}\Gamma \) contains an element of order \(7\). </p>
+</div>
+
+    <a class="latex_link" href="sec-group.html#lem:cauchy">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/exists_prime_orderOf_dvd_card">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:fixed_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:fixed" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">4</span><span class="lemma_thmtitle">Fixed points of an order-seven automorphism</span></div>
+    <div class="thm_thmcontent"><p> Let \(\Gamma \) be an \(\mathrm{srg}(99,14,1,2)\) and let \(\pi \) be an automorphism of order \(7\). Then \(\pi \) has exactly one fixed vertex, and its cycle type is \(1 + 7 \cdot 14\): one fixed point and fourteen \(7\)-cycles.  </p>
+</div>
+
+    <a class="latex_link" href="sec-group.html#lem:fixed">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_eq_one" class="lean_decl">ConwayO7.card_filter_fixed_eq_one</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_eq_replicate" class="lean_decl">ConwayO7.cycleType_eq_replicate</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:kraft_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:kraft" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">17</span><span class="lemma_thmtitle">Kraft equality and maximality</span></div>
+    <div class="thm_thmcontent"><p> A prefix-free family \(S \subseteq \{ 0,1\} ^{\le D}\) with \(\sum _{s \in S} 2^{D-|s|} = 2^D\) is a maximal antichain of the binary tree: every \(w \in \{ 0,1\} ^{D}\) has a (necessarily unique) member of \(S\) as a prefix. Hence the corresponding cells partition the valuation space.  </p>
+</div>
+
+    <a class="latex_link" href="sec-coverage.html#lem:kraft">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.covers_of_prefixFree_kraft">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:orbits_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:orbits" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">7</span><span class="lemma_thmtitle">Orbit structure of pairs</span></div>
+    <div class="thm_thmcontent"><p> The cyclic group \(\langle \sigma _0\rangle \cong \mathbb {Z}/7\) acts on the \(\binom {99}{2} = 4851\) unordered pairs of vertices with exactly \(693\) orbits, each of size \(7\).  </p>
+</div>
+
+    <a class="latex_link" href="sec-encoding.html#lem:orbits">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.orbitOf" class="lean_decl">ConwayO7.orbitOf</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.numOrbits_eq" class="lean_decl">ConwayO7.numOrbits_eq</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:sym1_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:sym1" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">13</span><span class="lemma_thmtitle">Normalisation of the fixed vertex’s neighbourhood</span></div>
+    <div class="thm_thmcontent"><p> Every \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) is isomorphic, via a block relabelling commuting with \(\sigma _0\), to one in which the neighbourhood of the fixed vertex \(0\) is exactly the union of blocks \(0\) and \(1\).  </p>
+</div>
+
+    <a class="latex_link" href="sec-lex.html#lem:sym1">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.sym1_seed">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:counters_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:counters" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">11</span><span class="proposition_thmtitle">Soundness of the counting networks</span></div>
+    <div class="thm_thmcontent"><p> For every valuation of the orbit variables satisfying the arithmetic conditions (1)–(2) of Definition&#160;<a href="sec-encoding.html#def:phi">9</a>, the auxiliary counter variables can be extended so that all counting clauses are satisfied.  </p>
+</div>
+
+    <a class="latex_link" href="sec-encoding.html#prop:counters">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.preLex_sat" class="lean_decl">ConwayO7.Encoder.preLex_sat</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.lex_section_trip" class="lean_decl">ConwayO7.Encoder.lex_section_trip</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:orbitfun_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:orbitfun" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">8</span><span class="proposition_thmtitle">Invariant graphs are orbit functions</span></div>
+    <div class="thm_thmcontent"><p> A graph \(G\) on \(\{ 0,\dots ,98\} \) is \(\sigma _0\)-invariant if and only if its edge indicator descends to the orbit space: there is \(\omega \colon \{ 0,\dots ,692\}  \to \{ 0,1\} \) with \(u \sim _G v \iff \omega (\mathrm{orb}(u,v)) = 1\) for all \(u \neq v\).  </p>
+</div>
+
+    <a class="latex_link" href="sec-encoding.html#prop:orbitfun">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.invariant_iff_exists_orbitFun">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:coverage_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:coverage" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">18</span><span class="theorem_thmtitle">Refutation by cells</span></div>
+    <div class="thm_thmcontent"><p> Let \(S\) be prefix-free with full Kraft mass as above. If for every \(s \in S\) the formula \(\Phi \wedge (\text{cell } s)\) is unsatisfiable, then \(\Phi \) is unsatisfiable.  </p>
+</div>
+
+    <a class="latex_link" href="sec-coverage.html#thm:coverage">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.unsat_of_prefix_cover" class="lean_decl">ConwayO7.unsat_of_prefix_cover</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.unsat_of_checked_cover" class="lean_decl">ConwayO7.unsat_of_checked_cover</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:encoding-complete_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:encoding-complete" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">15</span><span class="theorem_thmtitle">Completeness of the encoding</span></div>
+    <div class="thm_thmcontent"><p> If a \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) exists, then \(\Phi \) is satisfiable.  </p>
+</div>
+
+    <a class="latex_link" href="sec-lex.html#thm:encoding-complete">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.encodes_o7">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:lex-complete_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:lex-complete" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">14</span><span class="theorem_thmtitle">Completeness of minimality</span></div>
+    <div class="thm_thmcontent"><p> Every \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) admits an isomorphic copy whose orbit word \(\omega \) satisfies conditions (3)–(4) of Definition&#160;<a href="sec-encoding.html#def:phi">9</a>: the normalisation of Lemma&#160;<a href="sec-lex.html#lem:sym1">13</a> and \(\omega \preceq \rho \cdot \omega \) (lexicographic order) for each of the \(101\) generators \(\rho \).  </p>
+</div>
+
+    <a class="latex_link" href="sec-lex.html#thm:lex-complete">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.lexLeaderComplete">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:main_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:main" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2</span><span class="theorem_thmtitle">Main theorem</span></div>
+    <div class="thm_thmcontent"><p> Let \(\Gamma \) be a strongly regular graph with parameters \((99,14,1,2)\), on any vertex set. Then \(7 \nmid |\operatorname {Aut}\Gamma |\); in particular \(\Gamma \) has no automorphism of order \(7\).  </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#thm:main">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.no_aut_seven">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:reduction_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:reduction" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">6</span><span class="theorem_thmtitle">Reduction to \(\sigma _0\)</span></div>
+    <div class="thm_thmcontent"><p> If some \(\mathrm{srg}(99,14,1,2)\) has an automorphism of order \(7\), then some \(\mathrm{srg}(99,14,1,2)\) on the vertex set \(\{ 0,\dots ,98\} \) is invariant under \(\sigma _0\). Consequently, if no \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) exists, then \(7 \nmid |\operatorname {Aut}\Gamma |\) for every \(\mathrm{srg}(99,14,1,2)\) \(\Gamma \).  </p>
+</div>
+
+    <a class="latex_link" href="sec-group.html#thm:reduction">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.exists_sigma0_invariant" class="lean_decl">ConwayO7.exists_sigma0_invariant</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.seven_not_dvd_card_aut_of_no_sigma0_invariant" class="lean_decl">ConwayO7.seven_not_dvd_card_aut_of_no_sigma0_invariant</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+</div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/hpcc.min.js"></script>
+<script src="js/d3-graphviz.js"></script>
+
+<script type="text/javascript">
+const graphContainer = d3.select("#graph");
+const width = graphContainer.node().clientWidth;
+const height = graphContainer.node().clientHeight;
+
+
+graphContainer.graphviz({useWorker: true})
+    .width(width)
+    .height(height)
+    .fit(true)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:relabel"	[color=green,		fillcolor="#B0ECA3",		label=relabel,		shape=box,		style=filled];	"lem:sym1"	[color=green,		fillcolor="#A3D6FF",		label=sym1,		shape=ellipse,		style=filled];	"def:relabel" -> "lem:sym1"	[style=dashed];	"thm:lex-complete"	[color=green,		fillcolor="#A3D6FF",		label="lex-complete",		shape=ellipse,		style=filled];	"lem:sym1" -> "thm:lex-complete"	[style=dashed];	"thm:encoding-complete"	[color=green,		label="encoding-complete",		shape=ellipse];	"thm:lex-complete" -> "thm:encoding-complete"	[style=dashed];	"thm:main"	[color=green,		label=main,		shape=ellipse];	"thm:encoding-complete" -> "thm:main"	[style=dashed];	"def:phi"	[color=green,		fillcolor="#B0ECA3",		label=phi,		shape=box,		style=filled];	"prop:counters"	[color=green,		fillcolor="#A3D6FF",		label=counters,		shape=ellipse,		style=filled];	"def:phi" -> "prop:counters"	[style=dashed];	"prop:counters" -> "thm:encoding-complete"	[style=dashed];	"lem:cauchy"	[color=green,		label=cauchy,		shape=ellipse];	"lem:fixed"	[color=green,		fillcolor="#A3D6FF",		label=fixed,		shape=ellipse,		style=filled];	"lem:cauchy" -> "lem:fixed"	[style=dashed];	"thm:reduction"	[color=green,		fillcolor="#A3D6FF",		label=reduction,		shape=ellipse,		style=filled];	"lem:fixed" -> "thm:reduction"	[style=dashed];	"thm:reduction" -> "thm:main"	[style=dashed];	"lem:orbits"	[color=green,		label=orbits,		shape=ellipse];	"lem:orbits" -> "def:relabel"	[style=dashed];	"prop:orbitfun"	[color=green,		label=orbitfun,		shape=ellipse];	"lem:orbits" -> "prop:orbitfun"	[style=dashed];	"prop:orbitfun" -> "lem:sym1"	[style=dashed];	"def:srg"	[color=green,		fillcolor="#B0ECA3",		label=srg,		shape=box,		style=filled];	"def:srg" -> "lem:fixed"	[style=dashed];	"def:prefix"	[color=green,		fillcolor="#B0ECA3",		label=prefix,		shape=box,		style=filled];	"lem:kraft"	[color=green,		label=kraft,		shape=ellipse];	"def:prefix" -> "lem:kraft"	[style=dashed];	"thm:coverage"	[color=green,		label=coverage,		shape=ellipse];	"lem:kraft" -> "thm:coverage"	[style=dashed];	"thm:coverage" -> "thm:main"	[style=dashed];	"def:sigma0"	[color=green,		fillcolor="#B0ECA3",		label=sigma0,		shape=box,		style=filled];	"def:sigma0" -> "thm:reduction"	[style=dashed];	"def:sigma0" -> "lem:orbits"	[style=dashed];	"def:lrat"	[color=blue,		fillcolor="#A3D6FF",		label=lrat,		shape=box,		style=filled];}`)
+    .on("end", interactive);
+
+latexLabelEscaper = function(label) {
+  return label.replace(/\./g, '\\.').replace(/:/g, '\\:')
+}
+
+clickNode = function() {
+  $("#statements div").hide()
+  var node_id = $('text', this).text();
+  $('.thm').hide();
+  $('#'+latexLabelEscaper(node_id)).show().children().show();
+}
+function interactive() {
+    $("span#legend_title").on("click", function () {
+           $(this).siblings('dl').toggle();
+        })
+
+    d3.selectAll('.node')
+        .attr('pointer-events', 'fill')
+        .on('click', function () {
+           var title = d3.select(this).selectAll('title').text().trim();
+           $('#statements > div').hide()
+           $('.thm').hide();
+           $('#'+latexLabelEscaper(title)+'_modal').show().children().show().children().show();
+           $('#statements').show()
+        });
+
+    d3.selectAll('.dep-closebtn').on('click', function() {
+        var modal =
+            d3.select(this).node().parentNode.parentNode.parentNode ;
+        d3.select(modal).style('display', 'none');
+    });
+}
+
+</script>
+
+</body>
+</html>
