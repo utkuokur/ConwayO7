@@ -80,8 +80,8 @@ theorem step_srg {ω : Nat → Bool} {ρ : Nat → Nat} (hρ : ρ ∈ lexPerms)
     (h : (graphOfOrbits ω).IsSRGWith 99 14 1 2) :
     (graphOfOrbits fun o ↦ ω (orbitPerm ρ o)).IsSRGWith 99 14 1 2 := by
   have hinj := vertex_inj_of_mem hρ
-  refine IsSRGWith.of_iso
-    ⟨Equiv.ofBijective _ (Finite.injective_iff_bijective.mp hinj), fun {u v} ↦ ?_⟩ h
+  refine isSRGWith_of_iso (SimpleGraph.Iso.symm
+    ⟨Equiv.ofBijective _ (Finite.injective_iff_bijective.mp hinj), fun {u v} ↦ ?_⟩) h
   show ((permVertex ρ u ≠ permVertex ρ v) ∧
       ω (orbitOf (permVertex ρ u, permVertex ρ v)) = true)
     ↔ (u ≠ v ∧ ω (orbitPerm ρ (orbitOf (u, v))) = true)

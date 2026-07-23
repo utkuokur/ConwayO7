@@ -17,7 +17,6 @@ and all 101 lex constraints.
 import ConwayO7.LexTrip
 import ConwayO7.Bridge
 import ConwayO7.Pipeline
-import ConwayO7.SrgIso
 import ConwayO7.Data.EncoderMatch
 
 namespace ConwayO7
@@ -114,7 +113,8 @@ theorem encodes_of_lexLeader (hcomplete : LexLeaderComplete) :
   letI := instH
   obtain ⟨ω, heq⟩ := (invariant_iff_exists_orbitFun H).mp hinv
   have hsrg : (graphOfOrbits ω).IsSRGWith 99 14 1 2 :=
-    IsSRGWith.of_iso ⟨Equiv.refl _, fun {a b} ↦ by rw [heq]; exact Iff.rfl⟩ hH
+    isSRGWith_of_iso
+      (SimpleGraph.Iso.symm ⟨Equiv.refl _, fun {a b} ↦ by rw [heq]; exact Iff.rfl⟩) hH
   obtain ⟨ω', hsrg', hsym1, hlex⟩ := hcomplete ω hsrg
   have hpre := preLexInv_of_srg ω' hsrg' hsym1
   obtain ⟨a', _, hsat⟩ := mkO7St_sat (assignOfOrbits ω') ⟨hpre, hlex⟩

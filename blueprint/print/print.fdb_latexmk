@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1784830158.52078 "print.tex" "/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.pdf" "print" 1784830159.01987 0
+["pdflatex"] 1784830682.57473 "print.tex" "/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.pdf" "print" 1784830683.02167 0
   "/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -135,14 +135,14 @@
   "/home/uokur/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1782122328 94548 a4257380b3bd96fbaab312998c031fe0 ""
   "/home/uokur/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1781506154 2498847 79fa97a0fc78b4fc1f8d436f4cf44b9b ""
   "/home/uokur/.TinyTeX/texmf.cnf" 1781239159 637 edd806fb06a89761a6034e1968af9017 ""
-  "/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.aux" 1784830158.95249 15743 8900bd84bba845b064a2635a722ecbef "pdflatex"
-  "/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.out" 1784830158.95249 6098 0207ebab7910a4ca71736d9faf3e143e "pdflatex"
-  "/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.toc" 1784830158.95249 2562 0dd9a5700e3ecd62cd188f142dbf1f3b "pdflatex"
+  "/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.aux" 1784830682.96454 15638 80e40537667596409c6f3a65ef2491d3 "pdflatex"
+  "/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.out" 1784830682.96854 6098 0207ebab7910a4ca71736d9faf3e143e "pdflatex"
+  "/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.toc" 1784830682.96854 2562 0dd9a5700e3ecd62cd188f142dbf1f3b "pdflatex"
   "chapters/ch0-intro.tex" 1784829216.85643 71 58c899f38b39ff01b1805c413b4f92a1 ""
   "chapters/ch1-statement.tex" 1784829624.73645 4255 5ce9c7d69799bdcbafd4a14982036926 ""
-  "chapters/ch2-group.tex" 1784829849.20847 16372 11aad4d1b9710fc8c75ccdccb1b2b706 ""
+  "chapters/ch2-group.tex" 1784830464.74852 16345 74749b2558378486ad75fb0b6c69c16a ""
   "chapters/ch3-encoding.tex" 1784829667.38446 26280 54deffcf20c8d155c6a7c624b723ccef ""
-  "chapters/ch4-lex.tex" 1784829849.20847 20303 69c5c31aafaf0533c6039b26891b13a8 ""
+  "chapters/ch4-lex.tex" 1784830464.74852 19943 6569d18bb79902e71c654acffe8dff59 ""
   "chapters/ch5-coverage.tex" 1784829580.73646 17361 5e92b53a20e57e40218bf4e436a164f7 ""
   "chapters/ch6-certificates.tex" 1784830000.93648 5744 f23173566d5f42dc08cdd27e93b20d86 ""
   "chapters/ch7-trustedbase.tex" 1784829216.85643 523 065eb219a8184643c5c10b6ca553575f ""

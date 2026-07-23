@@ -34,7 +34,6 @@ ConwayO7.sigma0_fixed_card
 ConwayO7.sigma0_ne_one
 ConwayO7.sigma0_cycleType
 ConwayO7.isSRGWith_of_iso
-ConwayO7.IsSRGWith.of_iso
 ConwayO7.exists_sigma0_invariant
 ConwayO7.seven_not_dvd_card_aut_of_no_sigma0_invariant
 ConwayO7.orbitOf
@@ -90,7 +89,6 @@ ConwayO7.Encoder.preLex_sat
 ConwayO7.Encoder.degInv_of_srg
 ConwayO7.Encoder.cnInv_of_srg
 ConwayO7.Encoder.preLexInv_of_srg
-ConwayO7.isoCommonNeighbors
 ConwayO7.Encoder.lexPerms
 ConwayO7.Encoder.orbitPerm
 ConwayO7.Encoder.cycleRelabel

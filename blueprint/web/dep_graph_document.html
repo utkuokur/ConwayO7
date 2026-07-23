@@ -74,7 +74,7 @@
       <span class="corollary_thmcaption">
       Corollary
       </span>
-      <span class="corollary_thmlabel">118</span><span class="corollary_thmtitle">Refutation by checked cells</span></div>
+      <span class="corollary_thmlabel">117</span><span class="corollary_thmtitle">Refutation by checked cells</span></div>
     <div class="thm_thmcontent"><p> If the coverage check succeeds on \((D, S)\) and \(F \wedge (\text{cell } s)\) is unsatisfiable for every \(s \in S\), then \(F\) is unsatisfiable. The entire coverage side of the certificate thus reduces to one finite computation on the concrete data.  </p>
 </div>
 
@@ -134,7 +134,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">124</span><span class="theorem_thmtitle">The verified checker</span></div>
+      <span class="theorem_thmlabel">123</span><span class="theorem_thmtitle">The verified checker</span></div>
     <div class="thm_thmcontent"><p> Lean’s standard library provides an executable checker taking an LRAT derivation and a CNF, and a soundness theorem proved in Lean: whenever the checker accepts, the formula is unsatisfiable. Consequently a run of the checker inside Lean’s kernel converts a concrete derivation into a genuine Lean proof of unsatisfiability, with no unverified translation step.  </p>
 </div>
 
@@ -173,8 +173,8 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">127</span><span class="theorem_thmtitle">The certificate schema</span></div>
-    <div class="thm_thmcontent"><p> Let \(F\) be a CNF, and let \(S\) be a prefix-free family of sign words of full Kraft mass over a fixed variable order (Definition&#160;<a href="sect0016.html#def:prefix">104</a>, Lemma&#160;<a href="sect0016.html#lem:kraft">109</a>). If \(F \wedge (\text{cell } s)\) is unsatisfiable for every \(s \in S\), and \(F\) encodes the \(\sigma _0\)-invariant strongly regular graphs (Definition&#160;<a href="sect0001.html#st-encodes">4</a>), then no strongly regular graph with parameters \((99,14,1,2)\) has automorphism group of order divisible by \(7\). This composes the refutation-by-cells theorem (Theorem&#160;<a href="sect0017.html#thm:coverage">117</a>) with the conditional main theorem (Theorem&#160;<a href="sect0001.html#st-conditional">5</a>); a variant takes the prefix-freeness and Kraft hypotheses in the executable form of the cover checker.  </p>
+      <span class="theorem_thmlabel">126</span><span class="theorem_thmtitle">The certificate schema</span></div>
+    <div class="thm_thmcontent"><p> Let \(F\) be a CNF, and let \(S\) be a prefix-free family of sign words of full Kraft mass over a fixed variable order (Definition&#160;<a href="sect0016.html#def:prefix">103</a>, Lemma&#160;<a href="sect0016.html#lem:kraft">108</a>). If \(F \wedge (\text{cell } s)\) is unsatisfiable for every \(s \in S\), and \(F\) encodes the \(\sigma _0\)-invariant strongly regular graphs (Definition&#160;<a href="sect0001.html#st-encodes">4</a>), then no strongly regular graph with parameters \((99,14,1,2)\) has automorphism group of order divisible by \(7\). This composes the refutation-by-cells theorem (Theorem&#160;<a href="sect0017.html#thm:coverage">116</a>) with the conditional main theorem (Theorem&#160;<a href="sect0001.html#st-conditional">5</a>); a variant takes the prefix-freeness and Kraft hypotheses in the executable form of the cover checker.  </p>
 </div>
 
     <a class="latex_link" href="sec-certificates.html#crt-schema">LaTeX</a>
@@ -212,8 +212,8 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">128</span><span class="theorem_thmtitle">The schema on the distributed family</span></div>
-    <div class="thm_thmcontent"><p> Instantiate Theorem&#160;<a href="sec-certificates.html#crt-schema">127</a> with \(F = \Phi \) and \(S\) the distributed family of \(98{,}536\) words: if \(\Phi \wedge (\text{cell } s)\) is unsatisfiable for every \(s\) in the family, and \(\Phi \) encodes the \(\sigma _0\)-invariant strongly regular graphs, then the conclusion of the main theorem holds. The combinatorial hypotheses on \(S\) are discharged by the executed cover check (Fact&#160;<a href="sect0018.html#fact:tiling">122</a>); the remaining hypotheses are exactly the per-cell unsatisfiability facts and encoding completeness.  </p>
+      <span class="theorem_thmlabel">127</span><span class="theorem_thmtitle">The schema on the distributed family</span></div>
+    <div class="thm_thmcontent"><p> Instantiate Theorem&#160;<a href="sec-certificates.html#crt-schema">126</a> with \(F = \Phi \) and \(S\) the distributed family of \(98{,}536\) words: if \(\Phi \wedge (\text{cell } s)\) is unsatisfiable for every \(s\) in the family, and \(\Phi \) encodes the \(\sigma _0\)-invariant strongly regular graphs, then the conclusion of the main theorem holds. The combinatorial hypotheses on \(S\) are discharged by the executed cover check (Fact&#160;<a href="sect0018.html#fact:tiling">121</a>); the remaining hypotheses are exactly the per-cell unsatisfiability facts and encoding completeness.  </p>
 </div>
 
     <a class="latex_link" href="sec-certificates.html#crt-tiling">LaTeX</a>
@@ -242,7 +242,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">99</span><span class="definition_thmtitle">Cubes: partial valuations</span></div>
+      <span class="definition_thmlabel">98</span><span class="definition_thmtitle">Cubes: partial valuations</span></div>
     <div class="thm_thmcontent"><p> A <em>cube</em> is a finite list of literals read <em>conjunctively</em> (“all of these assertions hold”) — dually to a clause. A valuation satisfies a cube \(c\) iff it satisfies every literal of \(c\); thus a cube whose variables are pairwise distinct is the same thing as a <em>partial valuation</em> with finite domain, and its satisfaction set is the set of all total valuations extending it.  </p>
 </div>
 
@@ -281,7 +281,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">103</span><span class="definition_thmtitle">The audited text convention</span></div>
+      <span class="definition_thmlabel">102</span><span class="definition_thmtitle">The audited text convention</span></div>
     <div class="thm_thmcontent"><p> The distributed files render literals as signed integers: the literal \((v, 1)\) (with \(v\) counted from \(0\)) is written as the integer \(v+1\), and \((v, 0)\) as \(-(v+1)\). A clause is a line of literals terminated by \(0\); a cube is a line of literals with no terminator. The parsing maps from text to formulas and cubes, and the serialisation maps in the other direction, are fixed once in a deliberately small Lean file; on the artifact files they are mutually inverse byte for byte, which is what gives the byte-identity facts (such as Fact&#160;<a href="ssec-enc-formula.html#fact:bytes">43</a>) their meaning.  </p>
 </div>
 
@@ -326,7 +326,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">96</span><span class="definition_thmtitle">Clauses and formulas</span></div>
+      <span class="definition_thmlabel">95</span><span class="definition_thmtitle">Clauses and formulas</span></div>
     <div class="thm_thmcontent"><p> A <em>clause</em> is a finite list of literals, read <em>disjunctively</em> (“at least one of these assertions holds”). A <em>formula in conjunctive normal form</em> (a <em>CNF formula</em>) is a finite family \(F = (C_1, \dots , C_m)\) of clauses, read <em>conjunctively</em> (“every clause holds”).  </p>
 </div>
 
@@ -365,7 +365,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">95</span><span class="definition_thmtitle">Variables and literals</span></div>
+      <span class="definition_thmlabel">94</span><span class="definition_thmtitle">Variables and literals</span></div>
     <div class="thm_thmcontent"><p> Fix a countable index set \(V\) of <em>variables</em>; concretely \(V = \{ 0, 1, 2, \dots \} \). A <em>literal</em> is a pair \((x, \varepsilon ) \in V \times \{ 0,1\} \), written \(x\) when \(\varepsilon = 1\) and \(\neg x\) when \(\varepsilon = 0\): an assertion that the variable \(x\) takes the value \(\varepsilon \). </p>
 </div>
 
@@ -395,7 +395,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">98</span><span class="definition_thmtitle">Satisfiability</span></div>
+      <span class="definition_thmlabel">97</span><span class="definition_thmtitle">Satisfiability</span></div>
     <div class="thm_thmcontent"><p> A CNF formula \(F\) is <em>satisfiable</em> if some valuation satisfies it, and <em>unsatisfiable</em> if no valuation does. Unsatisfiability of a suitable formula is the finitary statement to which the non-existence theorem of this project is reduced.  </p>
 </div>
 
@@ -434,7 +434,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">97</span><span class="definition_thmtitle">Valuations and satisfaction</span></div>
+      <span class="definition_thmlabel">96</span><span class="definition_thmtitle">Valuations and satisfaction</span></div>
     <div class="thm_thmcontent"><p> A <em>valuation</em> is a function \(a \colon V \to \{ 0,1\} \), assigning a value to every variable. A valuation \(a\) <em>satisfies</em> </p>
 <ul class="itemize">
   <li><p>the literal \((x, \varepsilon )\) iff \(a(x) = \varepsilon \); </p>
@@ -482,7 +482,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">100</span><span class="definition_thmtitle">Adjoining a cube to a formula</span></div>
+      <span class="definition_thmlabel">99</span><span class="definition_thmtitle">Adjoining a cube to a formula</span></div>
     <div class="thm_thmcontent"><p> For a CNF formula \(F\) and a cube \(c\), the formula \(F \wedge c\) is obtained by adjoining to \(F\) one singleton clause \(\{ \ell \} \) per literal \(\ell \) of \(c\). This is the formula whose refutation certifies that \(F\) has no satisfying valuation <em>inside the cell described by \(c\)</em>.  </p>
 </div>
 
@@ -512,7 +512,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">113</span><span class="definition_thmtitle">The adjacent-pairs test</span></div>
+      <span class="definition_thmlabel">112</span><span class="definition_thmtitle">The adjacent-pairs test</span></div>
     <div class="thm_thmcontent"><p> For a finite sequence of words, the <em>adjacent-pairs test</em> checks, in one pass, that no term is a prefix of its immediate successor.  </p>
 </div>
 
@@ -542,7 +542,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">115</span><span class="definition_thmtitle">The coverage check</span></div>
+      <span class="definition_thmlabel">114</span><span class="definition_thmtitle">The coverage check</span></div>
     <div class="thm_thmcontent"><p> Given a depth \(D\) and a family \(S\) of words, the <em>coverage check</em> is the finite computation verifying: (i) every member of \(S\) has length \(\le D\); (ii) the family, sorted lexicographically (by merge sort), passes the adjacent-pairs test; (iii) the Kraft weight satisfies \(W_D(S) = 2^D\) exactly, in integer arithmetic.  </p>
 </div>
 
@@ -572,7 +572,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">106</span><span class="definition_thmtitle">Kraft weight</span></div>
+      <span class="definition_thmlabel">105</span><span class="definition_thmtitle">Kraft weight</span></div>
     <div class="thm_thmcontent"><p> The <em>Kraft weight</em> at depth \(D\) of a family \(S\) of words of length \(\le D\) is the integer \(W_D(S) = \sum _{s \in S} 2^{\, D - |s|}\), i.e. \(2^D\) times the usual Kraft mass \(\sum _s 2^{-|s|}\). The cell of \(s\) meets exactly \(2^{\, D-|s|}\) of the \(2^D\) branch words, so \(W_D(S)\) is the total number of branch words covered, counted with multiplicity.  </p>
 </div>
 
@@ -602,7 +602,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">111</span><span class="definition_thmtitle">Lexicographic order on words</span></div>
+      <span class="definition_thmlabel">110</span><span class="definition_thmtitle">Lexicographic order on words</span></div>
     <div class="thm_thmcontent"><p> Order \(\{ 0,1\} ^{\le D}\) by \(s \le t\) iff at the first position where they differ (reading left to right) \(s\) carries \(0\) and \(t\) carries \(1\), or \(s\) is a prefix of \(t\). This relation is total, transitive and antisymmetric: a linear order on words. </p>
 </div>
 
@@ -645,8 +645,8 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">119</span><span class="definition_thmtitle">The certified tiling data</span></div>
-    <div class="thm_thmcontent"><p> The consolidated cell list of the artifact (one cube per certificate, in manifest order) is embedded byte for byte into the Lean development and parsed by the maps of Definition&#160;<a href="sect0015.html#def:cnf-dimacs">103</a>, yielding the list of <em>tiling cubes</em>; the <em>branching order</em> is the sequence \(x_{15}, \dots , x_{214}\) of \(200\) variables; the <em>sign words</em> are the words in \(\{ 0,1\} ^{\le 200}\) obtained by reading off the signs of each cube’s literals. No processing external to Lean intervenes between the hash-pinned file and these terms.  </p>
+      <span class="definition_thmlabel">118</span><span class="definition_thmtitle">The certified tiling data</span></div>
+    <div class="thm_thmcontent"><p> The consolidated cell list of the artifact (one cube per certificate, in manifest order) is embedded byte for byte into the Lean development and parsed by the maps of Definition&#160;<a href="sect0015.html#def:cnf-dimacs">102</a>, yielding the list of <em>tiling cubes</em>; the <em>branching order</em> is the sequence \(x_{15}, \dots , x_{214}\) of \(200\) variables; the <em>sign words</em> are the words in \(\{ 0,1\} ^{\le 200}\) obtained by reading off the signs of each cube’s literals. No processing external to Lean intervenes between the hash-pinned file and these terms.  </p>
 </div>
 
     <a class="latex_link" href="sect0018.html#def:cov-tiling">LaTeX</a>
@@ -982,7 +982,7 @@
       Definition
       </span>
       <span class="definition_thmlabel">48</span><span class="definition_thmtitle">Level-1 symmetry condition</span></div>
-    <div class="thm_thmcontent"><p> A valuation \(a\) satisfies the <em>level-1 symmetry condition</em> if for each \(i {\lt} 14\) the orbit variable of the pair \((0,\,  1 + 7i)\) has value \(1\) exactly when \(i {\lt} 2\): the fixed vertex is adjacent to precisely the first two \(7\)-cycles. This is the semantic content of the normalisation of Lemma&#160;<a href="sect0010.html#lem:sym1">75</a>.  </p>
+    <div class="thm_thmcontent"><p> A valuation \(a\) satisfies the <em>level-1 symmetry condition</em> if for each \(i {\lt} 14\) the orbit variable of the pair \((0,\,  1 + 7i)\) has value \(1\) exactly when \(i {\lt} 2\): the fixed vertex is adjacent to precisely the first two \(7\)-cycles. This is the semantic content of the normalisation of Lemma&#160;<a href="sect0010.html#lem:sym1">74</a>.  </p>
 </div>
 
     <a class="latex_link" href="ssec-enc-framework.html#def:enc-sym1holds">LaTeX</a>
@@ -1080,7 +1080,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">71</span><span class="definition_thmtitle">Block bits</span></div>
+      <span class="definition_thmlabel">70</span><span class="definition_thmtitle">Block bits</span></div>
     <div class="thm_thmcontent"><p> For a word \(\omega \in \{ 0,1\} ^{693}\) and a block index \(c\), the <em>block bit</em> of \(c\) is the value of \(\omega \) on the orbit of the pair \(\{ 0, 1+7c\} \), i.e. the adjacency bit of the fixed vertex towards block&#160;\(c\).  </p>
 </div>
 
@@ -1110,7 +1110,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">68</span><span class="definition_thmtitle">Block relabellings</span></div>
+      <span class="definition_thmlabel">67</span><span class="definition_thmtitle">Block relabellings</span></div>
     <div class="thm_thmcontent"><p> Write \(B_i = \{ 1+7i,\dots ,7+7i\} \) (\(0 \le i \le 13\)) for the fourteen \(7\)-blocks rotated by \(\sigma _0\). A permutation \(\tau \in S_{14}\) of the block indices induces a permutation of the \(99\) vertices fixing \(0\) and sending the \(j\)-th vertex of block \(i\) to the \(j\)-th vertex of block \(\tau (i)\): block indices are permuted, positions within blocks are kept.  </p>
 </div>
 
@@ -1140,7 +1140,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">91</span><span class="definition_thmtitle">The master invariant</span></div>
+      <span class="definition_thmlabel">90</span><span class="definition_thmtitle">The master invariant</span></div>
     <div class="thm_thmcontent"><p> The <em>master invariant</em> of a valuation of the orbit block is the conjunction of the semantic conditions of all four sections of the encoding: the degree counts (1), the common-neighbour counts (2), the normalisation (3), and the lex-leader invariant (4).  </p>
 </div>
 
@@ -1170,7 +1170,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">87</span><span class="definition_thmtitle">The lex-leader invariant</span></div>
+      <span class="definition_thmlabel">86</span><span class="definition_thmtitle">The lex-leader invariant</span></div>
     <div class="thm_thmcontent"><p> A valuation of the orbit variables satisfies the <em>lex-leader invariant</em> if for each of the \(101\) generators \(\rho \) it satisfies \(X \preceq Y_\rho \), where \(Y_\rho \) is \(X\) re-indexed by \(\rho \)’s orbit action. On words this says precisely \(\omega \preceq \rho \cdot \omega \) for every generator \(\rho \), i.e. condition (4) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a>.  </p>
 </div>
 
@@ -1200,7 +1200,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">86</span><span class="definition_thmtitle">Lexicographic comparison of literal words</span></div>
+      <span class="definition_thmlabel">85</span><span class="definition_thmtitle">Lexicographic comparison of literal words</span></div>
     <div class="thm_thmcontent"><p> Fix two sequences \(X, Y\) of \(693\) literals over the orbit variables — for the encoding, \(X\) lists the orbit variables in position order and \(Y\) lists them re-indexed by a generator’s orbit action. A valuation \(a\) satisfies \(X \preceq Y\) if for every \(i {\lt} 693\): whenever the literal values of \(X\) and \(Y\) agree at all positions \(j {\lt} i\) and the \(i\)-th literal of \(X\) is true, the \(i\)-th literal of \(Y\) is true. This is the lexicographic comparison of the two literal-value words under \(a\).  </p>
 </div>
 
@@ -1241,7 +1241,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">81</span><span class="definition_thmtitle">Reachability</span></div>
+      <span class="definition_thmlabel">80</span><span class="definition_thmtitle">Reachability</span></div>
     <div class="thm_thmcontent"><p> For \(\omega \in \{ 0,1\} ^{693}\), let \(\mathcal{R}(\omega )\) be the smallest set of words containing \(\omega \) and closed under the action of each of the \(101\) generators: the orbit of \(\omega \) under the monoid they generate.  </p>
 </div>
 
@@ -1271,8 +1271,8 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">76</span><span class="definition_thmtitle">Vertex action of a generator</span></div>
-    <div class="thm_thmcontent"><p> Each of the \(101\) relabelling generators of Definition&#160;<a href="sect0009.html#def:relabel">67</a> is given by an explicit map on the vertex set \(\{ 0,\dots ,98\} \); this vertex map induces the generator’s action on pair orbits and hence on words.  </p>
+      <span class="definition_thmlabel">75</span><span class="definition_thmtitle">Vertex action of a generator</span></div>
+    <div class="thm_thmcontent"><p> Each of the \(101\) relabelling generators of Definition&#160;<a href="sect0009.html#def:relabel">66</a> is given by an explicit map on the vertex set \(\{ 0,\dots ,98\} \); this vertex map induces the generator’s action on pair orbits and hence on words.  </p>
 </div>
 
     <a class="latex_link" href="sect0011.html#def:lex-vertex-action">LaTeX</a>
@@ -1301,7 +1301,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">83</span><span class="definition_thmtitle">Big-endian value</span></div>
+      <span class="definition_thmlabel">82</span><span class="definition_thmtitle">Big-endian value</span></div>
     <div class="thm_thmcontent"><p> The <em>value</em> of a word \(\omega \in \{ 0,1\} ^{693}\) is \(\mathrm{val}(\omega ) = \sum _{i{\lt}693} \omega (i)\,  2^{692-i}\), the word read as a big-endian binary number.  </p>
 </div>
 
@@ -1331,7 +1331,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">123</span><span class="definition_thmtitle">Clausal derivations</span></div>
+      <span class="definition_thmlabel">122</span><span class="definition_thmtitle">Clausal derivations</span></div>
     <div class="thm_thmcontent"><p> Let \(F\) be a formula in conjunctive normal form, i.e. a finite set of <em>clauses</em>, each a disjunction of literals. A clause \(C\) is <em>entailed by reverse unit propagation</em> (RUP) from a set \(G\) of clauses if, starting from the assumption that every literal of \(C\) is false and repeatedly assigning any literal that is forced (because it is the last unfalsified literal of some clause of \(G\)), one reaches a clause of \(G\) all of whose literals are falsified; this syntactic check implies the semantic entailment \(G \models C\), since any valuation satisfying \(G\) but falsifying \(C\) would survive every propagation step. A <em>clausal derivation</em> from \(F\) is a finite sequence of clauses, each entailed by reverse unit propagation from \(F\) together with the preceding clauses (with clause deletions permitted along the way), ending in the empty clause — the clause with no literals, satisfied by no valuation. Since RUP steps preserve entailment, a clausal derivation witnesses that \(F\) is unsatisfiable. The <em>LRAT format</em> additionally annotates each step with the indices of the clauses used, so that a derivation can be checked in time linear in its length; Lean’s standard library formalises LRAT derivations as sequences of addition and deletion actions. </p>
 </div>
 
@@ -1379,7 +1379,7 @@
 </li>
   <li><p><em>normalisation</em>: the neighbourhood of the fixed vertex \(0\) is the union of the first two \(7\)-blocks; </p>
 </li>
-  <li><p><em>minimality</em>: the word \(\omega \in \{ 0,1\} ^{693}\) is lexicographically minimal in its orbit under the \(101\) relabelling generators of Definition&#160;<a href="sect0009.html#def:relabel">67</a>. </p>
+  <li><p><em>minimality</em>: the word \(\omega \in \{ 0,1\} ^{693}\) is lexicographically minimal in its orbit under the \(101\) relabelling generators of Definition&#160;<a href="sect0009.html#def:relabel">66</a>. </p>
 </li>
 </ol>
 <p> The cardinality conditions are rendered as clauses through standard counting networks (a sequential counter and a modulo-\(9\) totalizer, §<a href="ssec-enc-networks.html">3.4</a>); the minimality conditions through chained lexicographic comparisons. \(\Phi \) has \(432{,}882\) variables and \(1{,}131{,}708\) clauses.  </p>
@@ -1420,7 +1420,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">104</span><span class="definition_thmtitle">Sign prefixes and cells</span></div>
+      <span class="definition_thmlabel">103</span><span class="definition_thmtitle">Sign prefixes and cells</span></div>
     <div class="thm_thmcontent"><p> Fix a <em>branching order</em>: a sequence of \(D\) distinct variables, in the certificate the sequence \(x_{15}, x_{16}, \dots , x_{214}\) (so \(D = 200\)). To a word \(s \in \{ 0,1\} ^{\le D}\) associate the cube asserting \(x_{14+j} = s_j\) for \(1 \le j \le |s|\); its satisfaction set, the <em>cell</em> of \(s\), consists of all valuations extending the partial valuation \(s\) along the branching order. A family \(S\) of words is <em>prefix-free</em> if no member is a prefix of another (in particular the members are pairwise distinct).  </p>
 </div>
 
@@ -1459,7 +1459,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">67</span><span class="definition_thmtitle">Relabelling generators</span></div>
+      <span class="definition_thmlabel">66</span><span class="definition_thmtitle">Relabelling generators</span></div>
     <div class="thm_thmcontent"><p> Let \(N \le S_{99}\) be generated by: the block transposition exchanging \(7\)-blocks \(0,1\); the transpositions of adjacent blocks \(i,i{+}1\) for \(2 \le i \le 12\); the rotations of each block; and the five multiplier permutations \(j \mapsto aj \bmod 7\) (\(2 \le a \le 6\)) applied simultaneously to all blocks. Each \(\rho \in N\) normalises \(\langle \sigma _0\rangle \), hence acts on the orbit space and thus on words \(\{ 0,1\} ^{693}\) by \((\rho \cdot \omega )(o) = \omega (\rho ^{-1}o)\). The encoding uses \(101\) fixed generators of this action.  </p>
 </div>
 
@@ -1614,7 +1614,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">101</span><span class="lemma_thmtitle">Semantics of \(F \wedge c\)</span></div>
+      <span class="lemma_thmlabel">100</span><span class="lemma_thmtitle">Semantics of \(F \wedge c\)</span></div>
     <div class="thm_thmcontent"><p> A valuation satisfies \(F \wedge c\) if and only if it satisfies both \(F\) and the cube \(c\).  </p>
 </div>
 
@@ -1644,7 +1644,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">114</span><span class="lemma_thmtitle">Soundness of the adjacent-pairs test</span></div>
+      <span class="lemma_thmlabel">113</span><span class="lemma_thmtitle">Soundness of the adjacent-pairs test</span></div>
     <div class="thm_thmcontent"><p> If a sequence of words is sorted for the lexicographic order and passes the adjacent-pairs test, then the underlying family is prefix-free.  </p>
 </div>
 
@@ -1674,7 +1674,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">105</span><span class="lemma_thmtitle">Cells are prefix sets</span></div>
+      <span class="lemma_thmlabel">104</span><span class="lemma_thmtitle">Cells are prefix sets</span></div>
     <div class="thm_thmcontent"><p> Write \(w(a) \in \{ 0,1\} ^{D}\) for the <em>branch word</em> of a valuation \(a\): the values of \(a\) along the branching order. A valuation \(a\) lies in the cell of a word \(s\) (with \(|s| \le D\)) if and only if \(s\) is a prefix of \(w(a)\). Consequently two cells are either nested or disjoint, and the cells of a prefix-free family are pairwise disjoint.  </p>
 </div>
 
@@ -1704,8 +1704,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">116</span><span class="lemma_thmtitle">Soundness of the coverage check</span></div>
-    <div class="thm_thmcontent"><p> If the coverage check succeeds on \((D, S)\), then every member of \(S\) has length \(\le D\), the family \(S\) is prefix-free, and \(W_D(S) = 2^D\) — the three hypotheses of Lemma&#160;<a href="sect0016.html#lem:cov-valuation-cover">110</a>.  </p>
+      <span class="lemma_thmlabel">115</span><span class="lemma_thmtitle">Soundness of the coverage check</span></div>
+    <div class="thm_thmcontent"><p> If the coverage check succeeds on \((D, S)\), then every member of \(S\) has length \(\le D\), the family \(S\) is prefix-free, and \(W_D(S) = 2^D\) — the three hypotheses of Lemma&#160;<a href="sect0016.html#lem:cov-valuation-cover">109</a>.  </p>
 </div>
 
     <a class="latex_link" href="sect0017.html#lem:cov-checkcover-sound">LaTeX</a>
@@ -1734,7 +1734,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">108</span><span class="lemma_thmtitle">Kraft’s inequality</span></div>
+      <span class="lemma_thmlabel">107</span><span class="lemma_thmtitle">Kraft’s inequality</span></div>
     <div class="thm_thmcontent"><p> A prefix-free family \(S \subseteq \{ 0,1\} ^{\le D}\) satisfies \(W_D(S) \le 2^D\).  </p>
 </div>
 
@@ -1764,7 +1764,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">107</span><span class="lemma_thmtitle">Splitting at the root</span></div>
+      <span class="lemma_thmlabel">106</span><span class="lemma_thmtitle">Splitting at the root</span></div>
     <div class="thm_thmcontent"><p> For \(b \in \{ 0,1\} \) let \(S_b = \{  t : b\, t \in S \} \) be the family of tails of the members of \(S\) beginning with \(b\). If the empty word is not in \(S\), then \(W_{D+1}(S) = W_D(S_0) + W_D(S_1)\); moreover each \(S_b\) inherits prefix-freeness and the length bound from \(S\).  </p>
 </div>
 
@@ -1805,7 +1805,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">112</span><span class="lemma_thmtitle">Block property of the lexicographic order</span></div>
+      <span class="lemma_thmlabel">111</span><span class="lemma_thmtitle">Block property of the lexicographic order</span></div>
     <div class="thm_thmcontent"><p> Extensions of a fixed word \(s\) form an <em>interval</em>: if \(s\) is a prefix of \(t\) and \(s \le u \le t\) in the lexicographic order, then \(s\) is a prefix of \(u\). (In particular \(s \le t\) whenever \(s\) is a prefix of \(t\).)  </p>
 </div>
 
@@ -1844,7 +1844,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">110</span><span class="lemma_thmtitle">Coverage of the valuation space</span></div>
+      <span class="lemma_thmlabel">109</span><span class="lemma_thmtitle">Coverage of the valuation space</span></div>
     <div class="thm_thmcontent"><p> Let \(S\) be a prefix-free family of words of length \(\le D\) with full Kraft weight \(2^D\). Then every valuation lies in the cell of some (unique) member of \(S\).  </p>
 </div>
 
@@ -2783,16 +2783,7 @@
     <a class="latex_link" href="sect0007.html#lem:grp-srg-transport">LaTeX</a>
     
     
-  <div class="tooltip">
-      <span class="lean_link">Lean</span>
-      <ul class="tooltip_list">
-        
-           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.isSRGWith_of_iso" class="lean_decl">ConwayO7.isSRGWith_of_iso</a></li>
-        
-           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.IsSRGWith.of_iso" class="lean_decl">ConwayO7.IsSRGWith.of_iso</a></li>
-        
-      </ul>
-  </div>
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.isSRGWith_of_iso">Lean</a>
     
     
   
@@ -2875,7 +2866,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">109</span><span class="lemma_thmtitle">Kraft equality and maximality</span></div>
+      <span class="lemma_thmlabel">108</span><span class="lemma_thmtitle">Kraft equality and maximality</span></div>
     <div class="thm_thmcontent"><p> A prefix-free family \(S \subseteq \{ 0,1\} ^{\le D}\) with full Kraft weight \(W_D(S) = 2^D\) is a <em>maximal antichain</em> of the binary tree: every \(w \in \{ 0,1\} ^{D}\) has a (necessarily unique) member of \(S\) as a prefix. Hence the corresponding cells <em>partition</em> the valuation space.  </p>
 </div>
 
@@ -2905,7 +2896,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">72</span><span class="lemma_thmtitle">Adjacency to a block is constant on the block</span></div>
+      <span class="lemma_thmlabel">71</span><span class="lemma_thmtitle">Adjacency to a block is constant on the block</span></div>
     <div class="thm_thmcontent"><p> In the graph \(G_\omega \) associated to a word \(\omega \), the fixed vertex \(0\) is adjacent to a vertex \(v\) if and only if \(v \neq 0\) and the block bit of \(v\)’s block equals \(1\). In particular the neighbourhood of \(0\) is a union of full blocks.  </p>
 </div>
 
@@ -2935,7 +2926,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">88</span><span class="lemma_thmtitle">Satisfiability of one comparison chain</span></div>
+      <span class="lemma_thmlabel">87</span><span class="lemma_thmtitle">Satisfiability of one comparison chain</span></div>
     <div class="thm_thmcontent"><p> The clauses rendering one comparison \(X \preceq Y\) use fresh auxiliary registers. Every valuation \(a\) that satisfies all previously emitted clauses and the comparison \(X \preceq Y\) (on literal values) extends, by assigning only the fresh registers, to a valuation satisfying all clauses of the chain as well.  </p>
 </div>
 
@@ -2974,44 +2965,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">93</span><span class="lemma_thmtitle">Faithfulness from completeness of minimality</span></div>
-    <div class="thm_thmcontent"><p> Assume completeness of minimality (Theorem&#160;<a href="sect0014.html#thm:lex-complete">90</a>). If a \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) exists, then the distributed formula is satisfiable.  </p>
+      <span class="lemma_thmlabel">92</span><span class="lemma_thmtitle">Faithfulness from completeness of minimality</span></div>
+    <div class="thm_thmcontent"><p> Assume completeness of minimality (Theorem&#160;<a href="sect0014.html#thm:lex-complete">89</a>). If a \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) exists, then the distributed formula is satisfiable.  </p>
 </div>
 
     <a class="latex_link" href="sect0014.html#lem:lex-encodes">LaTeX</a>
     
     
   <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.encodes_of_lexLeader">Lean</a>
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
-
-
-    
-    <div class="dep-modal-container" id="lem:lex-iso-common-neighbors_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="lem:lex-iso-common-neighbors" style="display: none">
-    <div class="thm_thmheading">
-      <span class="lemma_thmcaption">
-      Lemma
-      </span>
-      <span class="lemma_thmlabel">66</span><span class="lemma_thmtitle">Common neighbours across an isomorphism</span></div>
-    <div class="thm_thmcontent"><p> A graph isomorphism \(e \colon G \to H\) restricts, for every pair of vertices \(v,w\) of \(G\), to a bijection between the common neighbours of \(v,w\) in \(G\) and the common neighbours of \(e(v),e(w)\) in \(H\).  </p>
-</div>
-
-    <a class="latex_link" href="sect0008.html#lem:lex-iso-common-neighbors">LaTeX</a>
-    
-    
-  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.isoCommonNeighbors">Lean</a>
     
     
   
@@ -3034,7 +2995,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">85</span><span class="lemma_thmtitle">Existence of a reachable minimum</span></div>
+      <span class="lemma_thmlabel">84</span><span class="lemma_thmtitle">Existence of a reachable minimum</span></div>
     <div class="thm_thmcontent"><p> For every \(\omega \) there is \(\omega _{\min } \in \mathcal{R}(\omega )\) with \(\mathrm{val}(\omega _{\min }) \le \mathrm{val}(\omega ')\) for all \(\omega ' \in \mathcal{R}(\omega )\).  </p>
 </div>
 
@@ -3064,7 +3025,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">82</span><span class="lemma_thmtitle">Reachability preserves the invariants</span></div>
+      <span class="lemma_thmlabel">81</span><span class="lemma_thmtitle">Reachability preserves the invariants</span></div>
     <div class="thm_thmcontent"><p> If \(G_\omega \) is an \(\mathrm{srg}(99,14,1,2)\), then so is \(G_{\omega '}\) for every \(\omega ' \in \mathcal{R}(\omega )\); and if \(\omega \) satisfies the normalisation condition, so does every \(\omega ' \in \mathcal{R}(\omega )\).  </p>
 </div>
 
@@ -3103,7 +3064,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">69</span><span class="lemma_thmtitle">Relabelling blocks commutes with rotating within blocks</span></div>
+      <span class="lemma_thmlabel">68</span><span class="lemma_thmtitle">Relabelling blocks commutes with rotating within blocks</span></div>
     <div class="thm_thmcontent"><p> Every block relabelling commutes with \(\sigma _0\).  </p>
 </div>
 
@@ -3142,7 +3103,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">79</span><span class="lemma_thmtitle">One generator step preserves strong regularity</span></div>
+      <span class="lemma_thmlabel">78</span><span class="lemma_thmtitle">One generator step preserves strong regularity</span></div>
     <div class="thm_thmcontent"><p> If \(G_\omega \) is an \(\mathrm{srg}(99,14,1,2)\) and \(\rho \) is one of the \(101\) generators, then \(G_{\rho \cdot \omega }\) is again an \(\mathrm{srg}(99,14,1,2)\).  </p>
 </div>
 
@@ -3172,7 +3133,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">80</span><span class="lemma_thmtitle">One generator step preserves the normalisation</span></div>
+      <span class="lemma_thmlabel">79</span><span class="lemma_thmtitle">One generator step preserves the normalisation</span></div>
     <div class="thm_thmcontent"><p> Each of the \(101\) generators permutes the fourteen orbits of pairs \(\{ 0, 1+7i\} \) among themselves and preserves the predicate “\(i {\lt} 2\)” on their indices; consequently, if the word \(\omega \) satisfies the normalisation condition (3) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a>, so does \(\rho \cdot \omega \).  </p>
 </div>
 
@@ -3211,7 +3172,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">74</span><span class="lemma_thmtitle">Exactly two neighbour blocks</span></div>
+      <span class="lemma_thmlabel">73</span><span class="lemma_thmtitle">Exactly two neighbour blocks</span></div>
     <div class="thm_thmcontent"><p> If \(G_\omega \) is an \(\mathrm{srg}(99,14,1,2)\), then exactly two of the fourteen block bits of \(\omega \) equal \(1\).  </p>
 </div>
 
@@ -3241,7 +3202,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">84</span><span class="lemma_thmtitle">Value order refines lexicographic order</span></div>
+      <span class="lemma_thmlabel">83</span><span class="lemma_thmtitle">Value order refines lexicographic order</span></div>
     <div class="thm_thmcontent"><p> Let \(u, w \in \{ 0,1\} ^{693}\) with \(\mathrm{val}(u) \le \mathrm{val}(w)\). Then for every position \(i {\lt} 693\): if \(u\) and \(w\) agree at all positions \(j {\lt} i\) and \(u(i) = 1\), then \(w(i) = 1\). Equivalently, \(u \preceq w\) in the lexicographic order.  </p>
 </div>
 
@@ -3312,7 +3273,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">75</span><span class="lemma_thmtitle">Normalisation of the fixed vertex’s neighbourhood</span></div>
+      <span class="lemma_thmlabel">74</span><span class="lemma_thmtitle">Normalisation of the fixed vertex’s neighbourhood</span></div>
     <div class="thm_thmcontent"><p> Every \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) is isomorphic, via a block relabelling commuting with \(\sigma _0\), to one in which the neighbourhood of the fixed vertex \(0\) is exactly the union of blocks \(0\) and \(1\): its orbit word has block bit \(1\) exactly at blocks \(0\) and \(1\).  </p>
 </div>
 
@@ -3618,7 +3579,7 @@
       <span class="proposition_thmcaption">
       Proposition
       </span>
-      <span class="proposition_thmlabel">92</span><span class="proposition_thmtitle">Generator satisfiability</span></div>
+      <span class="proposition_thmlabel">91</span><span class="proposition_thmtitle">Generator satisfiability</span></div>
     <div class="thm_thmcontent"><p> Every valuation of the orbit block satisfying the master invariant extends, over the auxiliary variables, to a valuation satisfying every clause of the generated formula \(\Phi \).  </p>
 </div>
 
@@ -3657,7 +3618,7 @@
       <span class="proposition_thmcaption">
       Proposition
       </span>
-      <span class="proposition_thmlabel">89</span><span class="proposition_thmtitle">The comparison section</span></div>
+      <span class="proposition_thmlabel">88</span><span class="proposition_thmtitle">The comparison section</span></div>
     <div class="thm_thmcontent"><p> The full minimality section of the encoding — the \(101\) chained comparisons of condition (4) — preserves satisfiability: any valuation of the orbit block satisfying the lex-leader invariant extends over the auxiliary registers of the section to satisfy every clause the section emits.  </p>
 </div>
 
@@ -3818,7 +3779,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">102</span><span class="theorem_thmtitle">Composition of refutations</span></div>
+      <span class="theorem_thmlabel">101</span><span class="theorem_thmtitle">Composition of refutations</span></div>
     <div class="thm_thmcontent"><p> Let \(F\) be a CNF formula and let \(c_1, \dots , c_N\) be cubes whose satisfaction sets <em>cover</em> the space of valuations (every valuation satisfies some \(c_i\)). If \(F \wedge c_i\) is unsatisfiable for every \(i\), then \(F\) is unsatisfiable.  </p>
 </div>
 
@@ -3848,7 +3809,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">117</span><span class="theorem_thmtitle">Refutation by cells</span></div>
+      <span class="theorem_thmlabel">116</span><span class="theorem_thmtitle">Refutation by cells</span></div>
     <div class="thm_thmcontent"><p> Let \(F\) be a CNF formula, fix a branching order of length \(D\), and let \(S \subseteq \{ 0,1\} ^{\le D}\) be prefix-free with full Kraft weight \(W_D(S) = 2^D\). If for every \(s \in S\) the formula \(F \wedge (\text{cell } s)\) is unsatisfiable, then \(F\) is unsatisfiable.  </p>
 </div>
 
@@ -3878,7 +3839,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">94</span><span class="theorem_thmtitle">Completeness of the encoding</span></div>
+      <span class="theorem_thmlabel">93</span><span class="theorem_thmtitle">Completeness of the encoding</span></div>
     <div class="thm_thmcontent"><p> If a \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) exists, then \(\Phi \) is satisfiable.  </p>
 </div>
 
@@ -3968,8 +3929,8 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">90</span><span class="theorem_thmtitle">Completeness of minimality</span></div>
-    <div class="thm_thmcontent"><p> Every \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) admits an isomorphic copy whose orbit word \(\omega \) satisfies conditions (3)–(4) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a>: the normalisation of Lemma&#160;<a href="sect0010.html#lem:sym1">75</a> and the lex-leader invariant \(\omega \preceq \rho \cdot \omega \) for each of the \(101\) generators \(\rho \).  </p>
+      <span class="theorem_thmlabel">89</span><span class="theorem_thmtitle">Completeness of minimality</span></div>
+    <div class="thm_thmcontent"><p> Every \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) admits an isomorphic copy whose orbit word \(\omega \) satisfies conditions (3)–(4) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a>: the normalisation of Lemma&#160;<a href="sect0010.html#lem:sym1">74</a> and the lex-leader invariant \(\omega \preceq \rho \cdot \omega \) for each of the \(101\) generators \(\rho \).  </p>
 </div>
 
     <a class="latex_link" href="sect0014.html#thm:lex-complete">LaTeX</a>
@@ -4072,7 +4033,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:relabel"	[color=green,		fillcolor="#B0ECA3",		label=relabel,		shape=box,		style=filled];	"def:phi"	[color=green,		fillcolor="#B0ECA3",		label=phi,		shape=box,		style=filled];	"def:relabel" -> "def:phi"	[style=dashed];	"def:lex-vertex-action"	[color=green,		fillcolor="#B0ECA3",		label="lex-vertex-action",		shape=box,		style=filled];	"def:relabel" -> "def:lex-vertex-action"	[style=dashed];	"def:lex-reach"	[color=green,		fillcolor="#B0ECA3",		label="lex-reach",		shape=box,		style=filled];	"def:relabel" -> "def:lex-reach"	[style=dashed];	"lem:lex-step-sym1"	[color=green,		fillcolor="#A3D6FF",		label="lex-step-sym1",		shape=ellipse,		style=filled];	"def:phi" -> "lem:lex-step-sym1"	[style=dashed];	"def:lex-leq"	[color=green,		fillcolor="#B0ECA3",		label="lex-leq",		shape=box,		style=filled];	"def:phi" -> "def:lex-leq"	[style=dashed];	"prop:counters"	[color=green,		fillcolor="#9CEC8B",		label=counters,		shape=ellipse,		style=filled];	"def:phi" -> "prop:counters"	[style=dashed];	"lem:enc-nozero"	[color=green,		fillcolor="#9CEC8B",		label="enc-nozero",		shape=ellipse,		style=filled];	"def:phi" -> "lem:enc-nozero"	[style=dashed];	"crt-tiling"	[color=green,		label="crt-tiling",		shape=ellipse];	"def:phi" -> "crt-tiling"	[style=dashed];	"def:lex-vertex-action" -> "lem:lex-step-sym1"	[style=dashed];	"lem:lex-reach-inv"	[color=green,		fillcolor="#A3D6FF",		label="lex-reach-inv",		shape=ellipse,		style=filled];	"def:lex-reach" -> "lem:lex-reach-inv"	[style=dashed];	"lem:lex-min-reach"	[color=green,		fillcolor="#A3D6FF",		label="lex-min-reach",		shape=ellipse,		style=filled];	"def:lex-reach" -> "lem:lex-min-reach"	[style=dashed];	"lem:lex-step-sym1" -> "lem:lex-reach-inv"	[style=dashed];	"def:lex-inv"	[color=green,		fillcolor="#B0ECA3",		label="lex-inv",		shape=box,		style=filled];	"def:lex-leq" -> "def:lex-inv"	[style=dashed];	"lem:lex-chain-sat"	[color=green,		fillcolor="#A3D6FF",		label="lex-chain-sat",		shape=ellipse,		style=filled];	"def:lex-leq" -> "lem:lex-chain-sat"	[style=dashed];	"def:lex-full-inv"	[color=green,		fillcolor="#B0ECA3",		label="lex-full-inv",		shape=box,		style=filled];	"prop:counters" -> "def:lex-full-inv"	[style=dashed];	"lem:enc-cnfsat"	[color=green,		fillcolor="#9CEC8B",		label="enc-cnfsat",		shape=ellipse,		style=filled];	"lem:enc-nozero" -> "lem:enc-cnfsat"	[style=dashed];	"thm:main"	[color=green,		label=main,		shape=ellipse];	"crt-tiling" -> "thm:main";	"def:lex-inv" -> "def:lex-full-inv"	[style=dashed];	"prop:lex-section-trip"	[color=green,		fillcolor="#A3D6FF",		label="lex-section-trip",		shape=ellipse,		style=filled];	"def:lex-inv" -> "prop:lex-section-trip"	[style=dashed];	"thm:lex-complete"	[color=green,		fillcolor="#A3D6FF",		label="lex-complete",		shape=ellipse,		style=filled];	"def:lex-inv" -> "thm:lex-complete"	[style=dashed];	"prop:lex-generator-sat"	[color=green,		fillcolor="#A3D6FF",		label="lex-generator-sat",		shape=ellipse,		style=filled];	"def:lex-full-inv" -> "prop:lex-generator-sat"	[style=dashed];	"prop:lex-section-trip" -> "prop:lex-generator-sat"	[style=dashed];	"thm:encoding-complete"	[color=green,		fillcolor="#A3D6FF",		label="encoding-complete",		shape=ellipse,		style=filled];	"thm:lex-complete" -> "thm:encoding-complete"	[style=dashed];	"lem:lex-reach-inv" -> "thm:lex-complete"	[style=dashed];	"lem:lex-chain-sat" -> "prop:lex-section-trip"	[style=dashed];	"lem:lex-min-reach" -> "thm:lex-complete"	[style=dashed];	"lem:grp-sigma0-iterate"	[color=green,		fillcolor="#1CAC78",		label="grp-sigma0-iterate",		shape=ellipse,		style=filled];	"lem:grp-sigma0-order"	[color=green,		fillcolor="#1CAC78",		label="grp-sigma0-order",		shape=ellipse,		style=filled];	"lem:grp-sigma0-iterate" -> "lem:grp-sigma0-order";	"lem:grp-sigma0-cycle-type"	[color=green,		fillcolor="#9CEC8B",		label="grp-sigma0-cycle-type",		shape=ellipse,		style=filled];	"lem:grp-sigma0-order" -> "lem:grp-sigma0-cycle-type";	"thm:grp-wlog"	[color=green,		fillcolor="#9CEC8B",		label="grp-wlog",		shape=ellipse,		style=filled];	"lem:grp-sigma0-cycle-type" -> "thm:grp-wlog";	"lem:orbits"	[color=green,		fillcolor="#1CAC78",		label=orbits,		shape=ellipse,		style=filled];	"lem:orbits" -> "def:relabel"	[style=dashed];	"def:lex-word-val"	[color=green,		fillcolor="#B0ECA3",		label="lex-word-val",		shape=box,		style=filled];	"lem:orbits" -> "def:lex-word-val"	[style=dashed];	"def:lex-block-bit"	[color=green,		fillcolor="#B0ECA3",		label="lex-block-bit",		shape=box,		style=filled];	"lem:orbits" -> "def:lex-block-bit"	[style=dashed];	"def:enc-graphoforbits"	[color=green,		fillcolor="#B0ECA3",		label="enc-graphoforbits",		shape=box,		style=filled];	"lem:orbits" -> "def:enc-graphoforbits"	[style=dashed];	"def:lex-word-val" -> "lem:lex-min-reach"	[style=dashed];	"lem:lex-value-order"	[color=green,		fillcolor="#A3D6FF",		label="lex-value-order",		shape=ellipse,		style=filled];	"def:lex-word-val" -> "lem:lex-value-order"	[style=dashed];	"lem:lex-adj-block"	[color=green,		fillcolor="#A3D6FF",		label="lex-adj-block",		shape=ellipse,		style=filled];	"def:lex-block-bit" -> "lem:lex-adj-block"	[style=dashed];	"lem:enc-faithful"	[color=green,		fillcolor="#1CAC78",		label="enc-faithful",		shape=ellipse,		style=filled];	"def:enc-graphoforbits" -> "lem:enc-faithful"	[style=dashed];	"lem:enc-invariance"	[color=green,		fillcolor="#1CAC78",		label="enc-invariance",		shape=ellipse,		style=filled];	"def:enc-graphoforbits" -> "lem:enc-invariance"	[style=dashed];	"def:enc-evar"	[color=green,		fillcolor="#B0ECA3",		label="enc-evar",		shape=box,		style=filled];	"def:enc-graphoforbits" -> "def:enc-evar"	[style=dashed];	"prop:orbitfun"	[color=green,		fillcolor="#1CAC78",		label=orbitfun,		shape=ellipse,		style=filled];	"lem:enc-faithful" -> "prop:orbitfun"	[style=dashed];	"prop:orbitfun" -> "lem:lex-adj-block"	[style=dashed];	"lem:lex-step-srg"	[color=green,		fillcolor="#A3D6FF",		label="lex-step-srg",		shape=ellipse,		style=filled];	"prop:orbitfun" -> "lem:lex-step-srg"	[style=dashed];	"lem:lex-value-order" -> "thm:lex-complete"	[style=dashed];	"lem:lex-two-blocks"	[color=green,		fillcolor="#A3D6FF",		label="lex-two-blocks",		shape=ellipse,		style=filled];	"lem:lex-adj-block" -> "lem:lex-two-blocks"	[style=dashed];	"lem:enc-invariance" -> "prop:orbitfun"	[style=dashed];	"def:enc-evar" -> "def:phi"	[style=dashed];	"def:enc-sym1holds"	[color=green,		fillcolor="#B0ECA3",		label="enc-sym1holds",		shape=box,		style=filled];	"def:enc-evar" -> "def:enc-sym1holds"	[style=dashed];	"def:enc-deginv"	[color=green,		fillcolor="#B0ECA3",		label="enc-deginv",		shape=box,		style=filled];	"def:enc-evar" -> "def:enc-deginv"	[style=dashed];	"def:enc-cninv"	[color=green,		fillcolor="#B0ECA3",		label="enc-cninv",		shape=box,		style=filled];	"def:enc-evar" -> "def:enc-cninv"	[style=dashed];	"lem:cnf-withcube-eval"	[color=green,		fillcolor="#A3D6FF",		label="cnf-withcube-eval",		shape=ellipse,		style=filled];	"thm:cnf-unsat-of-cubes"	[color=green,		fillcolor="#A3D6FF",		label="cnf-unsat-of-cubes",		shape=ellipse,		style=filled];	"lem:cnf-withcube-eval" -> "thm:cnf-unsat-of-cubes";	"thm:coverage"	[color=green,		fillcolor="#A3D6FF",		label=coverage,		shape=ellipse,		style=filled];	"thm:cnf-unsat-of-cubes" -> "thm:coverage";	"cor:cov-checked"	[color=green,		fillcolor="#A3D6FF",		label="cov-checked",		shape=ellipse,		style=filled];	"thm:coverage" -> "cor:cov-checked"	[style=dashed];	"crt-schema"	[color=green,		label="crt-schema",		shape=ellipse];	"thm:coverage" -> "crt-schema"	[style=dashed];	"lem:lex-step-srg" -> "lem:lex-reach-inv"	[style=dashed];	"lem:sym1"	[color=green,		fillcolor="#A3D6FF",		label=sym1,		shape=ellipse,		style=filled];	"lem:sym1" -> "def:phi"	[style=dashed];	"lem:sym1" -> "def:enc-sym1holds"	[style=dashed];	"lem:enc-sym1-section"	[color=green,		label="enc-sym1-section",		shape=ellipse];	"def:enc-sym1holds" -> "lem:enc-sym1-section"	[style=dashed];	"def:enc-prelexinv"	[color=green,		fillcolor="#B0ECA3",		label="enc-prelexinv",		shape=box,		style=filled];	"def:enc-sym1holds" -> "def:enc-prelexinv"	[style=dashed];	"lem:lex-encodes"	[color=green,		fillcolor="#A3D6FF",		label="lex-encodes",		shape=ellipse,		style=filled];	"lem:lex-encodes" -> "thm:encoding-complete"	[style=dashed];	"thm:encoding-complete" -> "thm:main"	[style=dashed];	"lem:lex-two-blocks" -> "lem:sym1"	[style=dashed];	"prop:lex-generator-sat" -> "lem:lex-encodes"	[style=dashed];	"def:cnf-literal"	[color=green,		fillcolor="#B0ECA3",		label="cnf-literal",		shape=box,		style=filled];	"def:cnf-formula"	[color=green,		fillcolor="#B0ECA3",		label="cnf-formula",		shape=box,		style=filled];	"def:cnf-literal" -> "def:cnf-formula"	[style=dashed];	"def:cnf-valuation"	[color=green,		fillcolor="#B0ECA3",		label="cnf-valuation",		shape=box,		style=filled];	"def:cnf-formula" -> "def:cnf-valuation"	[style=dashed];	"def:cnf-cube"	[color=green,		fillcolor="#B0ECA3",		label="cnf-cube",		shape=box,		style=filled];	"def:cnf-valuation" -> "def:cnf-cube"	[style=dashed];	"def:cnf-unsat"	[color=green,		fillcolor="#B0ECA3",		label="cnf-unsat",		shape=box,		style=filled];	"def:cnf-valuation" -> "def:cnf-unsat"	[style=dashed];	"def:cnf-dimacs"	[color=green,		fillcolor="#B0ECA3",		label="cnf-dimacs",		shape=box,		style=filled];	"def:cnf-cube" -> "def:cnf-dimacs"	[style=dashed];	"def:cnf-withcube"	[color=green,		fillcolor="#B0ECA3",		label="cnf-withcube",		shape=box,		style=filled];	"def:cnf-cube" -> "def:cnf-withcube"	[style=dashed];	"def:prefix"	[color=green,		fillcolor="#B0ECA3",		label=prefix,		shape=box,		style=filled];	"def:cnf-cube" -> "def:prefix"	[style=dashed];	"def:cov-tiling"	[color=green,		fillcolor="#B0ECA3",		label="cov-tiling",		shape=box,		style=filled];	"def:cnf-dimacs" -> "def:cov-tiling"	[style=dashed];	"def:cnf-withcube" -> "lem:cnf-withcube-eval"	[style=dashed];	"def:cov-adjacent"	[color=green,		fillcolor="#B0ECA3",		label="cov-adjacent",		shape=box,		style=filled];	"def:prefix" -> "def:cov-adjacent"	[style=dashed];	"lem:cov-cell-prefix"	[color=green,		fillcolor="#A3D6FF",		label="cov-cell-prefix",		shape=ellipse,		style=filled];	"def:prefix" -> "lem:cov-cell-prefix"	[style=dashed];	"def:cov-kraft"	[color=green,		fillcolor="#B0ECA3",		label="cov-kraft",		shape=box,		style=filled];	"def:prefix" -> "def:cov-kraft"	[style=dashed];	"def:cnf-unsat" -> "thm:cnf-unsat-of-cubes"	[style=dashed];	"crt-schema" -> "crt-tiling"	[style=dashed];	"def:cov-checkcover"	[color=green,		fillcolor="#B0ECA3",		label="cov-checkcover",		shape=box,		style=filled];	"lem:cov-checkcover-sound"	[color=green,		fillcolor="#A3D6FF",		label="cov-checkcover-sound",		shape=ellipse,		style=filled];	"def:cov-checkcover" -> "lem:cov-checkcover-sound"	[style=dashed];	"lem:cov-checkcover-sound" -> "cor:cov-checked";	"lem:grp-fix-support"	[color=green,		label="grp-fix-support",		shape=ellipse];	"lem:grp-cycletype-of-fixed"	[color=green,		fillcolor="#9CEC8B",		label="grp-cycletype-of-fixed",		shape=ellipse,		style=filled];	"lem:grp-fix-support" -> "lem:grp-cycletype-of-fixed";	"lem:grp-fixed-congruence"	[color=green,		fillcolor="#9CEC8B",		label="grp-fixed-congruence",		shape=ellipse,		style=filled];	"lem:grp-fix-support" -> "lem:grp-fixed-congruence";	"lem:grp-cycletype-of-fixed" -> "lem:grp-sigma0-cycle-type";	"lem:fixed"	[color=green,		fillcolor="#9CEC8B",		label=fixed,		shape=ellipse,		style=filled];	"lem:grp-fixed-congruence" -> "lem:fixed";	"thm:grp-cycle-type"	[color=green,		fillcolor="#9CEC8B",		label="grp-cycle-type",		shape=ellipse,		style=filled];	"lem:fixed" -> "thm:grp-cycle-type"	[style=dashed];	"cor:grp-aut-cycle-type"	[color=green,		fillcolor="#9CEC8B",		label="grp-aut-cycle-type",		shape=ellipse,		style=filled];	"thm:grp-cycle-type" -> "cor:grp-aut-cycle-type"	[style=dashed];	"cor:grp-aut-cycle-type" -> "thm:grp-wlog";	"prop:enc-mto"	[color=green,		fillcolor="#9CEC8B",		label="enc-mto",		shape=ellipse,		style=filled];	"prop:enc-mto-atmost"	[color=green,		fillcolor="#9CEC8B",		label="enc-mto-atmost",		shape=ellipse,		style=filled];	"prop:enc-mto" -> "prop:enc-mto-atmost"	[style=dashed];	"lem:enc-deg-gadget"	[color=green,		fillcolor="#9CEC8B",		label="enc-deg-gadget",		shape=ellipse,		style=filled];	"prop:enc-mto-atmost" -> "lem:enc-deg-gadget"	[style=dashed];	"prop:enc-deg-section"	[color=green,		fillcolor="#9CEC8B",		label="enc-deg-section",		shape=ellipse,		style=filled];	"lem:enc-deg-gadget" -> "prop:enc-deg-section"	[style=dashed];	"def:grp-autToPerm"	[color=green,		fillcolor="#B0ECA3",		label="grp-autToPerm",		shape=box,		style=filled];	"lem:grp-autToPerm-injective"	[color=green,		label="grp-autToPerm-injective",		shape=ellipse];	"def:grp-autToPerm" -> "lem:grp-autToPerm-injective"	[style=dashed];	"lem:grp-autToPerm-injective" -> "cor:grp-aut-cycle-type";	"lem:grp-aut-finite"	[color=green,		fillcolor="#9CEC8B",		label="grp-aut-finite",		shape=ellipse,		style=filled];	"lem:grp-autToPerm-injective" -> "lem:grp-aut-finite";	"lem:cauchy"	[color=green,		fillcolor="#9CEC8B",		label=cauchy,		shape=ellipse,		style=filled];	"lem:grp-aut-finite" -> "lem:cauchy"	[style=dashed];	"thm:reduction"	[color=green,		fillcolor="#9CEC8B",		label=reduction,		shape=ellipse,		style=filled];	"lem:cauchy" -> "thm:reduction";	"thm:grp-wlog" -> "thm:reduction";	"lem:enc-sym1-section" -> "prop:counters"	[style=dashed];	"def:enc-prelexinv" -> "prop:counters"	[style=dashed];	"prop:enc-prelex-bridge"	[color=green,		fillcolor="#9CEC8B",		label="enc-prelex-bridge",		shape=ellipse,		style=filled];	"def:enc-prelexinv" -> "prop:enc-prelex-bridge"	[style=dashed];	"st-conditional"	[color=green,		fillcolor="#A3D6FF",		label="st-conditional",		shape=ellipse,		style=filled];	"thm:reduction" -> "st-conditional"	[style=dashed];	"st-conditional" -> "crt-schema"	[style=dashed];	"lem:cov-lex-block"	[color=green,		fillcolor="#A3D6FF",		label="cov-lex-block",		shape=ellipse,		style=filled];	"lem:cov-adjacent-sound"	[color=green,		fillcolor="#A3D6FF",		label="cov-adjacent-sound",		shape=ellipse,		style=filled];	"lem:cov-lex-block" -> "lem:cov-adjacent-sound";	"lem:cov-adjacent-sound" -> "lem:cov-checkcover-sound";	"lem:enc-deg-bridge"	[color=green,		label="enc-deg-bridge",		shape=ellipse];	"lem:enc-deg-bridge" -> "prop:enc-prelex-bridge"	[style=dashed];	"def:sigma0"	[color=green,		fillcolor="#B0ECA3",		label=sigma0,		shape=box,		style=filled];	"def:sigma0" -> "lem:grp-sigma0-iterate"	[style=dashed];	"def:lex-cycle-relabel"	[color=green,		fillcolor="#B0ECA3",		label="lex-cycle-relabel",		shape=box,		style=filled];	"def:sigma0" -> "def:lex-cycle-relabel"	[style=dashed];	"lem:grp-sigma0-fixed-iff"	[color=green,		fillcolor="#1CAC78",		label="grp-sigma0-fixed-iff",		shape=ellipse,		style=filled];	"def:sigma0" -> "lem:grp-sigma0-fixed-iff"	[style=dashed];	"def:enc-orbitmap"	[color=green,		fillcolor="#B0ECA3",		label="enc-orbitmap",		shape=box,		style=filled];	"def:sigma0" -> "def:enc-orbitmap"	[style=dashed];	"lem:lex-relabel-comm"	[color=green,		fillcolor="#A3D6FF",		label="lex-relabel-comm",		shape=ellipse,		style=filled];	"def:lex-cycle-relabel" -> "lem:lex-relabel-comm"	[style=dashed];	"lem:grp-sigma0-fixed-card"	[color=green,		label="grp-sigma0-fixed-card",		shape=ellipse];	"lem:grp-sigma0-fixed-iff" -> "lem:grp-sigma0-fixed-card"	[style=dashed];	"def:enc-orbitmap" -> "lem:orbits"	[style=dashed];	"lem:lex-relabel-comm" -> "lem:sym1"	[style=dashed];	"lem:grp-sigma0-fixed-card" -> "lem:grp-sigma0-cycle-type";	"lem:cov-kraft-split"	[color=green,		fillcolor="#A3D6FF",		label="cov-kraft-split",		shape=ellipse,		style=filled];	"lem:cov-kraft-ineq"	[color=green,		fillcolor="#A3D6FF",		label="cov-kraft-ineq",		shape=ellipse,		style=filled];	"lem:cov-kraft-split" -> "lem:cov-kraft-ineq";	"lem:kraft"	[color=green,		fillcolor="#A3D6FF",		label=kraft,		shape=ellipse,		style=filled];	"lem:cov-kraft-ineq" -> "lem:kraft";	"lem:cov-valuation-cover"	[color=green,		fillcolor="#A3D6FF",		label="cov-valuation-cover",		shape=ellipse,		style=filled];	"lem:kraft" -> "lem:cov-valuation-cover";	"lem:cov-valuation-cover" -> "thm:coverage";	"prop:enc-totalizer"	[color=green,		fillcolor="#9CEC8B",		label="enc-totalizer",		shape=ellipse,		style=filled];	"prop:enc-totalizer" -> "prop:enc-mto"	[style=dashed];	"lem:enc-gtrip-comp"	[color=green,		fillcolor="#1CAC78",		label="enc-gtrip-comp",		shape=ellipse,		style=filled];	"lem:enc-gtrip-comp" -> "lem:enc-sym1-section"	[style=dashed];	"prop:enc-cn-section"	[color=green,		fillcolor="#9CEC8B",		label="enc-cn-section",		shape=ellipse,		style=filled];	"lem:enc-gtrip-comp" -> "prop:enc-cn-section"	[style=dashed];	"lem:enc-gtrip-comp" -> "prop:enc-deg-section"	[style=dashed];	"prop:enc-cn-section" -> "prop:counters"	[style=dashed];	"prop:enc-deg-section" -> "prop:counters"	[style=dashed];	"def:enc-deginv" -> "lem:enc-deg-gadget"	[style=dashed];	"def:enc-deginv" -> "def:enc-prelexinv"	[style=dashed];	"def:enc-deginv" -> "lem:enc-deg-bridge"	[style=dashed];	"def:cov-lex"	[color=green,		fillcolor="#B0ECA3",		label="cov-lex",		shape=box,		style=filled];	"def:cov-lex" -> "def:cov-checkcover"	[style=dashed];	"def:cov-lex" -> "lem:cov-lex-block"	[style=dashed];	"lem:grp-unique-triangle"	[color=green,		label="grp-unique-triangle",		shape=ellipse];	"lem:grp-label-injective"	[color=green,		fillcolor="#9CEC8B",		label="grp-label-injective",		shape=ellipse,		style=filled];	"lem:grp-unique-triangle" -> "lem:grp-label-injective";	"lem:grp-rigidity"	[color=green,		fillcolor="#9CEC8B",		label="grp-rigidity",		shape=ellipse,		style=filled];	"lem:grp-label-injective" -> "lem:grp-rigidity";	"lem:grp-rigidity" -> "lem:fixed";	"lem:enc-cn-product"	[color=green,		label="enc-cn-product",		shape=ellipse];	"lem:enc-cn-product" -> "prop:enc-cn-section"	[style=dashed];	"def:srg"	[color=green,		fillcolor="#B0ECA3",		label=srg,		shape=box,		style=filled];	"def:srg" -> "lem:lex-two-blocks"	[style=dashed];	"def:srg" -> "lem:enc-deg-bridge"	[style=dashed];	"def:srg" -> "lem:grp-unique-triangle"	[style=dashed];	"lem:enc-cn-bridge"	[color=green,		fillcolor="#1CAC78",		label="enc-cn-bridge",		shape=ellipse,		style=filled];	"def:srg" -> "lem:enc-cn-bridge"	[style=dashed];	"st-encodes"	[color=green,		fillcolor="#B0ECA3",		label="st-encodes",		shape=box,		style=filled];	"def:srg" -> "st-encodes"	[style=dashed];	"lem:lex-iso-common-neighbors"	[color=green,		label="lex-iso-common-neighbors",		shape=ellipse];	"def:srg" -> "lem:lex-iso-common-neighbors"	[style=dashed];	"lem:grp-mu-pair"	[color=green,		label="grp-mu-pair",		shape=ellipse];	"def:srg" -> "lem:grp-mu-pair"	[style=dashed];	"lem:grp-srg-transport"	[color=green,		fillcolor="#1CAC78",		label="grp-srg-transport",		shape=ellipse,		style=filled];	"def:srg" -> "lem:grp-srg-transport"	[style=dashed];	"lem:enc-cn-bridge" -> "prop:enc-prelex-bridge"	[style=dashed];	"st-encodes" -> "st-conditional"	[style=dashed];	"lem:grp-mu-pair" -> "lem:grp-label-injective";	"lem:grp-srg-transport" -> "lem:lex-step-srg"	[style=dashed];	"lem:grp-srg-transport" -> "lem:sym1"	[style=dashed];	"lem:grp-srg-transport" -> "thm:grp-wlog";	"st-aut"	[color=green,		fillcolor="#B0ECA3",		label="st-aut",		shape=box,		style=filled];	"st-aut" -> "st-conditional"	[style=dashed];	"def:enc-cninv" -> "def:enc-prelexinv"	[style=dashed];	"def:enc-cninv" -> "lem:enc-cn-product"	[style=dashed];	"def:enc-cninv" -> "lem:enc-cn-bridge"	[style=dashed];	"def:cov-adjacent" -> "def:cov-checkcover"	[style=dashed];	"def:cov-adjacent" -> "lem:cov-adjacent-sound"	[style=dashed];	"lem:cov-cell-prefix" -> "lem:cov-valuation-cover";	"def:cov-kraft" -> "def:cov-checkcover"	[style=dashed];	"def:cov-kraft" -> "lem:cov-kraft-split"	[style=dashed];	"prop:enc-seqcounter"	[color=green,		fillcolor="#1CAC78",		label="enc-seqcounter",		shape=ellipse,		style=filled];	"lem:enc-cn-equals"	[color=green,		fillcolor="#1CAC78",		label="enc-cn-equals",		shape=ellipse,		style=filled];	"prop:enc-seqcounter" -> "lem:enc-cn-equals"	[style=dashed];	"lem:enc-cn-equals" -> "prop:enc-cn-section"	[style=dashed];	"lem:grp-sigma0-inverse"	[color=green,		fillcolor="#1CAC78",		label="grp-sigma0-inverse",		shape=ellipse,		style=filled];	"lem:grp-sigma0-inverse" -> "def:sigma0"	[style=dashed];	"lem:grp-support-multiple"	[color=green,		fillcolor="#1CAC78",		label="grp-support-multiple",		shape=ellipse,		style=filled];	"lem:grp-support-multiple" -> "lem:grp-fixed-congruence";	"crt-checker"	[color=green,		label="crt-checker",		shape=ellipse];	"def:enc-unary"	[color=green,		fillcolor="#B0ECA3",		label="enc-unary",		shape=box,		style=filled];	"lem:enc-totmerge"	[color=green,		label="enc-totmerge",		shape=ellipse];	"def:enc-unary" -> "lem:enc-totmerge"	[style=dashed];	"lem:enc-totmerge" -> "prop:enc-totalizer"	[style=dashed];	"def:enc-gtrip"	[color=green,		fillcolor="#B0ECA3",		label="enc-gtrip",		shape=box,		style=filled];	"def:enc-gtrip" -> "lem:enc-gtrip-comp"	[style=dashed];	"lem:grp-equivariance"	[color=green,		label="grp-equivariance",		shape=ellipse];	"lem:grp-equivariance" -> "lem:grp-rigidity";	"def:enc-state"	[color=green,		fillcolor="#B0ECA3",		label="enc-state",		shape=box,		style=filled];	"def:enc-state" -> "def:enc-evar"	[style=dashed];	"def:enc-state" -> "prop:enc-seqcounter"	[style=dashed];	"def:enc-state" -> "def:enc-unary"	[style=dashed];	"def:enc-state" -> "def:enc-gtrip"	[style=dashed];	"def:lrat"	[color=green,		fillcolor="#B0ECA3",		label=lrat,		shape=box,		style=filled];	"def:lrat" -> "crt-checker"	[style=dashed];}`)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"lem:grp-sigma0-iterate"	[color=green,		fillcolor="#1CAC78",		label="grp-sigma0-iterate",		shape=ellipse,		style=filled];	"lem:grp-sigma0-order"	[color=green,		fillcolor="#1CAC78",		label="grp-sigma0-order",		shape=ellipse,		style=filled];	"lem:grp-sigma0-iterate" -> "lem:grp-sigma0-order";	"lem:grp-sigma0-cycle-type"	[color=green,		fillcolor="#9CEC8B",		label="grp-sigma0-cycle-type",		shape=ellipse,		style=filled];	"lem:grp-sigma0-order" -> "lem:grp-sigma0-cycle-type";	"thm:grp-wlog"	[color=green,		fillcolor="#9CEC8B",		label="grp-wlog",		shape=ellipse,		style=filled];	"lem:grp-sigma0-cycle-type" -> "thm:grp-wlog";	"lem:orbits"	[color=green,		fillcolor="#1CAC78",		label=orbits,		shape=ellipse,		style=filled];	"def:lex-block-bit"	[color=green,		fillcolor="#B0ECA3",		label="lex-block-bit",		shape=box,		style=filled];	"lem:orbits" -> "def:lex-block-bit"	[style=dashed];	"def:enc-graphoforbits"	[color=green,		fillcolor="#B0ECA3",		label="enc-graphoforbits",		shape=box,		style=filled];	"lem:orbits" -> "def:enc-graphoforbits"	[style=dashed];	"def:relabel"	[color=green,		fillcolor="#B0ECA3",		label=relabel,		shape=box,		style=filled];	"lem:orbits" -> "def:relabel"	[style=dashed];	"def:lex-word-val"	[color=green,		fillcolor="#B0ECA3",		label="lex-word-val",		shape=box,		style=filled];	"lem:orbits" -> "def:lex-word-val"	[style=dashed];	"lem:lex-adj-block"	[color=green,		fillcolor="#A3D6FF",		label="lex-adj-block",		shape=ellipse,		style=filled];	"def:lex-block-bit" -> "lem:lex-adj-block"	[style=dashed];	"lem:enc-faithful"	[color=green,		fillcolor="#1CAC78",		label="enc-faithful",		shape=ellipse,		style=filled];	"def:enc-graphoforbits" -> "lem:enc-faithful"	[style=dashed];	"lem:enc-invariance"	[color=green,		fillcolor="#1CAC78",		label="enc-invariance",		shape=ellipse,		style=filled];	"def:enc-graphoforbits" -> "lem:enc-invariance"	[style=dashed];	"def:enc-evar"	[color=green,		fillcolor="#B0ECA3",		label="enc-evar",		shape=box,		style=filled];	"def:enc-graphoforbits" -> "def:enc-evar"	[style=dashed];	"def:phi"	[color=green,		fillcolor="#B0ECA3",		label=phi,		shape=box,		style=filled];	"def:relabel" -> "def:phi"	[style=dashed];	"def:lex-vertex-action"	[color=green,		fillcolor="#B0ECA3",		label="lex-vertex-action",		shape=box,		style=filled];	"def:relabel" -> "def:lex-vertex-action"	[style=dashed];	"def:lex-reach"	[color=green,		fillcolor="#B0ECA3",		label="lex-reach",		shape=box,		style=filled];	"def:relabel" -> "def:lex-reach"	[style=dashed];	"lem:lex-min-reach"	[color=green,		fillcolor="#A3D6FF",		label="lex-min-reach",		shape=ellipse,		style=filled];	"def:lex-word-val" -> "lem:lex-min-reach"	[style=dashed];	"lem:lex-value-order"	[color=green,		fillcolor="#A3D6FF",		label="lex-value-order",		shape=ellipse,		style=filled];	"def:lex-word-val" -> "lem:lex-value-order"	[style=dashed];	"lem:lex-step-sym1"	[color=green,		fillcolor="#A3D6FF",		label="lex-step-sym1",		shape=ellipse,		style=filled];	"def:phi" -> "lem:lex-step-sym1"	[style=dashed];	"crt-tiling"	[color=green,		label="crt-tiling",		shape=ellipse];	"def:phi" -> "crt-tiling"	[style=dashed];	"prop:counters"	[color=green,		fillcolor="#9CEC8B",		label=counters,		shape=ellipse,		style=filled];	"def:phi" -> "prop:counters"	[style=dashed];	"lem:enc-nozero"	[color=green,		fillcolor="#9CEC8B",		label="enc-nozero",		shape=ellipse,		style=filled];	"def:phi" -> "lem:enc-nozero"	[style=dashed];	"def:lex-leq"	[color=green,		fillcolor="#B0ECA3",		label="lex-leq",		shape=box,		style=filled];	"def:phi" -> "def:lex-leq"	[style=dashed];	"lem:lex-reach-inv"	[color=green,		fillcolor="#A3D6FF",		label="lex-reach-inv",		shape=ellipse,		style=filled];	"lem:lex-step-sym1" -> "lem:lex-reach-inv"	[style=dashed];	"thm:main"	[color=green,		label=main,		shape=ellipse];	"crt-tiling" -> "thm:main";	"def:lex-full-inv"	[color=green,		fillcolor="#B0ECA3",		label="lex-full-inv",		shape=box,		style=filled];	"prop:counters" -> "def:lex-full-inv"	[style=dashed];	"lem:enc-cnfsat"	[color=green,		fillcolor="#9CEC8B",		label="enc-cnfsat",		shape=ellipse,		style=filled];	"lem:enc-nozero" -> "lem:enc-cnfsat"	[style=dashed];	"def:lex-inv"	[color=green,		fillcolor="#B0ECA3",		label="lex-inv",		shape=box,		style=filled];	"def:lex-leq" -> "def:lex-inv"	[style=dashed];	"lem:lex-chain-sat"	[color=green,		fillcolor="#A3D6FF",		label="lex-chain-sat",		shape=ellipse,		style=filled];	"def:lex-leq" -> "lem:lex-chain-sat"	[style=dashed];	"prop:orbitfun"	[color=green,		fillcolor="#1CAC78",		label=orbitfun,		shape=ellipse,		style=filled];	"lem:enc-faithful" -> "prop:orbitfun"	[style=dashed];	"prop:orbitfun" -> "lem:lex-adj-block"	[style=dashed];	"lem:lex-step-srg"	[color=green,		fillcolor="#A3D6FF",		label="lex-step-srg",		shape=ellipse,		style=filled];	"prop:orbitfun" -> "lem:lex-step-srg"	[style=dashed];	"lem:lex-two-blocks"	[color=green,		fillcolor="#A3D6FF",		label="lex-two-blocks",		shape=ellipse,		style=filled];	"lem:lex-adj-block" -> "lem:lex-two-blocks"	[style=dashed];	"lem:enc-invariance" -> "prop:orbitfun"	[style=dashed];	"def:enc-evar" -> "def:phi"	[style=dashed];	"def:enc-sym1holds"	[color=green,		fillcolor="#B0ECA3",		label="enc-sym1holds",		shape=box,		style=filled];	"def:enc-evar" -> "def:enc-sym1holds"	[style=dashed];	"def:enc-deginv"	[color=green,		fillcolor="#B0ECA3",		label="enc-deginv",		shape=box,		style=filled];	"def:enc-evar" -> "def:enc-deginv"	[style=dashed];	"def:enc-cninv"	[color=green,		fillcolor="#B0ECA3",		label="enc-cninv",		shape=box,		style=filled];	"def:enc-evar" -> "def:enc-cninv"	[style=dashed];	"def:lex-vertex-action" -> "lem:lex-step-sym1"	[style=dashed];	"def:lex-reach" -> "lem:lex-min-reach"	[style=dashed];	"def:lex-reach" -> "lem:lex-reach-inv"	[style=dashed];	"thm:lex-complete"	[color=green,		fillcolor="#A3D6FF",		label="lex-complete",		shape=ellipse,		style=filled];	"lem:lex-min-reach" -> "thm:lex-complete"	[style=dashed];	"lem:lex-value-order" -> "thm:lex-complete"	[style=dashed];	"lem:lex-step-srg" -> "lem:lex-reach-inv"	[style=dashed];	"lem:sym1"	[color=green,		fillcolor="#A3D6FF",		label=sym1,		shape=ellipse,		style=filled];	"lem:sym1" -> "def:phi"	[style=dashed];	"lem:sym1" -> "def:enc-sym1holds"	[style=dashed];	"lem:enc-sym1-section"	[color=green,		label="enc-sym1-section",		shape=ellipse];	"def:enc-sym1holds" -> "lem:enc-sym1-section"	[style=dashed];	"def:enc-prelexinv"	[color=green,		fillcolor="#B0ECA3",		label="enc-prelexinv",		shape=box,		style=filled];	"def:enc-sym1holds" -> "def:enc-prelexinv"	[style=dashed];	"lem:lex-two-blocks" -> "lem:sym1"	[style=dashed];	"lem:lex-encodes"	[color=green,		fillcolor="#A3D6FF",		label="lex-encodes",		shape=ellipse,		style=filled];	"thm:encoding-complete"	[color=green,		fillcolor="#A3D6FF",		label="encoding-complete",		shape=ellipse,		style=filled];	"lem:lex-encodes" -> "thm:encoding-complete"	[style=dashed];	"thm:encoding-complete" -> "thm:main"	[style=dashed];	"lem:lex-reach-inv" -> "thm:lex-complete"	[style=dashed];	"prop:lex-generator-sat"	[color=green,		fillcolor="#A3D6FF",		label="lex-generator-sat",		shape=ellipse,		style=filled];	"prop:lex-generator-sat" -> "lem:lex-encodes"	[style=dashed];	"def:lex-full-inv" -> "prop:lex-generator-sat"	[style=dashed];	"def:lex-inv" -> "def:lex-full-inv"	[style=dashed];	"def:lex-inv" -> "thm:lex-complete"	[style=dashed];	"prop:lex-section-trip"	[color=green,		fillcolor="#A3D6FF",		label="lex-section-trip",		shape=ellipse,		style=filled];	"def:lex-inv" -> "prop:lex-section-trip"	[style=dashed];	"thm:lex-complete" -> "thm:encoding-complete"	[style=dashed];	"prop:lex-section-trip" -> "prop:lex-generator-sat"	[style=dashed];	"lem:lex-chain-sat" -> "prop:lex-section-trip"	[style=dashed];	"def:cov-tiling"	[color=green,		fillcolor="#B0ECA3",		label="cov-tiling",		shape=box,		style=filled];	"lem:grp-fix-support"	[color=green,		label="grp-fix-support",		shape=ellipse];	"lem:grp-cycletype-of-fixed"	[color=green,		fillcolor="#9CEC8B",		label="grp-cycletype-of-fixed",		shape=ellipse,		style=filled];	"lem:grp-fix-support" -> "lem:grp-cycletype-of-fixed";	"lem:grp-fixed-congruence"	[color=green,		fillcolor="#9CEC8B",		label="grp-fixed-congruence",		shape=ellipse,		style=filled];	"lem:grp-fix-support" -> "lem:grp-fixed-congruence";	"lem:grp-cycletype-of-fixed" -> "lem:grp-sigma0-cycle-type";	"lem:fixed"	[color=green,		fillcolor="#9CEC8B",		label=fixed,		shape=ellipse,		style=filled];	"lem:grp-fixed-congruence" -> "lem:fixed";	"thm:grp-cycle-type"	[color=green,		fillcolor="#9CEC8B",		label="grp-cycle-type",		shape=ellipse,		style=filled];	"lem:fixed" -> "thm:grp-cycle-type"	[style=dashed];	"cor:grp-aut-cycle-type"	[color=green,		fillcolor="#9CEC8B",		label="grp-aut-cycle-type",		shape=ellipse,		style=filled];	"thm:grp-cycle-type" -> "cor:grp-aut-cycle-type"	[style=dashed];	"cor:grp-aut-cycle-type" -> "thm:grp-wlog";	"prop:enc-mto"	[color=green,		fillcolor="#9CEC8B",		label="enc-mto",		shape=ellipse,		style=filled];	"prop:enc-mto-atmost"	[color=green,		fillcolor="#9CEC8B",		label="enc-mto-atmost",		shape=ellipse,		style=filled];	"prop:enc-mto" -> "prop:enc-mto-atmost"	[style=dashed];	"lem:enc-deg-gadget"	[color=green,		fillcolor="#9CEC8B",		label="enc-deg-gadget",		shape=ellipse,		style=filled];	"prop:enc-mto-atmost" -> "lem:enc-deg-gadget"	[style=dashed];	"prop:enc-deg-section"	[color=green,		fillcolor="#9CEC8B",		label="enc-deg-section",		shape=ellipse,		style=filled];	"lem:enc-deg-gadget" -> "prop:enc-deg-section"	[style=dashed];	"def:grp-autToPerm"	[color=green,		fillcolor="#B0ECA3",		label="grp-autToPerm",		shape=box,		style=filled];	"lem:grp-autToPerm-injective"	[color=green,		label="grp-autToPerm-injective",		shape=ellipse];	"def:grp-autToPerm" -> "lem:grp-autToPerm-injective"	[style=dashed];	"lem:grp-autToPerm-injective" -> "cor:grp-aut-cycle-type";	"lem:grp-aut-finite"	[color=green,		fillcolor="#9CEC8B",		label="grp-aut-finite",		shape=ellipse,		style=filled];	"lem:grp-autToPerm-injective" -> "lem:grp-aut-finite";	"lem:cauchy"	[color=green,		fillcolor="#9CEC8B",		label=cauchy,		shape=ellipse,		style=filled];	"lem:grp-aut-finite" -> "lem:cauchy"	[style=dashed];	"thm:reduction"	[color=green,		fillcolor="#9CEC8B",		label=reduction,		shape=ellipse,		style=filled];	"lem:cauchy" -> "thm:reduction";	"thm:grp-wlog" -> "thm:reduction";	"lem:enc-sym1-section" -> "prop:counters"	[style=dashed];	"def:enc-prelexinv" -> "prop:counters"	[style=dashed];	"prop:enc-prelex-bridge"	[color=green,		fillcolor="#9CEC8B",		label="enc-prelex-bridge",		shape=ellipse,		style=filled];	"def:enc-prelexinv" -> "prop:enc-prelex-bridge"	[style=dashed];	"st-conditional"	[color=green,		fillcolor="#A3D6FF",		label="st-conditional",		shape=ellipse,		style=filled];	"thm:reduction" -> "st-conditional"	[style=dashed];	"crt-schema"	[color=green,		label="crt-schema",		shape=ellipse];	"st-conditional" -> "crt-schema"	[style=dashed];	"lem:enc-deg-bridge"	[color=green,		label="enc-deg-bridge",		shape=ellipse];	"lem:enc-deg-bridge" -> "prop:enc-prelex-bridge"	[style=dashed];	"def:sigma0"	[color=green,		fillcolor="#B0ECA3",		label=sigma0,		shape=box,		style=filled];	"def:sigma0" -> "lem:grp-sigma0-iterate"	[style=dashed];	"def:lex-cycle-relabel"	[color=green,		fillcolor="#B0ECA3",		label="lex-cycle-relabel",		shape=box,		style=filled];	"def:sigma0" -> "def:lex-cycle-relabel"	[style=dashed];	"lem:grp-sigma0-fixed-iff"	[color=green,		fillcolor="#1CAC78",		label="grp-sigma0-fixed-iff",		shape=ellipse,		style=filled];	"def:sigma0" -> "lem:grp-sigma0-fixed-iff"	[style=dashed];	"def:enc-orbitmap"	[color=green,		fillcolor="#B0ECA3",		label="enc-orbitmap",		shape=box,		style=filled];	"def:sigma0" -> "def:enc-orbitmap"	[style=dashed];	"lem:lex-relabel-comm"	[color=green,		fillcolor="#A3D6FF",		label="lex-relabel-comm",		shape=ellipse,		style=filled];	"def:lex-cycle-relabel" -> "lem:lex-relabel-comm"	[style=dashed];	"lem:grp-sigma0-fixed-card"	[color=green,		label="grp-sigma0-fixed-card",		shape=ellipse];	"lem:grp-sigma0-fixed-iff" -> "lem:grp-sigma0-fixed-card"	[style=dashed];	"def:enc-orbitmap" -> "lem:orbits"	[style=dashed];	"lem:lex-relabel-comm" -> "lem:sym1"	[style=dashed];	"lem:grp-sigma0-fixed-card" -> "lem:grp-sigma0-cycle-type";	"lem:cnf-withcube-eval"	[color=green,		fillcolor="#A3D6FF",		label="cnf-withcube-eval",		shape=ellipse,		style=filled];	"thm:cnf-unsat-of-cubes"	[color=green,		fillcolor="#A3D6FF",		label="cnf-unsat-of-cubes",		shape=ellipse,		style=filled];	"lem:cnf-withcube-eval" -> "thm:cnf-unsat-of-cubes";	"thm:coverage"	[color=green,		fillcolor="#A3D6FF",		label=coverage,		shape=ellipse,		style=filled];	"thm:cnf-unsat-of-cubes" -> "thm:coverage";	"cor:cov-checked"	[color=green,		fillcolor="#A3D6FF",		label="cov-checked",		shape=ellipse,		style=filled];	"thm:coverage" -> "cor:cov-checked"	[style=dashed];	"thm:coverage" -> "crt-schema"	[style=dashed];	"prop:enc-totalizer"	[color=green,		fillcolor="#9CEC8B",		label="enc-totalizer",		shape=ellipse,		style=filled];	"prop:enc-totalizer" -> "prop:enc-mto"	[style=dashed];	"crt-schema" -> "crt-tiling"	[style=dashed];	"lem:enc-gtrip-comp"	[color=green,		fillcolor="#1CAC78",		label="enc-gtrip-comp",		shape=ellipse,		style=filled];	"lem:enc-gtrip-comp" -> "lem:enc-sym1-section"	[style=dashed];	"lem:enc-gtrip-comp" -> "prop:enc-deg-section"	[style=dashed];	"prop:enc-cn-section"	[color=green,		fillcolor="#9CEC8B",		label="enc-cn-section",		shape=ellipse,		style=filled];	"lem:enc-gtrip-comp" -> "prop:enc-cn-section"	[style=dashed];	"prop:enc-deg-section" -> "prop:counters"	[style=dashed];	"prop:enc-cn-section" -> "prop:counters"	[style=dashed];	"def:enc-deginv" -> "lem:enc-deg-gadget"	[style=dashed];	"def:enc-deginv" -> "def:enc-prelexinv"	[style=dashed];	"def:enc-deginv" -> "lem:enc-deg-bridge"	[style=dashed];	"lem:grp-unique-triangle"	[color=green,		label="grp-unique-triangle",		shape=ellipse];	"lem:grp-label-injective"	[color=green,		fillcolor="#9CEC8B",		label="grp-label-injective",		shape=ellipse,		style=filled];	"lem:grp-unique-triangle" -> "lem:grp-label-injective";	"lem:grp-rigidity"	[color=green,		fillcolor="#9CEC8B",		label="grp-rigidity",		shape=ellipse,		style=filled];	"lem:grp-label-injective" -> "lem:grp-rigidity";	"lem:grp-rigidity" -> "lem:fixed";	"lem:enc-cn-product"	[color=green,		label="enc-cn-product",		shape=ellipse];	"lem:enc-cn-product" -> "prop:enc-cn-section"	[style=dashed];	"lem:cov-lex-block"	[color=green,		fillcolor="#A3D6FF",		label="cov-lex-block",		shape=ellipse,		style=filled];	"lem:cov-adjacent-sound"	[color=green,		fillcolor="#A3D6FF",		label="cov-adjacent-sound",		shape=ellipse,		style=filled];	"lem:cov-lex-block" -> "lem:cov-adjacent-sound";	"lem:cov-checkcover-sound"	[color=green,		fillcolor="#A3D6FF",		label="cov-checkcover-sound",		shape=ellipse,		style=filled];	"lem:cov-adjacent-sound" -> "lem:cov-checkcover-sound";	"lem:cov-checkcover-sound" -> "cor:cov-checked";	"def:srg"	[color=green,		fillcolor="#B0ECA3",		label=srg,		shape=box,		style=filled];	"def:srg" -> "lem:lex-two-blocks"	[style=dashed];	"def:srg" -> "lem:enc-deg-bridge"	[style=dashed];	"def:srg" -> "lem:grp-unique-triangle"	[style=dashed];	"lem:enc-cn-bridge"	[color=green,		fillcolor="#1CAC78",		label="enc-cn-bridge",		shape=ellipse,		style=filled];	"def:srg" -> "lem:enc-cn-bridge"	[style=dashed];	"st-encodes"	[color=green,		fillcolor="#B0ECA3",		label="st-encodes",		shape=box,		style=filled];	"def:srg" -> "st-encodes"	[style=dashed];	"lem:grp-mu-pair"	[color=green,		label="grp-mu-pair",		shape=ellipse];	"def:srg" -> "lem:grp-mu-pair"	[style=dashed];	"lem:grp-srg-transport"	[color=green,		fillcolor="#1CAC78",		label="grp-srg-transport",		shape=ellipse,		style=filled];	"def:srg" -> "lem:grp-srg-transport"	[style=dashed];	"lem:enc-cn-bridge" -> "prop:enc-prelex-bridge"	[style=dashed];	"st-encodes" -> "st-conditional"	[style=dashed];	"lem:grp-mu-pair" -> "lem:grp-label-injective";	"lem:grp-srg-transport" -> "lem:lex-step-srg"	[style=dashed];	"lem:grp-srg-transport" -> "lem:sym1"	[style=dashed];	"lem:grp-srg-transport" -> "thm:grp-wlog";	"st-aut"	[color=green,		fillcolor="#B0ECA3",		label="st-aut",		shape=box,		style=filled];	"st-aut" -> "st-conditional"	[style=dashed];	"def:enc-cninv" -> "def:enc-prelexinv"	[style=dashed];	"def:enc-cninv" -> "lem:enc-cn-product"	[style=dashed];	"def:enc-cninv" -> "lem:enc-cn-bridge"	[style=dashed];	"def:cnf-unsat"	[color=green,		fillcolor="#B0ECA3",		label="cnf-unsat",		shape=box,		style=filled];	"def:cnf-unsat" -> "thm:cnf-unsat-of-cubes"	[style=dashed];	"def:cov-checkcover"	[color=green,		fillcolor="#B0ECA3",		label="cov-checkcover",		shape=box,		style=filled];	"def:cov-checkcover" -> "lem:cov-checkcover-sound"	[style=dashed];	"def:cnf-literal"	[color=green,		fillcolor="#B0ECA3",		label="cnf-literal",		shape=box,		style=filled];	"def:cnf-formula"	[color=green,		fillcolor="#B0ECA3",		label="cnf-formula",		shape=box,		style=filled];	"def:cnf-literal" -> "def:cnf-formula"	[style=dashed];	"def:cnf-valuation"	[color=green,		fillcolor="#B0ECA3",		label="cnf-valuation",		shape=box,		style=filled];	"def:cnf-formula" -> "def:cnf-valuation"	[style=dashed];	"def:cnf-valuation" -> "def:cnf-unsat"	[style=dashed];	"def:cnf-cube"	[color=green,		fillcolor="#B0ECA3",		label="cnf-cube",		shape=box,		style=filled];	"def:cnf-valuation" -> "def:cnf-cube"	[style=dashed];	"def:cnf-dimacs"	[color=green,		fillcolor="#B0ECA3",		label="cnf-dimacs",		shape=box,		style=filled];	"def:cnf-cube" -> "def:cnf-dimacs"	[style=dashed];	"def:cnf-withcube"	[color=green,		fillcolor="#B0ECA3",		label="cnf-withcube",		shape=box,		style=filled];	"def:cnf-cube" -> "def:cnf-withcube"	[style=dashed];	"def:prefix"	[color=green,		fillcolor="#B0ECA3",		label=prefix,		shape=box,		style=filled];	"def:cnf-cube" -> "def:prefix"	[style=dashed];	"def:cnf-dimacs" -> "def:cov-tiling"	[style=dashed];	"def:cnf-withcube" -> "lem:cnf-withcube-eval"	[style=dashed];	"def:cov-kraft"	[color=green,		fillcolor="#B0ECA3",		label="cov-kraft",		shape=box,		style=filled];	"def:prefix" -> "def:cov-kraft"	[style=dashed];	"lem:cov-cell-prefix"	[color=green,		fillcolor="#A3D6FF",		label="cov-cell-prefix",		shape=ellipse,		style=filled];	"def:prefix" -> "lem:cov-cell-prefix"	[style=dashed];	"def:cov-adjacent"	[color=green,		fillcolor="#B0ECA3",		label="cov-adjacent",		shape=box,		style=filled];	"def:prefix" -> "def:cov-adjacent"	[style=dashed];	"def:cov-kraft" -> "def:cov-checkcover"	[style=dashed];	"lem:cov-kraft-split"	[color=green,		fillcolor="#A3D6FF",		label="cov-kraft-split",		shape=ellipse,		style=filled];	"def:cov-kraft" -> "lem:cov-kraft-split"	[style=dashed];	"lem:cov-kraft-ineq"	[color=green,		fillcolor="#A3D6FF",		label="cov-kraft-ineq",		shape=ellipse,		style=filled];	"lem:cov-kraft-split" -> "lem:cov-kraft-ineq";	"lem:kraft"	[color=green,		fillcolor="#A3D6FF",		label=kraft,		shape=ellipse,		style=filled];	"lem:cov-kraft-ineq" -> "lem:kraft";	"lem:cov-valuation-cover"	[color=green,		fillcolor="#A3D6FF",		label="cov-valuation-cover",		shape=ellipse,		style=filled];	"lem:kraft" -> "lem:cov-valuation-cover";	"lem:cov-valuation-cover" -> "thm:coverage";	"def:lrat"	[color=green,		fillcolor="#B0ECA3",		label=lrat,		shape=box,		style=filled];	"crt-checker"	[color=green,		label="crt-checker",		shape=ellipse];	"def:lrat" -> "crt-checker"	[style=dashed];	"prop:enc-seqcounter"	[color=green,		fillcolor="#1CAC78",		label="enc-seqcounter",		shape=ellipse,		style=filled];	"lem:enc-cn-equals"	[color=green,		fillcolor="#1CAC78",		label="enc-cn-equals",		shape=ellipse,		style=filled];	"prop:enc-seqcounter" -> "lem:enc-cn-equals"	[style=dashed];	"lem:enc-cn-equals" -> "prop:enc-cn-section"	[style=dashed];	"lem:grp-sigma0-inverse"	[color=green,		fillcolor="#1CAC78",		label="grp-sigma0-inverse",		shape=ellipse,		style=filled];	"lem:grp-sigma0-inverse" -> "def:sigma0"	[style=dashed];	"def:cov-lex"	[color=green,		fillcolor="#B0ECA3",		label="cov-lex",		shape=box,		style=filled];	"def:cov-lex" -> "lem:cov-lex-block"	[style=dashed];	"def:cov-lex" -> "def:cov-checkcover"	[style=dashed];	"lem:grp-support-multiple"	[color=green,		fillcolor="#1CAC78",		label="grp-support-multiple",		shape=ellipse,		style=filled];	"lem:grp-support-multiple" -> "lem:grp-fixed-congruence";	"lem:cov-cell-prefix" -> "lem:cov-valuation-cover";	"def:cov-adjacent" -> "lem:cov-adjacent-sound"	[style=dashed];	"def:cov-adjacent" -> "def:cov-checkcover"	[style=dashed];	"def:enc-unary"	[color=green,		fillcolor="#B0ECA3",		label="enc-unary",		shape=box,		style=filled];	"lem:enc-totmerge"	[color=green,		label="enc-totmerge",		shape=ellipse];	"def:enc-unary" -> "lem:enc-totmerge"	[style=dashed];	"lem:enc-totmerge" -> "prop:enc-totalizer"	[style=dashed];	"def:enc-gtrip"	[color=green,		fillcolor="#B0ECA3",		label="enc-gtrip",		shape=box,		style=filled];	"def:enc-gtrip" -> "lem:enc-gtrip-comp"	[style=dashed];	"def:enc-state"	[color=green,		fillcolor="#B0ECA3",		label="enc-state",		shape=box,		style=filled];	"def:enc-state" -> "def:enc-evar"	[style=dashed];	"def:enc-state" -> "prop:enc-seqcounter"	[style=dashed];	"def:enc-state" -> "def:enc-unary"	[style=dashed];	"def:enc-state" -> "def:enc-gtrip"	[style=dashed];	"lem:grp-equivariance"	[color=green,		label="grp-equivariance",		shape=ellipse];	"lem:grp-equivariance" -> "lem:grp-rigidity";}`)
     .on("end", interactive);
 
 latexLabelEscaper = function(label) {

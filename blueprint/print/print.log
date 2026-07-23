@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.15)  23 JUL 2026 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.15)  23 JUL 2026 20:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -455,17 +455,17 @@ Chapter 4.
 [18
 
 ]
-Overfull \hbox (4.63705pt too wide) in paragraph at lines 124--128
-[][]\T1/lmr/bx/n/10.95 Lemma 75 \T1/lmr/m/n/10.95 (Nor-mal-i-sa-tion of the fixed ver-tex's neigh-bour-hood)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 Ev-ery $\OML/lmm/m/it/10.95 ^^[[]$\T1/lmr/m/it/10.95 -invariant $[]\OT1/lmr/m/n/10.95 (99\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 14\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 2)$
+Overfull \hbox (4.63705pt too wide) in paragraph at lines 118--122
+[][]\T1/lmr/bx/n/10.95 Lemma 74 \T1/lmr/m/n/10.95 (Nor-mal-i-sa-tion of the fixed ver-tex's neigh-bour-hood)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 Ev-ery $\OML/lmm/m/it/10.95 ^^[[]$\T1/lmr/m/it/10.95 -invariant $[]\OT1/lmr/m/n/10.95 (99\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 14\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 2)$
  []
 
 [19] [20]
-Overfull \hbox (2.78775pt too wide) in paragraph at lines 256--259
-[][]\T1/lmr/bx/n/10.95 Lemma 85 \T1/lmr/m/n/10.95 (Ex-is-tence of a reach-able min-i-mum)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 For ev-ery $\OML/lmm/m/it/10.95 !$ \T1/lmr/m/it/10.95 there is $\OML/lmm/m/it/10.95 ![] \OMS/lmsy/m/n/10.95 2 R\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 !\OT1/lmr/m/n/10.95 )$ \T1/lmr/m/it/10.95 with $[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^T
+Overfull \hbox (2.78775pt too wide) in paragraph at lines 250--253
+[][]\T1/lmr/bx/n/10.95 Lemma 84 \T1/lmr/m/n/10.95 (Ex-is-tence of a reach-able min-i-mum)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 For ev-ery $\OML/lmm/m/it/10.95 !$ \T1/lmr/m/it/10.95 there is $\OML/lmm/m/it/10.95 ![] \OMS/lmsy/m/n/10.95 2 R\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 !\OT1/lmr/m/n/10.95 )$ \T1/lmr/m/it/10.95 with $[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^T
  []
 
 [21]
-Overfull \hbox (87.15631pt too wide) in paragraph at lines 322--323
+Overfull \hbox (87.15631pt too wide) in paragraph at lines 316--317
 []\T1/lmtt/m/it/9 Lean: ConwayO7.Encoder.lex_section_trip, ConwayO7.Encoder.specAddLexLeq_trip, ConwayO7.Encoder.specLexAgainst_trip[][]$[]$[] 
  []
 
@@ -478,7 +478,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 {/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 Overfull \hbox (15.9721pt too wide) in paragraph at lines 95--99
-[]\T1/lmr/m/it/9 uses: lem:cnf-withcube-eval \T1/lmr/m/n/10.95 Any val-u-a-tion sat-is-fy-ing $\OML/lmm/m/it/10.95 F$ \T1/lmr/m/n/10.95 sat-is-fies some $\OML/lmm/m/it/10.95 c[]$\T1/lmr/m/n/10.95 , hence by Lemma []101[]
+[]\T1/lmr/m/it/9 uses: lem:cnf-withcube-eval \T1/lmr/m/n/10.95 Any val-u-a-tion sat-is-fy-ing $\OML/lmm/m/it/10.95 F$ \T1/lmr/m/n/10.95 sat-is-fies some $\OML/lmm/m/it/10.95 c[]$\T1/lmr/m/n/10.95 , hence by Lemma []100[]
  []
 
 
@@ -504,18 +504,18 @@ Package rerunfilecheck Info: File `print.out' has not changed.
 (rerunfilecheck)             Checksum: 0207EBAB7910A4CA71736D9FAF3E143E;6098.
  ) 
 Here is how much of TeX's memory you used:
- 11099 strings out of 469086
- 168931 string characters out of 5457830
- 597211 words of memory out of 5000000
- 39723 multiletter control sequences out of 15000+600000
+ 11097 strings out of 469086
+ 168892 string characters out of 5457830
+ 597146 words of memory out of 5000000
+ 39722 multiletter control sequences out of 15000+600000
  736555 words of font info for 117 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  74i,8n,79p,542b,691s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/uokur/claude_workspace/ConwayO7/blueprint/print/print.pdf (33 pages, 500270 bytes).
+Output written on /home/uokur/claude_workspace/ConwayO7/blueprint/print/print.pdf (33 pages, 500030 bytes).
 PDF statistics:
- 731 PDF objects out of 1000 (max. 8388607)
- 639 compressed objects within 7 object streams
- 198 named destinations out of 1000 (max. 500000)
+ 730 PDF objects out of 1000 (max. 8388607)
+ 638 compressed objects within 7 object streams
+ 197 named destinations out of 1000 (max. 500000)
  225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

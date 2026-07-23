@@ -10,7 +10,6 @@ exactly two full cycles; relabeling those to positions 0 and 1 gives the seed
 assignment for the lex-leader minimization.
 -/
 import ConwayO7.Bridge
-import ConwayO7.SrgIso
 
 namespace ConwayO7
 namespace Encoder
@@ -240,8 +239,10 @@ theorem sym1_seed (ω : Nat → Bool) (hsrg : (graphOfOrbits ω).IsSRGWith 99 14
   have hinv := comap_invariant σ ω
   refine ⟨orbitFunOf ((graphOfOrbits ω).comap (cycleRelabel σ).toEmbedding), ?_, ?_⟩
   · -- strong regularity, through the relabeling isomorphism
-    refine IsSRGWith.of_iso ⟨Equiv.refl _, fun {a b} ↦ ?_⟩
-      (IsSRGWith.of_iso (SimpleGraph.Iso.comap (cycleRelabel σ) (graphOfOrbits ω)) hsrg)
+    refine isSRGWith_of_iso (SimpleGraph.Iso.symm ⟨Equiv.refl _, fun {a b} ↦ ?_⟩)
+      (isSRGWith_of_iso
+        (SimpleGraph.Iso.symm (SimpleGraph.Iso.comap (cycleRelabel σ) (graphOfOrbits ω)))
+        hsrg)
     rw [graphOfOrbits_orbitFunOf hinv]
     rfl
   · -- the level-1 units

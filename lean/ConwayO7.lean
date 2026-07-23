@@ -26,7 +26,6 @@ import ConwayO7.Data.EncoderMatch
 import ConwayO7.LexSpec
 import ConwayO7.LexTrip
 import ConwayO7.LexVal
-import ConwayO7.SrgIso
 import ConwayO7.Sym1Exists
 import ConwayO7.Assembly
 import ConwayO7.Complete
