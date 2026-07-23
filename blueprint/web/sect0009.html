@@ -12,10 +12,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fixed points of prime-order permutations</title>
-<link rel="next" href="sect0003.html" title="Local structure of an " />
-<link rel="prev" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
-<link rel="up" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
+<title>The block-relabelling subgroup</title>
+<link rel="next" href="sect0010.html" title="The neighbourhood of the fixed vertex" />
+<link rel="prev" href="sect0008.html" title="Transport of strong regularity" />
+<link rel="up" href="sec-lex.html" title="Completeness of the normalisation" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 <link rel="stylesheet" href="styles/showmore.css" />
@@ -35,11 +35,11 @@
 <li class="">
   <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Strongly regular graphs and the statement</span></a>
  </li>
-<li class=" active">
+<li class="">
   <a href="sec-group.html"><span class="toc_ref">2</span> <span class="toc_entry">From an order-seven automorphism to a canonical one</span></a>
-  <span class="expand-toc">▼</span>
-  <ul class="sub-toc-1 active">
-     <li class=" active current">
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
   <a href="sect0002.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Fixed points of prime-order permutations</span></a>
  </li>
 <li class="">
@@ -82,14 +82,14 @@
 
   </ul>
  </li>
-<li class="">
+<li class=" active">
   <a href="sec-lex.html"><span class="toc_ref">4</span> <span class="toc_entry">Completeness of the normalisation</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
      <li class="">
   <a href="sect0008.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Transport of strong regularity</span></a>
  </li>
-<li class="">
+<li class=" active current">
   <a href="sect0009.html"><span class="toc_ref">4.2</span> <span class="toc_entry">The block-relabelling subgroup</span></a>
  </li>
 <li class="">
@@ -144,15 +144,14 @@
 
 
 <div class="main-text">
-<h1 id="a0000000003">2.1 Fixed points of prime-order permutations</h1>
-<p>We begin with elementary counting lemmas about permutations \(\pi \) with \(\pi ^p = 1\) for a prime \(p\). Throughout, \(\operatorname {Fix}\pi \) denotes the set of fixed points and \(\operatorname {supp}\pi \) its complement, the support. </p>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-support-multiple">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<h1 id="a0000000010">4.2 The block-relabelling subgroup</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:relabel">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
     </span>
-    <span class="lemma_thmlabel">6</span>
-    <span class="lemma_thmtitle">Support is a multiple of \(p\)</span>
+    <span class="definition_thmlabel">67</span>
+    <span class="definition_thmtitle">Relabelling generators</span>
     <div class="thm_header_extras">
 
     
@@ -160,11 +159,28 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-support-multiple">#</a>
+    <a class="icon proof" href="sect0009.html#def:relabel">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
     
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="ssec-enc-orbits.html#lem:orbits">Lemma 33</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -178,7 +194,142 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_support_of_pow_prime_eq_one" class="lean_decl">ConwayO7.card_support_of_pow_prime_eq_one</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.lexPerms" class="lean_decl">ConwayO7.Encoder.lexPerms</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.orbitPerm" class="lean_decl">ConwayO7.Encoder.orbitPerm</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p> Let \(N \le S_{99}\) be generated by: the block transposition exchanging \(7\)-blocks \(0,1\); the transpositions of adjacent blocks \(i,i{+}1\) for \(2 \le i \le 12\); the rotations of each block; and the five multiplier permutations \(j \mapsto aj \bmod 7\) (\(2 \le a \le 6\)) applied simultaneously to all blocks. Each \(\rho \in N\) normalises \(\langle \sigma _0\rangle \), hence acts on the orbit space and thus on words \(\{ 0,1\} ^{693}\) by \((\rho \cdot \omega )(o) = \omega (\rho ^{-1}o)\). The encoding uses \(101\) fixed generators of this action.  </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:lex-cycle-relabel">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">68</span>
+    <span class="definition_thmtitle">Block relabellings</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#def:lex-cycle-relabel">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#def:sigma0">Definition 22</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.cycleRelabel" class="lean_decl">ConwayO7.Encoder.cycleRelabel</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p> Write \(B_i = \{ 1+7i,\dots ,7+7i\} \) (\(0 \le i \le 13\)) for the fourteen \(7\)-blocks rotated by \(\sigma _0\). A permutation \(\tau \in S_{14}\) of the block indices induces a permutation of the \(99\) vertices fixing \(0\) and sending the \(j\)-th vertex of block \(i\) to the \(j\)-th vertex of block \(\tau (i)\): block indices are permuted, positions within blocks are kept.  </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:lex-relabel-comm">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">69</span>
+    <span class="lemma_thmtitle">Relabelling blocks commutes with rotating within blocks</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0009.html#lem:lex-relabel-comm">#</a>
+    
+    <a class="icon proof" href="sect0009.html#a0000000062"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0009.html#def:lex-cycle-relabel">Definition 68</a></li>
+          
+          <li><a href="sect0006.html#def:sigma0">Definition 22</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.cycleRelabel_comm" class="lean_decl">ConwayO7.Encoder.cycleRelabel_comm</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.cycleRelabelVal_comm" class="lean_decl">ConwayO7.Encoder.cycleRelabelVal_comm</a></li>
           
         </ul>
     
@@ -189,185 +340,19 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation of a finite type with \(\pi ^p = 1\) for a prime \(p\). Then \(|\operatorname {supp}\pi |\) is a multiple of \(p\). </p>
+  <p> Every block relabelling commutes with \(\sigma _0\).  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000023">
+<div class="proof_wrapper" id="a0000000062">
   <div class="proof_heading">
     <span class="proof_caption">
-    Proof
+    Proof sketch
     </span>
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Either \(\pi = 1\), with empty support, or \(\operatorname {ord}\pi = p\); in the latter case the cycle type of \(\pi \) is a multiset of copies of \(p\), and the support is the disjoint union of the cycles. </p>
-
-  </div>
-</div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fix-support">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">7</span>
-    <span class="lemma_thmtitle">Fixed points and support partition the domain</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0002.html#lem:grp-fix-support">#</a>
-    
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_add_card_support" class="lean_decl">ConwayO7.card_filter_fixed_add_card_support</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p> For any permutation \(\pi \) of a finite type \(\alpha \), \(|\operatorname {Fix}\pi | + |\operatorname {supp}\pi | = |\alpha |\). </p>
-
-  </div>
-</div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fixed-congruence">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">8</span>
-    <span class="lemma_thmtitle">Fixed-point congruence</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0002.html#lem:grp-fixed-congruence">#</a>
-    
-    <a class="icon proof" href="sect0002.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_modEq" class="lean_decl">ConwayO7.card_filter_fixed_modEq</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation with \(\pi ^p = 1\), \(p\) prime, and let \(s\) be a finite \(\pi \)-invariant set. Then </p>
-<div class="displaymath" id="a0000000025">
-  \[  |\{ a \in s \mid \pi a = a\} | \equiv |s| \pmod p .  \]
-</div>
-
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000024">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p> Since \(\pi \) is injective and \(s\) is finite, \(\pi (s) \subseteq s\) upgrades to \(\pi (s) = s\), so \(\pi \) restricts to a permutation \(\pi '\) of \(s\) with \((\pi ')^p = 1\). By Lemmas&#160;<a href="sect0002.html#lem:grp-support-multiple">6</a> and&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> applied to \(\pi '\), the fixed points of \(\pi \) inside \(s\) number \(|s| - pm\) for some \(m\). (We will apply this with \(p = 7\) to the vertex set and to a neighbourhood, and with \(p = 2\) to a matching involution.) </p>
-
-  </div>
-</div>
-<div class="proposition_thmwrapper theorem-style-plain" id="lem:grp-cycletype-of-fixed">
-  <div class="proposition_thmheading">
-    <span class="proposition_thmcaption">
-    Proposition
-    </span>
-    <span class="proposition_thmlabel">9</span>
-    <span class="proposition_thmtitle">Cycle type from a fixed-point count</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0002.html#lem:grp-cycletype-of-fixed">#</a>
-    
-    <a class="icon proof" href="sect0002.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_eq_replicate_of_fixed" class="lean_decl">ConwayO7.cycleType_eq_replicate_of_fixed</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="proposition_thmcontent">
-  <p> Let \(\pi \ne 1\) be a permutation of a finite type of cardinality \(f + pm\) with \(\pi ^p = 1\), \(p\) prime, and exactly \(f\) fixed points. Then the cycle type of \(\pi \) is \([p^m]\). </p>
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000026">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p> Since \(\pi \ne 1\) and \(\pi ^p = 1\), the order of \(\pi \) is exactly \(p\), so its cycle type is \([p^n]\) for some \(n \ge 1\). By Lemma&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> the support has \(pm\) elements, and the cycle lengths sum to the support size, so \(pn = pm\) and \(n = m\). </p>
+  <p> In the coordinates (block index, position within block) of a nonzero vertex, \(\sigma _0\) increments the position modulo \(7\) and fixes the block index, while a block relabelling permutes the block index and fixes the position; the two actions touch disjoint coordinates. Both maps fix the vertex \(0\). </p>
 
   </div>
 </div>
@@ -382,11 +367,11 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0008.html" title="Transport of strong regularity"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="sec-lex.html" title="Completeness of the normalisation"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0003.html" title="Local structure of an \(\mathrm{srg}(99,14,1,2)\)"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0010.html" title="The neighbourhood of the fixed vertex"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

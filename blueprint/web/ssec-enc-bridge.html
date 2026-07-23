@@ -12,10 +12,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fixed points of prime-order permutations</title>
-<link rel="next" href="sect0003.html" title="Local structure of an " />
-<link rel="prev" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
-<link rel="up" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
+<title>The bridge from strong regularity</title>
+<link rel="next" href="sec-lex.html" title="Completeness of the normalisation" />
+<link rel="prev" href="ssec-enc-networks.html" title="Soundness of the counting networks" />
+<link rel="up" href="sec-encoding.html" title="The orbit quotient and the propositional encoding" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 <link rel="stylesheet" href="styles/showmore.css" />
@@ -35,11 +35,11 @@
 <li class="">
   <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Strongly regular graphs and the statement</span></a>
  </li>
-<li class=" active">
+<li class="">
   <a href="sec-group.html"><span class="toc_ref">2</span> <span class="toc_entry">From an order-seven automorphism to a canonical one</span></a>
-  <span class="expand-toc">▼</span>
-  <ul class="sub-toc-1 active">
-     <li class=" active current">
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
   <a href="sect0002.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Fixed points of prime-order permutations</span></a>
  </li>
 <li class="">
@@ -60,10 +60,10 @@
 
   </ul>
  </li>
-<li class="">
+<li class=" active">
   <a href="sec-encoding.html"><span class="toc_ref">3</span> <span class="toc_entry">The orbit quotient and the propositional encoding</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
      <li class="">
   <a href="ssec-enc-orbits.html"><span class="toc_ref">3.1</span> <span class="toc_entry">The orbit quotient</span></a>
  </li>
@@ -76,7 +76,7 @@
 <li class="">
   <a href="ssec-enc-networks.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Soundness of the counting networks</span></a>
  </li>
-<li class="">
+<li class=" active current">
   <a href="ssec-enc-bridge.html"><span class="toc_ref">3.5</span> <span class="toc_entry">The bridge from strong regularity</span></a>
  </li>
 
@@ -144,15 +144,16 @@
 
 
 <div class="main-text">
-<h1 id="a0000000003">2.1 Fixed points of prime-order permutations</h1>
-<p>We begin with elementary counting lemmas about permutations \(\pi \) with \(\pi ^p = 1\) for a prime \(p\). Throughout, \(\operatorname {Fix}\pi \) denotes the set of fixed points and \(\operatorname {supp}\pi \) its complement, the support. </p>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-support-multiple">
+<h1 id="ssec:enc-bridge">3.5 The bridge from strong regularity</h1>
+
+<p>Finally, the semantic preconditions above are not ad hoc: they are exactly what strong regularity delivers. </p>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:enc-deg-bridge">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6</span>
-    <span class="lemma_thmtitle">Support is a multiple of \(p\)</span>
+    <span class="lemma_thmlabel">63</span>
+    <span class="lemma_thmtitle">Regularity yields the degree invariant</span>
     <div class="thm_header_extras">
 
     
@@ -160,11 +161,34 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-support-multiple">#</a>
+    <a class="icon proof" href="ssec-enc-bridge.html#lem:enc-deg-bridge">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
     
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+          <li><a href="ssec-enc-orbits.html#def:enc-graphoforbits">Definition 34</a></li>
+          
+          <li><a href="ssec-enc-formula.html#def:enc-evar">Definition 39</a></li>
+          
+          <li><a href="ssec-enc-framework.html#def:enc-deginv">Definition 46</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -178,7 +202,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_support_of_pow_prime_eq_one" class="lean_decl">ConwayO7.card_support_of_pow_prime_eq_one</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.degInv_of_srg" class="lean_decl">ConwayO7.Encoder.degInv_of_srg</a></li>
           
         </ul>
     
@@ -189,11 +213,84 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation of a finite type with \(\pi ^p = 1\) for a prime \(p\). Then \(|\operatorname {supp}\pi |\) is a multiple of \(p\). </p>
+  <p> If \(G_\omega \) is strongly regular with parameters \((99,14,1,2)\), then the induced valuation \(a_\omega \) satisfies the degree invariant: for each vertex \(u\) the number of true orbit literals at \(u\) is the degree of \(u\) in \(G_\omega \), which is \(14\).  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000023">
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:enc-cn-bridge">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">64</span>
+    <span class="lemma_thmtitle">The srg identities yield the common-neighbour invariant</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="ssec-enc-bridge.html#lem:enc-cn-bridge">#</a>
+    
+    <a class="icon proof" href="ssec-enc-bridge.html#a0000000060"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+          <li><a href="ssec-enc-orbits.html#def:enc-graphoforbits">Definition 34</a></li>
+          
+          <li><a href="ssec-enc-formula.html#def:enc-evar">Definition 39</a></li>
+          
+          <li><a href="ssec-enc-framework.html#def:enc-cninv">Definition 47</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.cnInv_of_srg" class="lean_decl">ConwayO7.Encoder.cnInv_of_srg</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> If \(G_\omega \) is strongly regular with parameters \((99,14,1,2)\), then \(a_\omega \) satisfies the common-neighbour invariant: for a representative pair \(r\), the count \(c_r(a_\omega )\) equals the number of common neighbours of \(r_1, r_2\) plus the adjacency bit, i.e. \(\lambda + 1 = 2\) when the pair is an edge and \(\mu = 2\) when it is not.  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000060">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -201,124 +298,17 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Either \(\pi = 1\), with empty support, or \(\operatorname {ord}\pi = p\); in the latter case the cycle type of \(\pi \) is a multiset of copies of \(p\), and the support is the disjoint union of the cycles. </p>
+  <p>The candidate list ranges over all vertices other than \(r_1, r_2\), and a candidate’s two orbit literals are true exactly when it is a common neighbour in \(G_\omega \); the count is therefore \(|N(r_1) \cap N(r_2)|\) plus the adjacency indicator, and both cases of the strong-regularity identity give the value \(2\) since \(\mu - \lambda = 1\). </p>
 
   </div>
 </div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fix-support">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">7</span>
-    <span class="lemma_thmtitle">Fixed points and support partition the domain</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0002.html#lem:grp-fix-support">#</a>
-    
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_add_card_support" class="lean_decl">ConwayO7.card_filter_fixed_add_card_support</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p> For any permutation \(\pi \) of a finite type \(\alpha \), \(|\operatorname {Fix}\pi | + |\operatorname {supp}\pi | = |\alpha |\). </p>
-
-  </div>
-</div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fixed-congruence">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">8</span>
-    <span class="lemma_thmtitle">Fixed-point congruence</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0002.html#lem:grp-fixed-congruence">#</a>
-    
-    <a class="icon proof" href="sect0002.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_modEq" class="lean_decl">ConwayO7.card_filter_fixed_modEq</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation with \(\pi ^p = 1\), \(p\) prime, and let \(s\) be a finite \(\pi \)-invariant set. Then </p>
-<div class="displaymath" id="a0000000025">
-  \[  |\{ a \in s \mid \pi a = a\} | \equiv |s| \pmod p .  \]
-</div>
-
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000024">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p> Since \(\pi \) is injective and \(s\) is finite, \(\pi (s) \subseteq s\) upgrades to \(\pi (s) = s\), so \(\pi \) restricts to a permutation \(\pi '\) of \(s\) with \((\pi ')^p = 1\). By Lemmas&#160;<a href="sect0002.html#lem:grp-support-multiple">6</a> and&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> applied to \(\pi '\), the fixed points of \(\pi \) inside \(s\) number \(|s| - pm\) for some \(m\). (We will apply this with \(p = 7\) to the vertex set and to a neighbourhood, and with \(p = 2\) to a matching involution.) </p>
-
-  </div>
-</div>
-<div class="proposition_thmwrapper theorem-style-plain" id="lem:grp-cycletype-of-fixed">
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:enc-prelex-bridge">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">9</span>
-    <span class="proposition_thmtitle">Cycle type from a fixed-point count</span>
+    <span class="proposition_thmlabel">65</span>
+    <span class="proposition_thmtitle">Strong regularity yields the pre-lex invariant</span>
     <div class="thm_header_extras">
 
     
@@ -326,11 +316,37 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-cycletype-of-fixed">#</a>
+    <a class="icon proof" href="ssec-enc-bridge.html#prop:enc-prelex-bridge">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="ssec-enc-bridge.html#a0000000061"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="ssec-enc-bridge.html#lem:enc-deg-bridge">Lemma 63</a></li>
+          
+          <li><a href="ssec-enc-bridge.html#lem:enc-cn-bridge">Lemma 64</a></li>
+          
+          <li><a href="ssec-enc-framework.html#def:enc-sym1holds">Definition 48</a></li>
+          
+          <li><a href="ssec-enc-framework.html#def:enc-prelexinv">Definition 49</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -344,7 +360,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_eq_replicate_of_fixed" class="lean_decl">ConwayO7.cycleType_eq_replicate_of_fixed</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.preLexInv_of_srg" class="lean_decl">ConwayO7.Encoder.preLexInv_of_srg</a></li>
           
         </ul>
     
@@ -355,11 +371,11 @@
         </div>
   </div>
   <div class="proposition_thmcontent">
-  <p> Let \(\pi \ne 1\) be a permutation of a finite type of cardinality \(f + pm\) with \(\pi ^p = 1\), \(p\) prime, and exactly \(f\) fixed points. Then the cycle type of \(\pi \) is \([p^m]\). </p>
+  <p> If \(G_\omega \) is strongly regular with parameters \((99,14,1,2)\) and \(a_\omega \) satisfies the level-1 symmetry condition, then \(a_\omega \) satisfies the full pre-lex invariant. Combined with Proposition&#160;<a href="ssec-enc-networks.html#prop:counters">62</a>, every normalised \(\sigma _0\)-invariant srg would yield a valuation satisfying all pre-normalisation clauses of \(\Phi \); the minimality clauses are handled in Chapter&#160;<a href="sec-lex.html">4</a>.  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000026">
+<div class="proof_wrapper" id="a0000000061">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -367,7 +383,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p> Since \(\pi \ne 1\) and \(\pi ^p = 1\), the order of \(\pi \) is exactly \(p\), so its cycle type is \([p^n]\) for some \(n \ge 1\). By Lemma&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> the support has \(pm\) elements, and the cycle lengths sum to the support size, so \(pn = pm\) and \(n = m\). </p>
+  <p>Conjoin Lemmas&#160;<a href="ssec-enc-bridge.html#lem:enc-deg-bridge">63</a> and&#160;<a href="ssec-enc-bridge.html#lem:enc-cn-bridge">64</a> with the assumed symmetry condition. </p>
 
   </div>
 </div>
@@ -382,11 +398,11 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="ssec-enc-networks.html" title="Soundness of the counting networks"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="sec-encoding.html" title="The orbit quotient and the propositional encoding"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0003.html" title="Local structure of an \(\mathrm{srg}(99,14,1,2)\)"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sec-lex.html" title="Completeness of the normalisation"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

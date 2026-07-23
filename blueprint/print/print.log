@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.15)  23 JUL 2026 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.15)  23 JUL 2026 20:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -382,69 +382,118 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/home/uokur/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] (/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.toc)
+{/home/uokur/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] (/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 3.
+)
 \tf@toc=\write4
 \openout4 = `print.toc'.
 
- (./content.tex
+ (./content.tex (./chapters/ch0-intro.tex) (./chapters/ch1-statement.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4 \chapter
+l.1 \chapter
             {Strongly regular graphs and the statement} [1
 
 ]
 Chapter 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 7.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 7.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 7.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 11.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 10.
 (/home/uokur/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 11.
+(Font)              <9> on input line 10.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 11.
+(Font)              <5> on input line 10.
  [2
 
-{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]) (./chapters/ch2-group.tex [3]
 Chapter 2.
-[3
-
-]
-Chapter 3.
 [4
 
-{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [5]
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 71.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 71.
+
+Overfull \hbox (15.69548pt too wide) in paragraph at lines 110--113
+[][]\T1/lmr/bx/n/10.95 Lemma 13 \T1/lmr/m/n/10.95 (Equiv-ari-ance of com-mon neigh-bour-hoods)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 Let $\OML/lmm/m/it/10.95 ^^Y$ \T1/lmr/m/it/10.95 be a per-mu-ta-tion of $\OML/lmm/m/it/10.95 V$ \T1/lmr/m/it/10.95 with $\OT1/lmr/m/n/10.95 ^^@(\OML/lmm/m/it/10.95 ^^Yu; ^^Yv\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ,
+ []
+
+[5{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+Overfull \hbox (3.07314pt too wide) in paragraph at lines 145--149
+\T1/lmr/m/it/9 uses: lem:grp-fixed-congruence, lem:grp-unique-triangle, lem:grp-mu-pair, lem:grp-equivariance, lem:grp-rigidity \T1/lmr/m/it/10.95 Step
+ []
+
+[6]
+Overfull \hbox (7.85631pt too wide) in paragraph at lines 219--222
+[][]$[]$[]\T1/lmr/m/n/10.95 Cauchy's the-o-rem for the fi-nite group $[] \OML/lmm/m/it/10.95 G$ \T1/lmr/m/n/10.95 (math-lib's \T1/lmtt/m/n/10.95 exists_prime_orderOf_dvd_card\T1/lmr/m/n/10.95 )
+ []
+
+[7]
+Overfull \hbox (6.4553pt too wide) in paragraph at lines 344--347
+[][]$[]$[]\T1/lmr/m/n/10.95 The iso-mor-phism iden-ti-fies neigh-bour-hoods and com-mon neigh-bour-hoods vertex-by-vertex,
+ []
+
+[8]) (./chapters/ch3-encoding.tex [9]
+Chapter 3.
+[10
+
+] [11] [12] [13]
+Overfull \hbox (19.90012pt too wide) in paragraph at lines 352--359
+[][]$[]$[]\T1/lmr/m/n/10.95 Again in-duc-tion over a bi-nary tree, but each in-ter-nal node now merges two quo-tient/remainder
+ []
+
+[14] [15] [16]) (./chapters/ch4-lex.tex [17]
 Chapter 4.
-
-Overfull \hbox (4.63705pt too wide) in paragraph at lines 169--172
-[][]\T1/lmr/bx/n/10.95 Lemma 13 \T1/lmr/m/n/10.95 (Nor-mal-i-sa-tion of the fixed ver-tex's neigh-bour-hood)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 Ev-ery $\OML/lmm/m/it/10.95 ^^[[]$\T1/lmr/m/it/10.95 -invariant $[]\OT1/lmr/m/n/10.95 (99\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 14\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 2)$
- []
-
-[6
+[18
 
 ]
+Overfull \hbox (4.63705pt too wide) in paragraph at lines 124--128
+[][]\T1/lmr/bx/n/10.95 Lemma 75 \T1/lmr/m/n/10.95 (Nor-mal-i-sa-tion of the fixed ver-tex's neigh-bour-hood)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 Ev-ery $\OML/lmm/m/it/10.95 ^^[[]$\T1/lmr/m/it/10.95 -invariant $[]\OT1/lmr/m/n/10.95 (99\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 14\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 2)$
+ []
+
+[19] [20]
+Overfull \hbox (2.78775pt too wide) in paragraph at lines 256--259
+[][]\T1/lmr/bx/n/10.95 Lemma 85 \T1/lmr/m/n/10.95 (Ex-is-tence of a reach-able min-i-mum)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 For ev-ery $\OML/lmm/m/it/10.95 !$ \T1/lmr/m/it/10.95 there is $\OML/lmm/m/it/10.95 ![] \OMS/lmsy/m/n/10.95 2 R\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 !\OT1/lmr/m/n/10.95 )$ \T1/lmr/m/it/10.95 with $[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^T
+ []
+
+[21]
+Overfull \hbox (87.15631pt too wide) in paragraph at lines 322--323
+[]\T1/lmtt/m/it/9 Lean: ConwayO7.Encoder.lex_section_trip, ConwayO7.Encoder.specAddLexLeq_trip, ConwayO7.Encoder.specLexAgainst_trip[][]$[]$[] 
+ []
+
+[22]) (./chapters/ch5-coverage.tex [23]
 Chapter 5.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 35.
+(/home/uokur/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [24
 
-Overfull \hbox (0.53043pt too wide) in paragraph at lines 225--229
-[][]\T1/lmr/bx/n/10.95 Lemma 17 \T1/lmr/m/n/10.95 (Kraft equal-ity and max-i-mal-ity)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 A prefix-free fam-ily $\OML/lmm/m/it/10.95 S \OMS/lmsy/m/n/10.95 ^^R f\OT1/lmr/m/n/10.95 0\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 1\OMS/lmsy/m/n/10.95 g[]$ \T1/lmr/m/it/10.95 with $[][] \OT1/lmr/m/n/10.95 2[] =
+{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+Overfull \hbox (15.9721pt too wide) in paragraph at lines 95--99
+[]\T1/lmr/m/it/9 uses: lem:cnf-withcube-eval \T1/lmr/m/n/10.95 Any val-u-a-tion sat-is-fy-ing $\OML/lmm/m/it/10.95 F$ \T1/lmr/m/n/10.95 sat-is-fies some $\OML/lmm/m/it/10.95 c[]$\T1/lmr/m/n/10.95 , hence by Lemma []101[]
  []
 
-[7
 
-]
+Overfull \hbox (110.10854pt too wide) in paragraph at lines 112--113
+[]\T1/lmtt/m/n/9 Lean: ConwayO7.Dimacs.litOfInt, ConwayO7.Dimacs.parseDimacs, ConwayO7.Dimacs.serializeDimacs, ConwayO7.Dimacs.parseCubes,
+ []
+
+[25] [26] [27] [28]) (./chapters/ch6-certificates.tex [29]
 Chapter 6.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 263.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 53.
 (/home/uokur/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [8
+) [30
 
-]) [9
+]) (./chapters/ch7-trustedbase.tex [31])) [32
 
 ] (/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.aux)
  ***********
@@ -452,21 +501,21 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
  ***********
 Package rerunfilecheck Info: File `print.out' has not changed.
-(rerunfilecheck)             Checksum: 4531BB0A7DF90B436CE99C4741A8D05F;1446.
+(rerunfilecheck)             Checksum: 0207EBAB7910A4CA71736D9FAF3E143E;6098.
  ) 
 Here is how much of TeX's memory you used:
- 10686 strings out of 469086
- 161773 string characters out of 5457830
- 585065 words of memory out of 5000000
- 39498 multiletter control sequences out of 15000+600000
- 722157 words of font info for 104 fonts, out of 8000000 for 9000
+ 11099 strings out of 469086
+ 168931 string characters out of 5457830
+ 597211 words of memory out of 5000000
+ 39723 multiletter control sequences out of 15000+600000
+ 736555 words of font info for 117 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 74i,8n,79p,542b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/uokur/claude_workspace/ConwayO7/blueprint/print/print.pdf (10 pages, 355900 bytes).
+ 74i,8n,79p,542b,691s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /home/uokur/claude_workspace/ConwayO7/blueprint/print/print.pdf (33 pages, 500270 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 731 PDF objects out of 1000 (max. 8388607)
+ 639 compressed objects within 7 object streams
+ 198 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

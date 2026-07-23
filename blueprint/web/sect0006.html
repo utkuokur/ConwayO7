@@ -12,10 +12,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Certificates</title>
-<link rel="next" href="sect0019.html" title="Trusted base" />
-<link rel="prev" href="sect0018.html" title="The distributed family" />
-<link rel="up" href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven" />
+<title>The canonical permutation \(\sigma _0\)</title>
+<link rel="next" href="sect0007.html" title="Transport and the reduction" />
+<link rel="prev" href="sect0005.html" title="The automorphism group" />
+<link rel="up" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 <link rel="stylesheet" href="styles/showmore.css" />
@@ -35,10 +35,10 @@
 <li class="">
   <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Strongly regular graphs and the statement</span></a>
  </li>
-<li class="">
+<li class=" active">
   <a href="sec-group.html"><span class="toc_ref">2</span> <span class="toc_entry">From an order-seven automorphism to a canonical one</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
      <li class="">
   <a href="sect0002.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Fixed points of prime-order permutations</span></a>
  </li>
@@ -51,7 +51,7 @@
 <li class="">
   <a href="sect0005.html"><span class="toc_ref">2.4</span> <span class="toc_entry">The automorphism group</span></a>
  </li>
-<li class="">
+<li class=" active current">
   <a href="sect0006.html"><span class="toc_ref">2.5</span> <span class="toc_entry">The canonical permutation \(\sigma _0\)</span></a>
  </li>
 <li class="">
@@ -129,7 +129,7 @@
 
   </ul>
  </li>
-<li class=" active current">
+<li class="">
   <a href="sec-certificates.html"><span class="toc_ref">6</span> <span class="toc_entry">Certificates</span></a>
  </li>
 <li class="">
@@ -144,15 +144,14 @@
 
 
 <div class="main-text">
-<h1 id="sec:certificates">6 Certificates</h1>
-
-<div class="definition_thmwrapper theorem-style-definition" id="def:lrat">
+<h1 id="a0000000007">2.5 The canonical permutation \(\sigma _0\)</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:sigma0">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">123</span>
-    <span class="definition_thmtitle">Clausal derivations</span>
+    <span class="definition_thmlabel">22</span>
+    <span class="definition_thmtitle">The canonical permutation</span>
     <div class="thm_header_extras">
 
     
@@ -160,8 +159,28 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sec-certificates.html#def:lrat">#</a>
+    <a class="icon proof" href="sect0006.html#def:sigma0">#</a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#lem:grp-sigma0-inverse">Lemma 23</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -175,9 +194,13 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Std.Tactic.BVDecide.LRAT.IntAction" class="lean_decl">Std.Tactic.BVDecide.LRAT.IntAction</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0" class="lean_decl">ConwayO7.sigma0</a></li>
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Std.Tactic.BVDecide.LRAT.parseLRATProof" class="lean_decl">Std.Tactic.BVDecide.LRAT.parseLRATProof</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0Fun" class="lean_decl">ConwayO7.sigma0Fun</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0InvFun" class="lean_decl">ConwayO7.sigma0InvFun</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_val" class="lean_decl">ConwayO7.sigma0_val</a></li>
           
         </ul>
     
@@ -188,17 +211,21 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> Let \(F\) be a formula in conjunctive normal form, i.e. a finite set of <em>clauses</em>, each a disjunction of literals. A clause \(C\) is <em>entailed by reverse unit propagation</em> (RUP) from a set \(G\) of clauses if, starting from the assumption that every literal of \(C\) is false and repeatedly assigning any literal that is forced (because it is the last unfalsified literal of some clause of \(G\)), one reaches a clause of \(G\) all of whose literals are falsified; this syntactic check implies the semantic entailment \(G \models C\), since any valuation satisfying \(G\) but falsifying \(C\) would survive every propagation step. A <em>clausal derivation</em> from \(F\) is a finite sequence of clauses, each entailed by reverse unit propagation from \(F\) together with the preceding clauses (with clause deletions permitted along the way), ending in the empty clause — the clause with no literals, satisfied by no valuation. Since RUP steps preserve entailment, a clausal derivation witnesses that \(F\) is unsatisfiable. The <em>LRAT format</em> additionally annotates each step with the indices of the clauses used, so that a derivation can be checked in time linear in its length; Lean’s standard library formalises LRAT derivations as sequences of addition and deletion actions. </p>
+  <p> On the vertex set \(\{ 0,\dots ,98\} \), partition the nonzero vertices into fourteen consecutive blocks \(B_i = \{ 1+7i, \dots , 7+7i\} \), \(0 \le i \le 13\). Let \(\sigma _0\) be the permutation fixing \(0\) and rotating each block cyclically: </p>
+<div class="displaymath" id="a0000000034">
+  \[  \sigma _0(0) = 0, \qquad \sigma _0(1 + 7i + j) = 1 + 7i + \bigl((j+1) \bmod 7\bigr) \quad (0 \le j {\lt} 7).  \]
+</div>
+<p> Formally, \(\sigma _0\) is assembled from the explicit forward-rotation formula and its backward-rotation companion (positions advance by \(1\), respectively by \(6 \equiv -1\), modulo \(7\)).  </p>
 
   </div>
 </div>
-<div class="theorem_thmwrapper theorem-style-plain" id="crt-checker">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-sigma0-inverse">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
     </span>
-    <span class="theorem_thmlabel">124</span>
-    <span class="theorem_thmtitle">The verified checker</span>
+    <span class="lemma_thmlabel">23</span>
+    <span class="lemma_thmtitle">Inverse laws</span>
     <div class="thm_header_extras">
 
     
@@ -206,28 +233,11 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sec-certificates.html#crt-checker">#</a>
+    <a class="icon proof" href="sect0006.html#lem:grp-sigma0-inverse">#</a>
     
+    <a class="icon proof" href="sect0006.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sec-certificates.html#def:lrat">Definition 123</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
     
     
     <button class="modal lean">L∃∀N</button>
@@ -241,9 +251,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Std.Tactic.BVDecide.LRAT.check" class="lean_decl">Std.Tactic.BVDecide.LRAT.check</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_leftInverse" class="lean_decl">ConwayO7.sigma0_leftInverse</a></li>
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Std.Tactic.BVDecide.LRAT.check_sound" class="lean_decl">Std.Tactic.BVDecide.LRAT.check_sound</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_rightInverse" class="lean_decl">ConwayO7.sigma0_rightInverse</a></li>
           
         </ul>
     
@@ -253,279 +263,416 @@
     
         </div>
   </div>
-  <div class="theorem_thmcontent">
-  <p> Lean’s standard library provides an executable checker taking an LRAT derivation and a CNF, and a soundness theorem proved in Lean: whenever the checker accepts, the formula is unsatisfiable. Consequently a run of the checker inside Lean’s kernel converts a concrete derivation into a genuine Lean proof of unsatisfiability, with no unverified translation step.  </p>
+  <div class="lemma_thmcontent">
+  <p> The forward and backward block rotations are mutually inverse: advancing the position within a block by \(1\) and then by \(6\) (or vice versa) is the identity, and both maps fix \(0\). Hence \(\sigma _0\) is a well-defined permutation with an explicit inverse. </p>
 
   </div>
 </div>
-<div class="fact_thmwrapper theorem-style-definition" id="crt-sample">
-  <div class="fact_thmheading">
-    <span class="fact_thmcaption">
-    Computed Fact
-    </span>
-    <span class="fact_thmlabel">125</span>
-    <span class="fact_thmtitle">In-kernel sample replay</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sec-certificates.html#crt-sample">#</a>
-    
-    
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sec-certificates.html#def:lrat">Definition 123</a></li>
-          
-          <li><a href="sec-certificates.html#crt-checker">Theorem 124</a></li>
-          
-          <li><a href="ssec-enc-formula.html#fact:bytes">Computed Fact 43</a></li>
-          
-          <li><a href="sect0018.html#fact:tiling">Computed Fact 122</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="fact_thmcontent">
-  <p> Cell number \(4092\) of the distributed family (historically cube \(4093\) of the first-round split) is unsatisfiable together with \(\Phi \): the distributed derivation for this cell, whose compressed file is pinned by its SHA-256 hash, is replayed through the verified checker of Theorem&#160;<a href="sec-certificates.html#crt-checker">124</a> against the formula \(\Phi \wedge (\text{cell})\) built from the byte-identical embedded data by the same cube-adjunction used throughout the pipeline. This is the calibration sample: a sign convention, off-by-one, or clause-order mismatch anywhere between the Lean development and the distributed artifact would make this check fail.  </p>
-
-  </div>
-</div>
-<div class="fact_thmwrapper theorem-style-definition" id="fact:certificates">
-  <div class="fact_thmheading">
-    <span class="fact_thmcaption">
-    Computed Fact
-    </span>
-    <span class="fact_thmlabel">126</span>
-    <span class="fact_thmtitle">The external hypothesis</span>
-    <div class="thm_header_extras">
-
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sec-certificates.html#fact:certificates">#</a>
-    
-    
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sec-certificates.html#def:lrat">Definition 123</a></li>
-          
-          <li><a href="sec-certificates.html#crt-sample">Computed Fact 125</a></li>
-          
-          <li><a href="ssec-enc-formula.html#fact:bytes">Computed Fact 43</a></li>
-          
-          <li><a href="sect0018.html#fact:tiling">Computed Fact 122</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-    
-        </div>
-  </div>
-  <div class="fact_thmcontent">
-  <p> For each of the \(98{,}536\) cells there is a clausal derivation refuting \(\Phi \wedge (\text{cell } s)\). Each derivation was checked by <span class="sffamily">cake_lpr</span>, an LRAT checker formally verified (in HOL4) down to the machine code that executes; verification was performed on the distributed files, whose hashes are pinned. This is the unique hypothesis of the development not discharged inside Lean; one of the \(98{,}536\) instances is additionally replayed inside Lean’s kernel (Fact&#160;<a href="sec-certificates.html#crt-sample">125</a>), eliminating even the translation gap for that sample.  </p>
-
-  </div>
-</div>
-<div class="theorem_thmwrapper theorem-style-plain" id="crt-schema">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
-    </span>
-    <span class="theorem_thmlabel">127</span>
-    <span class="theorem_thmtitle">The certificate schema</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sec-certificates.html#crt-schema">#</a>
-    
-    
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sect0001.html#st-conditional">Theorem 5</a></li>
-          
-          <li><a href="sect0001.html#st-encodes">Definition 4</a></li>
-          
-          <li><a href="sect0017.html#thm:coverage">Theorem 117</a></li>
-          
-          <li><a href="sect0016.html#def:prefix">Definition 104</a></li>
-          
-          <li><a href="sect0016.html#lem:kraft">Lemma 109</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.no_aut_seven_of_certificates" class="lean_decl">ConwayO7.no_aut_seven_of_certificates</a></li>
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.no_aut_seven_of_checked_certificates" class="lean_decl">ConwayO7.no_aut_seven_of_checked_certificates</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="theorem_thmcontent">
-  <p> Let \(F\) be a CNF, and let \(S\) be a prefix-free family of sign words of full Kraft mass over a fixed variable order (Definition&#160;<a href="sect0016.html#def:prefix">104</a>, Lemma&#160;<a href="sect0016.html#lem:kraft">109</a>). If \(F \wedge (\text{cell } s)\) is unsatisfiable for every \(s \in S\), and \(F\) encodes the \(\sigma _0\)-invariant strongly regular graphs (Definition&#160;<a href="sect0001.html#st-encodes">4</a>), then no strongly regular graph with parameters \((99,14,1,2)\) has automorphism group of order divisible by \(7\). This composes the refutation-by-cells theorem (Theorem&#160;<a href="sect0017.html#thm:coverage">117</a>) with the conditional main theorem (Theorem&#160;<a href="sect0001.html#st-conditional">5</a>); a variant takes the prefix-freeness and Kraft hypotheses in the executable form of the cover checker.  </p>
-
-  </div>
-</div>
-<div class="theorem_thmwrapper theorem-style-plain" id="crt-tiling">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
-    </span>
-    <span class="theorem_thmlabel">128</span>
-    <span class="theorem_thmtitle">The schema on the distributed family</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sec-certificates.html#crt-tiling">#</a>
-    
-    
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sec-certificates.html#crt-schema">Theorem 127</a></li>
-          
-          <li><a href="sect0018.html#fact:tiling">Computed Fact 122</a></li>
-          
-          <li><a href="ssec-enc-formula.html#def:phi">Definition 40</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.no_aut_seven_of_tiling_certificates" class="lean_decl">ConwayO7.no_aut_seven_of_tiling_certificates</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="theorem_thmcontent">
-  <p> Instantiate Theorem&#160;<a href="sec-certificates.html#crt-schema">127</a> with \(F = \Phi \) and \(S\) the distributed family of \(98{,}536\) words: if \(\Phi \wedge (\text{cell } s)\) is unsatisfiable for every \(s\) in the family, and \(\Phi \) encodes the \(\sigma _0\)-invariant strongly regular graphs, then the conclusion of the main theorem holds. The combinatorial hypotheses on \(S\) are discharged by the executed cover check (Fact&#160;<a href="sect0018.html#fact:tiling">122</a>); the remaining hypotheses are exactly the per-cell unsatisfiability facts and encoding completeness.  </p>
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000021">
+<div class="proof_wrapper" id="a0000000035">
   <div class="proof_heading">
     <span class="proof_caption">
-    Assembly of Theorem&#160;<a href="sect0001.html#thm:main">3</a>
+    Proof
     </span>
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>   Apply Theorem&#160;<a href="sec-certificates.html#crt-tiling">128</a>. Its per-cell hypothesis is Fact&#160;<a href="sec-certificates.html#fact:certificates">126</a>: every \(\Phi \wedge (\text{cell } s)\) for \(s\) in the distributed family is unsatisfiable. Its encoding hypothesis is Theorem&#160;<a href="sect0014.html#thm:encoding-complete">94</a>: \(\Phi \) encodes the \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\)s. Hence no \(\mathrm{srg}(99,14,1,2)\), on any finite vertex set, has automorphism group of order divisible by \(7\). </p>
+  <p>On a nonzero vertex \(1+7i+j\) the composite advances the position by \(1 + 6 \equiv 0 \pmod7\) and leaves the block index \(i\) unchanged; the vertex \(0\) is fixed by both maps. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-sigma0-iterate">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">24</span>
+    <span class="lemma_thmtitle">Blocks are constant, positions advance</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#lem:grp-sigma0-iterate">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000036"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#def:sigma0">Definition 22</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_iterate_val" class="lean_decl">ConwayO7.sigma0_iterate_val</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> For a nonzero vertex \(v = 1 + 7i + j\) and every \(k \ge 0\), </p>
+<div class="displaymath" id="a0000000037">
+  \[  \sigma _0^{\, k}(v) = 1 + 7i + \bigl((j+k) \bmod 7\bigr):  \]
+</div>
+<p> iterating \(\sigma _0\) never leaves the block of \(v\) and advances the position within the block by \(k\) modulo \(7\).  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000036">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Induction on \(k\): a nonzero vertex stays nonzero (its position formula keeps it in the block \(B_i\)), so the defining formula of \(\sigma _0\) applies at every step and adds \(1\) to the position, modulo \(7\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-sigma0-order">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">25</span>
+    <span class="lemma_thmtitle">\(\sigma _0\) has order dividing seven</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#lem:grp-sigma0-order">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000038"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#def:sigma0">Definition 22</a></li>
+          
+          <li><a href="sect0006.html#lem:grp-sigma0-iterate">Lemma 24</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_pow_seven" class="lean_decl">ConwayO7.sigma0_pow_seven</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_iterate_seven" class="lean_decl">ConwayO7.sigma0_iterate_seven</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> \(\sigma _0^7 = 1\).  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000038">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> The vertex \(0\) is fixed; on a nonzero vertex, Lemma&#160;<a href="sect0006.html#lem:grp-sigma0-iterate">24</a> with \(k = 7\) advances the position by \(7 \equiv 0 \pmod7\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-sigma0-fixed-iff">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">26</span>
+    <span class="lemma_thmtitle">Fixed points of \(\sigma _0\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#lem:grp-sigma0-fixed-iff">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000039"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#def:sigma0">Definition 22</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_fixed_iff" class="lean_decl">ConwayO7.sigma0_fixed_iff</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> \(\sigma _0(v) = v\) if and only if \(v = 0\).  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000039">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>On a nonzero vertex the position advances, and \((j+1) \bmod 7 = j\) is impossible for \(0 \le j {\lt} 7\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-sigma0-fixed-card">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">27</span>
+    <span class="lemma_thmtitle">Fixed-point count of \(\sigma _0\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#lem:grp-sigma0-fixed-card">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#lem:grp-sigma0-fixed-iff">Lemma 26</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_fixed_card" class="lean_decl">ConwayO7.sigma0_fixed_card</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_ne_one" class="lean_decl">ConwayO7.sigma0_ne_one</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> \(\sigma _0\) has exactly one fixed point; in particular \(\sigma _0 \ne 1\).  </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-sigma0-cycle-type">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">28</span>
+    <span class="lemma_thmtitle">Cycle type of \(\sigma _0\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#lem:grp-sigma0-cycle-type">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000040"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#def:sigma0">Definition 22</a></li>
+          
+          <li><a href="sect0002.html#lem:grp-cycletype-of-fixed">Proposition 9</a></li>
+          
+          <li><a href="sect0006.html#lem:grp-sigma0-order">Lemma 25</a></li>
+          
+          <li><a href="sect0006.html#lem:grp-sigma0-fixed-card">Lemma 27</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_cycleType" class="lean_decl">ConwayO7.sigma0_cycleType</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> The cycle type of \(\sigma _0\) is \([7^{14}]\) — the same as that of any order-seven automorphism of an \(\mathrm{srg}(99,14,1,2)\) (Corollary&#160;<a href="sect0005.html#cor:grp-aut-cycle-type">21</a>).  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000040">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> Apply Proposition&#160;<a href="sect0002.html#lem:grp-cycletype-of-fixed">9</a> with \(p = 7\), \(f = 1\), \(m = 14\) and \(99 = 1 + 7 \cdot 14\), using \(\sigma _0^7 = 1\), \(\sigma _0 \ne 1\) and the fixed-point count. </p>
 
   </div>
 </div>
@@ -540,11 +687,11 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sect0018.html" title="The distributed family"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0005.html" title="The automorphism group"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0019.html" title="Trusted base"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0007.html" title="Transport and the reduction"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

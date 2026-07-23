@@ -12,10 +12,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The orbit quotient and the propositional encoding</title>
-<link rel="next" href="ssec-enc-orbits.html" title="The orbit quotient" />
-<link rel="prev" href="sect0007.html" title="Transport and the reduction" />
-<link rel="up" href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven" />
+<title>Transport of strong regularity</title>
+<link rel="next" href="sect0009.html" title="The block-relabelling subgroup" />
+<link rel="prev" href="sec-lex.html" title="Completeness of the normalisation" />
+<link rel="up" href="sec-lex.html" title="Completeness of the normalisation" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 <link rel="stylesheet" href="styles/showmore.css" />
@@ -60,10 +60,10 @@
 
   </ul>
  </li>
-<li class=" active current">
+<li class="">
   <a href="sec-encoding.html"><span class="toc_ref">3</span> <span class="toc_entry">The orbit quotient and the propositional encoding</span></a>
-  <span class="expand-toc">▼</span>
-  <ul class="sub-toc-1 active">
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
      <li class="">
   <a href="ssec-enc-orbits.html"><span class="toc_ref">3.1</span> <span class="toc_entry">The orbit quotient</span></a>
  </li>
@@ -82,11 +82,11 @@
 
   </ul>
  </li>
-<li class="">
+<li class=" active">
   <a href="sec-lex.html"><span class="toc_ref">4</span> <span class="toc_entry">Completeness of the normalisation</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
-     <li class="">
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class=" active current">
   <a href="sect0008.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Transport of strong regularity</span></a>
  </li>
 <li class="">
@@ -144,30 +144,73 @@
 
 
 <div class="main-text">
-<h1 id="sec:encoding">3 The orbit quotient and the propositional encoding</h1>
+<h1 id="a0000000009">4.1 Transport of strong regularity</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:lex-iso-common-neighbors">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">66</span>
+    <span class="lemma_thmtitle">Common neighbours across an isomorphism</span>
+    <div class="thm_header_extras">
 
-<p>By Theorem&#160;<a href="sect0007.html#thm:reduction">31</a> it suffices to decide whether some graph invariant under the canonical permutation \(\sigma _0\) is strongly regular with parameters \((99,14,1,2)\). This chapter carries out the reduction of that question to a single propositional formula \(\Phi \), and proves the direction that the certificate method needs: every invariant srg would give rise to a satisfying valuation of (the pre-normalisation part of) \(\Phi \). The chapter has five strands: the orbit quotient of the edge set (§<a href="ssec-enc-orbits.html">3.1</a>), the formula itself as a mathematical object, a Hoare-style framework for reasoning about clause-emitting transformations, the soundness of the three counting gadgets, and finally the bridge from strong regularity to the semantic counting invariants. </p>
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0008.html#lem:lex-iso-common-neighbors">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.isoCommonNeighbors" class="lean_decl">ConwayO7.isoCommonNeighbors</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> A graph isomorphism \(e \colon G \to H\) restricts, for every pair of vertices \(v,w\) of \(G\), to a bijection between the common neighbours of \(v,w\) in \(G\) and the common neighbours of \(e(v),e(w)\) in \(H\).  </p>
+
+  </div>
+</div>
 
 </div> <!--main-text -->
-<nav class=local_toc>
-<ul>
-  <li>  
-  <a href="ssec-enc-orbits.html"><span class="toc_ref">3.1</span> <span class="toc_entry">The orbit quotient</span></a>
-  </li>
-  <li>  
-  <a href="ssec-enc-formula.html"><span class="toc_ref">3.2</span> <span class="toc_entry">The formula</span></a>
-  </li>
-  <li>  
-  <a href="ssec-enc-framework.html"><span class="toc_ref">3.3</span> <span class="toc_entry">The verification framework</span></a>
-  </li>
-  <li>  
-  <a href="ssec-enc-networks.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Soundness of the counting networks</span></a>
-  </li>
-  <li>  
-  <a href="ssec-enc-bridge.html"><span class="toc_ref">3.5</span> <span class="toc_entry">The bridge from strong regularity</span></a>
-  </li>
-</ul>
-</nav>
 </div> <!-- content-wrapper -->
 </div> <!-- content -->
 </div> <!-- wrapper -->
@@ -177,11 +220,11 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sect0007.html" title="Transport and the reduction"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sec-lex.html" title="Completeness of the normalisation"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="sec-lex.html" title="Completeness of the normalisation"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="ssec-enc-orbits.html" title="The orbit quotient"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0009.html" title="The block-relabelling subgroup"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

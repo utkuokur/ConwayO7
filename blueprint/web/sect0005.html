@@ -12,9 +12,9 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fixed points of prime-order permutations</title>
-<link rel="next" href="sect0003.html" title="Local structure of an " />
-<link rel="prev" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
+<title>The automorphism group</title>
+<link rel="next" href="sect0006.html" title="The canonical permutation " />
+<link rel="prev" href="sect0004.html" title="The fixed-point count and the cycle type" />
 <link rel="up" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
@@ -39,7 +39,7 @@
   <a href="sec-group.html"><span class="toc_ref">2</span> <span class="toc_entry">From an order-seven automorphism to a canonical one</span></a>
   <span class="expand-toc">▼</span>
   <ul class="sub-toc-1 active">
-     <li class=" active current">
+     <li class="">
   <a href="sect0002.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Fixed points of prime-order permutations</span></a>
  </li>
 <li class="">
@@ -48,7 +48,7 @@
 <li class="">
   <a href="sect0004.html"><span class="toc_ref">2.3</span> <span class="toc_entry">The fixed-point count and the cycle type</span></a>
  </li>
-<li class="">
+<li class=" active current">
   <a href="sect0005.html"><span class="toc_ref">2.4</span> <span class="toc_entry">The automorphism group</span></a>
  </li>
 <li class="">
@@ -144,15 +144,14 @@
 
 
 <div class="main-text">
-<h1 id="a0000000003">2.1 Fixed points of prime-order permutations</h1>
-<p>We begin with elementary counting lemmas about permutations \(\pi \) with \(\pi ^p = 1\) for a prime \(p\). Throughout, \(\operatorname {Fix}\pi \) denotes the set of fixed points and \(\operatorname {supp}\pi \) its complement, the support. </p>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-support-multiple">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<h1 id="a0000000006">2.4 The automorphism group</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:grp-autToPerm">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
     </span>
-    <span class="lemma_thmlabel">6</span>
-    <span class="lemma_thmtitle">Support is a multiple of \(p\)</span>
+    <span class="definition_thmlabel">17</span>
+    <span class="definition_thmtitle">Forgetting an automorphism to a permutation</span>
     <div class="thm_header_extras">
 
     
@@ -160,10 +159,7 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-support-multiple">#</a>
-    
-    <a class="icon proof" href="sect0002.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
+    <a class="icon proof" href="sect0005.html#def:grp-autToPerm">#</a>
     
     
     
@@ -178,7 +174,71 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_support_of_pow_prime_eq_one" class="lean_decl">ConwayO7.card_support_of_pow_prime_eq_one</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.autToPerm" class="lean_decl">ConwayO7.autToPerm</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p> For a graph \(G\) on a vertex set \(V\), the map sending an automorphism \(\sigma \in \operatorname {Aut}G = (G \simeq _g G)\) to its underlying vertex bijection is a monoid homomorphism \(\operatorname {Aut}G \to \operatorname {Sym}(V)\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-autToPerm-injective">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">18</span>
+    <span class="lemma_thmtitle">Injectivity</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#lem:grp-autToPerm-injective">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#def:grp-autToPerm">Definition 17</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.autToPerm_injective" class="lean_decl">ConwayO7.autToPerm_injective</a></li>
           
         </ul>
     
@@ -189,29 +249,17 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation of a finite type with \(\pi ^p = 1\) for a prime \(p\). Then \(|\operatorname {supp}\pi |\) is a multiple of \(p\). </p>
+  <p> The homomorphism of Definition&#160;<a href="sect0005.html#def:grp-autToPerm">17</a> is injective: an automorphism is determined by its action on vertices.  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000023">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p>Either \(\pi = 1\), with empty support, or \(\operatorname {ord}\pi = p\); in the latter case the cycle type of \(\pi \) is a multiset of copies of \(p\), and the support is the disjoint union of the cycles. </p>
-
-  </div>
-</div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fix-support">
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-aut-finite">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">7</span>
-    <span class="lemma_thmtitle">Fixed points and support partition the domain</span>
+    <span class="lemma_thmlabel">19</span>
+    <span class="lemma_thmtitle">Finiteness of the automorphism group</span>
     <div class="thm_header_extras">
 
     
@@ -219,8 +267,33 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-fix-support">#</a>
+    <a class="icon proof" href="sect0005.html#lem:grp-aut-finite">#</a>
     
+    <a class="icon proof" href="sect0005.html#a0000000031"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#def:grp-autToPerm">Definition 17</a></li>
+          
+          <li><a href="sect0005.html#lem:grp-autToPerm-injective">Lemma 18</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -234,7 +307,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_add_card_support" class="lean_decl">ConwayO7.card_filter_fixed_add_card_support</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.instFiniteIso_conwayO7" class="lean_decl">ConwayO7.instFiniteIso_conwayO7</a></li>
           
         </ul>
     
@@ -245,17 +318,29 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p> For any permutation \(\pi \) of a finite type \(\alpha \), \(|\operatorname {Fix}\pi | + |\operatorname {supp}\pi | = |\alpha |\). </p>
+  <p> If \(V\) is finite then \(\operatorname {Aut}G\) is a finite group.  </p>
 
   </div>
 </div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fixed-congruence">
+<div class="proof_wrapper" id="a0000000031">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> \(\operatorname {Aut}G\) injects into the finite group \(\operatorname {Sym}(V)\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:cauchy">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">8</span>
-    <span class="lemma_thmtitle">Fixed-point congruence</span>
+    <span class="lemma_thmlabel">20</span>
+    <span class="lemma_thmtitle">Cauchy step</span>
     <div class="thm_header_extras">
 
     
@@ -263,11 +348,31 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-fixed-congruence">#</a>
+    <a class="icon proof" href="sect0005.html#lem:cauchy">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000032"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0005.html#lem:grp-aut-finite">Lemma 19</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -281,7 +386,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_modEq" class="lean_decl">ConwayO7.card_filter_fixed_modEq</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.exists_aut_orderOf_eq_seven" class="lean_decl">ConwayO7.exists_aut_orderOf_eq_seven</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/exists_prime_orderOf_dvd_card" class="lean_decl">exists_prime_orderOf_dvd_card</a></li>
           
         </ul>
     
@@ -292,15 +399,11 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation with \(\pi ^p = 1\), \(p\) prime, and let \(s\) be a finite \(\pi \)-invariant set. Then </p>
-<div class="displaymath" id="a0000000025">
-  \[  |\{ a \in s \mid \pi a = a\} | \equiv |s| \pmod p .  \]
-</div>
-
+  <p> If \(7 \mid |\operatorname {Aut}G|\) for a graph \(G\) on a finite vertex set, then \(\operatorname {Aut}G\) contains an element of order \(7\).  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000024">
+<div class="proof_wrapper" id="a0000000032">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -308,17 +411,17 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p> Since \(\pi \) is injective and \(s\) is finite, \(\pi (s) \subseteq s\) upgrades to \(\pi (s) = s\), so \(\pi \) restricts to a permutation \(\pi '\) of \(s\) with \((\pi ')^p = 1\). By Lemmas&#160;<a href="sect0002.html#lem:grp-support-multiple">6</a> and&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> applied to \(\pi '\), the fixed points of \(\pi \) inside \(s\) number \(|s| - pm\) for some \(m\). (We will apply this with \(p = 7\) to the vertex set and to a neighbourhood, and with \(p = 2\) to a matching involution.) </p>
+  <p>Cauchy’s theorem for the finite group \(\operatorname {Aut}G\) (mathlib’s <span class="ttfamily">exists_prime_orderOf_dvd_card</span>) with the prime \(7\). </p>
 
   </div>
 </div>
-<div class="proposition_thmwrapper theorem-style-plain" id="lem:grp-cycletype-of-fixed">
-  <div class="proposition_thmheading">
-    <span class="proposition_thmcaption">
-    Proposition
+<div class="corollary_thmwrapper theorem-style-plain" id="cor:grp-aut-cycle-type">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
     </span>
-    <span class="proposition_thmlabel">9</span>
-    <span class="proposition_thmtitle">Cycle type from a fixed-point count</span>
+    <span class="corollary_thmlabel">21</span>
+    <span class="corollary_thmtitle">Cycle type of an order-seven automorphism</span>
     <div class="thm_header_extras">
 
     
@@ -326,11 +429,37 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-cycletype-of-fixed">#</a>
+    <a class="icon proof" href="sect0005.html#cor:grp-aut-cycle-type">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0005.html#a0000000033"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+          <li><a href="sect0005.html#def:grp-autToPerm">Definition 17</a></li>
+          
+          <li><a href="sect0004.html#thm:grp-cycle-type">Theorem 16</a></li>
+          
+          <li><a href="sect0005.html#lem:grp-autToPerm-injective">Lemma 18</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -344,7 +473,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_eq_replicate_of_fixed" class="lean_decl">ConwayO7.cycleType_eq_replicate_of_fixed</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_autToPerm" class="lean_decl">ConwayO7.cycleType_autToPerm</a></li>
           
         </ul>
     
@@ -354,12 +483,12 @@
     
         </div>
   </div>
-  <div class="proposition_thmcontent">
-  <p> Let \(\pi \ne 1\) be a permutation of a finite type of cardinality \(f + pm\) with \(\pi ^p = 1\), \(p\) prime, and exactly \(f\) fixed points. Then the cycle type of \(\pi \) is \([p^m]\). </p>
+  <div class="corollary_thmcontent">
+  <p> Let \(\Gamma \) be an \(\mathrm{srg}(99,14,1,2)\) and \(\sigma \in \operatorname {Aut}\Gamma \) with \(\operatorname {ord}\sigma = 7\). Then the underlying vertex permutation of \(\sigma \) has cycle type \([7^{14}]\).  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000026">
+<div class="proof_wrapper" id="a0000000033">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -367,7 +496,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p> Since \(\pi \ne 1\) and \(\pi ^p = 1\), the order of \(\pi \) is exactly \(p\), so its cycle type is \([p^n]\) for some \(n \ge 1\). By Lemma&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> the support has \(pm\) elements, and the cycle lengths sum to the support size, so \(pn = pm\) and \(n = m\). </p>
+  <p> An injective homomorphism preserves orders, so the underlying permutation also has order \(7\) and preserves adjacency; apply Theorem&#160;<a href="sect0004.html#thm:grp-cycle-type">16</a>. </p>
 
   </div>
 </div>
@@ -382,11 +511,11 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0004.html" title="The fixed-point count and the cycle type"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
   <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0003.html" title="Local structure of an \(\mathrm{srg}(99,14,1,2)\)"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0006.html" title="The canonical permutation \(\sigma _0\)"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

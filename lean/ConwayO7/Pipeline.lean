@@ -15,11 +15,6 @@ if the CNF were satisfiable-but-meaningless the conclusion would be vacuous, not
 UNSAT does the refuting.  (The converse "assignment ⟹ graph" is what makes a SAT
 answer meaningful, but no SAT answer is being claimed.)
 
-`no_aut_seven_of_certificates` additionally inlines T1, so its hypotheses are exactly
-the shipped artifact's obligations: the cube list's prefix-freeness and full Kraft mass
-(to be discharged by `decide` on the concrete cube data), one `Unsat` fact per cube
-(cake_lpr on hash-pinned files, or `Std.Tactic.BVDecide.LRAT.check_sound` in-kernel),
-and `EncodesInvariantSRG o7cnf`.
 -/
 import ConwayO7.CoverageCheck
 import ConwayO7.Canonical
@@ -28,10 +23,9 @@ open Std.Sat
 
 namespace ConwayO7
 
-/-- **The L4/L5 obligation**: whenever a σ₀-invariant
-srg(99,14,1,2) exists on `Fin 99`, the formula `F` is satisfiable.
-For `F = o7.cnf` this is the encoder-faithfulness theorem for
-`tools/conway_o7.py` — orbit variables, cardinality counters,
+/-- Whenever a σ₀-invariant srg(99,14,1,2) exists on `Fin 99`,
+the formula `F` is satisfiable. For `F = o7.cnf` this is the encoder-faithfulness
+theorem for `tools/conway_o7.py` — orbit variables, cardinality counters,
 and completeness of the symmetry-breaking clauses. -/
 def EncodesInvariantSRG (F : CNF Nat) : Prop :=
   ∀ H : SimpleGraph (Fin 99), ∀ _ : DecidableRel H.Adj, H.IsSRGWith 99 14 1 2 →
@@ -68,9 +62,6 @@ theorem no_aut_seven_of_certificates (F : CNF Nat) (order : List Nat) (S : List 
     ¬7 ∣ Nat.card (G ≃g G) :=
   no_aut_seven_of_unsat henc (unsat_of_prefix_cover F order S hlen hpf hkraft hcubes) G hG
 
-/-- `no_aut_seven_of_certificates` with the three coverage hypotheses replaced by the
-single executable check of `ConwayO7/CoverageCheck.lean` — the form the concrete data
-layer will discharge by computation. -/
 theorem no_aut_seven_of_checked_certificates (F : CNF Nat) (order : List Nat)
     (S : List (List Bool))
     (hchk : checkCover order.length S = true)

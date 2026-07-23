@@ -1,5 +1,5 @@
 /-
-L4 gadget mathematics — satisfiability of the modulo-totalizer merge (`mto_MUA_A`).
+Gadget mathematics — satisfiability of the modulo-totalizer merge (`mto_MUA_A`).
 
 Register semantics: a block with true-count `C` is represented by an *upper* unary
 counter for `C / 9` and a *lower* unary counter for `C % 9` (`p = ⌊√98⌋ = 9` for every
@@ -123,8 +123,7 @@ theorem muaA_main (s : St) (a : Nat → Bool) (hs rs ff aa gg bb : Array Int)
     rw [litSat_neg a' (hB _ (arr.getElem_mem hi)).1, hu i hi]
   refine ⟨a', hag, ?_⟩
   intro c hc
-  simp only [muaA, emitFold_cls, push_cls, fresh_fst_cls, fresh_fst_top, fresh_snd,
-    if_neg hsig0] at hc
+  simp only [muaA, emitFold_cls, push_cls, fresh_fst_cls, fresh_snd, if_neg hsig0] at hc
   rw [← hc0] at hc
   -- the seven families
   rcases Array.mem_append.mp hc with hc | hc6
@@ -793,7 +792,7 @@ theorem mtoNode_sat :
     have hCsplit : countT a ilst
         = countT a (ilst.extract 0 (ilst.size - ilst.size / 2))
           + countT a (ilst.extract (ilst.size - ilst.size / 2) ilst.size) :=
-      countT_extract_split a ilst (ilst.size - ilst.size / 2) (by omega)
+      countT_extract_split a ilst (ilst.size - ilst.size / 2)
     -- prepare the first half
     obtain ⟨a1, hag1, hsat1, hw1, htop1, hunU1, hunL1, hbU1, hbL1, hszL1, hbig1, hflag1⟩ :=
       mtoPrepHalf_sat s a (ilst.extract 0 (ilst.size - ilst.size / 2)) hw hs hin_f

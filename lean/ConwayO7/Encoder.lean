@@ -18,7 +18,7 @@ plus the encoder's own product clauses and the three symmetry-breaking levels
 
 This port was cross-validated against a dependency-free Python reimplementation
 that reproduces `artifact/o7.cnf` byte-for-byte; the Lean theorem
-`ConwayO7/Data/EncoderMatch.lean : mkO7Cnf_eq` re-checks the identity in Lean.
+`ConwayO7/Data/EncoderMatch.lean.
 Clause and fresh-variable emission ORDER is part of the specification: variables are
 allocated by a single running counter exactly as pysat's `IDPool` does here (the
 encoder never calls `occupy`, so the pool is sequential).

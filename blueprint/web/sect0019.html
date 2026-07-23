@@ -12,9 +12,8 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The orbit quotient and the propositional encoding</title>
-<link rel="next" href="ssec-enc-orbits.html" title="The orbit quotient" />
-<link rel="prev" href="sect0007.html" title="Transport and the reduction" />
+<title>Trusted base</title>
+<link rel="prev" href="sec-certificates.html" title="Certificates" />
 <link rel="up" href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
@@ -60,10 +59,10 @@
 
   </ul>
  </li>
-<li class=" active current">
+<li class="">
   <a href="sec-encoding.html"><span class="toc_ref">3</span> <span class="toc_entry">The orbit quotient and the propositional encoding</span></a>
-  <span class="expand-toc">▼</span>
-  <ul class="sub-toc-1 active">
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
      <li class="">
   <a href="ssec-enc-orbits.html"><span class="toc_ref">3.1</span> <span class="toc_entry">The orbit quotient</span></a>
  </li>
@@ -132,7 +131,7 @@
 <li class="">
   <a href="sec-certificates.html"><span class="toc_ref">6</span> <span class="toc_entry">Certificates</span></a>
  </li>
-<li class="">
+<li class=" active current">
   <a href="sect0019.html"><span class="toc_ref"></span> <span class="toc_entry">Trusted base</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
@@ -144,30 +143,10 @@
 
 
 <div class="main-text">
-<h1 id="sec:encoding">3 The orbit quotient and the propositional encoding</h1>
-
-<p>By Theorem&#160;<a href="sect0007.html#thm:reduction">31</a> it suffices to decide whether some graph invariant under the canonical permutation \(\sigma _0\) is strongly regular with parameters \((99,14,1,2)\). This chapter carries out the reduction of that question to a single propositional formula \(\Phi \), and proves the direction that the certificate method needs: every invariant srg would give rise to a satisfying valuation of (the pre-normalisation part of) \(\Phi \). The chapter has five strands: the orbit quotient of the edge set (§<a href="ssec-enc-orbits.html">3.1</a>), the formula itself as a mathematical object, a Hoare-style framework for reasoning about clause-emitting transformations, the soundness of the three counting gadgets, and finally the bridge from strong regularity to the semantic counting invariants. </p>
+<h1 id="a0000000020">Trusted base</h1>
+<p> The formal proof rests on: the Lean&#160;4 kernel and mathlib; nineteen named computations executed by Lean’s compiled evaluator (each a finite check over the embedded data, including Facts&#160;<a href="ssec-enc-formula.html#fact:bytes">43</a> and <a href="sect0018.html#fact:tiling">122</a>); the HOL4-verified checker for Fact&#160;<a href="sec-certificates.html#fact:certificates">126</a>; and the identity of the two files (<span class="ttfamily">o7.cnf</span> and the cell list) shared between the Lean development and the certificate checking — by construction when both halves are run from one copy of the repository.   </p>
 
 </div> <!--main-text -->
-<nav class=local_toc>
-<ul>
-  <li>  
-  <a href="ssec-enc-orbits.html"><span class="toc_ref">3.1</span> <span class="toc_entry">The orbit quotient</span></a>
-  </li>
-  <li>  
-  <a href="ssec-enc-formula.html"><span class="toc_ref">3.2</span> <span class="toc_entry">The formula</span></a>
-  </li>
-  <li>  
-  <a href="ssec-enc-framework.html"><span class="toc_ref">3.3</span> <span class="toc_entry">The verification framework</span></a>
-  </li>
-  <li>  
-  <a href="ssec-enc-networks.html"><span class="toc_ref">3.4</span> <span class="toc_entry">Soundness of the counting networks</span></a>
-  </li>
-  <li>  
-  <a href="ssec-enc-bridge.html"><span class="toc_ref">3.5</span> <span class="toc_entry">The bridge from strong regularity</span></a>
-  </li>
-</ul>
-</nav>
 </div> <!-- content-wrapper -->
 </div> <!-- content -->
 </div> <!-- wrapper -->
@@ -177,11 +156,9 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sect0007.html" title="Transport and the reduction"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sec-certificates.html" title="Certificates"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
   <a href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
-</a>
-  <a href="ssec-enc-orbits.html" title="The orbit quotient"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

@@ -1,0 +1,100 @@
+\chapter{Certificates}\label{sec:certificates}
+
+\begin{definition}[Clausal derivations]\label{def:lrat}
+Let $F$ be a formula in conjunctive normal form, i.e.\ a finite set of
+\emph{clauses}, each a disjunction of literals.  A clause $C$ is
+\emph{entailed by reverse unit propagation} (RUP) from a set $G$ of clauses
+if, starting from the assumption that every literal of $C$ is false and
+repeatedly assigning any literal that is forced (because it is the last
+unfalsified literal of some clause of $G$), one reaches a clause of $G$ all
+of whose literals are falsified; this syntactic check implies the semantic
+entailment $G \models C$, since any valuation satisfying $G$ but falsifying
+$C$ would survive every propagation step.  A \emph{clausal derivation} from
+$F$ is a finite sequence of clauses, each entailed by reverse unit
+propagation from $F$ together with the preceding clauses (with clause
+deletions permitted along the way), ending in the empty clause --- the
+clause with no literals, satisfied by no valuation.  Since RUP steps
+preserve entailment, a clausal derivation witnesses that $F$ is
+unsatisfiable.  The \emph{LRAT format} additionally annotates each step
+with the indices of the clauses used, so that a derivation can be checked
+in time linear in its length; Lean's standard library formalises LRAT
+derivations as sequences of addition and deletion actions.
+\lean{Std.Tactic.BVDecide.LRAT.IntAction, Std.Tactic.BVDecide.LRAT.parseLRATProof}\leanok
+\end{definition}
+
+\begin{theorem}[The verified checker]\label{crt-checker}
+Lean's standard library provides an executable checker taking an LRAT
+derivation and a CNF, and a soundness theorem proved in Lean: whenever the
+checker accepts, the formula is unsatisfiable.  Consequently a run of the
+checker inside Lean's kernel converts a concrete derivation into a genuine
+Lean proof of unsatisfiability, with no unverified translation step.
+\lean{Std.Tactic.BVDecide.LRAT.check, Std.Tactic.BVDecide.LRAT.check_sound}\leanok
+\uses{def:lrat}
+\end{theorem}
+
+\begin{fact}[In-kernel sample replay]\label{crt-sample}
+Cell number $4092$ of the distributed family (historically cube $4093$ of
+the first-round split) is unsatisfiable together with $\Phi$: the
+distributed derivation for this cell, whose compressed file is pinned by
+its SHA-256 hash, is replayed through the verified checker of
+Theorem~\ref{crt-checker} against the formula
+$\Phi \wedge (\text{cell})$ built from the byte-identical embedded data by
+the same cube-adjunction used throughout the pipeline.  This is the
+calibration sample: a sign convention, off-by-one, or clause-order mismatch
+anywhere between the Lean development and the distributed artifact would
+make this check fail.
+\lean{ConwayO7.cube4093_unsat}\leanok
+\uses{def:lrat, crt-checker, fact:bytes, fact:tiling}
+\end{fact}
+
+\begin{fact}[The external hypothesis]\label{fact:certificates}
+For each of the $98{,}536$ cells there is a clausal derivation refuting
+$\Phi \wedge (\text{cell } s)$.  Each derivation was checked by
+\textsf{cake\_lpr}, an LRAT checker formally verified (in HOL4) down to the
+machine code that executes; verification was performed on the distributed
+files, whose hashes are pinned.  This is the unique hypothesis of the
+development not discharged inside Lean; one of the $98{,}536$ instances is
+additionally replayed inside Lean's kernel (Fact~\ref{crt-sample}),
+eliminating even the translation gap for that sample.
+\uses{def:lrat, crt-sample, fact:bytes, fact:tiling}
+\end{fact}
+
+\begin{theorem}[The certificate schema]\label{crt-schema}
+Let $F$ be a CNF, and let $S$ be a prefix-free family of sign words of full
+Kraft mass over a fixed variable order (Definition~\ref{def:prefix},
+Lemma~\ref{lem:kraft}).  If $F \wedge (\text{cell } s)$ is unsatisfiable
+for every $s \in S$, and $F$ encodes the $\sigma_0$-invariant strongly
+regular graphs (Definition~\ref{st-encodes}), then no strongly regular
+graph with parameters $(99,14,1,2)$ has automorphism group of order
+divisible by $7$.  This composes the refutation-by-cells theorem
+(Theorem~\ref{thm:coverage}) with the conditional main theorem
+(Theorem~\ref{st-conditional}); a variant takes the prefix-freeness and
+Kraft hypotheses in the executable form of the cover checker.
+\lean{ConwayO7.no_aut_seven_of_certificates, ConwayO7.no_aut_seven_of_checked_certificates}\leanok
+\uses{st-conditional, st-encodes, thm:coverage, def:prefix, lem:kraft}
+\end{theorem}
+
+\begin{theorem}[The schema on the distributed family]\label{crt-tiling}
+Instantiate Theorem~\ref{crt-schema} with $F = \Phi$ and $S$ the
+distributed family of $98{,}536$ words: if $\Phi \wedge (\text{cell } s)$
+is unsatisfiable for every $s$ in the family, and $\Phi$ encodes the
+$\sigma_0$-invariant strongly regular graphs, then the conclusion of the
+main theorem holds.  The combinatorial hypotheses on $S$ are discharged by
+the executed cover check (Fact~\ref{fact:tiling}); the remaining hypotheses
+are exactly the per-cell unsatisfiability facts and encoding completeness.
+\lean{ConwayO7.no_aut_seven_of_tiling_certificates}\leanok
+\uses{crt-schema, fact:tiling, def:phi}
+\end{theorem}
+
+\begin{proof}[Assembly of Theorem~\ref{thm:main}]
+\proves{thm:main}
+\uses{crt-tiling, thm:encoding-complete, fact:certificates}
+Apply Theorem~\ref{crt-tiling}.  Its per-cell hypothesis is
+Fact~\ref{fact:certificates}: every $\Phi \wedge (\text{cell } s)$ for $s$
+in the distributed family is unsatisfiable.  Its encoding hypothesis is
+Theorem~\ref{thm:encoding-complete}: $\Phi$ encodes the
+$\sigma_0$-invariant $\srg(99,14,1,2)$s.  Hence no $\srg(99,14,1,2)$, on
+any finite vertex set, has automorphism group of order divisible by $7$.
+\end{proof}
+
+%=====================================================================

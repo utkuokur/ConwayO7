@@ -12,9 +12,9 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fixed points of prime-order permutations</title>
-<link rel="next" href="sect0003.html" title="Local structure of an " />
-<link rel="prev" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
+<title>Transport and the reduction</title>
+<link rel="next" href="sec-encoding.html" title="The orbit quotient and the propositional encoding" />
+<link rel="prev" href="sect0006.html" title="The canonical permutation " />
 <link rel="up" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
@@ -39,7 +39,7 @@
   <a href="sec-group.html"><span class="toc_ref">2</span> <span class="toc_entry">From an order-seven automorphism to a canonical one</span></a>
   <span class="expand-toc">▼</span>
   <ul class="sub-toc-1 active">
-     <li class=" active current">
+     <li class="">
   <a href="sect0002.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Fixed points of prime-order permutations</span></a>
  </li>
 <li class="">
@@ -54,7 +54,7 @@
 <li class="">
   <a href="sect0006.html"><span class="toc_ref">2.5</span> <span class="toc_entry">The canonical permutation \(\sigma _0\)</span></a>
  </li>
-<li class="">
+<li class=" active current">
   <a href="sect0007.html"><span class="toc_ref">2.6</span> <span class="toc_entry">Transport and the reduction</span></a>
  </li>
 
@@ -144,15 +144,14 @@
 
 
 <div class="main-text">
-<h1 id="a0000000003">2.1 Fixed points of prime-order permutations</h1>
-<p>We begin with elementary counting lemmas about permutations \(\pi \) with \(\pi ^p = 1\) for a prime \(p\). Throughout, \(\operatorname {Fix}\pi \) denotes the set of fixed points and \(\operatorname {supp}\pi \) its complement, the support. </p>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-support-multiple">
+<h1 id="a0000000008">2.6 Transport and the reduction</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-srg-transport">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6</span>
-    <span class="lemma_thmtitle">Support is a multiple of \(p\)</span>
+    <span class="lemma_thmlabel">29</span>
+    <span class="lemma_thmtitle">Transport of strong regularity</span>
     <div class="thm_header_extras">
 
     
@@ -160,11 +159,31 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-support-multiple">#</a>
+    <a class="icon proof" href="sect0007.html#lem:grp-srg-transport">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0007.html#a0000000041"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -178,7 +197,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_support_of_pow_prime_eq_one" class="lean_decl">ConwayO7.card_support_of_pow_prime_eq_one</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.isSRGWith_of_iso" class="lean_decl">ConwayO7.isSRGWith_of_iso</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.IsSRGWith.of_iso" class="lean_decl">ConwayO7.IsSRGWith.of_iso</a></li>
           
         </ul>
     
@@ -189,11 +210,11 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation of a finite type with \(\pi ^p = 1\) for a prime \(p\). Then \(|\operatorname {supp}\pi |\) is a multiple of \(p\). </p>
+  <p> If \(G \simeq _g H\) is an isomorphism of finite graphs and \(G\) is an \(\mathrm{srg}(n,k,\lambda ,\mu )\), then so is \(H\).  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000023">
+<div class="proof_wrapper" id="a0000000041">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -201,17 +222,17 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Either \(\pi = 1\), with empty support, or \(\operatorname {ord}\pi = p\); in the latter case the cycle type of \(\pi \) is a multiset of copies of \(p\), and the support is the disjoint union of the cycles. </p>
+  <p>The isomorphism identifies neighbourhoods and common neighbourhoods vertex-by-vertex, so all four parameters are preserved. </p>
 
   </div>
 </div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fix-support">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:grp-wlog">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
     </span>
-    <span class="lemma_thmlabel">7</span>
-    <span class="lemma_thmtitle">Fixed points and support partition the domain</span>
+    <span class="theorem_thmlabel">30</span>
+    <span class="theorem_thmtitle">WLOG \(\sigma _0\)</span>
     <div class="thm_header_extras">
 
     
@@ -219,56 +240,40 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-fix-support">#</a>
+    <a class="icon proof" href="sect0007.html#thm:grp-wlog">#</a>
     
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_add_card_support" class="lean_decl">ConwayO7.card_filter_fixed_add_card_support</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p> For any permutation \(\pi \) of a finite type \(\alpha \), \(|\operatorname {Fix}\pi | + |\operatorname {supp}\pi | = |\alpha |\). </p>
-
-  </div>
-</div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fixed-congruence">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">8</span>
-    <span class="lemma_thmtitle">Fixed-point congruence</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0002.html#lem:grp-fixed-congruence">#</a>
-    
-    <a class="icon proof" href="sect0002.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0007.html#a0000000042"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+          <li><a href="sect0006.html#def:sigma0">Definition 22</a></li>
+          
+          <li><a href="sect0007.html#lem:grp-srg-transport">Lemma 29</a></li>
+          
+          <li><a href="sect0005.html#cor:grp-aut-cycle-type">Corollary 21</a></li>
+          
+          <li><a href="sect0006.html#lem:grp-sigma0-cycle-type">Lemma 28</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
     
     <button class="modal lean">L∃∀N</button>
         <div class="modal-container">
@@ -281,7 +286,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_modEq" class="lean_decl">ConwayO7.card_filter_fixed_modEq</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.exists_sigma0_invariant" class="lean_decl">ConwayO7.exists_sigma0_invariant</a></li>
           
         </ul>
     
@@ -291,34 +296,30 @@
     
         </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation with \(\pi ^p = 1\), \(p\) prime, and let \(s\) be a finite \(\pi \)-invariant set. Then </p>
-<div class="displaymath" id="a0000000025">
-  \[  |\{ a \in s \mid \pi a = a\} | \equiv |s| \pmod p .  \]
-</div>
-
+  <div class="theorem_thmcontent">
+  <p> If some \(\mathrm{srg}(99,14,1,2)\) \(\Gamma \), on any vertex set, admits an automorphism of order \(7\), then some \(\mathrm{srg}(99,14,1,2)\) on the vertex set \(\{ 0,\dots ,98\} \) is invariant under \(\sigma _0\).  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000024">
+<div class="proof_wrapper" id="a0000000042">
   <div class="proof_heading">
     <span class="proof_caption">
-    Proof
+    Proof sketch
     </span>
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p> Since \(\pi \) is injective and \(s\) is finite, \(\pi (s) \subseteq s\) upgrades to \(\pi (s) = s\), so \(\pi \) restricts to a permutation \(\pi '\) of \(s\) with \((\pi ')^p = 1\). By Lemmas&#160;<a href="sect0002.html#lem:grp-support-multiple">6</a> and&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> applied to \(\pi '\), the fixed points of \(\pi \) inside \(s\) number \(|s| - pm\) for some \(m\). (We will apply this with \(p = 7\) to the vertex set and to a neighbourhood, and with \(p = 2\) to a matching involution.) </p>
+  <p> Transport \(\Gamma \) to \(\{ 0,\dots ,98\} \) along any bijection of vertex sets (possible since \(|V| = 99\)); by Lemma&#160;<a href="sect0007.html#lem:grp-srg-transport">29</a> the transported graph is again an \(\mathrm{srg}(99,14,1,2)\), and the automorphism pushes through to an order-seven adjacency-preserving permutation \(\pi _1\). By Corollary&#160;<a href="sect0005.html#cor:grp-aut-cycle-type">21</a> and Lemma&#160;<a href="sect0006.html#lem:grp-sigma0-cycle-type">28</a>, \(\pi _1\) and \(\sigma _0\) have the same cycle type \([7^{14}]\), hence are conjugate in the symmetric group (mathlib’s <span class="ttfamily">Equiv.Perm.isConj_iff_cycleType_eq</span>); say \(\tau \pi _1 \tau ^{-1} = \sigma _0\). Relabelling once more by \(\tau \) yields an \(\mathrm{srg}(99,14,1,2)\) invariant under \(\sigma _0\) itself. </p>
 
   </div>
 </div>
-<div class="proposition_thmwrapper theorem-style-plain" id="lem:grp-cycletype-of-fixed">
-  <div class="proposition_thmheading">
-    <span class="proposition_thmcaption">
-    Proposition
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:reduction">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
     </span>
-    <span class="proposition_thmlabel">9</span>
-    <span class="proposition_thmtitle">Cycle type from a fixed-point count</span>
+    <span class="theorem_thmlabel">31</span>
+    <span class="theorem_thmtitle">Reduction to \(\sigma _0\)</span>
     <div class="thm_header_extras">
 
     
@@ -326,11 +327,37 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-cycletype-of-fixed">#</a>
+    <a class="icon proof" href="sect0007.html#thm:reduction">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0007.html#a0000000043"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+          <li><a href="sect0006.html#def:sigma0">Definition 22</a></li>
+          
+          <li><a href="sect0005.html#lem:cauchy">Lemma 20</a></li>
+          
+          <li><a href="sect0007.html#thm:grp-wlog">Theorem 30</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -344,7 +371,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_eq_replicate_of_fixed" class="lean_decl">ConwayO7.cycleType_eq_replicate_of_fixed</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.seven_not_dvd_card_aut_of_no_sigma0_invariant" class="lean_decl">ConwayO7.seven_not_dvd_card_aut_of_no_sigma0_invariant</a></li>
           
         </ul>
     
@@ -354,12 +381,12 @@
     
         </div>
   </div>
-  <div class="proposition_thmcontent">
-  <p> Let \(\pi \ne 1\) be a permutation of a finite type of cardinality \(f + pm\) with \(\pi ^p = 1\), \(p\) prime, and exactly \(f\) fixed points. Then the cycle type of \(\pi \) is \([p^m]\). </p>
+  <div class="theorem_thmcontent">
+  <p> Suppose no \(\mathrm{srg}(99,14,1,2)\) on the vertex set \(\{ 0,\dots ,98\} \) is invariant under \(\sigma _0\). Then \(7 \nmid |\operatorname {Aut}\Gamma |\) for every \(\mathrm{srg}(99,14,1,2)\) \(\Gamma \).  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000026">
+<div class="proof_wrapper" id="a0000000043">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -367,7 +394,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p> Since \(\pi \ne 1\) and \(\pi ^p = 1\), the order of \(\pi \) is exactly \(p\), so its cycle type is \([p^n]\) for some \(n \ge 1\). By Lemma&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> the support has \(pm\) elements, and the cycle lengths sum to the support size, so \(pn = pm\) and \(n = m\). </p>
+  <p> If \(7 \mid |\operatorname {Aut}\Gamma |\) then by the Cauchy step (Lemma&#160;<a href="sect0005.html#lem:cauchy">20</a>) some automorphism has order \(7\), and Theorem&#160;<a href="sect0007.html#thm:grp-wlog">30</a> produces a \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) on \(\{ 0,\dots ,98\} \) — contradicting the hypothesis. The hypothesis is exactly the statement encoded as a CNF formula in Chapter&#160;<a href="sec-encoding.html">3</a> and refuted by the verified proof checker, completing this branch of Theorem&#160;<a href="sect0001.html#thm:main">3</a>. </p>
 
   </div>
 </div>
@@ -382,11 +409,11 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0006.html" title="The canonical permutation \(\sigma _0\)"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
   <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0003.html" title="Local structure of an \(\mathrm{srg}(99,14,1,2)\)"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sec-encoding.html" title="The orbit quotient and the propositional encoding"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

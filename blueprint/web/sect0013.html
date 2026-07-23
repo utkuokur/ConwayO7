@@ -12,10 +12,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Strongly regular graphs and the statement</title>
-<link rel="next" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
-<link rel="prev" href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven" />
-<link rel="up" href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven" />
+<title>The comparison chains</title>
+<link rel="next" href="sect0014.html" title="Assembly" />
+<link rel="prev" href="sect0012.html" title="Word values and minimisation" />
+<link rel="up" href="sec-lex.html" title="Completeness of the normalisation" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 <link rel="stylesheet" href="styles/showmore.css" />
@@ -32,7 +32,7 @@
 <div class="wrapper">
 <nav class="toc">
 <ul class="sub-toc-0">
-<li class=" active current">
+<li class="">
   <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Strongly regular graphs and the statement</span></a>
  </li>
 <li class="">
@@ -82,10 +82,10 @@
 
   </ul>
  </li>
-<li class="">
+<li class=" active">
   <a href="sec-lex.html"><span class="toc_ref">4</span> <span class="toc_entry">Completeness of the normalisation</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
      <li class="">
   <a href="sect0008.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Transport of strong regularity</span></a>
  </li>
@@ -101,7 +101,7 @@
 <li class="">
   <a href="sect0012.html"><span class="toc_ref">4.5</span> <span class="toc_entry">Word values and minimisation</span></a>
  </li>
-<li class="">
+<li class=" active current">
   <a href="sect0013.html"><span class="toc_ref">4.6</span> <span class="toc_entry">The comparison chains</span></a>
  </li>
 <li class="">
@@ -144,14 +144,14 @@
 
 
 <div class="main-text">
-<h1 id="a0000000002">1 Strongly regular graphs and the statement</h1>
-<div class="definition_thmwrapper theorem-style-definition" id="def:srg">
+<h1 id="a0000000014">4.6 The comparison chains</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:lex-leq">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1</span>
-    <span class="definition_thmtitle">Strongly regular graph</span>
+    <span class="definition_thmlabel">86</span>
+    <span class="definition_thmtitle">Lexicographic comparison of literal words</span>
     <div class="thm_header_extras">
 
     
@@ -159,8 +159,30 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#def:srg">#</a>
+    <a class="icon proof" href="sect0013.html#def:lex-leq">#</a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="ssec-enc-formula.html#def:phi">Definition 40</a></li>
+          
+          <li><a href="sect0009.html#def:relabel">Definition 67</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -174,7 +196,11 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/SimpleGraph.IsSRGWith" class="lean_decl">SimpleGraph.IsSRGWith</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.LexLeq" class="lean_decl">ConwayO7.Encoder.LexLeq</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.lexXA" class="lean_decl">ConwayO7.Encoder.lexXA</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.lexYA" class="lean_decl">ConwayO7.Encoder.lexYA</a></li>
           
         </ul>
     
@@ -185,17 +211,17 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> A finite graph \(\Gamma \) on \(n\) vertices is <em>strongly regular with parameters \((n,k,\lambda ,\mu )\)</em> if it is \(k\)-regular, any two adjacent vertices have exactly \(\lambda \) common neighbours, and any two distinct non-adjacent vertices have exactly \(\mu \) common neighbours. Whether a graph with parameters \((99,14,1,2)\) — the <em>Conway 99-graph</em> — exists is open; the present development constrains its possible symmetries. </p>
+  <p> Fix two sequences \(X, Y\) of \(693\) literals over the orbit variables — for the encoding, \(X\) lists the orbit variables in position order and \(Y\) lists them re-indexed by a generator’s orbit action. A valuation \(a\) satisfies \(X \preceq Y\) if for every \(i {\lt} 693\): whenever the literal values of \(X\) and \(Y\) agree at all positions \(j {\lt} i\) and the \(i\)-th literal of \(X\) is true, the \(i\)-th literal of \(Y\) is true. This is the lexicographic comparison of the two literal-value words under \(a\).  </p>
 
   </div>
 </div>
-<div class="definition_thmwrapper theorem-style-definition" id="st-aut">
+<div class="definition_thmwrapper theorem-style-definition" id="def:lex-inv">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">2</span>
-    <span class="definition_thmtitle">Automorphism group</span>
+    <span class="definition_thmlabel">87</span>
+    <span class="definition_thmtitle">The lex-leader invariant</span>
     <div class="thm_header_extras">
 
     
@@ -203,8 +229,32 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#st-aut">#</a>
+    <a class="icon proof" href="sect0013.html#def:lex-inv">#</a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0013.html#def:lex-leq">Definition 86</a></li>
+          
+          <li><a href="sect0009.html#def:relabel">Definition 67</a></li>
+          
+          <li><a href="ssec-enc-formula.html#def:phi">Definition 40</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -218,7 +268,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/SimpleGraph.Iso" class="lean_decl">SimpleGraph.Iso</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.LexInv" class="lean_decl">ConwayO7.Encoder.LexInv</a></li>
           
         </ul>
     
@@ -229,25 +279,25 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> An <em>isomorphism</em> between graphs \(\Gamma \) and \(\Gamma '\) is a bijection of vertex sets under which adjacency in \(\Gamma \) corresponds exactly to adjacency in \(\Gamma '\). The isomorphisms from a graph \(\Gamma \) to itself form a group, the <em>automorphism group</em> \(\operatorname {Aut}\Gamma \). For a finite graph this group is finite, and its order \(|\operatorname {Aut}\Gamma |\) is the quantity constrained by the main theorem: the formal statements are about the cardinality of the type of self-isomorphisms \(\Gamma \cong \Gamma \). </p>
+  <p> A valuation of the orbit variables satisfies the <em>lex-leader invariant</em> if for each of the \(101\) generators \(\rho \) it satisfies \(X \preceq Y_\rho \), where \(Y_\rho \) is \(X\) re-indexed by \(\rho \)’s orbit action. On words this says precisely \(\omega \preceq \rho \cdot \omega \) for every generator \(\rho \), i.e. condition (4) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a>.  </p>
 
   </div>
 </div>
-<div class="theorem_thmwrapper theorem-style-plain" id="thm:main">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:lex-chain-sat">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
     </span>
-    <span class="theorem_thmlabel">3</span>
-    <span class="theorem_thmtitle">Main theorem</span>
+    <span class="lemma_thmlabel">88</span>
+    <span class="lemma_thmtitle">Satisfiability of one comparison chain</span>
     <div class="thm_header_extras">
 
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#thm:main">#</a>
+    <a class="icon proof" href="sect0013.html#lem:lex-chain-sat">#</a>
     
-    <a class="icon proof" href="sec-certificates.html#a0000000021"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0013.html#a0000000071"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -263,23 +313,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          <li><a href="sect0013.html#def:lex-leq">Definition 86</a></li>
           
-          <li><a href="sect0001.html#st-aut">Definition 2</a></li>
-          
-          <li><a href="sect0001.html#st-conditional">Theorem 5</a></li>
-          
-          <li><a href="sect0014.html#thm:encoding-complete">Theorem 94</a></li>
-          
-          <li><a href="sect0017.html#thm:coverage">Theorem 117</a></li>
-          
-          <li><a href="sec-certificates.html#fact:certificates">Computed Fact 126</a></li>
-          
-          <li><a href="sec-certificates.html#crt-tiling">Theorem 128</a></li>
-          
-          <li><a href="sect0014.html#thm:encoding-complete">Theorem 94</a></li>
-          
-          <li><a href="sec-certificates.html#fact:certificates">Computed Fact 126</a></li>
+          <li><a href="ssec-enc-formula.html#def:phi">Definition 40</a></li>
           
         </ul>
     
@@ -299,7 +335,9 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.no_aut_seven" class="lean_decl">ConwayO7.no_aut_seven</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.specAddLexLeq_sat" class="lean_decl">ConwayO7.Encoder.specAddLexLeq_sat</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.specAddLexLeq" class="lean_decl">ConwayO7.Encoder.specAddLexLeq</a></li>
           
         </ul>
     
@@ -309,160 +347,106 @@
     
         </div>
   </div>
-  <div class="theorem_thmcontent">
-  <p> Let \(\Gamma \) be a strongly regular graph with parameters \((99,14,1,2)\), on any vertex set. Then \(7 \nmid |\operatorname {Aut}\Gamma |\); in particular \(\Gamma \) has no automorphism of order \(7\).  </p>
+  <div class="lemma_thmcontent">
+  <p> The clauses rendering one comparison \(X \preceq Y\) use fresh auxiliary registers. Every valuation \(a\) that satisfies all previously emitted clauses and the comparison \(X \preceq Y\) (on literal values) extends, by assigning only the fresh registers, to a valuation satisfying all clauses of the chain as well.  </p>
 
   </div>
 </div>
-<p>The proof is a chain of reductions. First, group theory reduces the statement to the non-existence of a graph invariant under one <em>fixed</em> permutation \(\sigma _0\) of order \(7\) (§<a href="sec-group.html">2</a>). Second, such invariant graphs are encoded as Boolean valuations satisfying an explicit propositional formula \(\Phi \); the encoding is proved <em>complete</em>: if an invariant graph exists, \(\Phi \) is satisfiable (§<a href="sec-encoding.html">3</a>, §<a href="sec-lex.html">4</a>). Third, \(\Phi \) is proved unsatisfiable by a partition of the valuation space into \(98{,}536\) cells, each refuted by a checked certificate (§<a href="sec-coverage.html">5</a>, §<a href="sec-certificates.html">6</a>). The interface between the first two steps and the last is isolated in the following definition and conditional theorem. </p>
-<div class="definition_thmwrapper theorem-style-definition" id="st-encodes">
-  <div class="definition_thmheading">
-    <span class="definition_thmcaption">
-    Definition
-    </span>
-    <span class="definition_thmlabel">4</span>
-    <span class="definition_thmtitle">Encoding invariant graphs</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0001.html#st-encodes">#</a>
-    
-    
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.EncodesInvariantSRG" class="lean_decl">ConwayO7.EncodesInvariantSRG</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="definition_thmcontent">
-  <p> Let \(F\) be a propositional formula in conjunctive normal form. Say that \(F\) <em>encodes the \(\sigma _0\)-invariant strongly regular graphs</em> if for every graph \(H\) on the vertex set \(\{ 0,1,\dots ,98\} \) which is strongly regular with parameters \((99,14,1,2)\) and satisfies \(H(\sigma _0 u,\sigma _0 v) \Leftrightarrow H(u,v)\) for all vertices \(u,v\), there exists a Boolean valuation satisfying \(F\). Note the direction: only “graph \(\Rightarrow \) satisfying valuation” is required. If \(F\) were satisfiable but meaningless the main theorem would become vacuous, not wrong; it is the <em>unsatisfiability</em> of \(F\) that does the refuting.  </p>
-
-  </div>
-</div>
-<div class="theorem_thmwrapper theorem-style-plain" id="st-conditional">
-  <div class="theorem_thmheading">
-    <span class="theorem_thmcaption">
-    Theorem
-    </span>
-    <span class="theorem_thmlabel">5</span>
-    <span class="theorem_thmtitle">Conditional main theorem</span>
-    <div class="thm_header_extras">
-
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0001.html#st-conditional">#</a>
-    
-    <a class="icon proof" href="sect0001.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    
-    
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
-          
-          <li><a href="sect0001.html#st-aut">Definition 2</a></li>
-          
-          <li><a href="sect0001.html#st-encodes">Definition 4</a></li>
-          
-          <li><a href="sect0007.html#thm:reduction">Theorem 31</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.no_aut_seven_of_unsat" class="lean_decl">ConwayO7.no_aut_seven_of_unsat</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="theorem_thmcontent">
-  <p> Let \(F\) be an unsatisfiable formula which encodes the \(\sigma _0\)-invariant strongly regular graphs in the sense of Definition&#160;<a href="sect0001.html#st-encodes">4</a>. Then no strongly regular graph with parameters \((99,14,1,2)\), on any finite vertex set, has automorphism group of order divisible by \(7\).  </p>
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000022">
+<div class="proof_wrapper" id="a0000000071">
   <div class="proof_heading">
     <span class="proof_caption">
-    Proof
+    Proof sketch
     </span>
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Suppose \(\Gamma \) were such a graph with \(7 \mid |\operatorname {Aut}\Gamma |\). By the group-theoretic reduction (Theorem&#160;<a href="sect0007.html#thm:reduction">31</a>), there would then be a \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\) on \(\{ 0,\dots ,98\} \); since \(F\) encodes these graphs, \(F\) would be satisfiable, contradicting the hypothesis. </p>
+  <p> The chain introduces, at each position where the two literals differ structurally, one register meaning “all earlier positions agree”, defined by clauses from its predecessor and the current pair, together with the implication (\(i\)-th literal of \(X\) true \(\Rightarrow \) \(i\)-th literal of \(Y\) true) guarded by the previous register. Assign each register its intended truth value — the running equality flag of the literal-value words. Every defining clause then holds by construction, and every guarded implication holds because the comparison \(X \preceq Y\) supplies exactly the implication at each position whose strict prefix agrees. Induction over the positions of the chain. </p>
 
   </div>
 </div>
-<p>The remainder of the blueprint instantiates the two hypotheses for the concrete formula \(\Phi \) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a>: encoding completeness is Theorem&#160;<a href="sect0014.html#thm:encoding-complete">94</a>, and unsatisfiability is delivered by Theorem&#160;<a href="sect0017.html#thm:coverage">117</a> together with Fact&#160;<a href="sec-certificates.html#fact:certificates">126</a>. </p>
+<div class="proposition_thmwrapper theorem-style-plain" id="prop:lex-section-trip">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">89</span>
+    <span class="proposition_thmtitle">The comparison section</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0013.html#prop:lex-section-trip">#</a>
+    
+    <a class="icon proof" href="sect0013.html#a0000000072"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0013.html#def:lex-inv">Definition 87</a></li>
+          
+          <li><a href="sect0013.html#lem:lex-chain-sat">Lemma 88</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.lex_section_trip" class="lean_decl">ConwayO7.Encoder.lex_section_trip</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.specAddLexLeq_trip" class="lean_decl">ConwayO7.Encoder.specAddLexLeq_trip</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.Encoder.specLexAgainst_trip" class="lean_decl">ConwayO7.Encoder.specLexAgainst_trip</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p> The full minimality section of the encoding — the \(101\) chained comparisons of condition (4) — preserves satisfiability: any valuation of the orbit block satisfying the lex-leader invariant extends over the auxiliary registers of the section to satisfy every clause the section emits.  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000072">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof sketch
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> Each of the \(101\) chains is handled by Lemma&#160;<a href="sect0013.html#lem:lex-chain-sat">88</a>, whose hypothesis is one conjunct of the lex-leader invariant; the extensions compose because each chain touches only its own fresh registers, leaving the orbit block — and hence the invariant — unchanged. </p>
+
+  </div>
+</div>
 
 </div> <!--main-text -->
 </div> <!-- content-wrapper -->
@@ -474,11 +458,11 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0012.html" title="Word values and minimisation"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="index.html" title="No strongly regular graph srg(99,14,1,2) admits an automorphism of order seven"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="sec-lex.html" title="Completeness of the normalisation"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0014.html" title="Assembly"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

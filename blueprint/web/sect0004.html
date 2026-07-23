@@ -12,9 +12,9 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fixed points of prime-order permutations</title>
-<link rel="next" href="sect0003.html" title="Local structure of an " />
-<link rel="prev" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
+<title>The fixed-point count and the cycle type</title>
+<link rel="next" href="sect0005.html" title="The automorphism group" />
+<link rel="prev" href="sect0003.html" title="Local structure of an " />
 <link rel="up" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
@@ -39,13 +39,13 @@
   <a href="sec-group.html"><span class="toc_ref">2</span> <span class="toc_entry">From an order-seven automorphism to a canonical one</span></a>
   <span class="expand-toc">▼</span>
   <ul class="sub-toc-1 active">
-     <li class=" active current">
+     <li class="">
   <a href="sect0002.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Fixed points of prime-order permutations</span></a>
  </li>
 <li class="">
   <a href="sect0003.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Local structure of an \(\mathrm{srg}(99,14,1,2)\)</span></a>
  </li>
-<li class="">
+<li class=" active current">
   <a href="sect0004.html"><span class="toc_ref">2.3</span> <span class="toc_entry">The fixed-point count and the cycle type</span></a>
  </li>
 <li class="">
@@ -144,15 +144,14 @@
 
 
 <div class="main-text">
-<h1 id="a0000000003">2.1 Fixed points of prime-order permutations</h1>
-<p>We begin with elementary counting lemmas about permutations \(\pi \) with \(\pi ^p = 1\) for a prime \(p\). Throughout, \(\operatorname {Fix}\pi \) denotes the set of fixed points and \(\operatorname {supp}\pi \) its complement, the support. </p>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-support-multiple">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<h1 id="a0000000005">2.3 The fixed-point count and the cycle type</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="lem:fixed">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
     </span>
-    <span class="lemma_thmlabel">6</span>
-    <span class="lemma_thmtitle">Support is a multiple of \(p\)</span>
+    <span class="theorem_thmlabel">15</span>
+    <span class="theorem_thmtitle">Exactly one fixed vertex</span>
     <div class="thm_header_extras">
 
     
@@ -160,11 +159,41 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-support-multiple">#</a>
+    <a class="icon proof" href="sect0004.html#lem:fixed">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0004.html#a0000000029"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+          <li><a href="sect0002.html#lem:grp-fixed-congruence">Lemma 8</a></li>
+          
+          <li><a href="sect0003.html#lem:grp-unique-triangle">Lemma 10</a></li>
+          
+          <li><a href="sect0003.html#lem:grp-mu-pair">Lemma 11</a></li>
+          
+          <li><a href="sect0003.html#lem:grp-equivariance">Lemma 13</a></li>
+          
+          <li><a href="sect0003.html#lem:grp-rigidity">Proposition 14</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -178,7 +207,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_support_of_pow_prime_eq_one" class="lean_decl">ConwayO7.card_support_of_pow_prime_eq_one</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_eq_one" class="lean_decl">ConwayO7.card_filter_fixed_eq_one</a></li>
           
         </ul>
     
@@ -188,12 +217,98 @@
     
         </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation of a finite type with \(\pi ^p = 1\) for a prime \(p\). Then \(|\operatorname {supp}\pi |\) is a multiple of \(p\). </p>
+  <div class="theorem_thmcontent">
+  <p> Let \(\Gamma \) be an \(\mathrm{srg}(99,14,1,2)\) and let \(\pi \) be an adjacency-preserving permutation of its vertices with \(\operatorname {ord}\pi = 7\). Then \(\pi \) fixes exactly one vertex.  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000023">
+<div class="proof_wrapper" id="a0000000029">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof sketch
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> <em>Step 0.</em> By the congruence (Lemma&#160;<a href="sect0002.html#lem:grp-fixed-congruence">8</a>, \(p = 7\), \(s = V\)), \(|\operatorname {Fix}\pi | \equiv 99 \equiv 1 \pmod7\); in particular a fixed vertex \(x\) exists. </p>
+<p><em>Step 1.</em> Let \(s = N(x) \cap \operatorname {Fix}\pi \) be the set of fixed neighbours of \(x\). By \(\lambda = 1\), the map sending \(u \in N(x)\) to the apex of the unique triangle over the edge \(xu\) is a fixed-point-free involution of \(N(x)\); by equivariance and uniqueness of the apex it preserves \(s\), so (Lemma&#160;<a href="sect0002.html#lem:grp-fixed-congruence">8</a> with \(p = 2\)) \(|s|\) is even. Applying the congruence with \(p = 7\) to the invariant set \(N(x)\) gives \(|s| \equiv 14 \equiv 0 \pmod7\); together with \(|s| \le 14\) this leaves \(|s| \in \{ 0, 14\} \). </p>
+<p><em>Step 2.</em> If \(|s| = 14\) then \(\pi \) fixes \(x\) and all of \(N(x)\), so \(\pi = 1\) by rigidity (Proposition&#160;<a href="sect0003.html#lem:grp-rigidity">14</a>), contradicting \(\operatorname {ord}\pi = 7\). Hence \(s = \emptyset \). </p>
+<p><em>Step 3.</em> Suppose \(w \ne x\) were a second fixed vertex. It cannot be adjacent to \(x\) (it would lie in \(s\)). Otherwise \(\pi \) permutes the two common neighbours \(\{ a,b\}  = N(x,w)\); neither is fixed (both are neighbours of \(x\)), so \(\pi \) swaps them. Then \(\pi ^2\) fixes \(a\), and \(\pi = (\pi ^2)^4\) fixes \(a \in N(x)\) — contradiction. So \(\operatorname {Fix}\pi = \{ x\} \). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:grp-cycle-type">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">16</span>
+    <span class="theorem_thmtitle">Cycle type \([1,7^{14}]\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#thm:grp-cycle-type">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#def:srg">Definition 1</a></li>
+          
+          <li><a href="sect0004.html#lem:fixed">Theorem 15</a></li>
+          
+          <li><a href="sect0002.html#lem:grp-fix-support">Lemma 7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_eq_replicate" class="lean_decl">ConwayO7.cycleType_eq_replicate</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p> With \(\Gamma \) and \(\pi \) as in Theorem&#160;<a href="sect0004.html#lem:fixed">15</a>, the cycle type of \(\pi \) is \([7^{14}]\): one fixed vertex and fourteen \(7\)-cycles.  </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000030">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -201,173 +316,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Either \(\pi = 1\), with empty support, or \(\operatorname {ord}\pi = p\); in the latter case the cycle type of \(\pi \) is a multiset of copies of \(p\), and the support is the disjoint union of the cycles. </p>
-
-  </div>
-</div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fix-support">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">7</span>
-    <span class="lemma_thmtitle">Fixed points and support partition the domain</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0002.html#lem:grp-fix-support">#</a>
-    
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_add_card_support" class="lean_decl">ConwayO7.card_filter_fixed_add_card_support</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p> For any permutation \(\pi \) of a finite type \(\alpha \), \(|\operatorname {Fix}\pi | + |\operatorname {supp}\pi | = |\alpha |\). </p>
-
-  </div>
-</div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fixed-congruence">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">8</span>
-    <span class="lemma_thmtitle">Fixed-point congruence</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0002.html#lem:grp-fixed-congruence">#</a>
-    
-    <a class="icon proof" href="sect0002.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_modEq" class="lean_decl">ConwayO7.card_filter_fixed_modEq</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation with \(\pi ^p = 1\), \(p\) prime, and let \(s\) be a finite \(\pi \)-invariant set. Then </p>
-<div class="displaymath" id="a0000000025">
-  \[  |\{ a \in s \mid \pi a = a\} | \equiv |s| \pmod p .  \]
-</div>
-
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000024">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p> Since \(\pi \) is injective and \(s\) is finite, \(\pi (s) \subseteq s\) upgrades to \(\pi (s) = s\), so \(\pi \) restricts to a permutation \(\pi '\) of \(s\) with \((\pi ')^p = 1\). By Lemmas&#160;<a href="sect0002.html#lem:grp-support-multiple">6</a> and&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> applied to \(\pi '\), the fixed points of \(\pi \) inside \(s\) number \(|s| - pm\) for some \(m\). (We will apply this with \(p = 7\) to the vertex set and to a neighbourhood, and with \(p = 2\) to a matching involution.) </p>
-
-  </div>
-</div>
-<div class="proposition_thmwrapper theorem-style-plain" id="lem:grp-cycletype-of-fixed">
-  <div class="proposition_thmheading">
-    <span class="proposition_thmcaption">
-    Proposition
-    </span>
-    <span class="proposition_thmlabel">9</span>
-    <span class="proposition_thmtitle">Cycle type from a fixed-point count</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0002.html#lem:grp-cycletype-of-fixed">#</a>
-    
-    <a class="icon proof" href="sect0002.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_eq_replicate_of_fixed" class="lean_decl">ConwayO7.cycleType_eq_replicate_of_fixed</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="proposition_thmcontent">
-  <p> Let \(\pi \ne 1\) be a permutation of a finite type of cardinality \(f + pm\) with \(\pi ^p = 1\), \(p\) prime, and exactly \(f\) fixed points. Then the cycle type of \(\pi \) is \([p^m]\). </p>
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000026">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p> Since \(\pi \ne 1\) and \(\pi ^p = 1\), the order of \(\pi \) is exactly \(p\), so its cycle type is \([p^n]\) for some \(n \ge 1\). By Lemma&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> the support has \(pm\) elements, and the cycle lengths sum to the support size, so \(pn = pm\) and \(n = m\). </p>
+  <p> Since \(\operatorname {ord}\pi = 7\) is prime, the cycle type is \([7^{n+1}]\) for some \(n\). By Theorem&#160;<a href="sect0004.html#lem:fixed">15</a> and Lemma&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> the support has \(99 - 1 = 98\) elements, and the cycle lengths sum to the support size, so \(7(n+1) = 98\) and the cycle type is \([7^{14}]\). </p>
 
   </div>
 </div>
@@ -382,11 +331,11 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0003.html" title="Local structure of an \(\mathrm{srg}(99,14,1,2)\)"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
   <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0003.html" title="Local structure of an \(\mathrm{srg}(99,14,1,2)\)"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sect0005.html" title="The automorphism group"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

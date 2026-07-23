@@ -12,10 +12,10 @@
 <meta name="generator" content="plasTeX" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fixed points of prime-order permutations</title>
-<link rel="next" href="sect0003.html" title="Local structure of an " />
-<link rel="prev" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
-<link rel="up" href="sec-group.html" title="From an order-seven automorphism to a canonical one" />
+<title>The distributed family</title>
+<link rel="next" href="sec-certificates.html" title="Certificates" />
+<link rel="prev" href="sect0017.html" title="An executable coverage check" />
+<link rel="up" href="sec-coverage.html" title="Propositional formulas and the covering partition" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 <link rel="stylesheet" href="styles/showmore.css" />
@@ -35,11 +35,11 @@
 <li class="">
   <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Strongly regular graphs and the statement</span></a>
  </li>
-<li class=" active">
+<li class="">
   <a href="sec-group.html"><span class="toc_ref">2</span> <span class="toc_entry">From an order-seven automorphism to a canonical one</span></a>
-  <span class="expand-toc">▼</span>
-  <ul class="sub-toc-1 active">
-     <li class=" active current">
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
   <a href="sect0002.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Fixed points of prime-order permutations</span></a>
  </li>
 <li class="">
@@ -110,10 +110,10 @@
 
   </ul>
  </li>
-<li class="">
+<li class=" active">
   <a href="sec-coverage.html"><span class="toc_ref">5</span> <span class="toc_entry">Propositional formulas and the covering partition</span></a>
-  <span class="expand-toc">▶</span>
-  <ul class="sub-toc-1">
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
      <li class="">
   <a href="sect0015.html"><span class="toc_ref">5.1</span> <span class="toc_entry">Propositional formulas from first principles</span></a>
  </li>
@@ -123,7 +123,7 @@
 <li class="">
   <a href="sect0017.html"><span class="toc_ref">5.3</span> <span class="toc_entry">An executable coverage check</span></a>
  </li>
-<li class="">
+<li class=" active current">
   <a href="sect0018.html"><span class="toc_ref">5.4</span> <span class="toc_entry">The distributed family</span></a>
  </li>
 
@@ -144,15 +144,14 @@
 
 
 <div class="main-text">
-<h1 id="a0000000003">2.1 Fixed points of prime-order permutations</h1>
-<p>We begin with elementary counting lemmas about permutations \(\pi \) with \(\pi ^p = 1\) for a prime \(p\). Throughout, \(\operatorname {Fix}\pi \) denotes the set of fixed points and \(\operatorname {supp}\pi \) its complement, the support. </p>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-support-multiple">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<h1 id="a0000000019">5.4 The distributed family</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:cov-tiling">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
     </span>
-    <span class="lemma_thmlabel">6</span>
-    <span class="lemma_thmtitle">Support is a multiple of \(p\)</span>
+    <span class="definition_thmlabel">119</span>
+    <span class="definition_thmtitle">The certified tiling data</span>
     <div class="thm_header_extras">
 
     
@@ -160,11 +159,30 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-support-multiple">#</a>
+    <a class="icon proof" href="sect0018.html#def:cov-tiling">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
     
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0015.html#def:cnf-cube">Definition 99</a></li>
+          
+          <li><a href="sect0015.html#def:cnf-dimacs">Definition 103</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -178,7 +196,13 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_support_of_pow_prime_eq_one" class="lean_decl">ConwayO7.card_support_of_pow_prime_eq_one</a></li>
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cubesAllTxt" class="lean_decl">ConwayO7.cubesAllTxt</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.tilingCubes" class="lean_decl">ConwayO7.tilingCubes</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.tilingOrder" class="lean_decl">ConwayO7.tilingOrder</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.tilingSigns" class="lean_decl">ConwayO7.tilingSigns</a></li>
           
         </ul>
     
@@ -188,30 +212,18 @@
     
         </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation of a finite type with \(\pi ^p = 1\) for a prime \(p\). Then \(|\operatorname {supp}\pi |\) is a multiple of \(p\). </p>
+  <div class="definition_thmcontent">
+  <p> The consolidated cell list of the artifact (one cube per certificate, in manifest order) is embedded byte for byte into the Lean development and parsed by the maps of Definition&#160;<a href="sect0015.html#def:cnf-dimacs">103</a>, yielding the list of <em>tiling cubes</em>; the <em>branching order</em> is the sequence \(x_{15}, \dots , x_{214}\) of \(200\) variables; the <em>sign words</em> are the words in \(\{ 0,1\} ^{\le 200}\) obtained by reading off the signs of each cube’s literals. No processing external to Lean intervenes between the hash-pinned file and these terms.  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000023">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
+<div class="fact_thmwrapper theorem-style-definition" id="fact:cov-tiling-signs">
+  <div class="fact_thmheading">
+    <span class="fact_thmcaption">
+    Computed Fact
     </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p>Either \(\pi = 1\), with empty support, or \(\operatorname {ord}\pi = p\); in the latter case the cycle type of \(\pi \) is a multiset of copies of \(p\), and the support is the disjoint union of the cycles. </p>
-
-  </div>
-</div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fix-support">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">7</span>
-    <span class="lemma_thmtitle">Fixed points and support partition the domain</span>
+    <span class="fact_thmlabel">120</span>
+    <span class="fact_thmtitle">Faithfulness of the sign-word model</span>
     <div class="thm_header_extras">
 
     
@@ -219,8 +231,30 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-fix-support">#</a>
+    <a class="icon proof" href="sect0018.html#fact:cov-tiling-signs">#</a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0018.html#def:cov-tiling">Definition 119</a></li>
+          
+          <li><a href="sect0016.html#def:prefix">Definition 104</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -234,8 +268,6 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_add_card_support" class="lean_decl">ConwayO7.card_filter_fixed_add_card_support</a></li>
-          
         </ul>
     
       </div>
@@ -244,18 +276,18 @@
     
         </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p> For any permutation \(\pi \) of a finite type \(\alpha \), \(|\operatorname {Fix}\pi | + |\operatorname {supp}\pi | = |\alpha |\). </p>
+  <div class="fact_thmcontent">
+  <p> Rebuilding each cube from its sign word along the branching order reproduces the parsed cube list exactly: every distributed cube really is a sign pattern on an initial segment of consecutive variables starting at \(x_{15}\). (If the file contained any cube of another shape, this computation would fail.)  </p>
 
   </div>
 </div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-fixed-congruence">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
+<div class="fact_thmwrapper theorem-style-definition" id="fact:cov-tiling-count">
+  <div class="fact_thmheading">
+    <span class="fact_thmcaption">
+    Computed Fact
     </span>
-    <span class="lemma_thmlabel">8</span>
-    <span class="lemma_thmtitle">Fixed-point congruence</span>
+    <span class="fact_thmlabel">121</span>
+    <span class="fact_thmtitle">Cardinality</span>
     <div class="thm_header_extras">
 
     
@@ -263,11 +295,28 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-fixed-congruence">#</a>
+    <a class="icon proof" href="sect0018.html#fact:cov-tiling-count">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
     
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0018.html#def:cov-tiling">Definition 119</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -281,8 +330,6 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.card_filter_fixed_modEq" class="lean_decl">ConwayO7.card_filter_fixed_modEq</a></li>
-          
         </ul>
     
       </div>
@@ -291,34 +338,18 @@
     
         </div>
   </div>
-  <div class="lemma_thmcontent">
-  <p> Let \(\pi \) be a permutation with \(\pi ^p = 1\), \(p\) prime, and let \(s\) be a finite \(\pi \)-invariant set. Then </p>
-<div class="displaymath" id="a0000000025">
-  \[  |\{ a \in s \mid \pi a = a\} | \equiv |s| \pmod p .  \]
-</div>
-
+  <div class="fact_thmcontent">
+  <p> The distributed family consists of exactly \(98{,}536\) sign words, of lengths between \(12\) and \(200\).  </p>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000024">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
+<div class="fact_thmwrapper theorem-style-definition" id="fact:tiling">
+  <div class="fact_thmheading">
+    <span class="fact_thmcaption">
+    Computed Fact
     </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p> Since \(\pi \) is injective and \(s\) is finite, \(\pi (s) \subseteq s\) upgrades to \(\pi (s) = s\), so \(\pi \) restricts to a permutation \(\pi '\) of \(s\) with \((\pi ')^p = 1\). By Lemmas&#160;<a href="sect0002.html#lem:grp-support-multiple">6</a> and&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> applied to \(\pi '\), the fixed points of \(\pi \) inside \(s\) number \(|s| - pm\) for some \(m\). (We will apply this with \(p = 7\) to the vertex set and to a neighbourhood, and with \(p = 2\) to a matching involution.) </p>
-
-  </div>
-</div>
-<div class="proposition_thmwrapper theorem-style-plain" id="lem:grp-cycletype-of-fixed">
-  <div class="proposition_thmheading">
-    <span class="proposition_thmcaption">
-    Proposition
-    </span>
-    <span class="proposition_thmlabel">9</span>
-    <span class="proposition_thmtitle">Cycle type from a fixed-point count</span>
+    <span class="fact_thmlabel">122</span>
+    <span class="fact_thmtitle">The distributed family tiles the valuation space</span>
     <div class="thm_header_extras">
 
     
@@ -326,11 +357,32 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0002.html#lem:grp-cycletype-of-fixed">#</a>
+    <a class="icon proof" href="sect0018.html#fact:tiling">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
     
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0018.html#def:cov-tiling">Definition 119</a></li>
+          
+          <li><a href="sect0017.html#def:cov-checkcover">Definition 115</a></li>
+          
+          <li><a href="sect0016.html#def:prefix">Definition 104</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -344,8 +396,6 @@
         
         <ul class="uses">
           
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.cycleType_eq_replicate_of_fixed" class="lean_decl">ConwayO7.cycleType_eq_replicate_of_fixed</a></li>
-          
         </ul>
     
       </div>
@@ -354,20 +404,8 @@
     
         </div>
   </div>
-  <div class="proposition_thmcontent">
-  <p> Let \(\pi \ne 1\) be a permutation of a finite type of cardinality \(f + pm\) with \(\pi ^p = 1\), \(p\) prime, and exactly \(f\) fixed points. Then the cycle type of \(\pi \) is \([p^m]\). </p>
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000026">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p> Since \(\pi \ne 1\) and \(\pi ^p = 1\), the order of \(\pi \) is exactly \(p\), so its cycle type is \([p^n]\) for some \(n \ge 1\). By Lemma&#160;<a href="sect0002.html#lem:grp-fix-support">7</a> the support has \(pm\) elements, and the cycle lengths sum to the support size, so \(pn = pm\) and \(n = m\). </p>
+  <div class="fact_thmcontent">
+  <p> The coverage check of Definition&#160;<a href="sect0017.html#def:cov-checkcover">115</a> succeeds, at depth \(200\), on the \(98{,}536\) sign words: the family is prefix-free with full Kraft weight \(2^{200}\), so by Lemma&#160;<a href="sect0016.html#lem:kraft">109</a> its cells partition the valuation space — a perfect tiling. This is established by executing the verified check, inside Lean’s compiled evaluator, on the embedded data.  </p>
 
   </div>
 </div>
@@ -382,11 +420,11 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="sect0017.html" title="An executable coverage check"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="sec-group.html" title="From an order-seven automorphism to a canonical one"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="sec-coverage.html" title="Propositional formulas and the covering partition"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
-  <a href="sect0003.html" title="Local structure of an \(\mathrm{srg}(99,14,1,2)\)"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+  <a href="sec-certificates.html" title="Certificates"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>
 </nav>
 

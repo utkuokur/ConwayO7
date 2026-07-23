@@ -1,0 +1,8 @@
+\chapter*{Trusted base}
+The formal proof rests on: the Lean~4 kernel and mathlib; nineteen named
+computations executed by Lean's compiled evaluator (each a finite check over
+the embedded data, including Facts~\ref{fact:bytes} and \ref{fact:tiling});
+the HOL4-verified checker for Fact~\ref{fact:certificates}; and the identity
+of the two files (\texttt{o7.cnf} and the cell list) shared between the Lean
+development and the certificate checking --- by construction when both halves
+are run from one copy of the repository.

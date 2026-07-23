@@ -210,7 +210,7 @@ theorem mem_of_mem_extract {xs : Array Int} {b e : Nat} {l : Int}
   exact List.mem_of_mem_drop (List.mem_of_mem_take h)
 
 theorem countT_extract_split (a : Nat → Bool) (xs : Array Int) (h : Nat)
-    (hh : h ≤ xs.size) :
+    :
     countT a xs = countT a (xs.extract 0 h) + countT a (xs.extract h xs.size) := by
   unfold countT
   rw [← List.countP_append]
@@ -402,7 +402,7 @@ theorem toTONode_sat :
     have hunP : UnaryOut a2 olst ilst :=
       unaryOut_congr hag2a (fun l hl ↦ (hout l hl).2) (fun l hl ↦ (hin l hl).2) hun
     have hcnt2 : countT a2 ilst = countT a2 fstA + countT a2 sndA := by
-      have := countT_extract_split a2 ilst half (by omega)
+      have := countT_extract_split a2 ilst half
       rw [← hn, ← hfstA, ← hsndA] at this
       exact this
     have hsat2 : SatAll a2 s2 := by

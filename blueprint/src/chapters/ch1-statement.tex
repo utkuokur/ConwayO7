@@ -1,0 +1,79 @@
+\chapter{Strongly regular graphs and the statement}
+
+\begin{definition}[Strongly regular graph]\label{def:srg}
+A finite graph $\Gamma$ on $n$ vertices is \emph{strongly regular with
+parameters $(n,k,\lambda,\mu)$} if it is $k$-regular, any two adjacent
+vertices have exactly $\lambda$ common neighbours, and any two distinct
+non-adjacent vertices have exactly $\mu$ common neighbours.  Whether a
+graph with parameters $(99,14,1,2)$ --- the \emph{Conway 99-graph} --- exists
+is open; the present development constrains its possible symmetries.
+\lean{SimpleGraph.IsSRGWith}\leanok
+\end{definition}
+
+\begin{definition}[Automorphism group]\label{st-aut}
+An \emph{isomorphism} between graphs $\Gamma$ and $\Gamma'$ is a bijection
+of vertex sets under which adjacency in $\Gamma$ corresponds exactly to
+adjacency in $\Gamma'$.  The isomorphisms from a graph $\Gamma$ to itself
+form a group, the \emph{automorphism group} $\Aut\Gamma$.  For a finite
+graph this group is finite, and its order $|\Aut\Gamma|$ is the quantity
+constrained by the main theorem: the formal statements are about the
+cardinality of the type of self-isomorphisms $\Gamma \cong \Gamma$.
+\lean{SimpleGraph.Iso}\leanok
+\end{definition}
+
+\begin{theorem}[Main theorem]\label{thm:main}
+Let $\Gamma$ be a strongly regular graph with parameters $(99,14,1,2)$, on any
+vertex set.  Then $7 \nmid |\Aut\Gamma|$; in particular $\Gamma$ has no
+automorphism of order $7$.
+\lean{ConwayO7.no_aut_seven}\leanok
+\uses{def:srg, st-aut, st-conditional, thm:encoding-complete, thm:coverage, fact:certificates}
+\end{theorem}
+
+The proof is a chain of reductions.  First, group theory reduces the
+statement to the non-existence of a graph invariant under one \emph{fixed}
+permutation $\sigma_0$ of order $7$ (\S\ref{sec:group}).  Second, such
+invariant graphs are encoded as Boolean valuations satisfying an explicit
+propositional formula $\Phi$; the encoding is proved \emph{complete}: if an
+invariant graph exists, $\Phi$ is satisfiable (\S\ref{sec:encoding},
+\S\ref{sec:lex}).  Third, $\Phi$ is proved unsatisfiable by a partition of the
+valuation space into $98{,}536$ cells, each refuted by a checked certificate
+(\S\ref{sec:coverage}, \S\ref{sec:certificates}).  The interface between the
+first two steps and the last is isolated in the following definition and
+conditional theorem.
+
+\begin{definition}[Encoding invariant graphs]\label{st-encodes}
+Let $F$ be a propositional formula in conjunctive normal form.  Say that $F$
+\emph{encodes the $\sigma_0$-invariant strongly regular graphs} if for every
+graph $H$ on the vertex set $\{0,1,\dots,98\}$ which is strongly regular with
+parameters $(99,14,1,2)$ and satisfies
+$H(\sigma_0 u,\sigma_0 v) \Leftrightarrow H(u,v)$ for all vertices $u,v$,
+there exists a Boolean valuation satisfying $F$.  Note the direction: only
+``graph $\Rightarrow$ satisfying valuation'' is required.  If $F$ were
+satisfiable but meaningless the main theorem would become vacuous, not
+wrong; it is the \emph{unsatisfiability} of $F$ that does the refuting.
+\lean{ConwayO7.EncodesInvariantSRG}\leanok
+\uses{def:srg}
+\end{definition}
+
+\begin{theorem}[Conditional main theorem]\label{st-conditional}
+Let $F$ be an unsatisfiable formula which encodes the $\sigma_0$-invariant
+strongly regular graphs in the sense of Definition~\ref{st-encodes}.  Then
+no strongly regular graph with parameters $(99,14,1,2)$, on any finite
+vertex set, has automorphism group of order divisible by $7$.
+\lean{ConwayO7.no_aut_seven_of_unsat}\leanok
+\uses{def:srg, st-aut, st-encodes, thm:reduction}
+\end{theorem}
+
+\begin{proof}
+Suppose $\Gamma$ were such a graph with $7 \mid |\Aut\Gamma|$.  By the group-theoretic
+reduction (Theorem~\ref{thm:reduction}), there would then be a
+$\sigma_0$-invariant $\srg(99,14,1,2)$ on $\{0,\dots,98\}$; since $F$ encodes
+these graphs, $F$ would be satisfiable, contradicting the hypothesis.
+\end{proof}
+
+The remainder of the blueprint instantiates the two hypotheses for the
+concrete formula $\Phi$ of Definition~\ref{def:phi}: encoding completeness
+is Theorem~\ref{thm:encoding-complete}, and unsatisfiability is delivered by
+Theorem~\ref{thm:coverage} together with Fact~\ref{fact:certificates}.
+
+%=====================================================================
