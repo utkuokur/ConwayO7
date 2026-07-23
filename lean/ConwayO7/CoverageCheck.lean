@@ -13,7 +13,7 @@ already occur between sorted neighbours.
 obligations of `unsat_of_prefix_cover` reduce to a single `checkCover … = true`
 computation on the concrete cube data.
 -/
-import ConwayO7.Main
+import ConwayO7.Coverage
 
 namespace ConwayO7
 
@@ -149,6 +149,25 @@ theorem cover_of_checkCover {D : Nat} {S : List (List Bool)} (h : checkCover D S
   have hsorted := List.pairwise_mergeSort (le := lexLe) lexLe_trans lexLe_total S
   have hpw := pairwise_of_sorted_adjacent hsorted h2
   exact ((S.mergeSort_perm lexLe).pairwise_iff fun h ↦ ⟨h.2, h.1⟩).mp hpw
+
+/-- **certificate schema**  If the cube family is a prefix-free
+family of sign strings along a branching order with full Kraft mass (the facts
+`check_coverage.py` checks numerically previously),
+and every cube-augmented formula is unsatisfiable (the facts
+cake_lpr certifies), then the base CNF is unsatisfiable. -/
+theorem unsat_of_prefix_cover (F : Std.Sat.CNF Nat) (order : List Nat) (S : List (List Bool))
+    (hlen : ∀ s ∈ S, s.length ≤ order.length)
+    (hpf : PrefixFree S)
+    (hkraft : kraftWeight order.length S = 2 ^ order.length)
+    (hunsat : ∀ s ∈ S, Std.Sat.CNF.Unsat (withCube F (cubeOfSigns order s))) :
+    Std.Sat.CNF.Unsat F := by
+  refine unsat_of_cubes F (S.map (cubeOfSigns order)) ?_ ?_
+  · intro a
+    obtain ⟨s, hs, hsat⟩ := cube_cover_of_signs order S hlen hpf hkraft a
+    exact ⟨cubeOfSigns order s, List.mem_map.mpr ⟨s, hs, rfl⟩, hsat⟩
+  · intro c hc
+    obtain ⟨s, hs, rfl⟩ := List.mem_map.mp hc
+    exact hunsat s hs
 
 /-- **T1, fully computable form**: the coverage side of the certificate reduces to one
 `checkCover` computation on the concrete cube data. -/

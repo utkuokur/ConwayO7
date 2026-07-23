@@ -233,11 +233,10 @@ an srg(99,14,1,2) fixes exactly one vertex. -/
 theorem card_filter_fixed_eq_one
   (hG : G.IsSRGWith 99 14 1 2) (hord : orderOf π = 7) :
     #(univ.filter fun v ↦ π v = v) = 1 := by
-  have hp7 : Nat.Prime 7 := by decide
   have h7 : π ^ 7 = 1 := by rw [← hord]; exact pow_orderOf_eq_one π
   -- Step 0: #Fix ≡ 99 ≡ 1 (mod 7) gives a fixed vertex x
   have hmod : #(univ.filter fun v ↦ π v = v) ≡ 99 [MOD 7] := by
-    have h := card_filter_fixed_modEq π hp7 h7 univ (fun a _ ↦ mem_univ _)
+    have h := card_filter_fixed_modEq π Nat.prime_seven h7 univ (fun a _ ↦ mem_univ _)
     rwa [card_univ, hG.card] at h
   obtain ⟨x, hx⟩ : (univ.filter fun v ↦ π v = v).Nonempty := by
     rw [nonempty_iff_ne_empty]
@@ -302,7 +301,7 @@ theorem card_filter_fixed_eq_one
       rw [SimpleGraph.mem_neighborFinset] at ha ⊢
       rw [← hxfix]
       exact (hadj x a).mpr ha
-    have h := card_filter_fixed_modEq π hp7 h7 (G.neighborFinset x) hinv_nbr
+    have h := card_filter_fixed_modEq π Nat.prime_seven h7 (G.neighborFinset x) hinv_nbr
     rw [G.card_neighborFinset_eq_degree, hG.regular x] at h
     rw [← hs] at h
     exact Nat.modEq_zero_iff_dvd.mp (h.trans (by decide))

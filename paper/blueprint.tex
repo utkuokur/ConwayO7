@@ -1,0 +1,348 @@
+% Blueprint of the formal proof that no srg(99,14,1,2) admits an automorphism
+% of order 7.  Mathematical presentation; every numbered statement carries the
+% name of the corresponding Lean declaration (\lean{...}) and its logical
+% dependencies (\uses{...}), in the style of leanblueprint.
+\documentclass[11pt]{article}
+\usepackage[margin=2.6cm]{geometry}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% ---- leanblueprint-compatible macros (rendered simply under plain pdflatex) ----
+\newcommand{\lean}[1]{\par\noindent{\footnotesize\ttfamily\color{blue!50!black}Lean: #1}}
+\newcommand{\leanok}{{\footnotesize\;\;\textcolor{green!45!black}{$\checkmark$ formalised}}}
+\newcommand{\uses}[1]{\par\noindent{\footnotesize\itshape uses: #1}}
+\newcommand{\notready}{{\footnotesize\;\;\textcolor{orange}{external}}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{fact}[theorem]{Computed Fact}
+
+\newcommand{\Fq}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\word}[1]{\{0,1\}^{#1}}
+
+\title{No strongly regular graph $\mathrm{srg}(99,14,1,2)$ admits an
+automorphism of order seven\\[2mm]\large A blueprint of the formal proof}
+\author{Utku Okur}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Conway asked whether a strongly regular graph with parameters $(99,14,1,2)$
+exists.  We prove, by a formally verified combination of group theory,
+combinatorics and propositional logic, that no such graph admits an
+automorphism of order $7$; equivalently, $7 \nmid |\Aut\Gamma|$ for every such
+graph $\Gamma$.  This document presents the mathematical skeleton of the proof.
+Every numbered statement names the Lean~4 declaration that formalises it; the
+single external hypothesis (unsatisfiability of $98{,}536$ propositional
+formulas) is discharged by certificates checked with a proof checker that is
+itself formally verified.
+\end{abstract}
+
+\tableofcontents
+
+%=====================================================================
+\section{Strongly regular graphs and the statement}
+
+\begin{definition}[Strongly regular graph]\label{def:srg}
+A finite graph $\Gamma$ on $n$ vertices is \emph{strongly regular with
+parameters $(n,k,\lambda,\mu)$} if it is $k$-regular, any two adjacent
+vertices have exactly $\lambda$ common neighbours, and any two distinct
+non-adjacent vertices have exactly $\mu$ common neighbours.
+\lean{SimpleGraph.IsSRGWith}\leanok
+\end{definition}
+
+\begin{theorem}[Main theorem]\label{thm:main}
+Let $\Gamma$ be a strongly regular graph with parameters $(99,14,1,2)$, on any
+vertex set.  Then $7 \nmid |\Aut\Gamma|$; in particular $\Gamma$ has no
+automorphism of order $7$.
+\lean{ConwayO7.no\_aut\_seven}\leanok
+\uses{thm:reduction, thm:encoding-complete, thm:coverage, fact:certificates}
+\end{theorem}
+
+The proof is a chain of three reductions.  First, group theory reduces the
+statement to the non-existence of a graph invariant under one \emph{fixed}
+permutation $\sigma_0$ of order $7$ (\S\ref{sec:group}).  Second, such
+invariant graphs are encoded as Boolean valuations satisfying an explicit
+propositional formula $\Phi$; the encoding is proved \emph{complete}: if an
+invariant graph exists, $\Phi$ is satisfiable (\S\ref{sec:encoding},
+\S\ref{sec:lex}).  Third, $\Phi$ is proved unsatisfiable by a partition of the
+valuation space into $98{,}536$ cells, each refuted by a checked certificate
+(\S\ref{sec:coverage}, \S\ref{sec:certificates}).
+
+%=====================================================================
+\section{From an order-seven automorphism to a canonical one}\label{sec:group}
+
+\begin{lemma}[Cauchy step]\label{lem:cauchy}
+If $7 \mid |\Aut\Gamma|$ then $\Aut\Gamma$ contains an element of order $7$.
+\lean{ConwayO7.seven\_dvd\_implies\_orderOf (via mathlib
+\texttt{exists\_prime\_orderOf\_dvd\_card})}\leanok
+\end{lemma}
+
+\begin{lemma}[Fixed points of an order-seven automorphism]\label{lem:fixed}
+Let $\Gamma$ be an $\mathrm{srg}(99,14,1,2)$ and let $\pi$ be an automorphism
+of order $7$.  Then $\pi$ has exactly one fixed vertex, and its cycle type is
+$1 + 7 \cdot 14$: one fixed point and fourteen $7$-cycles.
+\lean{ConwayO7.card\_filter\_fixed\_eq\_one, ConwayO7.cycleType\_eq\_replicate}\leanok
+\uses{def:srg, lem:cauchy}
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+Since $\ord\pi = 7$ is prime, every cycle of $\pi$ has length $1$ or $7$, so
+$|\Fix\pi| \equiv 99 \equiv 1 \pmod 7$.  A counting argument on common
+neighbours excludes $|\Fix\pi| \ge 2$: the fixed set induces a subgraph in
+which the strong regularity parameters $(\lambda,\mu) = (1,2)$ force
+contradictory neighbour counts modulo $7$.  Hence exactly one fixed vertex,
+and $99 = 1 + 7\cdot 14$ determines the cycle type.
+\end{proof}
+
+\begin{definition}[The canonical permutation]\label{def:sigma0}
+Let $\sigma_0$ be the permutation of $\{0,\dots,98\}$ fixing $0$ and acting on
+each block $\{1+7i,\dots,7+7i\}$ ($0 \le i \le 13$) as the cyclic rotation
+$1+7i+j \mapsto 1+7i+(j+1 \bmod 7)$.  Its cycle type is $1+7\cdot 14$.
+\lean{ConwayO7.sigma0, ConwayO7.sigma0\_cycleType}\leanok
+\end{definition}
+
+\begin{theorem}[Reduction to $\sigma_0$]\label{thm:reduction}
+If some $\mathrm{srg}(99,14,1,2)$ has an automorphism of order $7$, then some
+$\mathrm{srg}(99,14,1,2)$ on the vertex set $\{0,\dots,98\}$ is invariant
+under $\sigma_0$.  Consequently, if no $\sigma_0$-invariant
+$\mathrm{srg}(99,14,1,2)$ exists, then $7 \nmid |\Aut\Gamma|$ for every
+$\mathrm{srg}(99,14,1,2)$ $\Gamma$.
+\lean{ConwayO7.exists\_sigma0\_invariant,
+ConwayO7.seven\_not\_dvd\_card\_aut\_of\_no\_sigma0\_invariant}\leanok
+\uses{lem:fixed, def:sigma0}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Transport $\Gamma$ to $\{0,\dots,98\}$ along any bijection.  By
+Lemma~\ref{lem:fixed} the resulting automorphism $\pi$ has the same cycle type
+as $\sigma_0$; two permutations of equal cycle type are conjugate in the
+symmetric group, say $\tau\pi\tau^{-1} = \sigma_0$.  The relabelled graph
+$\tau(\Gamma)$ is again an $\mathrm{srg}(99,14,1,2)$ and is
+$\sigma_0$-invariant.
+\end{proof}
+
+%=====================================================================
+\section{The orbit quotient and the propositional encoding}\label{sec:encoding}
+
+\begin{lemma}[Orbit structure of pairs]\label{lem:orbits}
+The cyclic group $\langle\sigma_0\rangle \cong \ZZ/7$ acts on the $\binom{99}{2}
+= 4851$ unordered pairs of vertices with exactly $693$ orbits, each of size
+$7$.
+\lean{ConwayO7.orbitOf, ConwayO7.numOrbits\_eq}\leanok
+\uses{def:sigma0}
+\end{lemma}
+
+\begin{proposition}[Invariant graphs are orbit functions]\label{prop:orbitfun}
+A graph $G$ on $\{0,\dots,98\}$ is $\sigma_0$-invariant if and only if its
+edge indicator descends to the orbit space: there is
+$\omega \colon \{0,\dots,692\} \to \{0,1\}$ with
+$u \sim_G v \iff \omega(\mathrm{orb}(u,v)) = 1$ for all $u \neq v$.
+\lean{ConwayO7.invariant\_iff\_exists\_orbitFun}\leanok
+\uses{lem:orbits}
+\end{proposition}
+
+\begin{definition}[The formula $\Phi$]\label{def:phi}
+$\Phi$ is a propositional formula in conjunctive normal form over variables
+$x_1,\dots,x_{693}$ (one per pair-orbit) together with auxiliary counter
+variables, whose clauses express, for the graph $G_\omega$ associated to a
+valuation $\omega$ of $x_1,\dots,x_{693}$:
+\begin{enumerate}
+\item \emph{regularity}: every vertex has exactly $14$ neighbours;
+\item \emph{common-neighbour counts}: for each orbit representative pair
+$(u,v)$, the number of common neighbours of $u,v$ equals $2$ minus the
+adjacency bit of $(u,v)$ (i.e.\ $\lambda = 1$, $\mu = 2$);
+\item \emph{normalisation}: the neighbourhood of the fixed vertex $0$ is the
+union of the first two $7$-blocks;
+\item \emph{minimality}: the word $\omega \in \word{693}$ is lexicographically
+minimal in its orbit under the $101$ relabelling generators of
+Definition~\ref{def:relabel}.
+\end{enumerate}
+The cardinality conditions are rendered as clauses through two standard
+counting networks (a sequential counter and a modulo-$9$ totalizer); the
+minimality conditions through chained comparisons.  $\Phi$ has $432{,}882$
+variables and $1{,}131{,}708$ clauses.
+\lean{ConwayO7.Encoder.mkO7Cnf}\leanok
+\end{definition}
+
+\begin{fact}[Byte identity]\label{fact:bytes}
+The formula generated inside Lean equals, byte for byte, the distributed file
+\texttt{o7.cnf} against which all certificates are checked.
+\lean{ConwayO7.mkO7Cnf\_eq}\leanok
+\uses{def:phi}
+\end{fact}
+
+\begin{proposition}[Soundness of the counting networks]\label{prop:counters}
+For every valuation of the orbit variables satisfying the arithmetic
+conditions (1)--(2) of Definition~\ref{def:phi}, the auxiliary counter
+variables can be extended so that all counting clauses are satisfied.
+\lean{ConwayO7.Encoder.preLex\_sat (sections composed via
+ConwayO7.Encoder.GTrip)}\leanok
+\uses{def:phi}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Each counting network is verified by a Hoare-style invariant on its
+constructed clauses: the sequential counter maintains the running count of
+true inputs; the totalizer maintains, for each internal node, a unary
+representation of the number of true leaves below it, split modulo $9$ into
+quotient and remainder registers.  Witness valuations for the auxiliary
+variables are constructed by structural induction over the emission of the
+clauses.
+\end{proof}
+
+%=====================================================================
+\section{Completeness of the normalisation}\label{sec:lex}
+
+\begin{definition}[Relabelling generators]\label{def:relabel}
+Let $N \le S_{99}$ be generated by: the block transposition exchanging
+$7$-blocks $0,1$; the transpositions of adjacent blocks $i,i{+}1$ for
+$2 \le i \le 12$; the rotations of each block; and the five multiplier
+permutations $j \mapsto aj \bmod 7$ ($2 \le a \le 6$) applied simultaneously
+to all blocks.  Each $\rho \in N$ normalises $\langle\sigma_0\rangle$, hence
+acts on the orbit space and thus on words $\word{693}$ by
+$(\rho\cdot\omega)(o) = \omega(\rho^{-1}o)$.  The encoding uses $101$ fixed
+generators of this action.
+\lean{ConwayO7.Encoder.lexPerms, ConwayO7.Encoder.orbitPerm}\leanok
+\uses{lem:orbits}
+\end{definition}
+
+\begin{lemma}[Normalisation of the fixed vertex's neighbourhood]\label{lem:sym1}
+Every $\sigma_0$-invariant $\mathrm{srg}(99,14,1,2)$ is isomorphic, via a
+block relabelling commuting with $\sigma_0$, to one in which the neighbourhood
+of the fixed vertex $0$ is exactly the union of blocks $0$ and $1$.
+\lean{ConwayO7.Encoder.sym1\_seed}\leanok
+\uses{prop:orbitfun, def:relabel}
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+The neighbourhood of $0$ is $\sigma_0$-invariant and of size $14$, hence a
+union of exactly two $7$-blocks; a permutation of block indices carries these
+two blocks to positions $0,1$, and any such permutation commutes with
+$\sigma_0$ and preserves strong regularity (transport along a graph
+isomorphism).
+\end{proof}
+
+\begin{theorem}[Completeness of minimality]\label{thm:lex-complete}
+Every $\sigma_0$-invariant $\mathrm{srg}(99,14,1,2)$ admits an isomorphic copy
+whose orbit word $\omega$ satisfies conditions (3)--(4) of
+Definition~\ref{def:phi}: the normalisation of Lemma~\ref{lem:sym1} and
+$\omega \preceq \rho\cdot\omega$ (lexicographic order) for each of the $101$
+generators $\rho$.
+\lean{ConwayO7.Encoder.lexLeaderComplete}\leanok
+\uses{lem:sym1, def:relabel}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Interpret words in $\word{693}$ as binary expansions of natural numbers.
+Among all words reachable from the normalised $\omega$ by the generator
+action (a set closed under each generator and preserving both strong
+regularity and the normalisation), choose one of minimal numerical value; the
+well-ordering of $\mathbb{N}$ provides it.  For each generator $\rho$ the word
+$\rho\cdot\omega_{\min}$ is again reachable, so
+$\mathrm{val}(\omega_{\min}) \le \mathrm{val}(\rho\cdot\omega_{\min})$, and
+numerical order refines lexicographic order on fixed-length words.
+\end{proof}
+
+\begin{theorem}[Completeness of the encoding]\label{thm:encoding-complete}
+If a $\sigma_0$-invariant $\mathrm{srg}(99,14,1,2)$ exists, then $\Phi$ is
+satisfiable.
+\lean{ConwayO7.Encoder.encodes\_o7}\leanok
+\uses{prop:orbitfun, prop:counters, thm:lex-complete, fact:bytes}
+\end{theorem}
+
+%=====================================================================
+\section{The partition of the valuation space}\label{sec:coverage}
+
+\begin{definition}[Sign prefixes]\label{def:prefix}
+Fix the sequence of variables $x_{15}, x_{16}, \dots, x_{214}$.  A
+\emph{cell} is specified by a word $s \in \{0,1\}^{\le 200}$: the set of
+valuations assigning $x_{14+j+1} = s_j$ for $1 \le j \le |s|$.  A family $S$
+of words is \emph{prefix-free} if no member is a proper initial segment of
+another.
+\lean{ConwayO7.cubeOfSigns, ConwayO7.PrefixFree}\leanok
+\end{definition}
+
+\begin{lemma}[Kraft equality and maximality]\label{lem:kraft}
+A prefix-free family $S \subseteq \{0,1\}^{\le D}$ with
+$\sum_{s \in S} 2^{D-|s|} = 2^D$ is a maximal antichain of the binary tree:
+every $w \in \word{D}$ has a (necessarily unique) member of $S$ as a prefix.
+Hence the corresponding cells partition the valuation space.
+\lean{ConwayO7.covers\_of\_prefixFree\_kraft}\leanok
+\uses{def:prefix}
+\end{lemma}
+
+\begin{theorem}[Refutation by cells]\label{thm:coverage}
+Let $S$ be prefix-free with full Kraft mass as above.  If for every $s \in S$
+the formula $\Phi \wedge (\text{cell } s)$ is unsatisfiable, then $\Phi$ is
+unsatisfiable.
+\lean{ConwayO7.unsat\_of\_prefix\_cover, ConwayO7.unsat\_of\_checked\_cover}\leanok
+\uses{lem:kraft}
+\end{theorem}
+
+\begin{fact}[The distributed family]\label{fact:tiling}
+The distributed family of $98{,}536$ words (of lengths between $12$ and
+$200$) is prefix-free and has full Kraft mass $2^{200}$; this is established
+by executing the checker of Theorem~\ref{thm:coverage} on the embedded data.
+\lean{ConwayO7.o7Tiling\_checkCover}\leanok
+\uses{def:prefix}
+\end{fact}
+
+%=====================================================================
+\section{Certificates}\label{sec:certificates}
+
+\begin{definition}[Clausal derivations]\label{def:lrat}
+A \emph{clausal derivation} from a CNF $F$ is a sequence of clauses, each of
+which follows from $F$ and the preceding clauses by reverse unit propagation
+(a restricted form of resolution), ending in the empty clause; such a
+derivation witnesses unsatisfiability of $F$.  The LRAT format additionally
+annotates each step with the indices needed to check it in linear time.
+\end{definition}
+
+\begin{fact}[The external hypothesis]\label{fact:certificates}
+\notready\;
+For each of the $98{,}536$ cells there is a clausal derivation refuting
+$\Phi \wedge (\text{cell } s)$.  Each derivation was checked by
+\textsf{cake\_lpr}, an LRAT checker formally verified (in HOL4) down to the
+machine code that executes; verification was performed on the distributed
+files, whose hashes are pinned.  One derivation (cell index $4092$) is
+additionally replayed inside Lean's kernel by the verified checker of the
+Lean standard library, eliminating even the translation gap for that sample.
+\lean{hypothesis \texttt{hcubes} of ConwayO7.no\_aut\_seven;
+sample: ConwayO7.cube4093\_unsat}
+\uses{def:lrat, fact:bytes, fact:tiling}
+\end{fact}
+
+\begin{proof}[Assembly of Theorem~\ref{thm:main}]
+By Fact~\ref{fact:certificates} and Theorem~\ref{thm:coverage}, $\Phi$ is
+unsatisfiable.  By Theorem~\ref{thm:encoding-complete}, no
+$\sigma_0$-invariant $\mathrm{srg}(99,14,1,2)$ exists.  By
+Theorem~\ref{thm:reduction}, no $\mathrm{srg}(99,14,1,2)$ has automorphism
+group of order divisible by $7$.
+\end{proof}
+
+%=====================================================================
+\section*{Trusted base}
+The formal proof rests on: the Lean~4 kernel and mathlib; nineteen named
+computations executed by Lean's compiled evaluator (each a finite check over
+the embedded data, including Facts~\ref{fact:bytes} and \ref{fact:tiling});
+the HOL4-verified checker for Fact~\ref{fact:certificates}; and the identity
+of the two files (\texttt{o7.cnf} and the cell list) shared between the Lean
+development and the certificate checking --- by construction when both halves
+are run from one copy of the repository.
+
+\end{document}

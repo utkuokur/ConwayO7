@@ -21,9 +21,8 @@ the shipped artifact's obligations: the cube list's prefix-freeness and full Kra
 (cake_lpr on hash-pinned files, or `Std.Tactic.BVDecide.LRAT.check_sound` in-kernel),
 and `EncodesInvariantSRG o7cnf`.
 -/
-import ConwayO7.Main
-import ConwayO7.Canonical
 import ConwayO7.CoverageCheck
+import ConwayO7.Canonical
 
 open Std.Sat
 

@@ -3,7 +3,6 @@
 -- admits an order-7 automorphism (7 ∤ |Aut Γ|).
 import ConwayO7.Semantics
 import ConwayO7.Coverage
-import ConwayO7.Main
 import ConwayO7.CycleType
 import ConwayO7.Aut
 import ConwayO7.Canonical

@@ -34,11 +34,11 @@ variable [Fintype V]
 instance : Finite (G ≃g G) :=
   Finite.of_injective (autToPerm G) (autToPerm_injective G)
 
-/-- **L2, Cauchy step**: if 7 divides the order of the automorphism group,
-some automorphism has order exactly 7. -/
+/-- **Cauchy step**: if 7 divides the order of the automorphism group,
+then some automorphism has order exactly 7. -/
 theorem exists_aut_orderOf_eq_seven (h : 7 ∣ Nat.card (G ≃g G)) :
     ∃ σ : G ≃g G, orderOf σ = 7 := by
-  haveI : Fact (Nat.Prime 7) := ⟨by decide⟩
+  haveI : Fact (Nat.Prime 7) := ⟨Nat.prime_seven⟩
   haveI := Fintype.ofFinite (G ≃g G)
   rw [Nat.card_eq_fintype_card] at h
   exact exists_prime_orderOf_dvd_card 7 h
