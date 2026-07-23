@@ -6,7 +6,7 @@ automorphism of order 7 (equivalently, `7 ∤ |Aut Γ|` for every such Γ).
 Verification has two independent halves, meeting at one shared file:
 
 - **Lean 4** proves: *if* every cube of the embedded tiling is UNSAT, the claim
-  holds (`ConwayO7.no_aut_seven` in `Conway_lean/`); coverage of the tiling,
+  holds (`ConwayO7.no_aut_seven` in `lean/`); coverage of the tiling,
   encoder faithfulness, and the byte-identity of the embedded `o7.cnf` are all
   proved inside Lean.
 - **cake_lpr** (HOL4-verified LRAT checker) certifies: every cube *is* UNSAT —
@@ -19,7 +19,7 @@ Verification has two independent halves, meeting at one shared file:
 
 | Element | Grade | Check |
 |---|---|---|
-| Lean statements say what the paper claims | referee reads | `Conway_lean/ConwayO7/Final.lean` (+ defs it references) |
+| Lean statements say what the paper claims | referee reads | `lean/ConwayO7/Final.lean` (+ defs it references) |
 | Lean kernel + mathlib | standard | `lake build` succeeds |
 | 19 `native_decide` facts (Lean's compiled evaluator) | small | listed by `#print axioms ConwayO7.no_aut_seven`; each is a finite computation; one cube is replayed native-free in-kernel (`cube4093_unsat`) |
 | cake_lpr verdicts | **must re-run** | steps below |

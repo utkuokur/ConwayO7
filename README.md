@@ -6,7 +6,7 @@ any such Γ (Conway's 99-graph problem).
 
 The result is a machine-checked composition of two halves that meet at one file:
 
-- **Lean 4 / mathlib** (`Conway_lean/`): theorem `ConwayO7.no_aut_seven` proves
+- **Lean 4 / mathlib** (`lean/`): theorem `ConwayO7.no_aut_seven` proves
   the claim *assuming* every cube of an explicit 98,536-cube tiling is
   unsatisfiable. The tiling's exactness (prefix-free, full Kraft mass), the
   SAT encoder's faithfulness, and the byte identity of the embedded CNF are all

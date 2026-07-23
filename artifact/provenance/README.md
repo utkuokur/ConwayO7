@@ -53,7 +53,7 @@ SHA-256 pinned cluster-side and re-verified byte-for-byte locally. The remaining
 46,273 proofs are the original campaign's trimmed certificates. All 98,536 share
 the same HPC solving provenance.
 
-**Relation to the Lean development.** `Conway_lean/ConwayO7/Final.lean` proves
+**Relation to the Lean development.** `lean/ConwayO7/Final.lean` proves
 that if every cube of the embedded tiling is UNSAT, then no srg(99,14,1,2)
 admits an automorphism of order 7 — with the tiling's exact coverage, encoder
 faithfulness, and byte identity of the embedded `o7.cnf` proved inside Lean.
