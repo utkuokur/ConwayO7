@@ -16,7 +16,7 @@ The result is a machine-checked composition of two halves that meet at one file:
   to machine code. Certificate `proofs/i.lrat.zst` corresponds to line `i` of
   `cubes_all.txt` — the same file Lean embeds byte-for-byte.
 
-**Referees**: start at [`artifact/REFEREE.md`](artifact/REFEREE.md) — a
+**Referees**: start at [`REFEREE.md`](REFEREE.md) — a
 three-command verification protocol (Apptainer container included).
 
 The proof archives (~35 GB) and the container image are distributed via the

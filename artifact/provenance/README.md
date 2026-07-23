@@ -10,3 +10,7 @@ Historical/reproduction material. Nothing here is needed to verify the result:
   Superseded by the formally verified cake_lpr (see `../REFEREE.md`). Kept as an
   independent second checker for the curious: it accepts exactly the same
   proofs (anchored gate: `^c VERIFIED`, exit 0).
+
+- `SIF_SHA256` — SHA-256 and build environment of the shipped `../cake_lpr.sif`
+  (Apptainer 1.5.3, ubuntu:24.04 base; the definition it was built from is
+  `../cake_lpr.def`, whose `%post` verifies the upstream `cake_lpr.S` pin).
