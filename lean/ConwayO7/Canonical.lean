@@ -98,7 +98,8 @@ theorem sigma0InvFun_val (v : Fin 99) : (sigma0InvFun v : ℕ)
     = if (v : ℕ) = 0 then 0
       else 1 + 7 * (((v : ℕ) - 1) / 7) + (((v : ℕ) - 1) % 7 + 6) % 7 := rfl
 
-theorem sigma0_leftInverse : ∀ v : Fin 99, sigma0InvFun (sigma0Fun v) = v := by
+theorem sigma0_leftInverse :
+  ∀ v : Fin 99, sigma0InvFun (sigma0Fun v) = v := by
   intro v
   have hv := v.isLt
   apply Fin.ext

@@ -24,8 +24,6 @@ ConwayO7.sigma0
 ConwayO7.sigma0Fun
 ConwayO7.sigma0InvFun
 ConwayO7.sigma0_val
-ConwayO7.sigma0_leftInverse
-ConwayO7.sigma0_rightInverse
 ConwayO7.sigma0_iterate_val
 ConwayO7.sigma0_pow_seven
 ConwayO7.sigma0_iterate_seven

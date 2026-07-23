@@ -44,10 +44,9 @@ theorem exists_aut_orderOf_eq_seven (h : 7 ∣ Nat.card (G ≃g G)) :
   exact exists_prime_orderOf_dvd_card 7 h
 
 variable [DecidableEq V] [DecidableRel G.Adj]
-
-/-- **L2 + L3**: an order-7 automorphism of an srg(99,14,1,2) moves the 99 vertices in
+/-- An order-7 automorphism of an srg(99,14,1,2) moves the 99 vertices in
 one fixed vertex and fourteen 7-cycles — the canonical shape `σ₀` encoded by
-`tools/conway_o7.py` is WLOG (up to the L4/L5 relabeling step). -/
+`tools/conway_o7.py` is WLOG. -/
 theorem cycleType_autToPerm (hG : G.IsSRGWith 99 14 1 2) (σ : G ≃g G)
     (hord : orderOf σ = 7) :
     (autToPerm G σ).cycleType = Multiset.replicate 14 7 :=

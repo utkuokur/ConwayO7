@@ -152,7 +152,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">50</span>
+    <span class="definition_thmlabel">49</span>
     <span class="definition_thmtitle">Unary representation of a count</span>
     <div class="thm_header_extras">
 
@@ -176,7 +176,7 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-formula.html#def:enc-state">Definition 38</a></li>
+          <li><a href="ssec-enc-formula.html#def:enc-state">Definition 37</a></li>
           
         </ul>
     
@@ -219,7 +219,7 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">51</span>
+    <span class="proposition_thmlabel">50</span>
     <span class="proposition_thmtitle">Soundness of the sequential counter</span>
     <div class="thm_header_extras">
 
@@ -246,7 +246,7 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-formula.html#def:enc-state">Definition 38</a></li>
+          <li><a href="ssec-enc-formula.html#def:enc-state">Definition 37</a></li>
           
         </ul>
     
@@ -299,7 +299,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">52</span>
+    <span class="lemma_thmlabel">51</span>
     <span class="lemma_thmtitle">The totalizer merge step</span>
     <div class="thm_header_extras">
 
@@ -323,7 +323,7 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-networks.html#def:enc-unary">Definition 50</a></li>
+          <li><a href="ssec-enc-networks.html#def:enc-unary">Definition 49</a></li>
           
         </ul>
     
@@ -364,7 +364,7 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">53</span>
+    <span class="proposition_thmlabel">52</span>
     <span class="proposition_thmtitle">Soundness of the totalizer</span>
     <div class="thm_header_extras">
 
@@ -391,9 +391,9 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-networks.html#def:enc-unary">Definition 50</a></li>
+          <li><a href="ssec-enc-networks.html#def:enc-unary">Definition 49</a></li>
           
-          <li><a href="ssec-enc-networks.html#lem:enc-totmerge">Lemma 52</a></li>
+          <li><a href="ssec-enc-networks.html#lem:enc-totmerge">Lemma 51</a></li>
           
         </ul>
     
@@ -437,7 +437,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Structural induction on the balanced binary tree over the inputs. At each internal node the fresh output register is assigned the unary representation of the number of true leaves below it; the count at a node is the sum of the counts at its children, so Lemma&#160;<a href="ssec-enc-networks.html#lem:enc-totmerge">52</a> discharges the merge clauses, and the induction hypothesis handles the subtrees. </p>
+  <p>Structural induction on the balanced binary tree over the inputs. At each internal node the fresh output register is assigned the unary representation of the number of true leaves below it; the count at a node is the sum of the counts at its children, so Lemma&#160;<a href="ssec-enc-networks.html#lem:enc-totmerge">51</a> discharges the merge clauses, and the induction hypothesis handles the subtrees. </p>
 
   </div>
 </div>
@@ -446,7 +446,7 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">54</span>
+    <span class="proposition_thmlabel">53</span>
     <span class="proposition_thmtitle">Soundness of the modulo-9 totalizer</span>
     <div class="thm_header_extras">
 
@@ -473,9 +473,9 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-networks.html#def:enc-unary">Definition 50</a></li>
+          <li><a href="ssec-enc-networks.html#def:enc-unary">Definition 49</a></li>
           
-          <li><a href="ssec-enc-networks.html#prop:enc-totalizer">Proposition 53</a></li>
+          <li><a href="ssec-enc-networks.html#prop:enc-totalizer">Proposition 52</a></li>
           
         </ul>
     
@@ -528,7 +528,7 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">55</span>
+    <span class="proposition_thmlabel">54</span>
     <span class="proposition_thmtitle">The at-most-\(k\) constraint via the modulo totalizer</span>
     <div class="thm_header_extras">
 
@@ -555,7 +555,7 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-networks.html#prop:enc-mto">Proposition 54</a></li>
+          <li><a href="ssec-enc-networks.html#prop:enc-mto">Proposition 53</a></li>
           
         </ul>
     
@@ -599,7 +599,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Take the extension of Proposition&#160;<a href="ssec-enc-networks.html#prop:enc-mto">54</a>. A comparator clause rules out the joint configuration “quotient \(\geq q\) and remainder \(\geq r\)” for each pair with \(9q + r {\gt} k\); since the registers carry the true quotient and remainder of a count \(C \leq k\), no forbidden configuration occurs. </p>
+  <p>Take the extension of Proposition&#160;<a href="ssec-enc-networks.html#prop:enc-mto">53</a>. A comparator clause rules out the joint configuration “quotient \(\geq q\) and remainder \(\geq r\)” for each pair with \(9q + r {\gt} k\); since the registers carry the true quotient and remainder of a count \(C \leq k\), no forbidden configuration occurs. </p>
 
   </div>
 </div>
@@ -608,7 +608,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">56</span>
+    <span class="lemma_thmlabel">55</span>
     <span class="lemma_thmtitle">The degree gadget</span>
     <div class="thm_header_extras">
 
@@ -635,11 +635,11 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-networks.html#prop:enc-mto-atmost">Proposition 55</a></li>
+          <li><a href="ssec-enc-networks.html#prop:enc-mto-atmost">Proposition 54</a></li>
           
-          <li><a href="ssec-enc-framework.html#def:enc-deginv">Definition 46</a></li>
+          <li><a href="ssec-enc-framework.html#def:enc-deginv">Definition 45</a></li>
           
-          <li><a href="ssec-enc-formula.html#def:enc-evar">Definition 39</a></li>
+          <li><a href="ssec-enc-formula.html#def:enc-evar">Definition 38</a></li>
           
         </ul>
     
@@ -683,7 +683,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Exactly \(14\) of \(98\) literals true means exactly \(84\) of the negated literals are true; apply Proposition&#160;<a href="ssec-enc-networks.html#prop:enc-mto-atmost">55</a> twice in sequence, composing the two fresh extensions. </p>
+  <p>Exactly \(14\) of \(98\) literals true means exactly \(84\) of the negated literals are true; apply Proposition&#160;<a href="ssec-enc-networks.html#prop:enc-mto-atmost">54</a> twice in sequence, composing the two fresh extensions. </p>
 
   </div>
 </div>
@@ -692,7 +692,7 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">57</span>
+    <span class="proposition_thmlabel">56</span>
     <span class="proposition_thmtitle">The degree section</span>
     <div class="thm_header_extras">
 
@@ -719,11 +719,11 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-framework.html#def:enc-gtrip">Definition 44</a></li>
+          <li><a href="ssec-enc-framework.html#def:enc-gtrip">Definition 43</a></li>
           
-          <li><a href="ssec-enc-framework.html#lem:enc-gtrip-comp">Lemma 45</a></li>
+          <li><a href="ssec-enc-framework.html#lem:enc-gtrip-comp">Lemma 44</a></li>
           
-          <li><a href="ssec-enc-networks.html#lem:enc-deg-gadget">Lemma 56</a></li>
+          <li><a href="ssec-enc-networks.html#lem:enc-deg-gadget">Lemma 55</a></li>
           
         </ul>
     
@@ -769,7 +769,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>The degree invariant concerns only the orbit variables (\(\leq 693\)), which every gadget’s extension leaves untouched; so it survives each step, and Lemma&#160;<a href="ssec-enc-networks.html#lem:enc-deg-gadget">56</a> supplies each step’s satisfiability. Compose by Lemma&#160;<a href="ssec-enc-framework.html#lem:enc-gtrip-comp">45</a>. </p>
+  <p>The degree invariant concerns only the orbit variables (\(\leq 693\)), which every gadget’s extension leaves untouched; so it survives each step, and Lemma&#160;<a href="ssec-enc-networks.html#lem:enc-deg-gadget">55</a> supplies each step’s satisfiability. Compose by Lemma&#160;<a href="ssec-enc-framework.html#lem:enc-gtrip-comp">44</a>. </p>
 
   </div>
 </div>
@@ -778,7 +778,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">58</span>
+    <span class="lemma_thmlabel">57</span>
     <span class="lemma_thmtitle">The common-neighbour products</span>
     <div class="thm_header_extras">
 
@@ -802,9 +802,9 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-formula.html#def:enc-evar">Definition 39</a></li>
+          <li><a href="ssec-enc-formula.html#def:enc-evar">Definition 38</a></li>
           
-          <li><a href="ssec-enc-framework.html#def:enc-cninv">Definition 47</a></li>
+          <li><a href="ssec-enc-framework.html#def:enc-cninv">Definition 46</a></li>
           
         </ul>
     
@@ -845,7 +845,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">59</span>
+    <span class="lemma_thmlabel">58</span>
     <span class="lemma_thmtitle">The exactly-2 gadget</span>
     <div class="thm_header_extras">
 
@@ -872,7 +872,7 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-networks.html#prop:enc-seqcounter">Proposition 51</a></li>
+          <li><a href="ssec-enc-networks.html#prop:enc-seqcounter">Proposition 50</a></li>
           
         </ul>
     
@@ -916,7 +916,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Exactly \(2\) true literals means exactly \(96\) true negations; apply Proposition&#160;<a href="ssec-enc-networks.html#prop:enc-seqcounter">51</a> to each counter in turn and compose the extensions. </p>
+  <p>Exactly \(2\) true literals means exactly \(96\) true negations; apply Proposition&#160;<a href="ssec-enc-networks.html#prop:enc-seqcounter">50</a> to each counter in turn and compose the extensions. </p>
 
   </div>
 </div>
@@ -925,7 +925,7 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">60</span>
+    <span class="proposition_thmlabel">59</span>
     <span class="proposition_thmtitle">The common-neighbour section</span>
     <div class="thm_header_extras">
 
@@ -952,15 +952,15 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-framework.html#def:enc-gtrip">Definition 44</a></li>
+          <li><a href="ssec-enc-framework.html#def:enc-gtrip">Definition 43</a></li>
           
-          <li><a href="ssec-enc-framework.html#lem:enc-gtrip-comp">Lemma 45</a></li>
+          <li><a href="ssec-enc-framework.html#lem:enc-gtrip-comp">Lemma 44</a></li>
           
-          <li><a href="ssec-enc-networks.html#lem:enc-cn-product">Lemma 58</a></li>
+          <li><a href="ssec-enc-networks.html#lem:enc-cn-product">Lemma 57</a></li>
           
-          <li><a href="ssec-enc-networks.html#lem:enc-cn-equals">Lemma 59</a></li>
+          <li><a href="ssec-enc-networks.html#lem:enc-cn-equals">Lemma 58</a></li>
           
-          <li><a href="ssec-enc-framework.html#def:enc-cninv">Definition 47</a></li>
+          <li><a href="ssec-enc-framework.html#def:enc-cninv">Definition 46</a></li>
           
         </ul>
     
@@ -1006,7 +1006,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>By Lemma&#160;<a href="ssec-enc-networks.html#lem:enc-cn-product">58</a> the product literals plus the adjacency literal have exactly \(c_r(a)\) true entries, which the invariant fixes at \(2\); Lemma&#160;<a href="ssec-enc-networks.html#lem:enc-cn-equals">59</a> then extends the valuation over the two counters. The invariant mentions only orbit variables and survives every fresh extension; compose by Lemma&#160;<a href="ssec-enc-framework.html#lem:enc-gtrip-comp">45</a>. </p>
+  <p>By Lemma&#160;<a href="ssec-enc-networks.html#lem:enc-cn-product">57</a> the product literals plus the adjacency literal have exactly \(c_r(a)\) true entries, which the invariant fixes at \(2\); Lemma&#160;<a href="ssec-enc-networks.html#lem:enc-cn-equals">58</a> then extends the valuation over the two counters. The invariant mentions only orbit variables and survives every fresh extension; compose by Lemma&#160;<a href="ssec-enc-framework.html#lem:enc-gtrip-comp">44</a>. </p>
 
   </div>
 </div>
@@ -1015,7 +1015,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">61</span>
+    <span class="lemma_thmlabel">60</span>
     <span class="lemma_thmtitle">The normalisation section</span>
     <div class="thm_header_extras">
 
@@ -1039,11 +1039,11 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-framework.html#def:enc-gtrip">Definition 44</a></li>
+          <li><a href="ssec-enc-framework.html#def:enc-gtrip">Definition 43</a></li>
           
-          <li><a href="ssec-enc-framework.html#lem:enc-gtrip-comp">Lemma 45</a></li>
+          <li><a href="ssec-enc-framework.html#lem:enc-gtrip-comp">Lemma 44</a></li>
           
-          <li><a href="ssec-enc-framework.html#def:enc-sym1holds">Definition 48</a></li>
+          <li><a href="ssec-enc-framework.html#def:enc-sym1holds">Definition 47</a></li>
           
         </ul>
     
@@ -1084,7 +1084,7 @@
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">62</span>
+    <span class="proposition_thmlabel">61</span>
     <span class="proposition_thmtitle">Pre-lex satisfiability</span>
     <div class="thm_header_extras">
 
@@ -1111,15 +1111,15 @@
         
         <ul class="uses">
           
-          <li><a href="ssec-enc-framework.html#def:enc-prelexinv">Definition 49</a></li>
+          <li><a href="ssec-enc-framework.html#def:enc-prelexinv">Definition 48</a></li>
           
-          <li><a href="ssec-enc-networks.html#prop:enc-deg-section">Proposition 57</a></li>
+          <li><a href="ssec-enc-networks.html#prop:enc-deg-section">Proposition 56</a></li>
           
-          <li><a href="ssec-enc-networks.html#prop:enc-cn-section">Proposition 60</a></li>
+          <li><a href="ssec-enc-networks.html#prop:enc-cn-section">Proposition 59</a></li>
           
-          <li><a href="ssec-enc-networks.html#lem:enc-sym1-section">Lemma 61</a></li>
+          <li><a href="ssec-enc-networks.html#lem:enc-sym1-section">Lemma 60</a></li>
           
-          <li><a href="ssec-enc-formula.html#def:phi">Definition 40</a></li>
+          <li><a href="ssec-enc-formula.html#def:phi">Definition 39</a></li>
           
         </ul>
     
@@ -1152,7 +1152,7 @@
         </div>
   </div>
   <div class="proposition_thmcontent">
-  <p> For every valuation of the orbit variables satisfying the pre-lex invariant (Definition&#160;<a href="ssec-enc-framework.html#def:enc-prelexinv">49</a>) — that is, the arithmetic conditions (1)–(3) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a> — there is an extension assigning only auxiliary variables above \(693\) that satisfies every clause emitted by the degree, common-neighbour, and normalisation sections of the generator.  </p>
+  <p> For every valuation of the orbit variables satisfying the pre-lex invariant (Definition&#160;<a href="ssec-enc-framework.html#def:enc-prelexinv">48</a>) — that is, the arithmetic conditions (1)–(3) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">39</a> — there is an extension assigning only auxiliary variables above \(693\) that satisfies every clause emitted by the degree, common-neighbour, and normalisation sections of the generator.  </p>
 <p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/SectionsCompose.lean</span></small> </p>
 
   </div>
@@ -1165,7 +1165,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Each of the three component invariants is stable under fresh extension, so each section’s triple upgrades to a triple for the full pre-lex invariant; compose the three (Lemma&#160;<a href="ssec-enc-framework.html#lem:enc-gtrip-comp">45</a>) and instantiate at the initial state \((693, \varnothing )\). A separate computation identifies the state built from the specification-level common-neighbour gadgets with the state the concrete generator emits, so the conclusion holds for the clauses of \(\Phi \) itself. </p>
+  <p>Each of the three component invariants is stable under fresh extension, so each section’s triple upgrades to a triple for the full pre-lex invariant; compose the three (Lemma&#160;<a href="ssec-enc-framework.html#lem:enc-gtrip-comp">44</a>) and instantiate at the initial state \((693, \varnothing )\). A separate computation identifies the state built from the specification-level common-neighbour gadgets with the state the concrete generator emits, so the conclusion holds for the clauses of \(\Phi \) itself. </p>
 
   </div>
 </div>

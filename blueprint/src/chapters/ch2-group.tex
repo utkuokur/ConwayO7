@@ -272,15 +272,6 @@ ConwayO7.sigma0_val}
 \uses{lem:grp-sigma0-inverse}
 \end{definition}
 
-\begin{lemma}[Inverse laws]\label{lem:grp-sigma0-inverse}
-The forward and backward block rotations are mutually inverse: advancing the
-position within a block by $1$ and then by $6$ (or vice versa) is the
-identity, and both maps fix $0$.  Hence $\sigma_0$ is a well-defined
-permutation with an explicit inverse.
-\lean{ConwayO7.sigma0_leftInverse, ConwayO7.sigma0_rightInverse}
-\leanfile{ConwayO7/Canonical.lean}\leanok
-\end{lemma}
-
 \begin{proof}\leanok
 On a nonzero vertex $1+7i+j$ the composite advances the position by
 $1 + 6 \equiv 0 \pmod 7$ and leaves the block index $i$ unchanged; the vertex

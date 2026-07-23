@@ -151,7 +151,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">122</span>
+    <span class="definition_thmlabel">121</span>
     <span class="definition_thmtitle">Clausal derivations</span>
     <div class="thm_header_extras">
 
@@ -198,7 +198,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">123</span>
+    <span class="theorem_thmlabel">122</span>
     <span class="theorem_thmtitle">The verified checker</span>
     <div class="thm_header_extras">
 
@@ -222,7 +222,7 @@
         
         <ul class="uses">
           
-          <li><a href="sec-certificates.html#def:lrat">Definition 122</a></li>
+          <li><a href="sec-certificates.html#def:lrat">Definition 121</a></li>
           
         </ul>
     
@@ -265,7 +265,7 @@
     <span class="fact_thmcaption">
     Computed Fact
     </span>
-    <span class="fact_thmlabel">124</span>
+    <span class="fact_thmlabel">123</span>
     <span class="fact_thmtitle">In-kernel sample replay</span>
     <div class="thm_header_extras">
 
@@ -289,13 +289,13 @@
         
         <ul class="uses">
           
-          <li><a href="sec-certificates.html#def:lrat">Definition 122</a></li>
+          <li><a href="sec-certificates.html#def:lrat">Definition 121</a></li>
           
-          <li><a href="sec-certificates.html#crt-checker">Theorem 123</a></li>
+          <li><a href="sec-certificates.html#crt-checker">Theorem 122</a></li>
           
-          <li><a href="ssec-enc-formula.html#fact:bytes">Computed Fact 43</a></li>
+          <li><a href="ssec-enc-formula.html#fact:bytes">Computed Fact 42</a></li>
           
-          <li><a href="sect0018.html#fact:tiling">Computed Fact 121</a></li>
+          <li><a href="sect0018.html#fact:tiling">Computed Fact 120</a></li>
           
         </ul>
     
@@ -324,7 +324,7 @@
         </div>
   </div>
   <div class="fact_thmcontent">
-  <p> Cell number \(4092\) of the distributed family (historically cube \(4093\) of the first-round split) is unsatisfiable together with \(\Phi \): the distributed derivation for this cell, whose compressed file is pinned by its SHA-256 hash, is replayed through the verified checker of Theorem&#160;<a href="sec-certificates.html#crt-checker">123</a> against the formula \(\Phi \wedge (\text{cell})\) built from the byte-identical embedded data by the same cube-adjunction used throughout the pipeline. This is the calibration sample: a sign convention, off-by-one, or clause-order mismatch anywhere between the Lean development and the distributed artifact would make this check fail.  </p>
+  <p> Cell number \(4092\) of the distributed family (historically cube \(4093\) of the first-round split) is unsatisfiable together with \(\Phi \): the distributed derivation for this cell, whose compressed file is pinned by its SHA-256 hash, is replayed through the verified checker of Theorem&#160;<a href="sec-certificates.html#crt-checker">122</a> against the formula \(\Phi \wedge (\text{cell})\) built from the byte-identical embedded data by the same cube-adjunction used throughout the pipeline. This is the calibration sample: a sign convention, off-by-one, or clause-order mismatch anywhere between the Lean development and the distributed artifact would make this check fail.  </p>
 <p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/Sample.lean</span></small> </p>
 
   </div>
@@ -334,7 +334,7 @@
     <span class="fact_thmcaption">
     Computed Fact
     </span>
-    <span class="fact_thmlabel">125</span>
+    <span class="fact_thmlabel">124</span>
     <span class="fact_thmtitle">The external hypothesis</span>
     <div class="thm_header_extras">
 
@@ -356,13 +356,13 @@
         
         <ul class="uses">
           
-          <li><a href="sec-certificates.html#def:lrat">Definition 122</a></li>
+          <li><a href="sec-certificates.html#def:lrat">Definition 121</a></li>
           
-          <li><a href="sec-certificates.html#crt-sample">Computed Fact 124</a></li>
+          <li><a href="sec-certificates.html#crt-sample">Computed Fact 123</a></li>
           
-          <li><a href="ssec-enc-formula.html#fact:bytes">Computed Fact 43</a></li>
+          <li><a href="ssec-enc-formula.html#fact:bytes">Computed Fact 42</a></li>
           
-          <li><a href="sect0018.html#fact:tiling">Computed Fact 121</a></li>
+          <li><a href="sect0018.html#fact:tiling">Computed Fact 120</a></li>
           
         </ul>
     
@@ -374,7 +374,7 @@
         </div>
   </div>
   <div class="fact_thmcontent">
-  <p> For each of the \(98{,}536\) cells there is a clausal derivation refuting \(\Phi \wedge (\text{cell } s)\). Each derivation was checked by <span class="sffamily">cake_lpr</span>, an LRAT checker formally verified (in HOL4) down to the machine code that executes; verification was performed on the distributed files, whose hashes are pinned. This is the unique hypothesis of the development not discharged inside Lean; one of the \(98{,}536\) instances is additionally replayed inside Lean’s kernel (Fact&#160;<a href="sec-certificates.html#crt-sample">124</a>), eliminating even the translation gap for that sample.  </p>
+  <p> For each of the \(98{,}536\) cells there is a clausal derivation refuting \(\Phi \wedge (\text{cell } s)\). Each derivation was checked by <span class="sffamily">cake_lpr</span>, an LRAT checker formally verified (in HOL4) down to the machine code that executes; verification was performed on the distributed files, whose hashes are pinned. This is the unique hypothesis of the development not discharged inside Lean; one of the \(98{,}536\) instances is additionally replayed inside Lean’s kernel (Fact&#160;<a href="sec-certificates.html#crt-sample">123</a>), eliminating even the translation gap for that sample.  </p>
 
   </div>
 </div>
@@ -383,7 +383,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">126</span>
+    <span class="theorem_thmlabel">125</span>
     <span class="theorem_thmtitle">The certificate schema</span>
     <div class="thm_header_extras">
 
@@ -411,11 +411,11 @@
           
           <li><a href="sect0001.html#st-encodes">Definition 4</a></li>
           
-          <li><a href="sect0017.html#thm:coverage">Theorem 116</a></li>
+          <li><a href="sect0017.html#thm:coverage">Theorem 115</a></li>
           
-          <li><a href="sect0016.html#def:prefix">Definition 103</a></li>
+          <li><a href="sect0016.html#def:prefix">Definition 102</a></li>
           
-          <li><a href="sect0016.html#lem:kraft">Lemma 108</a></li>
+          <li><a href="sect0016.html#lem:kraft">Lemma 107</a></li>
           
         </ul>
     
@@ -448,7 +448,7 @@
         </div>
   </div>
   <div class="theorem_thmcontent">
-  <p> Let \(F\) be a CNF, and let \(S\) be a prefix-free family of sign words of full Kraft mass over a fixed variable order (Definition&#160;<a href="sect0016.html#def:prefix">103</a>, Lemma&#160;<a href="sect0016.html#lem:kraft">108</a>). If \(F \wedge (\text{cell } s)\) is unsatisfiable for every \(s \in S\), and \(F\) encodes the \(\sigma _0\)-invariant strongly regular graphs (Definition&#160;<a href="sect0001.html#st-encodes">4</a>), then no strongly regular graph with parameters \((99,14,1,2)\) has automorphism group of order divisible by \(7\). This composes the refutation-by-cells theorem (Theorem&#160;<a href="sect0017.html#thm:coverage">116</a>) with the conditional main theorem (Theorem&#160;<a href="sect0001.html#st-conditional">5</a>); a variant takes the prefix-freeness and Kraft hypotheses in the executable form of the cover checker.  </p>
+  <p> Let \(F\) be a CNF, and let \(S\) be a prefix-free family of sign words of full Kraft mass over a fixed variable order (Definition&#160;<a href="sect0016.html#def:prefix">102</a>, Lemma&#160;<a href="sect0016.html#lem:kraft">107</a>). If \(F \wedge (\text{cell } s)\) is unsatisfiable for every \(s \in S\), and \(F\) encodes the \(\sigma _0\)-invariant strongly regular graphs (Definition&#160;<a href="sect0001.html#st-encodes">4</a>), then no strongly regular graph with parameters \((99,14,1,2)\) has automorphism group of order divisible by \(7\). This composes the refutation-by-cells theorem (Theorem&#160;<a href="sect0017.html#thm:coverage">115</a>) with the conditional main theorem (Theorem&#160;<a href="sect0001.html#st-conditional">5</a>); a variant takes the prefix-freeness and Kraft hypotheses in the executable form of the cover checker.  </p>
 <p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Pipeline.lean</span></small> </p>
 
   </div>
@@ -458,7 +458,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">127</span>
+    <span class="theorem_thmlabel">126</span>
     <span class="theorem_thmtitle">The schema on the distributed family</span>
     <div class="thm_header_extras">
 
@@ -482,11 +482,11 @@
         
         <ul class="uses">
           
-          <li><a href="sec-certificates.html#crt-schema">Theorem 126</a></li>
+          <li><a href="sec-certificates.html#crt-schema">Theorem 125</a></li>
           
-          <li><a href="sect0018.html#fact:tiling">Computed Fact 121</a></li>
+          <li><a href="sect0018.html#fact:tiling">Computed Fact 120</a></li>
           
-          <li><a href="ssec-enc-formula.html#def:phi">Definition 40</a></li>
+          <li><a href="ssec-enc-formula.html#def:phi">Definition 39</a></li>
           
         </ul>
     
@@ -517,7 +517,7 @@
         </div>
   </div>
   <div class="theorem_thmcontent">
-  <p> Instantiate Theorem&#160;<a href="sec-certificates.html#crt-schema">126</a> with \(F = \Phi \) and \(S\) the distributed family of \(98{,}536\) words: if \(\Phi \wedge (\text{cell } s)\) is unsatisfiable for every \(s\) in the family, and \(\Phi \) encodes the \(\sigma _0\)-invariant strongly regular graphs, then the conclusion of the main theorem holds. The combinatorial hypotheses on \(S\) are discharged by the executed cover check (Fact&#160;<a href="sect0018.html#fact:tiling">121</a>); the remaining hypotheses are exactly the per-cell unsatisfiability facts and encoding completeness.  </p>
+  <p> Instantiate Theorem&#160;<a href="sec-certificates.html#crt-schema">125</a> with \(F = \Phi \) and \(S\) the distributed family of \(98{,}536\) words: if \(\Phi \wedge (\text{cell } s)\) is unsatisfiable for every \(s\) in the family, and \(\Phi \) encodes the \(\sigma _0\)-invariant strongly regular graphs, then the conclusion of the main theorem holds. The combinatorial hypotheses on \(S\) are discharged by the executed cover check (Fact&#160;<a href="sect0018.html#fact:tiling">120</a>); the remaining hypotheses are exactly the per-cell unsatisfiability facts and encoding completeness.  </p>
 <p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/FullTiling.lean</span></small> </p>
 
   </div>
@@ -530,7 +530,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>   Apply Theorem&#160;<a href="sec-certificates.html#crt-tiling">127</a>. Its per-cell hypothesis is Fact&#160;<a href="sec-certificates.html#fact:certificates">125</a>: every \(\Phi \wedge (\text{cell } s)\) for \(s\) in the distributed family is unsatisfiable. Its encoding hypothesis is Theorem&#160;<a href="sect0014.html#thm:encoding-complete">93</a>: \(\Phi \) encodes the \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\)s. Hence no \(\mathrm{srg}(99,14,1,2)\), on any finite vertex set, has automorphism group of order divisible by \(7\). </p>
+  <p>   Apply Theorem&#160;<a href="sec-certificates.html#crt-tiling">126</a>. Its per-cell hypothesis is Fact&#160;<a href="sec-certificates.html#fact:certificates">124</a>: every \(\Phi \wedge (\text{cell } s)\) for \(s\) in the distributed family is unsatisfiable. Its encoding hypothesis is Theorem&#160;<a href="sect0014.html#thm:encoding-complete">92</a>: \(\Phi \) encodes the \(\sigma _0\)-invariant \(\mathrm{srg}(99,14,1,2)\)s. Hence no \(\mathrm{srg}(99,14,1,2)\), on any finite vertex set, has automorphism group of order divisible by \(7\). </p>
 
   </div>
 </div>

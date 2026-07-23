@@ -150,7 +150,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">118</span>
+    <span class="definition_thmlabel">117</span>
     <span class="definition_thmtitle">The certified tiling data</span>
     <div class="thm_header_extras">
 
@@ -174,9 +174,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0015.html#def:cnf-cube">Definition 98</a></li>
+          <li><a href="sect0015.html#def:cnf-cube">Definition 97</a></li>
           
-          <li><a href="sect0015.html#def:cnf-dimacs">Definition 102</a></li>
+          <li><a href="sect0015.html#def:cnf-dimacs">Definition 101</a></li>
           
         </ul>
     
@@ -213,7 +213,7 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> The consolidated cell list of the artifact (one cube per certificate, in manifest order) is embedded byte for byte into the Lean development and parsed by the maps of Definition&#160;<a href="sect0015.html#def:cnf-dimacs">102</a>, yielding the list of <em>tiling cubes</em>; the <em>branching order</em> is the sequence \(x_{15}, \dots , x_{214}\) of \(200\) variables; the <em>sign words</em> are the words in \(\{ 0,1\} ^{\le 200}\) obtained by reading off the signs of each cube’s literals. No processing external to Lean intervenes between the hash-pinned file and these terms.  </p>
+  <p> The consolidated cell list of the artifact (one cube per certificate, in manifest order) is embedded byte for byte into the Lean development and parsed by the maps of Definition&#160;<a href="sect0015.html#def:cnf-dimacs">101</a>, yielding the list of <em>tiling cubes</em>; the <em>branching order</em> is the sequence \(x_{15}, \dots , x_{214}\) of \(200\) variables; the <em>sign words</em> are the words in \(\{ 0,1\} ^{\le 200}\) obtained by reading off the signs of each cube’s literals. No processing external to Lean intervenes between the hash-pinned file and these terms.  </p>
 <p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/FullTiling.lean</span></small> </p>
 
   </div>
@@ -223,7 +223,7 @@
     <span class="fact_thmcaption">
     Computed Fact
     </span>
-    <span class="fact_thmlabel">119</span>
+    <span class="fact_thmlabel">118</span>
     <span class="fact_thmtitle">Faithfulness of the sign-word model</span>
     <div class="thm_header_extras">
 
@@ -247,9 +247,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0018.html#def:cov-tiling">Definition 118</a></li>
+          <li><a href="sect0018.html#def:cov-tiling">Definition 117</a></li>
           
-          <li><a href="sect0016.html#def:prefix">Definition 103</a></li>
+          <li><a href="sect0016.html#def:prefix">Definition 102</a></li>
           
         </ul>
     
@@ -288,7 +288,7 @@
     <span class="fact_thmcaption">
     Computed Fact
     </span>
-    <span class="fact_thmlabel">120</span>
+    <span class="fact_thmlabel">119</span>
     <span class="fact_thmtitle">Cardinality</span>
     <div class="thm_header_extras">
 
@@ -312,7 +312,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0018.html#def:cov-tiling">Definition 118</a></li>
+          <li><a href="sect0018.html#def:cov-tiling">Definition 117</a></li>
           
         </ul>
     
@@ -351,7 +351,7 @@
     <span class="fact_thmcaption">
     Computed Fact
     </span>
-    <span class="fact_thmlabel">121</span>
+    <span class="fact_thmlabel">120</span>
     <span class="fact_thmtitle">The distributed family tiles the valuation space</span>
     <div class="thm_header_extras">
 
@@ -375,11 +375,11 @@
         
         <ul class="uses">
           
-          <li><a href="sect0018.html#def:cov-tiling">Definition 118</a></li>
+          <li><a href="sect0018.html#def:cov-tiling">Definition 117</a></li>
           
-          <li><a href="sect0017.html#def:cov-checkcover">Definition 114</a></li>
+          <li><a href="sect0017.html#def:cov-checkcover">Definition 113</a></li>
           
-          <li><a href="sect0016.html#def:prefix">Definition 103</a></li>
+          <li><a href="sect0016.html#def:prefix">Definition 102</a></li>
           
         </ul>
     
@@ -408,7 +408,7 @@
         </div>
   </div>
   <div class="fact_thmcontent">
-  <p> The coverage check of Definition&#160;<a href="sect0017.html#def:cov-checkcover">114</a> succeeds, at depth \(200\), on the \(98{,}536\) sign words: the family is prefix-free with full Kraft weight \(2^{200}\), so by Lemma&#160;<a href="sect0016.html#lem:kraft">108</a> its cells partition the valuation space — a perfect tiling. This is established by executing the verified check, inside Lean’s compiled evaluator, on the embedded data.  </p>
+  <p> The coverage check of Definition&#160;<a href="sect0017.html#def:cov-checkcover">113</a> succeeds, at depth \(200\), on the \(98{,}536\) sign words: the family is prefix-free with full Kraft weight \(2^{200}\), so by Lemma&#160;<a href="sect0016.html#lem:kraft">107</a> its cells partition the valuation space — a perfect tiling. This is established by executing the verified check, inside Lean’s compiled evaluator, on the embedded data.  </p>
 <p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/FullTiling.lean</span></small> </p>
 
   </div>

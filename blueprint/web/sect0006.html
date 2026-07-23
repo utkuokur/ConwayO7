@@ -161,26 +161,9 @@
 
     <a class="icon proof" href="sect0006.html#def:sigma0">#</a>
     
+    <a class="icon proof" href="sect0006.html#a0000000034"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sect0006.html#lem:grp-sigma0-inverse">Lemma 23</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
     
     
     <button class="modal lean">L∃∀N</button>
@@ -212,7 +195,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> On the vertex set \(\{ 0,\dots ,98\} \), partition the nonzero vertices into fourteen consecutive blocks \(B_i = \{ 1+7i, \dots , 7+7i\} \), \(0 \le i \le 13\). Let \(\sigma _0\) be the permutation fixing \(0\) and rotating each block cyclically: </p>
-<div class="displaymath" id="a0000000034">
+<div class="displaymath" id="a0000000035">
   \[  \sigma _0(0) = 0, \qquad \sigma _0(1 + 7i + j) = 1 + 7i + \bigl((j+1) \bmod 7\bigr) \quad (0 \le j {\lt} 7).  \]
 </div>
 <p> Formally, \(\sigma _0\) is assembled from the explicit forward-rotation formula and its backward-rotation companion (positions advance by \(1\), respectively by \(6 \equiv -1\), modulo \(7\)).  </p>
@@ -220,57 +203,7 @@
 
   </div>
 </div>
-<div class="lemma_thmwrapper theorem-style-plain" id="lem:grp-sigma0-inverse">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">23</span>
-    <span class="lemma_thmtitle">Inverse laws</span>
-    <div class="thm_header_extras">
-
-    
-    ✓
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0006.html#lem:grp-sigma0-inverse">#</a>
-    
-    <a class="icon proof" href="sect0006.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_leftInverse" class="lean_decl">ConwayO7.sigma0_leftInverse</a></li>
-          
-          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ConwayO7.sigma0_rightInverse" class="lean_decl">ConwayO7.sigma0_rightInverse</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p> The forward and backward block rotations are mutually inverse: advancing the position within a block by \(1\) and then by \(6\) (or vice versa) is the identity, and both maps fix \(0\). Hence \(\sigma _0\) is a well-defined permutation with an explicit inverse.  </p>
-<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Canonical.lean</span></small></p>
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000035">
+<div class="proof_wrapper" id="a0000000034">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -287,7 +220,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">24</span>
+    <span class="lemma_thmlabel">23</span>
     <span class="lemma_thmtitle">Blocks are constant, positions advance</span>
     <div class="thm_header_extras">
 
@@ -371,7 +304,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">25</span>
+    <span class="lemma_thmlabel">24</span>
     <span class="lemma_thmtitle">\(\sigma _0\) has order dividing seven</span>
     <div class="thm_header_extras">
 
@@ -400,7 +333,7 @@
           
           <li><a href="sect0006.html#def:sigma0">Definition 22</a></li>
           
-          <li><a href="sect0006.html#lem:grp-sigma0-iterate">Lemma 24</a></li>
+          <li><a href="sect0006.html#lem:grp-sigma0-iterate">Lemma 23</a></li>
           
         </ul>
     
@@ -446,7 +379,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p> The vertex \(0\) is fixed; on a nonzero vertex, Lemma&#160;<a href="sect0006.html#lem:grp-sigma0-iterate">24</a> with \(k = 7\) advances the position by \(7 \equiv 0 \pmod7\). </p>
+  <p> The vertex \(0\) is fixed; on a nonzero vertex, Lemma&#160;<a href="sect0006.html#lem:grp-sigma0-iterate">23</a> with \(k = 7\) advances the position by \(7 \equiv 0 \pmod7\). </p>
 
   </div>
 </div>
@@ -455,7 +388,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">26</span>
+    <span class="lemma_thmlabel">25</span>
     <span class="lemma_thmtitle">Fixed points of \(\sigma _0\)</span>
     <div class="thm_header_extras">
 
@@ -535,7 +468,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">27</span>
+    <span class="lemma_thmlabel">26</span>
     <span class="lemma_thmtitle">Fixed-point count of \(\sigma _0\)</span>
     <div class="thm_header_extras">
 
@@ -559,7 +492,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0006.html#lem:grp-sigma0-fixed-iff">Lemma 26</a></li>
+          <li><a href="sect0006.html#lem:grp-sigma0-fixed-iff">Lemma 25</a></li>
           
         </ul>
     
@@ -602,7 +535,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">28</span>
+    <span class="lemma_thmlabel">27</span>
     <span class="lemma_thmtitle">Cycle type of \(\sigma _0\)</span>
     <div class="thm_header_extras">
 
@@ -633,9 +566,9 @@
           
           <li><a href="sect0002.html#lem:grp-cycletype-of-fixed">Proposition 9</a></li>
           
-          <li><a href="sect0006.html#lem:grp-sigma0-order">Lemma 25</a></li>
+          <li><a href="sect0006.html#lem:grp-sigma0-order">Lemma 24</a></li>
           
-          <li><a href="sect0006.html#lem:grp-sigma0-fixed-card">Lemma 27</a></li>
+          <li><a href="sect0006.html#lem:grp-sigma0-fixed-card">Lemma 26</a></li>
           
         </ul>
     
