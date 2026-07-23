@@ -59,4 +59,4 @@ The Lean build is ~1–2 h (first run; native checks included).
 ## Integrity
 
 `SHA256SUMS` pins every file in this artifact (201,777 entries); verify with
-`cd artifact && sha256sum -c SHA256SUMS`. Repair/provenance history: `provenance/CAKE_VERIFICATION_REPORT.md`.
+`cd artifact && sha256sum -c SHA256SUMS`. Repair/provenance history: `artifact/provenance/README.md`.
