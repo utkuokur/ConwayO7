@@ -213,6 +213,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> The cyclic group \(\langle \sigma _0\rangle \) acts on unordered pairs of vertices \(\{ u,v\}  \subseteq \{ 0,\dots ,98\} \), \(u \neq v\), by \(\sigma _0\cdot \{ u,v\}  = \{ \sigma _0(u),\sigma _0(v)\} \). Write \(\mathrm{orb}(u,v)\) for the index of the orbit of \(\{ u,v\} \), orbits being numbered \(0,1,2,\dots \) in order of first appearance as the pairs are enumerated lexicographically, and for each orbit index \(o\) let \(\mathrm{rep}(o)\) denote the first pair of orbit \(o\) in that enumeration (its <em>representative</em>). The map \(\mathrm{orb}\) is symmetric in its two arguments and constant along the action: \(\mathrm{orb}(\sigma _0 u, \sigma _0 v) = \mathrm{orb}(u,v)\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Orbits.lean</span></small> </p>
 
   </div>
 </div>
@@ -284,6 +285,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> The action of \(\langle \sigma _0\rangle \cong \mathbb {Z}/7\) on the \(\binom {99}{2} = 4851\) unordered pairs of vertices has exactly \(693\) orbits, each of size \(7\); equivalently, \(\mathrm{orb}\) takes exactly the values \(0,\dots ,692\), and every pair is reached from its orbit’s representative by iterating the action.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Orbits.lean</span></small> </p>
 
   </div>
 </div>
@@ -362,6 +364,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> For \(\omega \colon \mathbb {N} \to \{ 0,1\} \) let \(G_\omega \) be the graph on \(\{ 0,\dots ,98\} \) in which distinct \(u, v\) are adjacent exactly when \(\omega (\mathrm{orb}(u,v)) = 1\). Only the values \(\omega (0),\dots ,\omega (692)\) matter, so \(G_\omega \) is determined by a word in \(\{ 0,1\} ^{693}\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Orbits.lean</span></small> </p>
 
   </div>
 </div>
@@ -431,6 +434,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> For every \(\omega \) the graph \(G_\omega \) is \(\sigma _0\)-invariant: \(\sigma _0(u) \sim \sigma _0(v)\) in \(G_\omega \) if and only if \(u \sim v\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Orbits.lean</span></small> </p>
 
   </div>
 </div>
@@ -514,6 +518,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> Let \(H\) be a \(\sigma _0\)-invariant graph on \(\{ 0,\dots ,98\} \) and define \(\omega _H(o) = 1\) exactly when the representative pair \(\mathrm{rep}(o)\) is an edge of \(H\). Then \(G_{\omega _H} = H\): an invariant graph is reconstructed exactly from its \(693\) orbit bits.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Orbits.lean</span></small> </p>
 
   </div>
 </div>
@@ -595,6 +600,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p> A graph \(H\) on \(\{ 0,\dots ,98\} \) is \(\sigma _0\)-invariant if and only if \(H = G_\omega \) for some \(\omega \colon \mathbb {N} \to \{ 0,1\} \). This is the verified reduction from \(4851\) edge variables to \(693\) orbit variables.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Orbits.lean</span></small> </p>
 
   </div>
 </div>

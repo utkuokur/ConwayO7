@@ -15,7 +15,8 @@ Fix a countable index set $V$ of \emph{variables}; concretely $V = \{0, 1, 2, \d
 \emph{literal} is a pair $(x, \varepsilon) \in V \times \{0,1\}$, written
 $x$ when $\varepsilon = 1$ and $\neg x$ when $\varepsilon = 0$: an assertion
 that the variable $x$ takes the value $\varepsilon$.
-\lean{Std.Sat.Literal}\leanok
+\lean{Std.Sat.Literal}
+\leanfile{mathlib / Lean core}\leanok
 \end{definition}
 
 \begin{definition}[Clauses and formulas]\label{def:cnf-formula}
@@ -24,7 +25,8 @@ A \emph{clause} is a finite list of literals, read \emph{disjunctively}
 conjunctive normal form} (a \emph{CNF formula}) is a finite family
 $F = (C_1, \dots, C_m)$ of clauses, read \emph{conjunctively} (``every
 clause holds'').
-\lean{Std.Sat.CNF, Std.Sat.CNF.Clause}\leanok
+\lean{Std.Sat.CNF, Std.Sat.CNF.Clause}
+\leanfile{mathlib / Lean core}\leanok
 \uses{def:cnf-literal}
 \end{definition}
 
@@ -38,7 +40,8 @@ to every variable.  A valuation $a$ \emph{satisfies}
 \end{itemize}
 In Lean these are the evaluation maps sending a valuation and a
 clause/formula to $\{0,1\}$; satisfaction means evaluating to $1$.
-\lean{Std.Sat.CNF.eval, Std.Sat.CNF.Clause.eval}\leanok
+\lean{Std.Sat.CNF.eval, Std.Sat.CNF.Clause.eval}
+\leanfile{mathlib / Lean core}\leanok
 \uses{def:cnf-formula}
 \end{definition}
 
@@ -47,7 +50,8 @@ A CNF formula $F$ is \emph{satisfiable} if some valuation satisfies it, and
 \emph{unsatisfiable} if no valuation does.  Unsatisfiability of a suitable
 formula is the finitary statement to which the non-existence theorem of this
 project is reduced.
-\lean{Std.Sat.CNF.Sat, Std.Sat.CNF.Unsat}\leanok
+\lean{Std.Sat.CNF.Sat, Std.Sat.CNF.Unsat}
+\leanfile{mathlib / Lean core}\leanok
 \uses{def:cnf-valuation}
 \end{definition}
 
@@ -58,7 +62,8 @@ satisfies a cube $c$ iff it satisfies every literal of $c$; thus a cube
 whose variables are pairwise distinct is the same thing as a \emph{partial
 valuation} with finite domain, and its satisfaction set is the set of all
 total valuations extending it.
-\lean{ConwayO7.Cube, ConwayO7.Cube.eval}\leanok
+\lean{ConwayO7.Cube, ConwayO7.Cube.eval}
+\leanfile{ConwayO7/Semantics.lean}\leanok
 \uses{def:cnf-literal, def:cnf-valuation}
 \end{definition}
 
@@ -67,14 +72,16 @@ For a CNF formula $F$ and a cube $c$, the formula $F \wedge c$ is obtained
 by adjoining to $F$ one singleton clause $\{\ell\}$ per literal $\ell$ of
 $c$.  This is the formula whose refutation certifies that $F$ has no
 satisfying valuation \emph{inside the cell described by $c$}.
-\lean{ConwayO7.withCube}\leanok
+\lean{ConwayO7.withCube}
+\leanfile{ConwayO7/Semantics.lean}\leanok
 \uses{def:cnf-formula, def:cnf-cube}
 \end{definition}
 
 \begin{lemma}[Semantics of $F \wedge c$]\label{lem:cnf-withcube-eval}
 A valuation satisfies $F \wedge c$ if and only if it satisfies both $F$ and
 the cube $c$.
-\lean{ConwayO7.eval_withCube}\leanok
+\lean{ConwayO7.eval_withCube}
+\leanfile{ConwayO7/Semantics.lean}\leanok
 \uses{def:cnf-withcube, def:cnf-valuation}
 \end{lemma}
 \begin{proof}[Proof sketch]
@@ -88,7 +95,8 @@ Let $F$ be a CNF formula and let $c_1, \dots, c_N$ be cubes whose
 satisfaction sets \emph{cover} the space of valuations (every valuation
 satisfies some $c_i$).  If $F \wedge c_i$ is unsatisfiable for every $i$,
 then $F$ is unsatisfiable.
-\lean{ConwayO7.unsat_of_cubes}\leanok
+\lean{ConwayO7.unsat_of_cubes}
+\leanfile{ConwayO7/Semantics.lean}\leanok
 \uses{def:cnf-unsat, def:cnf-withcube}
 \end{theorem}
 \begin{proof}[Proof sketch]
@@ -109,7 +117,8 @@ are mutually inverse byte for byte, which is what gives the byte-identity
 facts (such as Fact~\ref{fact:bytes}) their meaning.
 \lean{ConwayO7.Dimacs.litOfInt, ConwayO7.Dimacs.parseDimacs,
 ConwayO7.Dimacs.serializeDimacs, ConwayO7.Dimacs.parseCubes,
-ConwayO7.Dimacs.serializeCubes}\leanok
+ConwayO7.Dimacs.serializeCubes}
+\leanfile{ConwayO7/Dimacs.lean}\leanok
 \uses{def:cnf-formula, def:cnf-cube}
 \end{definition}
 
@@ -129,7 +138,8 @@ $x_{14+j} = s_j$ for $1 \le j \le |s|$; its satisfaction set, the
 valuation $s$ along the branching order.  A family $S$ of words is
 \emph{prefix-free} if no member is a prefix of another (in particular the
 members are pairwise distinct).
-\lean{ConwayO7.cubeOfSigns, ConwayO7.PrefixFree}\leanok
+\lean{ConwayO7.cubeOfSigns, ConwayO7.PrefixFree}
+\leanfile{ConwayO7/Coverage.lean}\leanok
 \uses{def:cnf-cube}
 \end{definition}
 
@@ -139,7 +149,8 @@ the values of $a$ along the branching order.  A valuation $a$ lies in the
 cell of a word $s$ (with $|s| \le D$) if and only if $s$ is a prefix of
 $w(a)$.  Consequently two cells are either nested or disjoint, and the
 cells of a prefix-free family are pairwise disjoint.
-\lean{ConwayO7.cubeOfSigns_eval_iff}\leanok
+\lean{ConwayO7.cubeOfSigns_eval_iff}
+\leanfile{ConwayO7/Coverage.lean}\leanok
 \uses{def:prefix, def:cnf-valuation}
 \end{lemma}
 \begin{proof}[Proof sketch]
@@ -153,7 +164,8 @@ $W_D(S) = \sum_{s \in S} 2^{\,D - |s|}$,
 i.e.\ $2^D$ times the usual Kraft mass $\sum_s 2^{-|s|}$.  The cell of $s$
 meets exactly $2^{\,D-|s|}$ of the $2^D$ branch words, so $W_D(S)$ is the
 total number of branch words covered, counted with multiplicity.
-\lean{ConwayO7.kraftWeight}\leanok
+\lean{ConwayO7.kraftWeight}
+\leanfile{ConwayO7/Coverage.lean}\leanok
 \uses{def:prefix}
 \end{definition}
 
@@ -164,7 +176,8 @@ then
 $W_{D+1}(S) = W_D(S_0) + W_D(S_1)$;
 moreover each $S_b$ inherits prefix-freeness and the length bound from $S$.
 \lean{ConwayO7.kraftWeight_split, ConwayO7.branchTails,
-ConwayO7.prefixFree_branchTails}\leanok
+ConwayO7.prefixFree_branchTails}
+\leanfile{ConwayO7/Coverage.lean}\leanok
 \uses{def:cov-kraft, def:prefix}
 \end{lemma}
 \begin{proof}[Proof sketch]
@@ -177,7 +190,8 @@ relations between their tails.
 \begin{lemma}[Kraft's inequality]\label{lem:cov-kraft-ineq}
 A prefix-free family $S \subseteq \{0,1\}^{\le D}$ satisfies
 $W_D(S) \le 2^D$.
-\lean{ConwayO7.kraftWeight_le}\leanok
+\lean{ConwayO7.kraftWeight_le}
+\leanfile{ConwayO7/Coverage.lean}\leanok
 \uses{def:cov-kraft, def:prefix}
 \end{lemma}
 \begin{proof}[Proof sketch]
@@ -193,7 +207,8 @@ A prefix-free family $S \subseteq \{0,1\}^{\le D}$ with full Kraft weight
 $W_D(S) = 2^D$ is a \emph{maximal antichain} of the binary tree: every
 $w \in \word{D}$ has a (necessarily unique) member of $S$ as a prefix.
 Hence the corresponding cells \emph{partition} the valuation space.
-\lean{ConwayO7.covers_of_prefixFree_kraft}\leanok
+\lean{ConwayO7.covers_of_prefixFree_kraft}
+\leanfile{ConwayO7/Coverage.lean}\leanok
 \uses{def:prefix, def:cov-kraft}
 \end{lemma}
 \begin{proof}[Proof sketch]
@@ -211,7 +226,8 @@ prefix-freeness via Lemma~\ref{lem:cov-cell-prefix}.
 Let $S$ be a prefix-free family of words of length $\le D$ with full Kraft
 weight $2^D$.  Then every valuation lies in the cell of some (unique)
 member of $S$.
-\lean{ConwayO7.cube_cover_of_signs}\leanok
+\lean{ConwayO7.cube_cover_of_signs}
+\leanfile{ConwayO7/Coverage.lean}\leanok
 \uses{def:prefix, def:cnf-valuation}
 \end{lemma}
 \begin{proof}[Proof sketch]
@@ -234,14 +250,16 @@ differ (reading left to right) $s$ carries $0$ and $t$ carries $1$, or $s$
 is a prefix of $t$.  This relation is total, transitive and antisymmetric:
 a linear order on words.
 \lean{ConwayO7.lexLe, ConwayO7.lexLe_total, ConwayO7.lexLe_trans,
-ConwayO7.lexLe_antisymm}\leanok
+ConwayO7.lexLe_antisymm}
+\leanfile{ConwayO7/CoverageCheck.lean}\leanok
 \end{definition}
 
 \begin{lemma}[Block property of the lexicographic order]\label{lem:cov-lex-block}
 Extensions of a fixed word $s$ form an \emph{interval}: if $s$ is a prefix
 of $t$ and $s \le u \le t$ in the lexicographic order, then $s$ is a prefix
 of $u$.  (In particular $s \le t$ whenever $s$ is a prefix of $t$.)
-\lean{ConwayO7.prefix_of_lexLe_of_lexLe, ConwayO7.lexLe_of_prefix}\leanok
+\lean{ConwayO7.prefix_of_lexLe_of_lexLe, ConwayO7.lexLe_of_prefix}
+\leanfile{ConwayO7/CoverageCheck.lean}\leanok
 \uses{def:cov-lex}
 \end{lemma}
 \begin{proof}[Proof sketch]
@@ -253,14 +271,16 @@ order hypotheses.
 \begin{definition}[The adjacent-pairs test]\label{def:cov-adjacent}
 For a finite sequence of words, the \emph{adjacent-pairs test} checks, in
 one pass, that no term is a prefix of its immediate successor.
-\lean{ConwayO7.adjacentOk}\leanok
+\lean{ConwayO7.adjacentOk}
+\leanfile{ConwayO7/CoverageCheck.lean}\leanok
 \uses{def:prefix}
 \end{definition}
 
 \begin{lemma}[Soundness of the adjacent-pairs test]\label{lem:cov-adjacent-sound}
 If a sequence of words is sorted for the lexicographic order and passes the
 adjacent-pairs test, then the underlying family is prefix-free.
-\lean{ConwayO7.pairwise_of_sorted_adjacent}\leanok
+\lean{ConwayO7.pairwise_of_sorted_adjacent}
+\leanfile{ConwayO7/CoverageCheck.lean}\leanok
 \uses{def:cov-adjacent, def:cov-lex, def:prefix}
 \end{lemma}
 \begin{proof}[Proof sketch]
@@ -280,7 +300,8 @@ the finite computation verifying:
 adjacent-pairs test;
 (iii) the Kraft weight satisfies $W_D(S) = 2^D$ exactly, in integer
 arithmetic.
-\lean{ConwayO7.checkCover}\leanok
+\lean{ConwayO7.checkCover}
+\leanfile{ConwayO7/CoverageCheck.lean}\leanok
 \uses{def:cov-adjacent, def:cov-lex, def:cov-kraft}
 \end{definition}
 
@@ -288,7 +309,8 @@ arithmetic.
 If the coverage check succeeds on $(D, S)$, then every member of $S$ has
 length $\le D$, the family $S$ is prefix-free, and $W_D(S) = 2^D$ --- the
 three hypotheses of Lemma~\ref{lem:cov-valuation-cover}.
-\lean{ConwayO7.cover_of_checkCover}\leanok
+\lean{ConwayO7.cover_of_checkCover}
+\leanfile{ConwayO7/CoverageCheck.lean}\leanok
 \uses{def:cov-checkcover, def:prefix, def:cov-kraft}
 \end{lemma}
 \begin{proof}[Proof sketch]
@@ -305,7 +327,8 @@ Let $F$ be a CNF formula, fix a branching order of length $D$, and let
 $S \subseteq \{0,1\}^{\le D}$ be prefix-free with full Kraft weight
 $W_D(S) = 2^D$.  If for every $s \in S$ the formula
 $F \wedge (\text{cell } s)$ is unsatisfiable, then $F$ is unsatisfiable.
-\lean{ConwayO7.unsat_of_prefix_cover}\leanok
+\lean{ConwayO7.unsat_of_prefix_cover}
+\leanfile{ConwayO7/CoverageCheck.lean}\leanok
 \uses{def:prefix, def:cov-kraft, def:cnf-withcube, def:cnf-unsat}
 \end{theorem}
 \begin{proof}[Proof sketch]
@@ -320,7 +343,8 @@ If the coverage check succeeds on $(D, S)$ and $F \wedge (\text{cell } s)$
 is unsatisfiable for every $s \in S$, then $F$ is unsatisfiable.  The
 entire coverage side of the certificate thus reduces to one finite
 computation on the concrete data.
-\lean{ConwayO7.unsat_of_checked_cover}\leanok
+\lean{ConwayO7.unsat_of_checked_cover}
+\leanfile{ConwayO7/CoverageCheck.lean}\leanok
 \uses{thm:coverage, def:cov-checkcover}
 \end{corollary}
 \begin{proof}[Proof sketch]
@@ -341,7 +365,8 @@ words in $\{0,1\}^{\le 200}$ obtained by reading off the signs of each
 cube's literals.  No processing external to Lean intervenes between the
 hash-pinned file and these terms.
 \lean{ConwayO7.cubesAllTxt, ConwayO7.tilingCubes, ConwayO7.tilingOrder,
-ConwayO7.tilingSigns}\leanok
+ConwayO7.tilingSigns}
+\leanfile{ConwayO7/Data/FullTiling.lean}\leanok
 \uses{def:cnf-cube, def:cnf-dimacs}
 \end{definition}
 
@@ -351,14 +376,16 @@ reproduces the parsed cube list exactly: every distributed cube really is a
 sign pattern on an initial segment of consecutive variables starting at
 $x_{15}$.  (If the file contained any cube of another shape, this
 computation would fail.)
-\lean{ConwayO7.tilingSigns_eq}\leanok
+\lean{ConwayO7.tilingSigns_eq}
+\leanfile{ConwayO7/Data/FullTiling.lean}\leanok
 \uses{def:cov-tiling, def:prefix}
 \end{fact}
 
 \begin{fact}[Cardinality]\label{fact:cov-tiling-count}
 The distributed family consists of exactly $98{,}536$ sign words, of
 lengths between $12$ and $200$.
-\lean{ConwayO7.tiling_count}\leanok
+\lean{ConwayO7.tiling_count}
+\leanfile{ConwayO7/Data/FullTiling.lean}\leanok
 \uses{def:cov-tiling}
 \end{fact}
 
@@ -369,7 +396,8 @@ full Kraft weight $2^{200}$, so by Lemma~\ref{lem:kraft} its cells
 partition the valuation space --- a perfect tiling.  This is established by
 executing the verified check, inside Lean's compiled evaluator, on the
 embedded data.
-\lean{ConwayO7.o7Tiling_checkCover}\leanok
+\lean{ConwayO7.o7Tiling_checkCover}
+\leanfile{ConwayO7/Data/FullTiling.lean}\leanok
 \uses{def:cov-tiling, def:cov-checkcover, def:prefix}
 \end{fact}
 

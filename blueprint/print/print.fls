@@ -212,6 +212,7 @@ INPUT /home/uokur/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /home/uokur/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /home/uokur/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmtt9.tfm
+INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmri9.tfm
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/lmmi9.tfm
@@ -224,7 +225,6 @@ INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.t
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
-INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmri9.tfm
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmtti10.tfm
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
 INPUT /home/uokur/.TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm

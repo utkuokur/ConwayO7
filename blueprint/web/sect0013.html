@@ -212,6 +212,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> Fix two sequences \(X, Y\) of \(693\) literals over the orbit variables — for the encoding, \(X\) lists the orbit variables in position order and \(Y\) lists them re-indexed by a generator’s orbit action. A valuation \(a\) satisfies \(X \preceq Y\) if for every \(i {\lt} 693\): whenever the literal values of \(X\) and \(Y\) agree at all positions \(j {\lt} i\) and the \(i\)-th literal of \(X\) is true, the \(i\)-th literal of \(Y\) is true. This is the lexicographic comparison of the two literal-value words under \(a\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/LexSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -280,6 +281,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> A valuation of the orbit variables satisfies the <em>lex-leader invariant</em> if for each of the \(101\) generators \(\rho \) it satisfies \(X \preceq Y_\rho \), where \(Y_\rho \) is \(X\) re-indexed by \(\rho \)’s orbit action. On words this says precisely \(\omega \preceq \rho \cdot \omega \) for every generator \(\rho \), i.e. condition (4) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a>.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/LexSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -349,6 +351,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> The clauses rendering one comparison \(X \preceq Y\) use fresh auxiliary registers. Every valuation \(a\) that satisfies all previously emitted clauses and the comparison \(X \preceq Y\) (on literal values) extends, by assigning only the fresh registers, to a valuation satisfying all clauses of the chain as well.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/LexSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -432,6 +435,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p> The full minimality section of the encoding — the \(101\) chained comparisons of condition (4) — preserves satisfiability: any valuation of the orbit block satisfying the lex-leader invariant extends over the auxiliary registers of the section to satisfy every clause the section emits.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/LexTrip.lean</span></small> </p>
 
   </div>
 </div>

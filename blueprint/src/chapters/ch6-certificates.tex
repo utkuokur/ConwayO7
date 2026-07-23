@@ -19,7 +19,8 @@ unsatisfiable.  The \emph{LRAT format} additionally annotates each step
 with the indices of the clauses used, so that a derivation can be checked
 in time linear in its length; Lean's standard library formalises LRAT
 derivations as sequences of addition and deletion actions.
-\lean{Std.Tactic.BVDecide.LRAT.IntAction, Std.Tactic.BVDecide.LRAT.parseLRATProof}\leanok
+\lean{Std.Tactic.BVDecide.LRAT.IntAction, Std.Tactic.BVDecide.LRAT.parseLRATProof}
+\leanfile{mathlib / Lean core}\leanok
 \end{definition}
 
 \begin{theorem}[The verified checker]\label{crt-checker}
@@ -28,7 +29,8 @@ derivation and a CNF, and a soundness theorem proved in Lean: whenever the
 checker accepts, the formula is unsatisfiable.  Consequently a run of the
 checker inside Lean's kernel converts a concrete derivation into a genuine
 Lean proof of unsatisfiability, with no unverified translation step.
-\lean{Std.Tactic.BVDecide.LRAT.check, Std.Tactic.BVDecide.LRAT.check_sound}\leanok
+\lean{Std.Tactic.BVDecide.LRAT.check, Std.Tactic.BVDecide.LRAT.check_sound}
+\leanfile{mathlib / Lean core}\leanok
 \uses{def:lrat}
 \end{theorem}
 
@@ -43,7 +45,8 @@ the same cube-adjunction used throughout the pipeline.  This is the
 calibration sample: a sign convention, off-by-one, or clause-order mismatch
 anywhere between the Lean development and the distributed artifact would
 make this check fail.
-\lean{ConwayO7.cube4093_unsat}\leanok
+\lean{ConwayO7.cube4093_unsat}
+\leanfile{ConwayO7/Data/Sample.lean}\leanok
 \uses{def:lrat, crt-checker, fact:bytes, fact:tiling}
 \end{fact}
 
@@ -70,7 +73,8 @@ divisible by $7$.  This composes the refutation-by-cells theorem
 (Theorem~\ref{thm:coverage}) with the conditional main theorem
 (Theorem~\ref{st-conditional}); a variant takes the prefix-freeness and
 Kraft hypotheses in the executable form of the cover checker.
-\lean{ConwayO7.no_aut_seven_of_certificates, ConwayO7.no_aut_seven_of_checked_certificates}\leanok
+\lean{ConwayO7.no_aut_seven_of_certificates, ConwayO7.no_aut_seven_of_checked_certificates}
+\leanfile{ConwayO7/Pipeline.lean}\leanok
 \uses{st-conditional, st-encodes, thm:coverage, def:prefix, lem:kraft}
 \end{theorem}
 
@@ -82,7 +86,8 @@ $\sigma_0$-invariant strongly regular graphs, then the conclusion of the
 main theorem holds.  The combinatorial hypotheses on $S$ are discharged by
 the executed cover check (Fact~\ref{fact:tiling}); the remaining hypotheses
 are exactly the per-cell unsatisfiability facts and encoding completeness.
-\lean{ConwayO7.no_aut_seven_of_tiling_certificates}\leanok
+\lean{ConwayO7.no_aut_seven_of_tiling_certificates}
+\leanfile{ConwayO7/Data/FullTiling.lean}\leanok
 \uses{crt-schema, fact:tiling, def:phi}
 \end{theorem}
 

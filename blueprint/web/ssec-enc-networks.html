@@ -210,6 +210,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> A vector of literals \((y_1,\dots ,y_m)\) <em>carries the unary representation</em> of a number \(k\) under a valuation \(a\) if \(y_i\) is true exactly when \(i \leq k\); when \(k\) is the number of true literals among a vector of inputs, we say the register carries the unary count of those inputs.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/TotSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -277,6 +278,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p> Fix input literals \(\ell _1,\dots ,\ell _n\) over variables \(\leq T\) and a threshold \(1 \leq \tau \) with \(\tau + 2 \leq n\). For any valuation \(a\) under which at most \(\tau \) of the inputs are true, the valuation extending \(a\) that assigns to each fresh register variable \(s_{k,j}\) the truth value of “more than \(k\) of the first \(k + j + 1\) inputs are true” satisfies every clause of the sequential at-most-\(\tau \) counter, and agrees with \(a\) on all variables \(\leq T\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/SeqSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -353,6 +355,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> Suppose, under a valuation \(a\), two child registers carry the unary counts of their respective input sets and the parent register carries the unary count of the union. Then all merge clauses of the internal node — which say that \(i\) true literals on one side and \(j\) on the other force at least \(i + j\) in the parent, and conversely — are satisfied by \(a\) itself; no fresh variables are involved in this step.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/TotSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -422,6 +425,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p> For any well-formed state \(s\) with threshold \(t\), valuation \(a\) satisfying \(s\), and input literals over variables \(\leq t\): there is a valuation \(a'\) agreeing with \(a\) on all variables \(\leq t\) that satisfies every clause of the totalizer built on those inputs, and under which the output register carries the unary count of the inputs.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/TotSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -503,6 +507,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p> Let \(C\) be the number of true inputs under \(a\) (at least \(9\) inputs, over variables \(\leq t\)). There is an extension \(a'\) of \(a\) by fresh variables satisfying all clauses of the modulo-\(9\) totalizer, under which the two output registers carry the unary representations of the quotient \(\lfloor C/9 \rfloor \) and the remainder \(C \bmod 9\) respectively.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/MtoSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -582,6 +587,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p> Fix \(98\) input literals over variables \(\leq t\) and \(0 {\lt} k {\lt} 98\). If at most \(k\) of the inputs are true under \(a\), then the modulo-\(9\) totalizer together with its comparator clauses — which forbid every quotient/remainder combination exceeding \(k\) — is satisfied by an extension of \(a\) assigning only fresh variables.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/MtoSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -665,6 +671,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> Fix a vertex \(u\) and a valuation \(a\) under which exactly \(14\) of the \(98\) orbit literals at \(u\) are true. Then the exactly-\(14\) gadget for \(u\) — an at-least-\(14\) network run on the negated literals (as at-most-\(84\)) followed by an at-most-\(14\) network, both modulo-\(9\) totalizers — admits an extension of \(a\) by fresh variables satisfying all its clauses.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/DegSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -750,6 +757,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p> The degree invariant is a valid pre- and postcondition for the degree gadget of each vertex, and hence for the entire degree section — the iteration of the gadget over all \(99\) vertices — as one emission triple.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/DegSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -828,6 +836,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> Fix a representative pair \(r = (r_1,r_2)\). For each candidate common neighbour \(w\) the gadget allocates a fresh variable \(p_w\) with three clauses expressing \(p_w \leftrightarrow (e_{r_1 w} \wedge e_{r_2 w})\) in terms of the orbit literals. Assigning each \(p_w\) its semantic value — the conjunction of the two adjacencies — satisfies all product clauses, and the recorded list of product literals evaluates to exactly the indicator sequence of common neighbourhood.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CnSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -895,6 +904,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> Fix \(98\) literals over variables \(\leq t\) of which exactly two are true under \(a\). Then the exactly-\(2\) gadget — a sequential at-most-\(96\) counter on the negated literals (enforcing at least \(2\)) followed by a sequential at-most-\(2\) counter — admits an extension of \(a\) by fresh variables satisfying all its clauses.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CnSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -984,6 +994,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p> The common-neighbour invariant is a valid pre- and postcondition for the gadget of each orbit — the product stage followed by the exactly-\(2\) gadget on the \(97\) product literals together with the pair’s own orbit literal — and hence for the whole section over all \(693\) orbits, as one emission triple.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CnSpec.lean</span></small> </p>
 
   </div>
 </div>
@@ -1064,6 +1075,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> The level-1 symmetry condition is a valid pre- and postcondition for the section emitting the \(14\) unit clauses that pin the neighbourhood of the fixed vertex: under the condition, each unit clause is already true and no fresh variables are needed.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/SatFrame.lean</span></small> </p>
 
   </div>
 </div>
@@ -1141,6 +1153,7 @@
   </div>
   <div class="proposition_thmcontent">
   <p> For every valuation of the orbit variables satisfying the pre-lex invariant (Definition&#160;<a href="ssec-enc-framework.html#def:enc-prelexinv">49</a>) — that is, the arithmetic conditions (1)–(3) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a> — there is an extension assigning only auxiliary variables above \(693\) that satisfies every clause emitted by the degree, common-neighbour, and normalisation sections of the generator.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/SectionsCompose.lean</span></small> </p>
 
   </div>
 </div>

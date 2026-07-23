@@ -18,7 +18,8 @@ points and $\operatorname{supp}\pi$ its complement, the support.
 \begin{lemma}[Support is a multiple of $p$]\label{lem:grp-support-multiple}
 Let $\pi$ be a permutation of a finite type with $\pi^p = 1$ for a prime $p$.
 Then $|\operatorname{supp}\pi|$ is a multiple of $p$.
-\lean{ConwayO7.card_support_of_pow_prime_eq_one}\leanok
+\lean{ConwayO7.card_support_of_pow_prime_eq_one}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \end{lemma}
 
 \begin{proof}\leanok
@@ -30,7 +31,8 @@ disjoint union of the cycles.
 \begin{lemma}[Fixed points and support partition the domain]\label{lem:grp-fix-support}
 For any permutation $\pi$ of a finite type $\alpha$,
 $|\Fix\pi| + |\operatorname{supp}\pi| = |\alpha|$.
-\lean{ConwayO7.card_filter_fixed_add_card_support}\leanok
+\lean{ConwayO7.card_filter_fixed_add_card_support}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \end{lemma}
 
 \begin{lemma}[Fixed-point congruence]\label{lem:grp-fixed-congruence}
@@ -39,7 +41,8 @@ finite $\pi$-invariant set.  Then
 \[
   |\{a \in s \mid \pi a = a\}| \equiv |s| \pmod p .
 \]
-\lean{ConwayO7.card_filter_fixed_modEq}\leanok
+\lean{ConwayO7.card_filter_fixed_modEq}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \end{lemma}
 
 \begin{proof}\leanok
@@ -57,7 +60,8 @@ involution.)
 Let $\pi \ne 1$ be a permutation of a finite type of cardinality $f + pm$ with
 $\pi^p = 1$, $p$ prime, and exactly $f$ fixed points.  Then the cycle type of
 $\pi$ is $[p^m]$.
-\lean{ConwayO7.cycleType_eq_replicate_of_fixed}\leanok
+\lean{ConwayO7.cycleType_eq_replicate_of_fixed}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \end{proposition}
 
 \begin{proof}\leanok
@@ -77,14 +81,16 @@ common neighbourhood.
 \begin{lemma}[$\lambda = 1$: unique triangles]\label{lem:grp-unique-triangle}
 If $x$ and $u$ are adjacent then $N(x,u)$ is a singleton: every edge of
 $\Gamma$ lies in exactly one triangle.
-\lean{ConwayO7.commonNeighbors_eq_singleton_of_adj}\leanok
+\lean{ConwayO7.commonNeighbors_eq_singleton_of_adj}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \uses{def:srg}
 \end{lemma}
 
 \begin{lemma}[$\mu = 2$: common-neighbour pairs]\label{lem:grp-mu-pair}
 If $x \ne w$ are nonadjacent then $N(x,w) = \{a,b\}$ for two distinct
 vertices $a \ne b$.
-\lean{ConwayO7.commonNeighbors_eq_pair_of_not_adj}\leanok
+\lean{ConwayO7.commonNeighbors_eq_pair_of_not_adj}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \uses{def:srg}
 \end{lemma}
 
@@ -92,7 +98,8 @@ vertices $a \ne b$.
 Let $w, w' \ne x$ be nonadjacent to $x$.  If $N(x,w) = N(x,w')$ then
 $w = w'$: a vertex at distance two from $x$ is determined by its pair of
 common neighbours with $x$.
-\lean{ConwayO7.eq_of_commonNeighbors_eq}\leanok
+\lean{ConwayO7.eq_of_commonNeighbors_eq}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \uses{def:srg}
 \end{lemma}
 
@@ -110,13 +117,15 @@ $\{x,w\} = N(a,b) = \{x,w'\}$ and $w = w'$.
 Let $\pi$ be a permutation of $V$ with
 $\Gamma(\pi u, \pi v) \Leftrightarrow \Gamma(u,v)$ for all $u,v$.  Then
 $\pi\bigl(N(v,w)\bigr) \subseteq N(\pi v, \pi w)$.
-\lean{ConwayO7.mapsTo_commonNeighbors}\leanok
+\lean{ConwayO7.mapsTo_commonNeighbors}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \end{lemma}
 
 \begin{proposition}[Rigidity]\label{lem:grp-rigidity}
 An adjacency-preserving permutation of an $\srg(99,14,1,2)$ that fixes a
 vertex $x$ and every neighbour of $x$ is the identity.
-\lean{ConwayO7.eq_one_of_fixes_neighbors}\leanok
+\lean{ConwayO7.eq_one_of_fixes_neighbors}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \uses{def:srg}
 \end{proposition}
 
@@ -136,7 +145,8 @@ $x$ and distinct from $x$, injectivity of the labelling
 Let $\Gamma$ be an $\srg(99,14,1,2)$ and let $\pi$ be an adjacency-preserving
 permutation of its vertices with $\ord\pi = 7$.  Then $\pi$ fixes exactly one
 vertex.
-\lean{ConwayO7.card_filter_fixed_eq_one}\leanok
+\lean{ConwayO7.card_filter_fixed_eq_one}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \uses{def:srg}
 \end{theorem}
 
@@ -170,7 +180,8 @@ $\pi = (\pi^2)^4$ fixes $a \in N(x)$ --- contradiction.  So $\Fix\pi = \{x\}$.
 \begin{theorem}[{Cycle type $[1,7^{14}]$}]\label{thm:grp-cycle-type}
 With $\Gamma$ and $\pi$ as in Theorem~\ref{lem:fixed}, the cycle type of
 $\pi$ is $[7^{14}]$: one fixed vertex and fourteen $7$-cycles.
-\lean{ConwayO7.cycleType_eq_replicate}\leanok
+\lean{ConwayO7.cycleType_eq_replicate}
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \uses{def:srg, lem:fixed}
 \end{theorem}
 
@@ -188,13 +199,15 @@ $7(n+1) = 98$ and the cycle type is $[7^{14}]$.
 For a graph $G$ on a vertex set $V$, the map sending an automorphism
 $\sigma \in \Aut G = (G \simeq_g G)$ to its underlying vertex bijection is a
 monoid homomorphism $\Aut G \to \operatorname{Sym}(V)$.
-\lean{ConwayO7.autToPerm}\leanok
+\lean{ConwayO7.autToPerm}
+\leanfile{ConwayO7/Aut.lean}\leanok
 \end{definition}
 
 \begin{lemma}[Injectivity]\label{lem:grp-autToPerm-injective}
 The homomorphism of Definition~\ref{def:grp-autToPerm} is injective: an
 automorphism is determined by its action on vertices.
-\lean{ConwayO7.autToPerm_injective}\leanok
+\lean{ConwayO7.autToPerm_injective}
+\leanfile{ConwayO7/Aut.lean}\leanok
 \uses{def:grp-autToPerm}
 \end{lemma}
 
@@ -212,7 +225,8 @@ $\Aut G$ injects into the finite group $\operatorname{Sym}(V)$.
 \begin{lemma}[Cauchy step]\label{lem:cauchy}
 If $7 \mid |\Aut G|$ for a graph $G$ on a finite vertex set, then $\Aut G$
 contains an element of order $7$.
-\lean{ConwayO7.exists_aut_orderOf_eq_seven, exists_prime_orderOf_dvd_card}\leanok
+\lean{ConwayO7.exists_aut_orderOf_eq_seven, exists_prime_orderOf_dvd_card}
+\leanfile{ConwayO7/Aut.lean}\leanok
 \uses{lem:grp-aut-finite}
 \end{lemma}
 
@@ -225,7 +239,8 @@ Cauchy's theorem for the finite group $\Aut G$
 Let $\Gamma$ be an $\srg(99,14,1,2)$ and $\sigma \in \Aut\Gamma$ with
 $\ord\sigma = 7$.  Then the underlying vertex permutation of $\sigma$ has
 cycle type $[7^{14}]$.
-\lean{ConwayO7.cycleType_autToPerm}\leanok
+\lean{ConwayO7.cycleType_autToPerm}
+\leanfile{ConwayO7/Aut.lean}\leanok
 \uses{def:srg, def:grp-autToPerm, thm:grp-cycle-type}
 \end{corollary}
 
@@ -252,7 +267,8 @@ Formally, $\sigma_0$ is assembled from the explicit forward-rotation formula
 and its backward-rotation companion (positions advance by $1$, respectively
 by $6 \equiv -1$, modulo $7$).
 \lean{ConwayO7.sigma0, ConwayO7.sigma0Fun, ConwayO7.sigma0InvFun,
-ConwayO7.sigma0_val}\leanok
+ConwayO7.sigma0_val}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \uses{lem:grp-sigma0-inverse}
 \end{definition}
 
@@ -261,7 +277,8 @@ The forward and backward block rotations are mutually inverse: advancing the
 position within a block by $1$ and then by $6$ (or vice versa) is the
 identity, and both maps fix $0$.  Hence $\sigma_0$ is a well-defined
 permutation with an explicit inverse.
-\lean{ConwayO7.sigma0_leftInverse, ConwayO7.sigma0_rightInverse}\leanok
+\lean{ConwayO7.sigma0_leftInverse, ConwayO7.sigma0_rightInverse}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \end{lemma}
 
 \begin{proof}\leanok
@@ -277,7 +294,8 @@ For a nonzero vertex $v = 1 + 7i + j$ and every $k \ge 0$,
 \]
 iterating $\sigma_0$ never leaves the block of $v$ and advances the position
 within the block by $k$ modulo $7$.
-\lean{ConwayO7.sigma0_iterate_val}\leanok
+\lean{ConwayO7.sigma0_iterate_val}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \uses{def:sigma0}
 \end{lemma}
 
@@ -289,7 +307,8 @@ step and adds $1$ to the position, modulo $7$.
 
 \begin{lemma}[$\sigma_0$ has order dividing seven]\label{lem:grp-sigma0-order}
 $\sigma_0^7 = 1$.
-\lean{ConwayO7.sigma0_pow_seven, ConwayO7.sigma0_iterate_seven}\leanok
+\lean{ConwayO7.sigma0_pow_seven, ConwayO7.sigma0_iterate_seven}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \uses{def:sigma0}
 \end{lemma}
 
@@ -302,7 +321,8 @@ $7 \equiv 0 \pmod 7$.
 
 \begin{lemma}[Fixed points of $\sigma_0$]\label{lem:grp-sigma0-fixed-iff}
 $\sigma_0(v) = v$ if and only if $v = 0$.
-\lean{ConwayO7.sigma0_fixed_iff}\leanok
+\lean{ConwayO7.sigma0_fixed_iff}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \uses{def:sigma0}
 \end{lemma}
 
@@ -313,7 +333,8 @@ impossible for $0 \le j < 7$.
 
 \begin{lemma}[Fixed-point count of $\sigma_0$]\label{lem:grp-sigma0-fixed-card}
 $\sigma_0$ has exactly one fixed point; in particular $\sigma_0 \ne 1$.
-\lean{ConwayO7.sigma0_fixed_card, ConwayO7.sigma0_ne_one}\leanok
+\lean{ConwayO7.sigma0_fixed_card, ConwayO7.sigma0_ne_one}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \uses{lem:grp-sigma0-fixed-iff}
 \end{lemma}
 
@@ -321,7 +342,8 @@ $\sigma_0$ has exactly one fixed point; in particular $\sigma_0 \ne 1$.
 The cycle type of $\sigma_0$ is $[7^{14}]$ --- the same as that of any
 order-seven automorphism of an $\srg(99,14,1,2)$
 (Corollary~\ref{cor:grp-aut-cycle-type}).
-\lean{ConwayO7.sigma0_cycleType}\leanok
+\lean{ConwayO7.sigma0_cycleType}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \uses{def:sigma0}
 \end{lemma}
 
@@ -337,7 +359,8 @@ and the fixed-point count.
 \begin{lemma}[Transport of strong regularity]\label{lem:grp-srg-transport}
 If $G \simeq_g H$ is an isomorphism of finite graphs and $G$ is an
 $\srg(n,k,\lambda,\mu)$, then so is $H$.
-\lean{ConwayO7.isSRGWith_of_iso}\leanok
+\lean{ConwayO7.isSRGWith_of_iso}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \uses{def:srg}
 \end{lemma}
 
@@ -350,7 +373,8 @@ vertex-by-vertex, so all four parameters are preserved.
 If some $\srg(99,14,1,2)$ $\Gamma$, on any vertex set, admits an automorphism
 of order $7$, then some $\srg(99,14,1,2)$ on the vertex set $\{0,\dots,98\}$
 is invariant under $\sigma_0$.
-\lean{ConwayO7.exists_sigma0_invariant}\leanok
+\lean{ConwayO7.exists_sigma0_invariant}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \uses{def:srg, def:sigma0}
 \end{theorem}
 
@@ -372,7 +396,8 @@ $\srg(99,14,1,2)$ invariant under $\sigma_0$ itself.
 Suppose no $\srg(99,14,1,2)$ on the vertex set $\{0,\dots,98\}$ is invariant
 under $\sigma_0$.  Then $7 \nmid |\Aut\Gamma|$ for every $\srg(99,14,1,2)$
 $\Gamma$.
-\lean{ConwayO7.seven_not_dvd_card_aut_of_no_sigma0_invariant}\leanok
+\lean{ConwayO7.seven_not_dvd_card_aut_of_no_sigma0_invariant}
+\leanfile{ConwayO7/Canonical.lean}\leanok
 \uses{def:srg, def:sigma0}
 \end{theorem}
 

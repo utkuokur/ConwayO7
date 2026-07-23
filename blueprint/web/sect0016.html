@@ -209,6 +209,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> Fix a <em>branching order</em>: a sequence of \(D\) distinct variables, in the certificate the sequence \(x_{15}, x_{16}, \dots , x_{214}\) (so \(D = 200\)). To a word \(s \in \{ 0,1\} ^{\le D}\) associate the cube asserting \(x_{14+j} = s_j\) for \(1 \le j \le |s|\); its satisfaction set, the <em>cell</em> of \(s\), consists of all valuations extending the partial valuation \(s\) along the branching order. A family \(S\) of words is <em>prefix-free</em> if no member is a prefix of another (in particular the members are pairwise distinct).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Coverage.lean</span></small> </p>
 
   </div>
 </div>
@@ -276,6 +277,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> Write \(w(a) \in \{ 0,1\} ^{D}\) for the <em>branch word</em> of a valuation \(a\): the values of \(a\) along the branching order. A valuation \(a\) lies in the cell of a word \(s\) (with \(|s| \le D\)) if and only if \(s\) is a prefix of \(w(a)\). Consequently two cells are either nested or disjoint, and the cells of a prefix-free family are pairwise disjoint.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Coverage.lean</span></small> </p>
 
   </div>
 </div>
@@ -352,6 +354,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> The <em>Kraft weight</em> at depth \(D\) of a family \(S\) of words of length \(\le D\) is the integer \(W_D(S) = \sum _{s \in S} 2^{\, D - |s|}\), i.e. \(2^D\) times the usual Kraft mass \(\sum _s 2^{-|s|}\). The cell of \(s\) meets exactly \(2^{\, D-|s|}\) of the \(2^D\) branch words, so \(W_D(S)\) is the total number of branch words covered, counted with multiplicity.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Coverage.lean</span></small> </p>
 
   </div>
 </div>
@@ -423,6 +426,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> For \(b \in \{ 0,1\} \) let \(S_b = \{  t : b\, t \in S \} \) be the family of tails of the members of \(S\) beginning with \(b\). If the empty word is not in \(S\), then \(W_{D+1}(S) = W_D(S_0) + W_D(S_1)\); moreover each \(S_b\) inherits prefix-freeness and the length bound from \(S\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Coverage.lean</span></small> </p>
 
   </div>
 </div>
@@ -504,6 +508,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> A prefix-free family \(S \subseteq \{ 0,1\} ^{\le D}\) satisfies \(W_D(S) \le 2^D\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Coverage.lean</span></small> </p>
 
   </div>
 </div>
@@ -587,6 +592,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> A prefix-free family \(S \subseteq \{ 0,1\} ^{\le D}\) with full Kraft weight \(W_D(S) = 2^D\) is a <em>maximal antichain</em> of the binary tree: every \(w \in \{ 0,1\} ^{D}\) has a (necessarily unique) member of \(S\) as a prefix. Hence the corresponding cells <em>partition</em> the valuation space.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Coverage.lean</span></small> </p>
 
   </div>
 </div>
@@ -670,6 +676,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> Let \(S\) be a prefix-free family of words of length \(\le D\) with full Kraft weight \(2^D\). Then every valuation lies in the cell of some (unique) member of \(S\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Coverage.lean</span></small> </p>
 
   </div>
 </div>

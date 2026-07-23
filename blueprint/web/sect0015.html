@@ -185,7 +185,8 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> Fix a countable index set \(V\) of <em>variables</em>; concretely \(V = \{ 0, 1, 2, \dots \} \). A <em>literal</em> is a pair \((x, \varepsilon ) \in V \times \{ 0,1\} \), written \(x\) when \(\varepsilon = 1\) and \(\neg x\) when \(\varepsilon = 0\): an assertion that the variable \(x\) takes the value \(\varepsilon \). </p>
+  <p> Fix a countable index set \(V\) of <em>variables</em>; concretely \(V = \{ 0, 1, 2, \dots \} \). A <em>literal</em> is a pair \((x, \varepsilon ) \in V \times \{ 0,1\} \), written \(x\) when \(\varepsilon = 1\) and \(\neg x\) when \(\varepsilon = 0\): an assertion that the variable \(x\) takes the value \(\varepsilon \).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">mathlib / Lean core</span></small></p>
 
   </div>
 </div>
@@ -252,6 +253,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> A <em>clause</em> is a finite list of literals, read <em>disjunctively</em> (“at least one of these assertions holds”). A <em>formula in conjunctive normal form</em> (a <em>CNF formula</em>) is a finite family \(F = (C_1, \dots , C_m)\) of clauses, read <em>conjunctively</em> (“every clause holds”).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">mathlib / Lean core</span></small> </p>
 
   </div>
 </div>
@@ -327,6 +329,7 @@
 </li>
 </ul>
 <p> In Lean these are the evaluation maps sending a valuation and a clause/formula to \(\{ 0,1\} \); satisfaction means evaluating to \(1\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">mathlib / Lean core</span></small> </p>
 
   </div>
 </div>
@@ -393,6 +396,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> A CNF formula \(F\) is <em>satisfiable</em> if some valuation satisfies it, and <em>unsatisfiable</em> if no valuation does. Unsatisfiability of a suitable formula is the finitary statement to which the non-existence theorem of this project is reduced.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">mathlib / Lean core</span></small> </p>
 
   </div>
 </div>
@@ -461,6 +465,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> A <em>cube</em> is a finite list of literals read <em>conjunctively</em> (“all of these assertions hold”) — dually to a clause. A valuation satisfies a cube \(c\) iff it satisfies every literal of \(c\); thus a cube whose variables are pairwise distinct is the same thing as a <em>partial valuation</em> with finite domain, and its satisfaction set is the set of all total valuations extending it.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Semantics.lean</span></small> </p>
 
   </div>
 </div>
@@ -527,6 +532,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> For a CNF formula \(F\) and a cube \(c\), the formula \(F \wedge c\) is obtained by adjoining to \(F\) one singleton clause \(\{ \ell \} \) per literal \(\ell \) of \(c\). This is the formula whose refutation certifies that \(F\) has no satisfying valuation <em>inside the cell described by \(c\)</em>.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Semantics.lean</span></small> </p>
 
   </div>
 </div>
@@ -594,6 +600,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> A valuation satisfies \(F \wedge c\) if and only if it satisfies both \(F\) and the cube \(c\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Semantics.lean</span></small> </p>
 
   </div>
 </div>
@@ -675,6 +682,7 @@
   </div>
   <div class="theorem_thmcontent">
   <p> Let \(F\) be a CNF formula and let \(c_1, \dots , c_N\) be cubes whose satisfaction sets <em>cover</em> the space of valuations (every valuation satisfies some \(c_i\)). If \(F \wedge c_i\) is unsatisfiable for every \(i\), then \(F\) is unsatisfiable.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Semantics.lean</span></small> </p>
 
   </div>
 </div>
@@ -761,6 +769,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> The distributed files render literals as signed integers: the literal \((v, 1)\) (with \(v\) counted from \(0\)) is written as the integer \(v+1\), and \((v, 0)\) as \(-(v+1)\). A clause is a line of literals terminated by \(0\); a cube is a line of literals with no terminator. The parsing maps from text to formulas and cubes, and the serialisation maps in the other direction, are fixed once in a deliberately small Lean file; on the artifact files they are mutually inverse byte for byte, which is what gives the byte-identity facts (such as Fact&#160;<a href="ssec-enc-formula.html#fact:bytes">43</a>) their meaning.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Dimacs.lean</span></small> </p>
 
   </div>
 </div>

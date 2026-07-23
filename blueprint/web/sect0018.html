@@ -214,6 +214,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> The consolidated cell list of the artifact (one cube per certificate, in manifest order) is embedded byte for byte into the Lean development and parsed by the maps of Definition&#160;<a href="sect0015.html#def:cnf-dimacs">102</a>, yielding the list of <em>tiling cubes</em>; the <em>branching order</em> is the sequence \(x_{15}, \dots , x_{214}\) of \(200\) variables; the <em>sign words</em> are the words in \(\{ 0,1\} ^{\le 200}\) obtained by reading off the signs of each cube’s literals. No processing external to Lean intervenes between the hash-pinned file and these terms.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/FullTiling.lean</span></small> </p>
 
   </div>
 </div>
@@ -278,6 +279,7 @@
   </div>
   <div class="fact_thmcontent">
   <p> Rebuilding each cube from its sign word along the branching order reproduces the parsed cube list exactly: every distributed cube really is a sign pattern on an initial segment of consecutive variables starting at \(x_{15}\). (If the file contained any cube of another shape, this computation would fail.)  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/FullTiling.lean</span></small> </p>
 
   </div>
 </div>
@@ -340,6 +342,7 @@
   </div>
   <div class="fact_thmcontent">
   <p> The distributed family consists of exactly \(98{,}536\) sign words, of lengths between \(12\) and \(200\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/FullTiling.lean</span></small> </p>
 
   </div>
 </div>
@@ -406,6 +409,7 @@
   </div>
   <div class="fact_thmcontent">
   <p> The coverage check of Definition&#160;<a href="sect0017.html#def:cov-checkcover">114</a> succeeds, at depth \(200\), on the \(98{,}536\) sign words: the family is prefix-free with full Kraft weight \(2^{200}\), so by Lemma&#160;<a href="sect0016.html#lem:kraft">108</a> its cells partition the valuation space — a perfect tiling. This is established by executing the verified check, inside Lean’s compiled evaluator, on the embedded data.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/FullTiling.lean</span></small> </p>
 
   </div>
 </div>

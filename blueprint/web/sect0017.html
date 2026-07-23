@@ -192,7 +192,8 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> Order \(\{ 0,1\} ^{\le D}\) by \(s \le t\) iff at the first position where they differ (reading left to right) \(s\) carries \(0\) and \(t\) carries \(1\), or \(s\) is a prefix of \(t\). This relation is total, transitive and antisymmetric: a linear order on words. </p>
+  <p> Order \(\{ 0,1\} ^{\le D}\) by \(s \le t\) iff at the first position where they differ (reading left to right) \(s\) carries \(0\) and \(t\) carries \(1\), or \(s\) is a prefix of \(t\). This relation is total, transitive and antisymmetric: a linear order on words.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CoverageCheck.lean</span></small></p>
 
   </div>
 </div>
@@ -260,6 +261,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> Extensions of a fixed word \(s\) form an <em>interval</em>: if \(s\) is a prefix of \(t\) and \(s \le u \le t\) in the lexicographic order, then \(s\) is a prefix of \(u\). (In particular \(s \le t\) whenever \(s\) is a prefix of \(t\).)  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CoverageCheck.lean</span></small> </p>
 
   </div>
 </div>
@@ -336,6 +338,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> For a finite sequence of words, the <em>adjacent-pairs test</em> checks, in one pass, that no term is a prefix of its immediate successor.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CoverageCheck.lean</span></small> </p>
 
   </div>
 </div>
@@ -407,6 +410,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> If a sequence of words is sorted for the lexicographic order and passes the adjacent-pairs test, then the underlying family is prefix-free.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CoverageCheck.lean</span></small> </p>
 
   </div>
 </div>
@@ -487,6 +491,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> Given a depth \(D\) and a family \(S\) of words, the <em>coverage check</em> is the finite computation verifying: (i) every member of \(S\) has length \(\le D\); (ii) the family, sorted lexicographically (by merge sort), passes the adjacent-pairs test; (iii) the Kraft weight satisfies \(W_D(S) = 2^D\) exactly, in integer arithmetic.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CoverageCheck.lean</span></small> </p>
 
   </div>
 </div>
@@ -558,6 +563,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> If the coverage check succeeds on \((D, S)\), then every member of \(S\) has length \(\le D\), the family \(S\) is prefix-free, and \(W_D(S) = 2^D\) — the three hypotheses of Lemma&#160;<a href="sect0016.html#lem:cov-valuation-cover">109</a>.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CoverageCheck.lean</span></small> </p>
 
   </div>
 </div>
@@ -645,6 +651,7 @@
   </div>
   <div class="theorem_thmcontent">
   <p> Let \(F\) be a CNF formula, fix a branching order of length \(D\), and let \(S \subseteq \{ 0,1\} ^{\le D}\) be prefix-free with full Kraft weight \(W_D(S) = 2^D\). If for every \(s \in S\) the formula \(F \wedge (\text{cell } s)\) is unsatisfiable, then \(F\) is unsatisfiable.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CoverageCheck.lean</span></small> </p>
 
   </div>
 </div>
@@ -726,6 +733,7 @@
   </div>
   <div class="corollary_thmcontent">
   <p> If the coverage check succeeds on \((D, S)\) and \(F \wedge (\text{cell } s)\) is unsatisfiable for every \(s \in S\), then \(F\) is unsatisfiable. The entire coverage side of the certificate thus reduces to one finite computation on the concrete data.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/CoverageCheck.lean</span></small> </p>
 
   </div>
 </div>

@@ -26,7 +26,8 @@ $\mathrm{rep}(o)$ denote the first pair of orbit $o$ in that enumeration (its
 arguments and constant along the action:
 $\mathrm{orb}(\sigma_0 u, \sigma_0 v) = \mathrm{orb}(u,v)$.
 \lean{ConwayO7.orbitOf, ConwayO7.orbitRep, ConwayO7.orbitOf_swap,
-ConwayO7.orbitOf_sigma0}\leanok
+ConwayO7.orbitOf_sigma0}
+\leanfile{ConwayO7/Orbits.lean}\leanok
 \uses{def:sigma0}
 \end{definition}
 
@@ -37,7 +38,8 @@ $7$; equivalently, $\mathrm{orb}$ takes exactly the values $0,\dots,692$, and
 every pair is reached from its orbit's representative by iterating the
 action.
 \lean{ConwayO7.numOrbits_eq, ConwayO7.orbitOf_lt,
-ConwayO7.orbitRep_reaches}\leanok
+ConwayO7.orbitRep_reaches}
+\leanfile{ConwayO7/Orbits.lean}\leanok
 \uses{def:enc-orbitmap}
 \end{lemma}
 
@@ -53,14 +55,16 @@ For $\omega \colon \mathbb{N} \to \{0,1\}$ let $G_\omega$ be the graph on
 $\{0,\dots,98\}$ in which distinct $u, v$ are adjacent exactly when
 $\omega(\mathrm{orb}(u,v)) = 1$.  Only the values $\omega(0),\dots,\omega(692)$
 matter, so $G_\omega$ is determined by a word in $\word{693}$.
-\lean{ConwayO7.graphOfOrbits}\leanok
+\lean{ConwayO7.graphOfOrbits}
+\leanfile{ConwayO7/Orbits.lean}\leanok
 \uses{def:enc-orbitmap, lem:orbits}
 \end{definition}
 
 \begin{lemma}[Invariance of the induced graph]\label{lem:enc-invariance}
 For every $\omega$ the graph $G_\omega$ is $\sigma_0$-invariant:
 $\sigma_0(u) \sim \sigma_0(v)$ in $G_\omega$ if and only if $u \sim v$.
-\lean{ConwayO7.graphOfOrbits_invariant}\leanok
+\lean{ConwayO7.graphOfOrbits_invariant}
+\leanfile{ConwayO7/Orbits.lean}\leanok
 \uses{def:enc-graphoforbits, def:sigma0}
 \end{lemma}
 
@@ -74,7 +78,8 @@ Let $H$ be a $\sigma_0$-invariant graph on $\{0,\dots,98\}$ and define
 $\omega_H(o) = 1$ exactly when the representative pair $\mathrm{rep}(o)$ is an
 edge of $H$.  Then $G_{\omega_H} = H$: an invariant graph is reconstructed
 exactly from its $693$ orbit bits.
-\lean{ConwayO7.orbitFunOf, ConwayO7.graphOfOrbits_orbitFunOf}\leanok
+\lean{ConwayO7.orbitFunOf, ConwayO7.graphOfOrbits_orbitFunOf}
+\leanfile{ConwayO7/Orbits.lean}\leanok
 \uses{def:enc-graphoforbits, lem:orbits}
 \end{lemma}
 
@@ -90,7 +95,8 @@ is the definition of $\omega_H(\mathrm{orb}(u,v))$.
 A graph $H$ on $\{0,\dots,98\}$ is $\sigma_0$-invariant if and only if
 $H = G_\omega$ for some $\omega \colon \mathbb{N} \to \{0,1\}$.  This is the
 verified reduction from $4851$ edge variables to $693$ orbit variables.
-\lean{ConwayO7.invariant_iff_exists_orbitFun}\leanok
+\lean{ConwayO7.invariant_iff_exists_orbitFun}
+\leanfile{ConwayO7/Orbits.lean}\leanok
 \uses{lem:enc-invariance, lem:enc-faithful}
 \end{proposition}
 
@@ -112,7 +118,8 @@ $t \geq 693$ and every literal of every clause mentions a variable $\leq t$.
 The generator below starts from the initial state $(693, \varnothing)$, whose
 first $693$ variables $x_1,\dots,x_{693}$ are the orbit variables, and only
 ever appends clauses and raises the threshold.
-\lean{ConwayO7.Encoder.St, ConwayO7.Encoder.SatAll, ConwayO7.Encoder.WF}\leanok
+\lean{ConwayO7.Encoder.St, ConwayO7.Encoder.SatAll, ConwayO7.Encoder.WF}
+\leanfile{ConwayO7/Encoder.lean}\leanok
 \end{definition}
 
 \begin{definition}[Orbit literals and orbit valuations]\label{def:enc-evar}
@@ -123,7 +130,8 @@ $x_1,\dots,x_{693}$.  Conversely each $\omega \colon \mathbb{N} \to \{0,1\}$ ind
 the valuation $a_\omega(v) = \omega(v-1)$, under which the orbit literal of
 $(u,v)$ is true exactly when $u \sim v$ in $G_\omega$.
 \lean{ConwayO7.Encoder.evarI, ConwayO7.Encoder.assignOfOrbits,
-ConwayO7.Encoder.litSat_evarI}\leanok
+ConwayO7.Encoder.litSat_evarI}
+\leanfile{ConwayO7/Encoder.lean}\leanok
 \uses{def:enc-orbitmap, def:enc-graphoforbits, def:enc-state}
 \end{definition}
 
@@ -148,14 +156,16 @@ The cardinality conditions are rendered as clauses through standard counting
 networks (a sequential counter and a modulo-$9$ totalizer, \S\ref{ssec:enc-networks});
 the minimality conditions through chained lexicographic comparisons.  $\Phi$
 has $432{,}882$ variables and $1{,}131{,}708$ clauses.
-\lean{ConwayO7.Encoder.mkO7St, ConwayO7.Encoder.mkO7Cnf}\leanok
+\lean{ConwayO7.Encoder.mkO7St, ConwayO7.Encoder.mkO7Cnf}
+\leanfile{ConwayO7/Encoder.lean}\leanok
 \uses{def:enc-state, def:enc-evar, lem:orbits, def:relabel, lem:sym1}
 \end{definition}
 
 \begin{lemma}[No degenerate literals]\label{lem:enc-nozero}
 No clause of $\Phi$ contains the literal $0$; every literal denotes a genuine
 variable with a polarity.
-\lean{ConwayO7.Encoder.mkO7_no_zero}\leanok
+\lean{ConwayO7.Encoder.mkO7_no_zero}
+\leanfile{ConwayO7/SatFrame.lean}\leanok
 \uses{def:phi}
 \end{lemma}
 
@@ -170,7 +180,8 @@ corresponding $0$-based valuation satisfies $\Phi$ as a formal CNF.  In
 particular, if some valuation satisfies every generated clause then $\Phi$ is
 satisfiable.
 \lean{ConwayO7.Encoder.satAll_iff_cnfSat,
-ConwayO7.Encoder.sat_mkO7Cnf_of_satAll}\leanok
+ConwayO7.Encoder.sat_mkO7Cnf_of_satAll}
+\leanfile{ConwayO7/SatFrame.lean}\leanok
 \uses{def:phi, lem:enc-nozero}
 \end{lemma}
 
@@ -186,7 +197,8 @@ distributed file \texttt{o7.cnf} (SHA-256 pinned), and re-serialising that
 content reproduces the file byte for byte, header included.  All certificates
 of later chapters therefore speak about exactly the formula $\Phi$ of
 Definition~\ref{def:phi}.
-\lean{ConwayO7.mkO7Cnf_eq, ConwayO7.o7cnf_bytes}\leanok
+\lean{ConwayO7.mkO7Cnf_eq, ConwayO7.o7cnf_bytes}
+\leanfile{ConwayO7/Data/EncoderMatch.lean}\leanok
 \uses{def:phi}
 \end{fact}
 
@@ -212,7 +224,8 @@ Thus a triple asserts: whatever clauses have been emitted so far, the new
 gadget's clauses can always be satisfied by choosing values for its own fresh
 auxiliary variables, provided the semantic condition $P$ holds on the
 protected variables.
-\lean{ConwayO7.Encoder.GTrip}\leanok
+\lean{ConwayO7.Encoder.GTrip}
+\leanfile{ConwayO7/SatFrame.lean}\leanok
 \uses{def:enc-state}
 \end{definition}
 
@@ -221,7 +234,8 @@ Emission triples compose: from $\{P\}\,f\,\{Q\}$ and $\{Q\}\,g\,\{R\}$
 follows $\{P\}\,g \circ f\,\{R\}$.  More generally, if a condition
 $\mathrm{Inv}$ is an invariant of every step of a finite iteration, it is an
 invariant of the whole iteration.
-\lean{ConwayO7.Encoder.GTrip.comp, ConwayO7.Encoder.GTrip.foldl_inv}\leanok
+\lean{ConwayO7.Encoder.GTrip.comp, ConwayO7.Encoder.GTrip.foldl_inv}
+\leanfile{ConwayO7/SatFrame.lean}\leanok
 \uses{def:enc-gtrip}
 \end{lemma}
 
@@ -239,7 +253,8 @@ A valuation $a$ satisfies the \emph{degree invariant} if for every vertex
 $u$ exactly $14$ of the $98$ orbit literals
 $\{\,\mathrm{orb}(u,v)+1 : v \neq u\,\}$ are true under $a$; i.e.\ every
 vertex of the graph read off the orbit variables has degree $14$.
-\lean{ConwayO7.Encoder.DegInv}\leanok
+\lean{ConwayO7.Encoder.DegInv}
+\leanfile{ConwayO7/DegSpec.lean}\leanok
 \uses{def:enc-evar}
 \end{definition}
 
@@ -252,7 +267,8 @@ $(r_1,r_2)$ itself is true.  A valuation satisfies the
 orbit $o < 693$.  (Since $\mu - \lambda = 1$ for the parameters
 $(99,14,1,2)$, the adjacent case $\lambda = 1$ and the non-adjacent case
 $\mu = 2$ are captured by the single value $2$.)
-\lean{ConwayO7.Encoder.cnCountR, ConwayO7.Encoder.CnInv}\leanok
+\lean{ConwayO7.Encoder.cnCountR, ConwayO7.Encoder.CnInv}
+\leanfile{ConwayO7/CnSpec.lean}\leanok
 \uses{def:enc-evar, def:enc-orbitmap}
 \end{definition}
 
@@ -262,14 +278,16 @@ $i < 14$ the orbit variable of the pair $(0,\, 1 + 7i)$ has value $1$ exactly
 when $i < 2$: the fixed vertex is adjacent to precisely the first two
 $7$-cycles.  This is the semantic content of the normalisation of
 Lemma~\ref{lem:sym1}.
-\lean{ConwayO7.Encoder.Sym1Holds}\leanok
+\lean{ConwayO7.Encoder.Sym1Holds}
+\leanfile{ConwayO7/SatFrame.lean}\leanok
 \uses{def:enc-evar, lem:sym1}
 \end{definition}
 
 \begin{definition}[The pre-lex invariant]\label{def:enc-prelexinv}
 The \emph{pre-lex invariant} is the conjunction of the degree invariant, the
 common-neighbour invariant, and the level-1 symmetry condition.
-\lean{ConwayO7.Encoder.PreLexInv}\leanok
+\lean{ConwayO7.Encoder.PreLexInv}
+\leanfile{ConwayO7/SectionsCompose.lean}\leanok
 \uses{def:enc-deginv, def:enc-cninv, def:enc-sym1holds}
 \end{definition}
 
@@ -286,7 +304,8 @@ representation} of a number $k$ under a valuation $a$ if $y_i$ is true
 exactly when $i \leq k$; when $k$ is the number of true literals among a
 vector of inputs, we say the register carries the unary count of those
 inputs.
-\lean{ConwayO7.TotSpec.UnaryOut, ConwayO7.MtoSpec.UnaryOf}\leanok
+\lean{ConwayO7.TotSpec.UnaryOut, ConwayO7.MtoSpec.UnaryOf}
+\leanfile{ConwayO7/TotSpec.lean}\leanok
 \uses{def:enc-state}
 \end{definition}
 
@@ -298,7 +317,8 @@ that assigns to each fresh register variable $s_{k,j}$ the truth value of
 ``more than $k$ of the first $k + j + 1$ inputs are true'' satisfies every
 clause of the sequential at-most-$\tau$ counter, and agrees with $a$ on all
 variables $\leq T$.
-\lean{ConwayO7.SeqSpec.spec_sat}\leanok
+\lean{ConwayO7.SeqSpec.spec_sat}
+\leanfile{ConwayO7/SeqSpec.lean}\leanok
 \uses{def:enc-state}
 \end{proposition}
 
@@ -317,7 +337,8 @@ of the union.  Then all merge clauses of the internal node --- which say that
 $i$ true literals on one side and $j$ on the other force at least $i + j$ in
 the parent, and conversely --- are satisfied by $a$ itself; no fresh
 variables are involved in this step.
-\lean{ConwayO7.TotSpec.toUA_sat}\leanok
+\lean{ConwayO7.TotSpec.toUA_sat}
+\leanfile{ConwayO7/TotSpec.lean}\leanok
 \uses{def:enc-unary}
 \end{lemma}
 
@@ -327,7 +348,8 @@ $s$, and input literals over variables $\leq t$: there is a valuation $a'$
 agreeing with $a$ on all variables $\leq t$ that satisfies every clause of
 the totalizer built on those inputs, and under which the output register
 carries the unary count of the inputs.
-\lean{ConwayO7.TotSpec.toTO_sat}\leanok
+\lean{ConwayO7.TotSpec.toTO_sat}
+\leanfile{ConwayO7/TotSpec.lean}\leanok
 \uses{def:enc-unary, lem:enc-totmerge}
 \end{proposition}
 
@@ -345,7 +367,8 @@ variables $\leq t$).  There is an extension $a'$ of $a$ by fresh variables
 satisfying all clauses of the modulo-$9$ totalizer, under which the two
 output registers carry the unary representations of the quotient
 $\lfloor C/9 \rfloor$ and the remainder $C \bmod 9$ respectively.
-\lean{ConwayO7.MtoSpec.mtoMTO_sat}\leanok
+\lean{ConwayO7.MtoSpec.mtoMTO_sat}
+\leanfile{ConwayO7/MtoSpec.lean}\leanok
 \uses{def:enc-unary, prop:enc-totalizer}
 \end{proposition}
 
@@ -364,7 +387,8 @@ $k$ of the inputs are true under $a$, then the modulo-$9$ totalizer together
 with its comparator clauses --- which forbid every quotient/remainder
 combination exceeding $k$ --- is satisfied by an extension of $a$ assigning
 only fresh variables.
-\lean{ConwayO7.MtoSpec.mtoAtMost_sat}\leanok
+\lean{ConwayO7.MtoSpec.mtoAtMost_sat}
+\leanfile{ConwayO7/MtoSpec.lean}\leanok
 \uses{prop:enc-mto}
 \end{proposition}
 
@@ -382,7 +406,8 @@ orbit literals at $u$ are true.  Then the exactly-$14$ gadget for $u$ --- an
 at-least-$14$ network run on the negated literals (as at-most-$84$) followed
 by an at-most-$14$ network, both modulo-$9$ totalizers --- admits an
 extension of $a$ by fresh variables satisfying all its clauses.
-\lean{ConwayO7.Encoder.encEqualsDeg_sat}\leanok
+\lean{ConwayO7.Encoder.encEqualsDeg_sat}
+\leanfile{ConwayO7/DegSpec.lean}\leanok
 \uses{prop:enc-mto-atmost, def:enc-deginv, def:enc-evar}
 \end{lemma}
 
@@ -396,7 +421,8 @@ sequence, composing the two fresh extensions.
 The degree invariant is a valid pre- and postcondition for the degree gadget
 of each vertex, and hence for the entire degree section --- the iteration of
 the gadget over all $99$ vertices --- as one emission triple.
-\lean{ConwayO7.Encoder.degreeStep_trip, ConwayO7.Encoder.deg_section_trip}\leanok
+\lean{ConwayO7.Encoder.degreeStep_trip, ConwayO7.Encoder.deg_section_trip}
+\leanfile{ConwayO7/DegSpec.lean}\leanok
 \uses{def:enc-gtrip, lem:enc-gtrip-comp, lem:enc-deg-gadget}
 \end{proposition}
 
@@ -415,7 +441,8 @@ orbit literals.  Assigning each $p_w$ its semantic value --- the conjunction
 of the two adjacencies --- satisfies all product clauses, and the recorded
 list of product literals evaluates to exactly the indicator sequence of
 common neighbourhood.
-\lean{ConwayO7.Encoder.prodFold_sat}\leanok
+\lean{ConwayO7.Encoder.prodFold_sat}
+\leanfile{ConwayO7/CnSpec.lean}\leanok
 \uses{def:enc-evar, def:enc-cninv}
 \end{lemma}
 
@@ -425,7 +452,8 @@ under $a$.  Then the exactly-$2$ gadget --- a sequential at-most-$96$
 counter on the negated literals (enforcing at least $2$) followed by a
 sequential at-most-$2$ counter --- admits an extension of $a$ by fresh
 variables satisfying all its clauses.
-\lean{ConwayO7.Encoder.specSeqEquals_sat}\leanok
+\lean{ConwayO7.Encoder.specSeqEquals_sat}
+\leanfile{ConwayO7/CnSpec.lean}\leanok
 \uses{prop:enc-seqcounter}
 \end{lemma}
 
@@ -441,7 +469,8 @@ gadget of each orbit --- the product stage followed by the exactly-$2$
 gadget on the $97$ product literals together with the pair's own orbit
 literal --- and hence for the whole section over all $693$ orbits, as one
 emission triple.
-\lean{ConwayO7.Encoder.specCnStep_trip, ConwayO7.Encoder.cn_section_trip}\leanok
+\lean{ConwayO7.Encoder.specCnStep_trip, ConwayO7.Encoder.cn_section_trip}
+\leanfile{ConwayO7/CnSpec.lean}\leanok
 \uses{def:enc-gtrip, lem:enc-gtrip-comp, lem:enc-cn-product,
 lem:enc-cn-equals, def:enc-cninv}
 \end{proposition}
@@ -459,7 +488,8 @@ The level-1 symmetry condition is a valid pre- and postcondition for the
 section emitting the $14$ unit clauses that pin the neighbourhood of the
 fixed vertex: under the condition, each unit clause is already true and no
 fresh variables are needed.
-\lean{ConwayO7.Encoder.sym1_section_trip}\leanok
+\lean{ConwayO7.Encoder.sym1_section_trip}
+\leanfile{ConwayO7/SatFrame.lean}\leanok
 \uses{def:enc-gtrip, lem:enc-gtrip-comp, def:enc-sym1holds}
 \end{lemma}
 
@@ -469,7 +499,8 @@ For every valuation of the orbit variables satisfying the pre-lex invariant
 (1)--(3) of Definition~\ref{def:phi} --- there is an extension assigning
 only auxiliary variables above $693$ that satisfies every clause emitted by
 the degree, common-neighbour, and normalisation sections of the generator.
-\lean{ConwayO7.Encoder.preLexSpec_trip, ConwayO7.Encoder.preLex_sat}\leanok
+\lean{ConwayO7.Encoder.preLexSpec_trip, ConwayO7.Encoder.preLex_sat}
+\leanfile{ConwayO7/SectionsCompose.lean}\leanok
 \uses{def:enc-prelexinv, prop:enc-deg-section, prop:enc-cn-section,
 lem:enc-sym1-section, def:phi}
 \end{proposition}
@@ -494,7 +525,8 @@ If $G_\omega$ is strongly regular with parameters $(99,14,1,2)$, then the
 induced valuation $a_\omega$ satisfies the degree invariant: for each vertex
 $u$ the number of true orbit literals at $u$ is the degree of $u$ in
 $G_\omega$, which is $14$.
-\lean{ConwayO7.Encoder.degInv_of_srg}\leanok
+\lean{ConwayO7.Encoder.degInv_of_srg}
+\leanfile{ConwayO7/Bridge.lean}\leanok
 \uses{def:srg, def:enc-graphoforbits, def:enc-evar, def:enc-deginv}
 \end{lemma}
 
@@ -504,7 +536,8 @@ $a_\omega$ satisfies the common-neighbour invariant: for a representative
 pair $r$, the count $c_r(a_\omega)$ equals the number of common neighbours
 of $r_1, r_2$ plus the adjacency bit, i.e.\ $\lambda + 1 = 2$ when the pair
 is an edge and $\mu = 2$ when it is not.
-\lean{ConwayO7.Encoder.cnInv_of_srg}\leanok
+\lean{ConwayO7.Encoder.cnInv_of_srg}
+\leanfile{ConwayO7/Bridge.lean}\leanok
 \uses{def:srg, def:enc-graphoforbits, def:enc-evar, def:enc-cninv}
 \end{lemma}
 
@@ -523,7 +556,8 @@ satisfies the full pre-lex invariant.  Combined with
 Proposition~\ref{prop:counters}, every normalised $\sigma_0$-invariant srg
 would yield a valuation satisfying all pre-normalisation clauses of $\Phi$;
 the minimality clauses are handled in Chapter~\ref{sec:lex}.
-\lean{ConwayO7.Encoder.preLexInv_of_srg}\leanok
+\lean{ConwayO7.Encoder.preLexInv_of_srg}
+\leanfile{ConwayO7/Bridge.lean}\leanok
 \uses{lem:enc-deg-bridge, lem:enc-cn-bridge, def:enc-sym1holds,
 def:enc-prelexinv}
 \end{proposition}

@@ -190,7 +190,8 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> An <em>emission state</em> is a pair \(s = (t, C)\) of a threshold \(t \in \mathbb {N}\) — the highest variable index allocated so far — and a finite sequence \(C\) of clauses, each clause a finite list of nonzero integer literals. A valuation \(a \colon \mathbb {N} \to \{ 0,1\} \) <em>satisfies</em> \(s\) if it satisfies every clause of \(C\) (a positive literal \(v\) is true when \(a(v) = 1\), a negative literal \(-v\) when \(a(v) = 0\)). The state is <em>well-formed</em> if \(t \geq 693\) and every literal of every clause mentions a variable \(\leq t\). The generator below starts from the initial state \((693, \varnothing )\), whose first \(693\) variables \(x_1,\dots ,x_{693}\) are the orbit variables, and only ever appends clauses and raises the threshold. </p>
+  <p> An <em>emission state</em> is a pair \(s = (t, C)\) of a threshold \(t \in \mathbb {N}\) — the highest variable index allocated so far — and a finite sequence \(C\) of clauses, each clause a finite list of nonzero integer literals. A valuation \(a \colon \mathbb {N} \to \{ 0,1\} \) <em>satisfies</em> \(s\) if it satisfies every clause of \(C\) (a positive literal \(v\) is true when \(a(v) = 1\), a negative literal \(-v\) when \(a(v) = 0\)). The state is <em>well-formed</em> if \(t \geq 693\) and every literal of every clause mentions a variable \(\leq t\). The generator below starts from the initial state \((693, \varnothing )\), whose first \(693\) variables \(x_1,\dots ,x_{693}\) are the orbit variables, and only ever appends clauses and raises the threshold.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Encoder.lean</span></small></p>
 
   </div>
 </div>
@@ -263,6 +264,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> For distinct vertices \(u,v\) the <em>orbit literal</em> of the pair is the (positive) literal of variable \(\mathrm{orb}(u,v) + 1\); thus the adjacency of \(u,v\) in \(G_\omega \) is expressed by one of the variables \(x_1,\dots ,x_{693}\). Conversely each \(\omega \colon \mathbb {N} \to \{ 0,1\} \) induces the valuation \(a_\omega (v) = \omega (v-1)\), under which the orbit literal of \((u,v)\) is true exactly when \(u \sim v\) in \(G_\omega \).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Encoder.lean</span></small> </p>
 
   </div>
 </div>
@@ -348,6 +350,7 @@
 </li>
 </ol>
 <p> The cardinality conditions are rendered as clauses through standard counting networks (a sequential counter and a modulo-\(9\) totalizer, §<a href="ssec-enc-networks.html">3.4</a>); the minimality conditions through chained lexicographic comparisons. \(\Phi \) has \(432{,}882\) variables and \(1{,}131{,}708\) clauses.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Encoder.lean</span></small> </p>
 
   </div>
 </div>
@@ -415,6 +418,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> No clause of \(\Phi \) contains the literal \(0\); every literal denotes a genuine variable with a polarity.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/SatFrame.lean</span></small> </p>
 
   </div>
 </div>
@@ -498,6 +502,7 @@
   </div>
   <div class="lemma_thmcontent">
   <p> A valuation satisfies the final emission state of the generator (in the integer-literal sense of Definition&#160;<a href="ssec-enc-formula.html#def:enc-state">38</a>) if and only if the corresponding \(0\)-based valuation satisfies \(\Phi \) as a formal CNF. In particular, if some valuation satisfies every generated clause then \(\Phi \) is satisfiable.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/SatFrame.lean</span></small> </p>
 
   </div>
 </div>
@@ -572,6 +577,7 @@
   </div>
   <div class="fact_thmcontent">
   <p> The formula generated inside Lean equals the parsed content of the distributed file <span class="ttfamily">o7.cnf</span> (SHA-256 pinned), and re-serialising that content reproduces the file byte for byte, header included. All certificates of later chapters therefore speak about exactly the formula \(\Phi \) of Definition&#160;<a href="ssec-enc-formula.html#def:phi">40</a>.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/EncoderMatch.lean</span></small> </p>
 
   </div>
 </div>

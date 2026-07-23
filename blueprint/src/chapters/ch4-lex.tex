@@ -30,7 +30,8 @@ to all blocks.  Each $\rho \in N$ normalises $\langle\sigma_0\rangle$, hence
 acts on the orbit space and thus on words $\word{693}$ by
 $(\rho\cdot\omega)(o) = \omega(\rho^{-1}o)$.  The encoding uses $101$ fixed
 generators of this action.
-\lean{ConwayO7.Encoder.lexPerms, ConwayO7.Encoder.orbitPerm}\leanok
+\lean{ConwayO7.Encoder.lexPerms, ConwayO7.Encoder.orbitPerm}
+\leanfile{ConwayO7/Encoder.lean}\leanok
 \uses{lem:orbits}
 \end{definition}
 
@@ -40,13 +41,15 @@ $7$-blocks rotated by $\sigma_0$.  A permutation $\tau \in S_{14}$ of the
 block indices induces a permutation of the $99$ vertices fixing $0$ and
 sending the $j$-th vertex of block $i$ to the $j$-th vertex of block
 $\tau(i)$: block indices are permuted, positions within blocks are kept.
-\lean{ConwayO7.Encoder.cycleRelabel}\leanok
+\lean{ConwayO7.Encoder.cycleRelabel}
+\leanfile{ConwayO7/Sym1Exists.lean}\leanok
 \uses{def:sigma0}
 \end{definition}
 
 \begin{lemma}[Relabelling blocks commutes with rotating within blocks]\label{lem:lex-relabel-comm}
 Every block relabelling commutes with $\sigma_0$.
-\lean{ConwayO7.Encoder.cycleRelabel_comm, ConwayO7.Encoder.cycleRelabelVal_comm}\leanok
+\lean{ConwayO7.Encoder.cycleRelabel_comm, ConwayO7.Encoder.cycleRelabelVal_comm}
+\leanfile{ConwayO7/Sym1Exists.lean}\leanok
 \uses{def:lex-cycle-relabel, def:sigma0}
 \end{lemma}
 
@@ -65,7 +68,8 @@ For $v \neq 0$ the orbit of the pair $\{0,v\}$ under
 $\langle\sigma_0\rangle$ depends only on the block of $v$: it equals the
 orbit of $\{0, b\}$ where $b$ is the first vertex of $v$'s block.  (Checked
 by computation over all $98$ vertices.)
-\lean{ConwayO7.Encoder.orbit0_cyc}\leanok
+\lean{ConwayO7.Encoder.orbit0_cyc}
+\leanfile{ConwayO7/Sym1Exists.lean}\leanok
 \uses{def:sigma0, lem:orbits}
 \end{fact}
 
@@ -74,7 +78,8 @@ For a word $\omega \in \word{693}$ and a block index $c$, the \emph{block
 bit} of $c$ is the value of $\omega$ on the orbit of the pair
 $\{0, 1+7c\}$, i.e.\ the adjacency bit of the fixed vertex towards
 block~$c$.
-\lean{ConwayO7.Encoder.cycleBit}\leanok
+\lean{ConwayO7.Encoder.cycleBit}
+\leanfile{ConwayO7/Sym1Exists.lean}\leanok
 \uses{lem:orbits, fact:lex-orbit-block}
 \end{definition}
 
@@ -83,7 +88,8 @@ In the graph $G_\omega$ associated to a word $\omega$, the fixed vertex $0$
 is adjacent to a vertex $v$ if and only if $v \neq 0$ and the block bit of
 $v$'s block equals $1$.  In particular the neighbourhood of $0$ is a union
 of full blocks.
-\lean{ConwayO7.Encoder.adj_zero_iff}\leanok
+\lean{ConwayO7.Encoder.adj_zero_iff}
+\leanfile{ConwayO7/Sym1Exists.lean}\leanok
 \uses{prop:orbitfun, def:lex-block-bit, fact:lex-orbit-block}
 \end{lemma}
 
@@ -95,14 +101,16 @@ of~$v$.
 
 \begin{fact}[Block sizes]\label{fact:lex-block-card}
 Each of the fourteen blocks contains exactly $7$ vertices.
-\lean{ConwayO7.Encoder.cycle_fiber_card}\leanok
+\lean{ConwayO7.Encoder.cycle_fiber_card}
+\leanfile{ConwayO7/Sym1Exists.lean}\leanok
 \uses{def:sigma0}
 \end{fact}
 
 \begin{lemma}[Exactly two neighbour blocks]\label{lem:lex-two-blocks}
 If $G_\omega$ is an $\srg(99,14,1,2)$, then exactly two of the fourteen
 block bits of $\omega$ equal $1$.
-\lean{ConwayO7.Encoder.two_neighbor_cycles}\leanok
+\lean{ConwayO7.Encoder.two_neighbor_cycles}
+\leanfile{ConwayO7/Sym1Exists.lean}\leanok
 \uses{def:srg, lem:lex-adj-block, fact:lex-block-card}
 \end{lemma}
 
@@ -119,7 +127,8 @@ Every $\sigma_0$-invariant $\srg(99,14,1,2)$ is isomorphic, via a block
 relabelling commuting with $\sigma_0$, to one in which the neighbourhood of
 the fixed vertex $0$ is exactly the union of blocks $0$ and $1$: its orbit
 word has block bit $1$ exactly at blocks $0$ and $1$.
-\lean{ConwayO7.Encoder.sym1_seed, ConwayO7.Encoder.comap_invariant}\leanok
+\lean{ConwayO7.Encoder.sym1_seed, ConwayO7.Encoder.comap_invariant}
+\leanfile{ConwayO7/Sym1Exists.lean}\leanok
 \uses{prop:orbitfun, def:lex-cycle-relabel, lem:lex-relabel-comm, lem:lex-two-blocks, lem:grp-srg-transport}
 \end{lemma}
 
@@ -142,7 +151,8 @@ $0$ and~$1$.
 Each of the $101$ relabelling generators of Definition~\ref{def:relabel} is
 given by an explicit map on the vertex set $\{0,\dots,98\}$; this vertex map
 induces the generator's action on pair orbits and hence on words.
-\lean{ConwayO7.Encoder.permVertex}\leanok
+\lean{ConwayO7.Encoder.permVertex}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{def:relabel}
 \end{definition}
 
@@ -152,21 +162,24 @@ $u,v$, the orbit index assigned by $\rho$ to the orbit of $\{u,v\}$ is the
 orbit of $\{\rho(u),\rho(v)\}$: the action on orbit words is induced by the
 action on vertices.  (Checked by computation over all $101 \cdot
 \binom{99}{2}$ instances.)
-\lean{ConwayO7.Encoder.orbit_compat_of_mem, ConwayO7.Encoder.lexPerms_orbit_compat}\leanok
+\lean{ConwayO7.Encoder.orbit_compat_of_mem, ConwayO7.Encoder.lexPerms_orbit_compat}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{def:relabel, def:lex-vertex-action, lem:orbits}
 \end{fact}
 
 \begin{fact}[Injectivity of the vertex maps]\label{fact:lex-vertex-inj}
 The vertex map of each of the $101$ generators is injective, hence a
 permutation of the $99$ vertices.  (Checked by computation.)
-\lean{ConwayO7.Encoder.vertex_inj_of_mem, ConwayO7.Encoder.lexPerms_vertex_inj}\leanok
+\lean{ConwayO7.Encoder.vertex_inj_of_mem, ConwayO7.Encoder.lexPerms_vertex_inj}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{def:relabel, def:lex-vertex-action}
 \end{fact}
 
 \begin{lemma}[One generator step preserves strong regularity]\label{lem:lex-step-srg}
 If $G_\omega$ is an $\srg(99,14,1,2)$ and $\rho$ is one of the $101$
 generators, then $G_{\rho\cdot\omega}$ is again an $\srg(99,14,1,2)$.
-\lean{ConwayO7.Encoder.step_srg}\leanok
+\lean{ConwayO7.Encoder.step_srg}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{prop:orbitfun, fact:lex-orbit-compat, fact:lex-vertex-inj, lem:grp-srg-transport}
 \end{lemma}
 
@@ -183,7 +196,8 @@ $\{0, 1+7i\}$ among themselves and preserves the predicate ``$i < 2$'' on
 their indices; consequently, if the word $\omega$ satisfies the
 normalisation condition (3) of Definition~\ref{def:phi}, so does
 $\rho\cdot\omega$.
-\lean{ConwayO7.Encoder.step_sym1, ConwayO7.Encoder.lexPerms_sym1}\leanok
+\lean{ConwayO7.Encoder.step_sym1, ConwayO7.Encoder.lexPerms_sym1}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{def:relabel, def:phi, def:lex-vertex-action}
 \end{lemma}
 
@@ -201,7 +215,8 @@ $\omega$.
 For $\omega \in \word{693}$, let $\mathcal{R}(\omega)$ be the smallest set
 of words containing $\omega$ and closed under the action of each of the
 $101$ generators: the orbit of $\omega$ under the monoid they generate.
-\lean{ConwayO7.Encoder.Reach}\leanok
+\lean{ConwayO7.Encoder.Reach}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{def:relabel}
 \end{definition}
 
@@ -209,7 +224,8 @@ $101$ generators: the orbit of $\omega$ under the monoid they generate.
 If $G_\omega$ is an $\srg(99,14,1,2)$, then so is $G_{\omega'}$ for every
 $\omega' \in \mathcal{R}(\omega)$; and if $\omega$ satisfies the
 normalisation condition, so does every $\omega' \in \mathcal{R}(\omega)$.
-\lean{ConwayO7.Encoder.reach_srg, ConwayO7.Encoder.reach_sym1}\leanok
+\lean{ConwayO7.Encoder.reach_srg, ConwayO7.Encoder.reach_sym1}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{def:lex-reach, lem:lex-step-srg, lem:lex-step-sym1}
 \end{lemma}
 
@@ -225,7 +241,8 @@ Lemmas~\ref{lem:lex-step-srg} and~\ref{lem:lex-step-sym1} at each step.
 The \emph{value} of a word $\omega \in \word{693}$ is
 $\mathrm{val}(\omega) = \sum_{i<693} \omega(i)\, 2^{692-i}$, the word read
 as a big-endian binary number.
-\lean{ConwayO7.Encoder.wordVal}\leanok
+\lean{ConwayO7.Encoder.wordVal}
+\leanfile{ConwayO7/LexVal.lean}\leanok
 \uses{lem:orbits}
 \end{definition}
 
@@ -234,7 +251,8 @@ Let $u, w \in \word{693}$ with $\mathrm{val}(u) \le \mathrm{val}(w)$.  Then
 for every position $i < 693$: if $u$ and $w$ agree at all positions
 $j < i$ and $u(i) = 1$, then $w(i) = 1$.  Equivalently, $u \preceq w$ in the
 lexicographic order.
-\lean{ConwayO7.Encoder.lex_of_val_le}\leanok
+\lean{ConwayO7.Encoder.lex_of_val_le}
+\leanfile{ConwayO7/LexVal.lean}\leanok
 \uses{def:lex-word-val}
 \end{lemma}
 
@@ -250,7 +268,8 @@ $\mathrm{val}(u) > \mathrm{val}(w)$, a contradiction.
 For every $\omega$ there is $\omega_{\min} \in \mathcal{R}(\omega)$ with
 $\mathrm{val}(\omega_{\min}) \le \mathrm{val}(\omega')$ for all
 $\omega' \in \mathcal{R}(\omega)$.
-\lean{ConwayO7.Encoder.exists_min_reach}\leanok
+\lean{ConwayO7.Encoder.exists_min_reach}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{def:lex-reach, def:lex-word-val}
 \end{lemma}
 
@@ -270,7 +289,8 @@ $X \preceq Y$ if for every $i < 693$: whenever the literal values of $X$ and
 $Y$ agree at all positions $j < i$ and the $i$-th literal of $X$ is true,
 the $i$-th literal of $Y$ is true.  This is the lexicographic comparison of
 the two literal-value words under $a$.
-\lean{ConwayO7.Encoder.LexLeq, ConwayO7.Encoder.lexXA, ConwayO7.Encoder.lexYA}\leanok
+\lean{ConwayO7.Encoder.LexLeq, ConwayO7.Encoder.lexXA, ConwayO7.Encoder.lexYA}
+\leanfile{ConwayO7/LexSpec.lean}\leanok
 \uses{def:phi, def:relabel}
 \end{definition}
 
@@ -281,7 +301,8 @@ $X \preceq Y_\rho$, where $Y_\rho$ is $X$ re-indexed by $\rho$'s orbit
 action.  On words this says precisely
 $\omega \preceq \rho\cdot\omega$ for every generator $\rho$, i.e.\
 condition (4) of Definition~\ref{def:phi}.
-\lean{ConwayO7.Encoder.LexInv}\leanok
+\lean{ConwayO7.Encoder.LexInv}
+\leanfile{ConwayO7/LexSpec.lean}\leanok
 \uses{def:lex-leq, def:relabel, def:phi}
 \end{definition}
 
@@ -291,7 +312,8 @@ registers.  Every valuation $a$ that satisfies all previously emitted
 clauses and the comparison $X \preceq Y$ (on literal values) extends, by
 assigning only the fresh registers, to a valuation satisfying all clauses of
 the chain as well.
-\lean{ConwayO7.Encoder.specAddLexLeq_sat, ConwayO7.Encoder.specAddLexLeq}\leanok
+\lean{ConwayO7.Encoder.specAddLexLeq_sat, ConwayO7.Encoder.specAddLexLeq}
+\leanfile{ConwayO7/LexSpec.lean}\leanok
 \uses{def:lex-leq, def:phi}
 \end{lemma}
 
@@ -313,7 +335,8 @@ The full minimality section of the encoding — the $101$ chained comparisons
 of condition (4) — preserves satisfiability: any valuation of the orbit
 block satisfying the lex-leader invariant extends over the auxiliary
 registers of the section to satisfy every clause the section emits.
-\lean{ConwayO7.Encoder.lex_section_trip, ConwayO7.Encoder.specAddLexLeq_trip, ConwayO7.Encoder.specLexAgainst_trip}\leanok
+\lean{ConwayO7.Encoder.lex_section_trip, ConwayO7.Encoder.specAddLexLeq_trip, ConwayO7.Encoder.specLexAgainst_trip}
+\leanfile{ConwayO7/LexTrip.lean}\leanok
 \uses{def:lex-inv, lem:lex-chain-sat}
 \end{proposition}
 
@@ -333,7 +356,8 @@ orbit word $\omega$ satisfies conditions (3)--(4) of
 Definition~\ref{def:phi}: the normalisation of Lemma~\ref{lem:sym1} and the
 lex-leader invariant $\omega \preceq \rho\cdot\omega$ for each of the $101$
 generators $\rho$.
-\lean{ConwayO7.Encoder.lexLeaderComplete, ConwayO7.Encoder.LexLeaderComplete}\leanok
+\lean{ConwayO7.Encoder.lexLeaderComplete, ConwayO7.Encoder.LexLeaderComplete}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{lem:sym1, def:lex-reach, lem:lex-reach-inv, lem:lex-min-reach, lem:lex-value-order, def:lex-inv}
 \end{theorem}
 
@@ -357,7 +381,8 @@ The \emph{master invariant} of a valuation of the orbit block is the
 conjunction of the semantic conditions of all four sections of the
 encoding: the degree counts (1), the common-neighbour counts (2), the
 normalisation (3), and the lex-leader invariant (4).
-\lean{ConwayO7.Encoder.FullInv}\leanok
+\lean{ConwayO7.Encoder.FullInv}
+\leanfile{ConwayO7/Assembly.lean}\leanok
 \uses{def:phi, prop:counters, def:lex-inv}
 \end{definition}
 
@@ -365,7 +390,8 @@ normalisation (3), and the lex-leader invariant (4).
 Every valuation of the orbit block satisfying the master invariant extends,
 over the auxiliary variables, to a valuation satisfying every clause of the
 generated formula $\Phi$.
-\lean{ConwayO7.Encoder.mkO7St_sat, ConwayO7.Encoder.fullSpec_trip}\leanok
+\lean{ConwayO7.Encoder.mkO7St_sat, ConwayO7.Encoder.fullSpec_trip}
+\leanfile{ConwayO7/Assembly.lean}\leanok
 \uses{def:lex-full-inv, prop:counters, prop:lex-section-trip, def:phi}
 \end{proposition}
 
@@ -385,7 +411,8 @@ computation.
 Assume completeness of minimality
 (Theorem~\ref{thm:lex-complete}).  If a $\sigma_0$-invariant
 $\srg(99,14,1,2)$ exists, then the distributed formula is satisfiable.
-\lean{ConwayO7.Encoder.encodes_of_lexLeader}\leanok
+\lean{ConwayO7.Encoder.encodes_of_lexLeader}
+\leanfile{ConwayO7/Assembly.lean}\leanok
 \uses{prop:orbitfun, lem:grp-srg-transport, def:lex-full-inv, prop:lex-generator-sat, fact:bytes}
 \end{lemma}
 
@@ -405,7 +432,8 @@ byte identity (Fact~\ref{fact:bytes}).
 \begin{theorem}[Completeness of the encoding]\label{thm:encoding-complete}
 If a $\sigma_0$-invariant $\srg(99,14,1,2)$ exists, then $\Phi$ is
 satisfiable.
-\lean{ConwayO7.Encoder.encodes_o7}\leanok
+\lean{ConwayO7.Encoder.encodes_o7}
+\leanfile{ConwayO7/Complete.lean}\leanok
 \uses{thm:lex-complete, lem:lex-encodes}
 \end{theorem}
 

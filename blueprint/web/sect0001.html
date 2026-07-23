@@ -185,7 +185,8 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> A finite graph \(\Gamma \) on \(n\) vertices is <em>strongly regular with parameters \((n,k,\lambda ,\mu )\)</em> if it is \(k\)-regular, any two adjacent vertices have exactly \(\lambda \) common neighbours, and any two distinct non-adjacent vertices have exactly \(\mu \) common neighbours. Whether a graph with parameters \((99,14,1,2)\) — the <em>Conway 99-graph</em> — exists is open; the present development constrains its possible symmetries. </p>
+  <p> A finite graph \(\Gamma \) on \(n\) vertices is <em>strongly regular with parameters \((n,k,\lambda ,\mu )\)</em> if it is \(k\)-regular, any two adjacent vertices have exactly \(\lambda \) common neighbours, and any two distinct non-adjacent vertices have exactly \(\mu \) common neighbours. Whether a graph with parameters \((99,14,1,2)\) — the <em>Conway 99-graph</em> — exists is open; the present development constrains its possible symmetries.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">mathlib / Lean core</span></small></p>
 
   </div>
 </div>
@@ -229,7 +230,8 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> An <em>isomorphism</em> between graphs \(\Gamma \) and \(\Gamma '\) is a bijection of vertex sets under which adjacency in \(\Gamma \) corresponds exactly to adjacency in \(\Gamma '\). The isomorphisms from a graph \(\Gamma \) to itself form a group, the <em>automorphism group</em> \(\operatorname {Aut}\Gamma \). For a finite graph this group is finite, and its order \(|\operatorname {Aut}\Gamma |\) is the quantity constrained by the main theorem: the formal statements are about the cardinality of the type of self-isomorphisms \(\Gamma \cong \Gamma \). </p>
+  <p> An <em>isomorphism</em> between graphs \(\Gamma \) and \(\Gamma '\) is a bijection of vertex sets under which adjacency in \(\Gamma \) corresponds exactly to adjacency in \(\Gamma '\). The isomorphisms from a graph \(\Gamma \) to itself form a group, the <em>automorphism group</em> \(\operatorname {Aut}\Gamma \). For a finite graph this group is finite, and its order \(|\operatorname {Aut}\Gamma |\) is the quantity constrained by the main theorem: the formal statements are about the cardinality of the type of self-isomorphisms \(\Gamma \cong \Gamma \).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">mathlib / Lean core</span></small></p>
 
   </div>
 </div>
@@ -311,6 +313,7 @@
   </div>
   <div class="theorem_thmcontent">
   <p> Let \(\Gamma \) be a strongly regular graph with parameters \((99,14,1,2)\), on any vertex set. Then \(7 \nmid |\operatorname {Aut}\Gamma |\); in particular \(\Gamma \) has no automorphism of order \(7\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Final.lean</span></small> </p>
 
   </div>
 </div>
@@ -376,6 +379,7 @@
   </div>
   <div class="definition_thmcontent">
   <p> Let \(F\) be a propositional formula in conjunctive normal form. Say that \(F\) <em>encodes the \(\sigma _0\)-invariant strongly regular graphs</em> if for every graph \(H\) on the vertex set \(\{ 0,1,\dots ,98\} \) which is strongly regular with parameters \((99,14,1,2)\) and satisfies \(H(\sigma _0 u,\sigma _0 v) \Leftrightarrow H(u,v)\) for all vertices \(u,v\), there exists a Boolean valuation satisfying \(F\). Note the direction: only “graph \(\Rightarrow \) satisfying valuation” is required. If \(F\) were satisfiable but meaningless the main theorem would become vacuous, not wrong; it is the <em>unsatisfiability</em> of \(F\) that does the refuting.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Pipeline.lean</span></small> </p>
 
   </div>
 </div>
@@ -447,6 +451,7 @@
   </div>
   <div class="theorem_thmcontent">
   <p> Let \(F\) be an unsatisfiable formula which encodes the \(\sigma _0\)-invariant strongly regular graphs in the sense of Definition&#160;<a href="sect0001.html#st-encodes">4</a>. Then no strongly regular graph with parameters \((99,14,1,2)\), on any finite vertex set, has automorphism group of order divisible by \(7\).  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Pipeline.lean</span></small> </p>
 
   </div>
 </div>

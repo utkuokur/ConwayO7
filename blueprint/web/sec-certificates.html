@@ -188,7 +188,8 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p> Let \(F\) be a formula in conjunctive normal form, i.e. a finite set of <em>clauses</em>, each a disjunction of literals. A clause \(C\) is <em>entailed by reverse unit propagation</em> (RUP) from a set \(G\) of clauses if, starting from the assumption that every literal of \(C\) is false and repeatedly assigning any literal that is forced (because it is the last unfalsified literal of some clause of \(G\)), one reaches a clause of \(G\) all of whose literals are falsified; this syntactic check implies the semantic entailment \(G \models C\), since any valuation satisfying \(G\) but falsifying \(C\) would survive every propagation step. A <em>clausal derivation</em> from \(F\) is a finite sequence of clauses, each entailed by reverse unit propagation from \(F\) together with the preceding clauses (with clause deletions permitted along the way), ending in the empty clause — the clause with no literals, satisfied by no valuation. Since RUP steps preserve entailment, a clausal derivation witnesses that \(F\) is unsatisfiable. The <em>LRAT format</em> additionally annotates each step with the indices of the clauses used, so that a derivation can be checked in time linear in its length; Lean’s standard library formalises LRAT derivations as sequences of addition and deletion actions. </p>
+  <p> Let \(F\) be a formula in conjunctive normal form, i.e. a finite set of <em>clauses</em>, each a disjunction of literals. A clause \(C\) is <em>entailed by reverse unit propagation</em> (RUP) from a set \(G\) of clauses if, starting from the assumption that every literal of \(C\) is false and repeatedly assigning any literal that is forced (because it is the last unfalsified literal of some clause of \(G\)), one reaches a clause of \(G\) all of whose literals are falsified; this syntactic check implies the semantic entailment \(G \models C\), since any valuation satisfying \(G\) but falsifying \(C\) would survive every propagation step. A <em>clausal derivation</em> from \(F\) is a finite sequence of clauses, each entailed by reverse unit propagation from \(F\) together with the preceding clauses (with clause deletions permitted along the way), ending in the empty clause — the clause with no literals, satisfied by no valuation. Since RUP steps preserve entailment, a clausal derivation witnesses that \(F\) is unsatisfiable. The <em>LRAT format</em> additionally annotates each step with the indices of the clauses used, so that a derivation can be checked in time linear in its length; Lean’s standard library formalises LRAT derivations as sequences of addition and deletion actions.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">mathlib / Lean core</span></small></p>
 
   </div>
 </div>
@@ -255,6 +256,7 @@
   </div>
   <div class="theorem_thmcontent">
   <p> Lean’s standard library provides an executable checker taking an LRAT derivation and a CNF, and a soundness theorem proved in Lean: whenever the checker accepts, the formula is unsatisfiable. Consequently a run of the checker inside Lean’s kernel converts a concrete derivation into a genuine Lean proof of unsatisfiability, with no unverified translation step.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">mathlib / Lean core</span></small> </p>
 
   </div>
 </div>
@@ -323,6 +325,7 @@
   </div>
   <div class="fact_thmcontent">
   <p> Cell number \(4092\) of the distributed family (historically cube \(4093\) of the first-round split) is unsatisfiable together with \(\Phi \): the distributed derivation for this cell, whose compressed file is pinned by its SHA-256 hash, is replayed through the verified checker of Theorem&#160;<a href="sec-certificates.html#crt-checker">123</a> against the formula \(\Phi \wedge (\text{cell})\) built from the byte-identical embedded data by the same cube-adjunction used throughout the pipeline. This is the calibration sample: a sign convention, off-by-one, or clause-order mismatch anywhere between the Lean development and the distributed artifact would make this check fail.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/Sample.lean</span></small> </p>
 
   </div>
 </div>
@@ -446,6 +449,7 @@
   </div>
   <div class="theorem_thmcontent">
   <p> Let \(F\) be a CNF, and let \(S\) be a prefix-free family of sign words of full Kraft mass over a fixed variable order (Definition&#160;<a href="sect0016.html#def:prefix">103</a>, Lemma&#160;<a href="sect0016.html#lem:kraft">108</a>). If \(F \wedge (\text{cell } s)\) is unsatisfiable for every \(s \in S\), and \(F\) encodes the \(\sigma _0\)-invariant strongly regular graphs (Definition&#160;<a href="sect0001.html#st-encodes">4</a>), then no strongly regular graph with parameters \((99,14,1,2)\) has automorphism group of order divisible by \(7\). This composes the refutation-by-cells theorem (Theorem&#160;<a href="sect0017.html#thm:coverage">116</a>) with the conditional main theorem (Theorem&#160;<a href="sect0001.html#st-conditional">5</a>); a variant takes the prefix-freeness and Kraft hypotheses in the executable form of the cover checker.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Pipeline.lean</span></small> </p>
 
   </div>
 </div>
@@ -514,6 +518,7 @@
   </div>
   <div class="theorem_thmcontent">
   <p> Instantiate Theorem&#160;<a href="sec-certificates.html#crt-schema">126</a> with \(F = \Phi \) and \(S\) the distributed family of \(98{,}536\) words: if \(\Phi \wedge (\text{cell } s)\) is unsatisfiable for every \(s\) in the family, and \(\Phi \) encodes the \(\sigma _0\)-invariant strongly regular graphs, then the conclusion of the main theorem holds. The combinatorial hypotheses on \(S\) are discharged by the executed cover check (Fact&#160;<a href="sect0018.html#fact:tiling">121</a>); the remaining hypotheses are exactly the per-cell unsatisfiability facts and encoding completeness.  </p>
+<p><small class="footnotesize"><i class="itshape">source:</i> <span class="ttfamily">ConwayO7/Data/FullTiling.lean</span></small> </p>
 
   </div>
 </div>
