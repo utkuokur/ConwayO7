@@ -1,6 +1,0 @@
-PWD /home/uokur/claude_workspace/ConwayO7/blueprint/src
-INPUT /home/uokur/.TinyTeX/texmf.cnf
-INPUT /home/uokur/.TinyTeX/texmf-dist/web2c/texmf.cnf
-INPUT /home/uokur/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT content.tex
-OUTPUT /home/uokur/claude_workspace/ConwayO7/blueprint/print/content.log
