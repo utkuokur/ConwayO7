@@ -38,7 +38,7 @@ apptainer build cake_lpr.sif cake_lpr.def
 CAKE="apptainer exec ./cake_lpr.sif cake_lpr" P=8 ./cake_verify.sh
 # expect final line: "report: 98536 OK / 98536 checked ...; FAIL=0, MISSING=0, BADHASH=0"
 
-# 3. check the Lean half (in Conway_lean; needs elan; mathlib cache included)
+# 3. check the Lean half (in lean/; needs elan; mathlib cache included)
 lake build && echo '#print axioms ConwayO7.no_aut_seven' | lake env lean --stdin
 ```
 
@@ -58,5 +58,5 @@ The Lean build is ~1–2 h (first run; native checks included).
 
 ## Integrity
 
-`SHA256SUMS` pins every file in this artifact (201,777 entries); verify with
+`SHA256SUMS` pins every file in this artifact (98,548 entries); verify with
 `cd artifact && sha256sum -c SHA256SUMS`. Repair/provenance history: `artifact/provenance/README.md`.

@@ -19,7 +19,7 @@ The result is a machine-checked composition of two halves that meet at one file:
 **Referees**: start at [`REFEREE.md`](REFEREE.md) — a
 three-command verification protocol (Apptainer container included).
 
-The proof archives (~35 GB) and the container image are distributed via the
+The proof archives (~77 GB) and the container image are distributed via the
 Zenodo deposit (DOI in the paper), not this repository; everything needed to
 *rebuild* them from the pinned sources is here.
 
