@@ -68,7 +68,7 @@ def sigma0Val (n : Nat) : Nat :=
 
 theorem sigma0_val_eq (v : Fin 99) : (sigma0 v).val = sigma0Val v.val := rfl
 
-/-- The cycle relabeling commutes with the canonical rotation (value level). -/
+/-- The cycle relabeling commutes with the canonical rotation. -/
 theorem cycleRelabelVal_comm (σ : Equiv.Perm (Fin 14)) (n : Nat) :
     cycleRelabelVal σ (sigma0Val n) = sigma0Val (cycleRelabelVal σ n) := by
   by_cases h0 : n = 0

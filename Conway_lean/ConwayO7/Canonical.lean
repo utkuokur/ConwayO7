@@ -106,25 +106,21 @@ theorem sigma0_pow_seven : sigma0 ^ 7 = 1 := by
   rw [← Equiv.Perm.iterate_eq_pow, Equiv.Perm.one_apply]
   exact sigma0_iterate_seven v
 
-theorem sigma0_ne_one : sigma0 ≠ 1 := by
-  intro h
-  have h1 : sigma0 1 = 1 := by rw [h]; rfl
-  exact absurd h1 (by decide)
-
-theorem sigma0_fixed_card : #(univ.filter fun v : Fin 99 ↦ sigma0 v = v) = 1 := by decide
+theorem sigma0_fixed_card :
+  #{ v : Fin 99 | sigma0 v = v} = 1 := by decide
 
 /-- σ₀ has the cycle type `[1, 7¹⁴]` of the L3 lemma. -/
 theorem sigma0_cycleType : sigma0.cycleType = Multiset.replicate 14 7 :=
-  cycleType_eq_replicate_of_fixed sigma0 (by decide) sigma0_pow_seven sigma0_ne_one
+  cycleType_eq_replicate_of_fixed sigma0 Nat.prime_seven sigma0_pow_seven (by decide)
     sigma0_fixed_card (by simp)
 
 /-! ### Step 5: any order-7 automorphism relabels onto σ₀ -/
 
 variable {V : Type*} [Fintype V] {G : SimpleGraph V} [DecidableRel G.Adj]
 
-/-- **WLOG σ₀** (Step 5 of `docs/L3_cycle_type.md`): if some srg(99,14,1,2) admits an
-order-7 automorphism, then some srg(99,14,1,2) on `Fin 99` is invariant under the
-canonical `sigma0` — the statement whose refutation `o7.cnf` encodes. -/
+/-- **WLOG σ₀**: if some srg(99,14,1,2) admits an
+order-7 automorphism, then some srg(99,14,1,2) on `Fin 99` is invariant
+under the canonical `sigma0` — the statement whose refutation `o7.cnf` encodes. -/
 theorem exists_sigma0_invariant (hG : G.IsSRGWith 99 14 1 2) (σ : G ≃g G)
     (hord : orderOf σ = 7) :
     ∃ H : SimpleGraph (Fin 99), ∃ _ : DecidableRel H.Adj, H.IsSRGWith 99 14 1 2 ∧
@@ -162,8 +158,8 @@ theorem exists_sigma0_invariant (hG : G.IsSRGWith 99 14 1 2) (σ : G ≃g G)
   simp only [SimpleGraph.comap_adj, Equiv.toEmbedding_apply, key]
   exact hadj₁ _ _
 
-/-- **T2, reduced form**: if no σ₀-invariant srg(99,14,1,2) exists on `Fin 99`
-(the fact `o7.cnf` encodes, to be discharged by layer L4 and T1 + cake_lpr), then
+/-- **reduced form**: if no σ₀-invariant srg(99,14,1,2) exists on `Fin 99`
+(the fact `o7.cnf` encodes, to be discharged by cake_lpr), then
 no srg(99,14,1,2) has 7 dividing its automorphism-group order. -/
 theorem seven_not_dvd_card_aut_of_no_sigma0_invariant
     (hno : ∀ H : SimpleGraph (Fin 99),

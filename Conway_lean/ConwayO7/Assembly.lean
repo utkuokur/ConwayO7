@@ -1,6 +1,4 @@
 /-
-L4/L5 assembly — all four generator sections composed, and encoder faithfulness
-modulo lex-leader completeness.
 
 The master invariant `FullInv` joins the pre-lex semantics (`PreLexInv`: degree
 counts, μ-counts, level-1 units) with the lex-leader conditions (`LexInv`).  The

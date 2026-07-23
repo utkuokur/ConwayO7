@@ -1,8 +1,6 @@
 /-
-Strong regularity transports across graph isomorphisms.
-
-Mathlib provides `Iso.card_eq`, `Iso.mapNeighborSet` and `map_adj_iff`; this file
-packages them into the transport `IsSRGWith.of_iso`, used twice by the lex-leader
+Strong regularity transports across graph isomorphisms:
+`IsSRGWith.of_iso`, used twice by the lex-leader
 completeness layer: once for the abstract cycle relabeling that establishes the
 level-1 symmetry choice, and once per lex generator during minimization.
 -/
@@ -13,17 +11,17 @@ namespace ConwayO7
 
 open SimpleGraph
 
+variable {V W : Type*} {G : SimpleGraph V} {H : SimpleGraph W}
+
 /-- A graph isomorphism carries common-neighbour sets to common-neighbour sets. -/
-def isoCommonNeighbors {V W : Type*} {G : SimpleGraph V} {H : SimpleGraph W}
-    (e : G ≃g H) (v w : V) :
+def isoCommonNeighbors (e : G ≃g H) (v w : V) :
     G.commonNeighbors v w ≃ H.commonNeighbors (e v) (e w) :=
   Equiv.subtypeEquiv e.toEquiv fun u ↦ by
     rw [mem_commonNeighbors, mem_commonNeighbors]
     exact and_congr (e.map_adj_iff).symm (e.map_adj_iff).symm
 
 /-- **Strong regularity across an isomorphism.** -/
-theorem IsSRGWith.of_iso {V W : Type*} [Fintype V] [Fintype W]
-    {G : SimpleGraph V} {H : SimpleGraph W}
+theorem IsSRGWith.of_iso [Fintype V] [Fintype W]
     [DecidableRel G.Adj] [DecidableRel H.Adj]
     (e : G ≃g H) {n k l m : ℕ} (h : H.IsSRGWith n k l m) : G.IsSRGWith n k l m where
   card := e.card_eq.trans h.card

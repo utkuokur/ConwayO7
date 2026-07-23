@@ -1,17 +1,19 @@
 # cake_lpr verification report — complete certificate
 
-**Date:** 2026-07-22
+**Date:** 2026-07-23 (final layout; supersedes the 2026-07-22 run on the pre-consolidation tree)
 **Verdict:** `98536 OK / 98536 checked — FAIL=0, MISSING=0, BADHASH=0`
 
 ## What was verified
 
-All 98,536 LRAT certificates of the order-7 non-existence artifact, one per line of
-`manifest_all.tsv` / `cubes_all.txt`. For each entry the runner (`cake_verify.sh`):
+All 98,536 LRAT certificates of the order-7 non-existence artifact: certificate
+`proofs/i.lrat.zst` corresponds to line `i` (0-based) of `cubes_all.txt`. For each
+index the runner (`cake_verify.sh`):
 
 1. verified the compressed proof's SHA-256 against the pinned `SHA256SUMS` entry;
 2. rebuilt the cube formula `F_i = o7.cnf + cube_i` from the embedded cube list;
 3. decompressed the proof (`zstd`);
-4. ran **cake_lpr** — the LRAT/LPR checker formally verified in HOL4 down to
+4. ran **cake_lpr through the shipped Apptainer image** (`cake_lpr.sif`, SHA-256 in
+   `container/SIF_SHA256`) — — the LRAT/LPR checker formally verified in HOL4 down to
    machine code (Tan, Heule, Myreen) — accepting only the anchored verdict line
    `s VERIFIED UNSAT` (a substring match on `VERIFIED` was the historical gate
    bug; this run's gate self-test rejects an empty proof before any real work).

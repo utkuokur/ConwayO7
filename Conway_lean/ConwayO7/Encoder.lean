@@ -1,5 +1,5 @@
 /-
-Layer L4 — the exact CNF generator, in Lean.
+The exact CNF generator, in Lean.
 
 A faithful port of the `o7.cnf` generation pipeline:
 `tools/conway_o7.py::encode(99,14,1,2, build_sigma(99,1,7), fixed=1, cyc=7,
@@ -34,38 +34,38 @@ namespace Encoder
 
 /-- Emission state: the last allocated DIMACS variable and the clauses so far. -/
 structure St where
-  top : Nat
-  cls : Array (List Int)
+  top : ℕ
+  cls : Array (List ℤ)
 
-@[inline] def push (s : St) (c : List Int) : St := { s with cls := s.cls.push c }
+@[inline] def push (s : St) (c : List ℤ) : St := { s with cls := s.cls.push c }
 
-@[inline] def fresh (s : St) : St × Int :=
-  ({ s with top := s.top + 1 }, (s.top + 1 : Nat))
+@[inline] def fresh (s : St) : St × ℤ :=
+  ({ s with top := s.top + 1 }, (s.top + 1 : ℕ))
 
 /-- Push a list of clauses in order. -/
-def pushMany (s : St) (cs : List (List Int)) : St := cs.foldl push s
+def pushMany (s : St) (cs : List (List ℤ)) : St := cs.foldl push s
 
 /-- Emit clauses generated per item of a list, in order — the proof-friendly loop
 shape shared by all gadget emitters. -/
-def emitFold {α : Type} (s : St) (l : List α) (f : α → List (List Int)) : St :=
+def emitFold {α : Type} (s : St) (l : List α) (f : α → List (List ℤ)) : St :=
   l.foldl (fun s x ↦ pushMany s (f x)) s
 
 /-! ### Totalizer (`to_TO` / `to_UA`), used by mto for short blocks -/
 
-def toUA (s : St) (outl al bl : Array Int) : St :=
+def toUA (s : St) (outl al bl : Array ℤ) : St :=
   let s := emitFold s (List.range bl.size) fun j ↦ [[-bl[j]!, outl[j]!]]
   let s := emitFold s (List.range al.size) fun i ↦ [[-al[i]!, outl[i]!]]
   emitFold s (List.range al.size) fun i ↦
     (List.range bl.size).map fun j ↦ [-al[i]!, -bl[j]!, outl[i + j + 1]!]
 
 /-- Allocate `n` fresh variables (in closed form: `top+1 … top+n`). -/
-def freshMany (s : St) (n : Nat) : St × Array Int :=
-  ({ s with top := s.top + n }, (Array.range n).map fun i ↦ ((s.top + 1 + i : Nat) : Int))
+def freshMany (s : St) (n : ℕ) : St × Array ℤ :=
+  ({ s with top := s.top + n }, (Array.range n).map fun i ↦ ((s.top + 1 + i : ℕ) : ℤ))
 
 /-- One totalizer tree node: allocate child outputs (first half, then second),
 emit the parent's `to_UA` clauses, then process the second half, then the first
 (the C++ stack pops in LIFO order). -/
-def toTONode (fuel : Nat) (s : St) (ilst olst : Array Int) : St :=
+def toTONode (fuel : ℕ) (s : St) (ilst olst : Array ℤ) : St :=
   match fuel with
   | 0 => s
   | fuel + 1 =>
@@ -80,7 +80,7 @@ def toTONode (fuel : Nat) (s : St) (ilst olst : Array Int) : St :=
     if 2 ≤ half then toTONode fuel s3 fst sf.2 else s3
 
 /-- `to_TO`: returns the output variables (the inputs themselves when `n < 2`). -/
-def toTO (s : St) (invars : Array Int) : St × Array Int :=
+def toTO (s : St) (invars : Array ℤ) : St × Array ℤ :=
   if invars.size < 2 then (s, invars)
   else
     let so := freshMany s invars.size
@@ -88,7 +88,7 @@ def toTO (s : St) (invars : Array Int) : St × Array Int :=
 
 /-! ### Modulo totalizer (`mto_MUA_A` / `mto_MTO_A` / comparator) -/
 
-def muaA (s0 : St) (hs rs ff aa gg bb : Array Int) (p : Nat) : St :=
+def muaA (s0 : St) (hs rs ff aa gg bb : Array ℤ) (p : ℕ) : St :=
   let sigma := hs.size
   let sc := fresh s0
   let c := sc.2
@@ -117,8 +117,8 @@ def muaA (s0 : St) (hs rs ff aa gg bb : Array Int) (p : Nat) : St :=
 
 /-- Prepare one half inside an `MTO_A` node: short halves get an immediate
 totalizer; long halves get fresh upper/lower registers and a pending job. -/
-def mtoPrepHalf (s : St) (halfLits : Array Int) (p : Nat) :
-    St × Array Int × Array Int × Bool :=
+def mtoPrepHalf (s : St) (halfLits : Array ℤ) (p : ℕ) :
+    St × Array ℤ × Array ℤ × Bool :=
   if halfLits.size < p then
     let sl := toTO s halfLits
     (sl.1, #[], sl.2, false)
@@ -127,7 +127,7 @@ def mtoPrepHalf (s : St) (halfLits : Array Int) (p : Nat) :
     let sl := freshMany su.1 (p - 1)
     (sl.1, su.2, sl.2, true)
 
-def mtoNode (fuel : Nat) (s : St) (ilst ulst llst : Array Int) (p : Nat) : St :=
+def mtoNode (fuel : ℕ) (s : St) (ilst ulst llst : Array ℤ) (p : ℕ) : St :=
   match fuel with
   | 0 => s
   | fuel + 1 =>
@@ -142,7 +142,7 @@ def mtoNode (fuel : Nat) (s : St) (ilst ulst llst : Array Int) (p : Nat) : St :=
     if pf.2.2.2 then mtoNode fuel s3 fst pf.2.1 pf.2.2.1 p else s3
 
 /-- `mto_MTO_A` (with `k = -1`, as `mto_encode_atmostN` calls it). -/
-def mtoMTO (s : St) (is_ : Array Int) (p : Nat) : St × Array Int × Array Int :=
+def mtoMTO (s : St) (is_ : Array ℤ) (p : ℕ) : St × Array ℤ × Array ℤ :=
   if is_.size < p then
     let sl := toTO s is_
     (sl.1, #[], sl.2)
@@ -151,7 +151,7 @@ def mtoMTO (s : St) (is_ : Array Int) (p : Nat) : St × Array Int × Array Int :
     let sl := freshMany su.1 (p - 1)
     (mtoNode is_.size sl.1 is_ su.2 sl.2 p, su.2, sl.2)
 
-def mtoComparator (s : St) (upper lower : Array Int) (p k : Nat) : St :=
+def mtoComparator (s : St) (upper lower : Array ℤ) (p k : ℕ) : St :=
   let ro := k / p
   let nu := k % p
   let s := emitFold s (List.range' (ro + 1) (upper.size - ro)) fun i ↦ [[-upper[i - 1]!]]
@@ -160,7 +160,7 @@ def mtoComparator (s : St) (upper lower : Array Int) (p k : Nat) : St :=
       if ro - 1 < upper.size then [[-upper[ro - 1]!, -lower[i - 1]!]] else []
     else [[-lower[i - 1]!]]
 
-def mtoAtMost (s : St) (vars : Array Int) (k : Nat) : St :=
+def mtoAtMost (s : St) (vars : Array ℤ) (k : ℕ) : St :=
   let n := vars.size
   if k ≥ n then s
   else if k = 0 then vars.foldl (fun s v ↦ push s [-v]) s
@@ -170,14 +170,13 @@ def mtoAtMost (s : St) (vars : Array Int) (k : Nat) : St :=
     mtoComparator mt.1 mt.2.1 mt.2.2 p k
 
 /-! ### Sequential counter (Knuth's irredundant variant) -/
-
-def seqAtMost (s0 : St) (xs : Array Int) (tval : Nat) : St := Id.run do
+def seqAtMost (s0 : St) (xs : Array ℤ) (tval : ℕ) : St := Id.run do
   let n := xs.size
   let nt := n - tval
   -- the (k, j) register table, allocated on first use
-  let mut tbl : Array (Option Int) := Array.replicate (tval * nt) none
+  let mut tbl : Array (Option ℤ) := Array.replicate (tval * nt) none
   let mut s := s0
-  let mk := fun (s : St) (tbl : Array (Option Int)) (k j : Nat) ↦
+  let mk := fun (s : St) (tbl : Array (Option ℤ)) (k j : ℕ) ↦
     match tbl[k * nt + j]! with
     | some v => (s, tbl, v)
     | none =>
@@ -210,7 +209,7 @@ def seqAtMost (s0 : St) (xs : Array Int) (tval : Nat) : St := Id.run do
 
 inductive Enc | mto | seq
 
-def encAtMost (s : St) (lits : Array Int) (rhs : Nat) (enc : Enc) : St :=
+def encAtMost (s : St) (lits : Array ℤ) (rhs : ℕ) (enc : Enc) : St :=
   let n := lits.size
   if rhs ≥ n then s
   else if rhs = n - 1 then push s (lits.toList.map (-·))
@@ -219,23 +218,23 @@ def encAtMost (s : St) (lits : Array Int) (rhs : Nat) (enc : Enc) : St :=
     | .mto => mtoAtMost s lits rhs
     | .seq => seqAtMost s lits rhs
 
-def encAtLeast (s : St) (lits : Array Int) (rhs : Nat) (enc : Enc) : St :=
+def encAtLeast (s : St) (lits : Array ℤ) (rhs : ℕ) (enc : Enc) : St :=
   if rhs = 0 then s
   else if rhs = 1 then push s lits.toList
   else if rhs = lits.size then lits.foldl (fun s l ↦ push s [l]) s
   else encAtMost s (lits.map (-·)) (lits.size - rhs) enc
 
-def encEquals (s : St) (lits : Array Int) (k : Nat) (enc : Enc) : St :=
+def encEquals (s : St) (lits : Array ℤ) (k : ℕ) (enc : Enc) : St :=
   encAtMost (encAtLeast s lits k enc) lits k enc
 
 /-! ### The o7 instance -/
 
 /-- DIMACS id of the edge-orbit variable of the pair `{u, v}` (`u ≠ v`). -/
-def evarI (u v : Fin 99) : Int := (orbitOf (u, v) + 1 : Nat)
+def evarI (u v : Fin 99) : ℤ := (orbitOf (u, v) + 1 : ℕ)
 
-/-- Nat-level vertex relabeling helpers for the symmetry generators
+/-- ℕ-level vertex relabeling helpers for the symmetry generators
 (`fixed = 1`, `cyc = 7`). -/
-def rhoSwap (i j u : Nat) : Nat :=
+def rhoSwap (i j u : ℕ) : ℕ :=
   if u = 0 then 0
   else
     let ci := (u - 1) / 7
@@ -243,35 +242,35 @@ def rhoSwap (i j u : Nat) : Nat :=
     let ci' := if ci = i then j else if ci = j then i else ci
     1 + 7 * ci' + ph
 
-def rhoRot (i r u : Nat) : Nat :=
+def rhoRot (i r u : ℕ) : ℕ :=
   if u = 0 then 0
   else
     let ci := (u - 1) / 7
     let ph := (u - 1) % 7
     if ci = i then 1 + 7 * ci + (ph + r) % 7 else u
 
-def rhoMul (a u : Nat) : Nat :=
+def rhoMul (a u : ℕ) : ℕ :=
   if u = 0 then 0
   else
     let ci := (u - 1) / 7
     let ph := (u - 1) % 7
     1 + 7 * ci + (a * ph) % 7
 
-/-- Orbit id of a Nat pair (values < 99). -/
-def orbitOfN (a b : Nat) : Nat :=
+/-- Orbit id of a ℕ pair (values < 99). -/
+def orbitOfN (a b : ℕ) : ℕ :=
   orbitOf (⟨a % 99, Nat.mod_lt a (by omega)⟩, ⟨b % 99, Nat.mod_lt b (by omega)⟩)
 
 /-- The image orbit of orbit `o` under a vertex relabeling `rho`
 (`perm[o] = orbit_of[norm(rho(rep))]` in the encoder). -/
-def orbitPerm (rho : Nat → Nat) (o : Nat) : Nat :=
+def orbitPerm (rho : ℕ → ℕ) (o : ℕ) : ℕ :=
   let r := orbitRep o
   orbitOfN (rho r.1.val) (rho r.2.val)
 
 /-- `add_lex_leq`: the soundness-critical lex-chain clauses, with `z`-registers
 allocated on the fly (skipping structurally equal positions). -/
-def addLexLeq (s0 : St) (X Y : Array Int) : St := Id.run do
+def addLexLeq (s0 : St) (X Y : Array ℤ) : St := Id.run do
   let mut s := s0
-  let mut zPrev : Option Int := none
+  let mut zPrev : Option ℤ := none
   for i in [0:X.size] do
     let x := X[i]!
     let y := Y[i]!
@@ -296,21 +295,21 @@ def addLexLeq (s0 : St) (X Y : Array Int) : St := Id.run do
   return s
 
 /-- The lex constraint `E ≤ E ∘ perm` over all 693 orbit variables. -/
-def lexAgainst (s : St) (perm : Nat → Nat) : St :=
-  let X : Array Int := .ofFn (n := 693) fun o ↦ ((o : Nat) + 1 : Nat)
-  let Y : Array Int := .ofFn (n := 693) fun o ↦ ((perm o.val) + 1 : Nat)
+def lexAgainst (s : St) (perm : ℕ → ℕ) : St :=
+  let X : Array ℤ := .ofFn (n := 693) fun o ↦ ((o : ℕ) + 1 : ℕ)
+  let Y : Array ℤ := .ofFn (n := 693) fun o ↦ ((perm o.val) + 1 : ℕ)
   addLexLeq s X Y
 
 /-! The generator, as explicit folds of named steps (proof-friendly shape). -/
 
 /-- Degree gadget for vertex `u`: exactly 14 neighbours (mtotalizer). -/
 def degreeStep (s : St) (u : Fin 99) : St :=
-  let lits : Array Int :=
+  let lits : Array ℤ :=
     ((List.finRange 99).filterMap fun v ↦ if v ≠ u then some (evarI u v) else none).toArray
   encEquals s lits 14 .mto
 
 /-- Product gadget: `p ↔ e(r₁,w) ∧ e(r₂,w)` for one candidate common neighbour `w`. -/
-def prodStep (r : Fin 99 × Fin 99) (acc : St × Array Int) (w : Fin 99) : St × Array Int :=
+def prodStep (r : Fin 99 × Fin 99) (acc : St × Array ℤ) (w : Fin 99) : St × Array ℤ :=
   if w ≠ r.1 ∧ w ≠ r.2 then
     let a := evarI r.1 w
     let c := evarI r.2 w
@@ -323,19 +322,19 @@ def prodStep (r : Fin 99 × Fin 99) (acc : St × Array Int) (w : Fin 99) : St ×
 
 /-- Common-neighbour gadget for orbit `o`: products, then the μ = 2 counter
 (seqcounter). -/
-def cnStep (s : St) (o : Nat) : St :=
+def cnStep (s : St) (o : ℕ) : St :=
   let r := orbitRep o
   let (s, prods) := (List.finRange 99).foldl (prodStep r) (s, #[])
   encEquals s (prods.push (evarI r.1 r.2)) 2 .seq
 
 /-- Symmetry level 1, unit `i`: the fixed vertex is adjacent to cycles 0 and 1 only. -/
-def sym1Step (s : St) (i : Nat) : St :=
-  let v : Int := (orbitOfN 0 (1 + 7 * i) + 1 : Nat)
+def sym1Step (s : St) (i : ℕ) : St :=
+  let v : ℤ := (orbitOfN 0 (1 + 7 * i) + 1 : ℕ)
   push s (if i < 2 then [v] else [-v])
 
 /-- The 101 lex-leader generators, in emission order: adjacent cycle swaps
 (level 2), then per-cycle rotations and multipliers (level 3). -/
-def lexPerms : List (Nat → Nat) :=
+def lexPerms : List (ℕ → ℕ) :=
   (rhoSwap 0 1 :: (List.range' 2 11).map fun m ↦ rhoSwap m (m + 1)) ++
     ((List.range 14).flatMap fun i ↦ (List.range' 1 6).map fun r ↦ rhoRot i r) ++
     (List.range' 2 5).map fun a ↦ rhoMul a
@@ -350,7 +349,7 @@ def mkO7St : St :=
 
 /-- The generated CNF, in the 0-based `Std.Sat.CNF` convention of
 `ConwayO7/Dimacs.lean`. -/
-def mkO7Cnf : Std.Sat.CNF Nat :=
+def mkO7Cnf : Std.Sat.CNF ℕ :=
   ⟨mkO7St.cls.map fun c ↦ c.map Dimacs.litOfInt⟩
 
 end Encoder

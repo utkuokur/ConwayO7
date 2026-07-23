@@ -26,32 +26,32 @@ namespace Encoder
 /-! ### DIMACS-level semantics -/
 
 /-- Satisfaction of a 1-based signed DIMACS literal. -/
-def litSat (a : Nat → Bool) (l : Int) : Bool :=
+def litSat (a : ℕ → Bool) (l : Int) : Bool :=
   if l < 0 then !a l.natAbs else a l.natAbs
 
 /-- Satisfaction of a clause (disjunction). -/
-def clauseSat (a : Nat → Bool) (c : List Int) : Bool := c.any (litSat a)
+def clauseSat (a : ℕ → Bool) (c : List Int) : Bool := c.any (litSat a)
 
 /-- All clauses of a generator state are satisfied. -/
-def SatAll (a : Nat → Bool) (s : St) : Prop := ∀ c ∈ s.cls, clauseSat a c = true
+def SatAll (a : ℕ → Bool) (s : St) : Prop := ∀ c ∈ s.cls, clauseSat a c = true
 
-theorem satAll_init (a : Nat → Bool) (t : Nat) : SatAll a ⟨t, #[]⟩ := by
+theorem satAll_init (a : ℕ → Bool) (t : ℕ) : SatAll a ⟨t, #[]⟩ := by
   intro c hc
   simp at hc
 
-theorem satAll_push {a : Nat → Bool} {s : St} {c : List Int} (hs : SatAll a s)
+theorem satAll_push {a : ℕ → Bool} {s : St} {c : List Int} (hs : SatAll a s)
     (hc : clauseSat a c = true) : SatAll a (push s c) := by
   intro d hd
   rcases Array.mem_push.mp hd with h | rfl
   · exact hs d h
   · exact hc
 
-theorem litSat_congr {a b : Nat → Bool} {l : Int} (h : a l.natAbs = b l.natAbs) :
+theorem litSat_congr {a b : ℕ → Bool} {l : Int} (h : a l.natAbs = b l.natAbs) :
     litSat a l = litSat b l := by
   unfold litSat
   split <;> rw [h]
 
-theorem litSat_neg (a : Nat → Bool) {l : Int} (hl : l ≠ 0) :
+theorem litSat_neg (a : ℕ → Bool) {l : Int} (hl : l ≠ 0) :
     litSat a (-l) = !litSat a l := by
   unfold litSat
   rcases lt_trichotomy l 0 with h | h | h
@@ -60,7 +60,7 @@ theorem litSat_neg (a : Nat → Bool) {l : Int} (hl : l ≠ 0) :
   · rw [if_pos (by omega : (-l) < 0), if_neg (by omega : ¬l < 0), Int.natAbs_neg]
 
 /-- Clause satisfaction only depends on the assignment at the clause's variables. -/
-theorem clauseSat_congr {a b : Nat → Bool} {c : List Int}
+theorem clauseSat_congr {a b : ℕ → Bool} {c : List Int}
     (h : ∀ l ∈ c, a l.natAbs = b l.natAbs) : clauseSat a c = clauseSat b c := by
   induction c with
   | nil => rfl
@@ -82,13 +82,13 @@ def WF (s : St) : Prop :=
 /-- Gadget triple: on well-formed states, from `P` (and all earlier clauses
 satisfied), `f`'s clauses can be satisfied by changing only variables above `s.top`,
 preserving well-formedness and establishing `Q`. -/
-structure GTrip (P : (Nat → Bool) → Prop) (f : St → St) (Q : (Nat → Bool) → Prop) :
+structure GTrip (P : (ℕ → Bool) → Prop) (f : St → St) (Q : (ℕ → Bool) → Prop) :
     Prop where
   mono : ∀ s, s.top ≤ (f s).top
   sat : ∀ s a, WF s → SatAll a s → P a →
     ∃ a', (∀ v ≤ s.top, a' v = a v) ∧ SatAll a' (f s) ∧ WF (f s) ∧ Q a'
 
-theorem GTrip.comp {P Q R : (Nat → Bool) → Prop} {f g : St → St}
+theorem GTrip.comp {P Q R : (ℕ → Bool) → Prop} {f g : St → St}
     (hf : GTrip P f Q) (hg : GTrip Q g R) : GTrip P (fun s ↦ g (f s)) R := by
   refine ⟨fun s ↦ le_trans (hf.mono s) (hg.mono (f s)), fun s a hw hs hp ↦ ?_⟩
   obtain ⟨a1, hag1, hs1, hw1, hq⟩ := hf.sat s a hw hs hp
@@ -97,16 +97,16 @@ theorem GTrip.comp {P Q R : (Nat → Bool) → Prop} {f g : St → St}
     hw2, hr⟩
 
 /-- A gadget that changes nothing is a triple for any stable condition. -/
-theorem GTrip.id {P : (Nat → Bool) → Prop} : GTrip P (fun s ↦ s) P :=
+theorem GTrip.id {P : (ℕ → Bool) → Prop} : GTrip P (fun s ↦ s) P :=
   ⟨fun _ ↦ le_refl _, fun _ a hw hs hp ↦ ⟨a, fun _ _ ↦ rfl, hs, hw, hp⟩⟩
 
 /-- On a well-formed state, satisfaction transfers along agreement up to `top`. -/
-theorem satAll_of_agree {a b : Nat → Bool} {s : St} (hw : WF s) (hs : SatAll a s)
+theorem satAll_of_agree {a b : ℕ → Bool} {s : St} (hw : WF s) (hs : SatAll a s)
     (h : ∀ v ≤ s.top, b v = a v) : SatAll b s := fun c hc ↦ by
   rw [clauseSat_congr fun l hl ↦ h _ (hw.2 c hc l hl)]
   exact hs c hc
 
-theorem clauseSat_four {a : Nat → Bool} {l₁ l₂ l₃ l₄ : Int}
+theorem clauseSat_four {a : ℕ → Bool} {l₁ l₂ l₃ l₄ : Int}
     (h : litSat a l₁ = true ∨ litSat a l₂ = true ∨ litSat a l₃ = true ∨
       litSat a l₄ = true) :
     clauseSat a [l₁, l₂, l₃, l₄] = true := by
@@ -124,7 +124,7 @@ theorem clauseSat_four {a : Nat → Bool} {l₁ l₂ l₃ l₄ : Int}
 
 @[simp] theorem fresh_fst_cls (s : St) : (fresh s).1.cls = s.cls := rfl
 
-@[simp] theorem fresh_snd (s : St) : (fresh s).2 = ((s.top + 1 : Nat) : Int) := rfl
+@[simp] theorem fresh_snd (s : St) : (fresh s).2 = ((s.top + 1 : ℕ) : Int) := rfl
 
 theorem pushMany_cls (s : St) (cs : List (List Int)) :
     (pushMany s cs).cls = s.cls ++ cs.toArray := by
@@ -161,7 +161,7 @@ theorem emitFold_top {α : Type} (s : St) (l : List α) (f : α → List (List I
     rw [ih, pushMany_top]
 
 /-- Satisfaction of a state extended by a clause list (any new top). -/
-theorem satAll_append {a : Nat → Bool} {s : St} {new : List (List Int)} {t : Nat}
+theorem satAll_append {a : ℕ → Bool} {s : St} {new : List (List Int)} {t : ℕ}
     (hold : ∀ c ∈ s.cls, clauseSat a c = true)
     (hnew : ∀ c ∈ new, clauseSat a c = true) :
     SatAll a ⟨t, s.cls ++ new.toArray⟩ := by
@@ -178,7 +178,7 @@ theorem countP_eq_count_true {α : Type*} (l : List α) (p : α → Bool) :
     rw [List.countP_cons, List.map_cons, List.count_cons, ih]
     cases hx : p x <;> simp
 
-theorem countP_neg_map (a : Nat → Bool) (l : List Int) (h0 : ∀ x ∈ l, x ≠ 0) :
+theorem countP_neg_map (a : ℕ → Bool) (l : List Int) (h0 : ∀ x ∈ l, x ≠ 0) :
     (l.map (-·)).countP (litSat a) = l.length - l.countP (litSat a) := by
   induction l with
   | nil => rfl
@@ -187,12 +187,12 @@ theorem countP_neg_map (a : Nat → Bool) (l : List Int) (h0 : ∀ x ∈ l, x �
     have hle := List.countP_le_length (p := litSat a) (l := l)
     rw [List.map_cons, List.countP_cons, List.countP_cons,
       ih fun y hy ↦ h0 y (List.mem_cons_of_mem _ hy), litSat_neg a hx0]
-    cases hlx : litSat a x <;> simp <;> omega
+    cases hlx : litSat a x <;> simp ; omega
 
 /-- Adapt a triple to a stronger pre/post pair: the precondition projects onto `P`,
 and the postcondition is rebuilt from the old one plus any ≤ 693-stable leftovers of
 the precondition (every gadget extension fixes the orbit block). -/
-theorem GTrip.adapt {P P' Q Q' : (Nat → Bool) → Prop} {f : St → St}
+theorem GTrip.adapt {P P' Q Q' : (ℕ → Bool) → Prop} {f : St → St}
     (h : GTrip P f Q) (hPP : ∀ a, P' a → P a)
     (hQQ : ∀ a a', (∀ v ≤ 693, a' v = a v) → P' a → Q a' → Q' a') :
     GTrip P' f Q' := by
@@ -202,7 +202,7 @@ theorem GTrip.adapt {P P' Q Q' : (Nat → Bool) → Prop} {f : St → St}
     hQQ a a' (fun v hv ↦ hag v (le_trans hv hw.1)) hp' hq⟩
 
 /-- Fold composition with a uniform invariant. -/
-theorem GTrip.foldl_inv {α : Type*} {Inv : (Nat → Bool) → Prop} {step : St → α → St}
+theorem GTrip.foldl_inv {α : Type*} {Inv : (ℕ → Bool) → Prop} {step : St → α → St}
     (l : List α) (h : ∀ x ∈ l, GTrip Inv (fun s ↦ step s x) Inv) :
     GTrip Inv (fun s ↦ l.foldl step s) Inv := by
   induction l with
@@ -214,7 +214,7 @@ theorem GTrip.foldl_inv {α : Type*} {Inv : (Nat → Bool) → Prop} {step : St 
 
 /-! ### Bridge to `Std.Sat.CNF` -/
 
-theorem clauseSat_eq_eval (a : Nat → Bool) (c : List Int) (h0 : ∀ l ∈ c, l ≠ 0) :
+theorem clauseSat_eq_eval (a : ℕ → Bool) (c : List Int) (h0 : ∀ l ∈ c, l ≠ 0) :
     clauseSat a c =
       Std.Sat.CNF.Clause.eval (fun v ↦ a (v + 1)) (c.map Dimacs.litOfInt) := by
   induction c with
@@ -233,7 +233,7 @@ theorem clauseSat_eq_eval (a : Nat → Bool) (c : List Int) (h0 : ∀ l ∈ c, l
 
 /-- Generic bridge: a state with no zero literals is `SatAll`-satisfied iff its
 converted CNF is satisfied by the index-shifted assignment. -/
-theorem satAll_iff_cnfSat (a : Nat → Bool) (s : St)
+theorem satAll_iff_cnfSat (a : ℕ → Bool) (s : St)
     (h0 : ∀ c ∈ s.cls, ∀ l ∈ c, l ≠ 0) :
     SatAll a s ↔
       Std.Sat.CNF.Sat (fun v ↦ a (v + 1)) ⟨s.cls.map fun c ↦ c.map Dimacs.litOfInt⟩ := by
@@ -261,21 +261,21 @@ theorem mkO7_no_zero : ∀ c ∈ mkO7St.cls, ∀ l ∈ c, l ≠ 0 := by
 
 /-- **The bridge**: any assignment satisfying every generator clause yields a
 satisfying assignment of the generated CNF. -/
-theorem sat_mkO7Cnf_of_satAll {a : Nat → Bool} (h : SatAll a mkO7St) :
+theorem sat_mkO7Cnf_of_satAll {a : ℕ → Bool} (h : SatAll a mkO7St) :
     ∃ b, Std.Sat.CNF.Sat b mkO7Cnf :=
   ⟨fun v ↦ a (v + 1), (satAll_iff_cnfSat a mkO7St mkO7_no_zero).mp h⟩
 
 /-! ### First gadget instance: the symmetry-level-1 units -/
 
 /-- The level-1 symmetry condition on the orbit variables: the fixed vertex is
-adjacent to exactly cycles 0 and 1 (the WLOG choice L5 will justify). -/
-def Sym1Holds (a : Nat → Bool) : Prop :=
+adjacent to exactly cycles 0 and 1. -/
+def Sym1Holds (a : ℕ → Bool) : Prop :=
   ∀ i < 14, a (orbitOfN 0 (1 + 7 * i) + 1) = decide (i < 2)
 
 /-- The level-1 unit variables sit inside the orbit block (computed). -/
 theorem sym1_var_lt : ∀ i < 14, orbitOfN 0 (1 + 7 * i) + 1 ≤ 693 := by native_decide
 
-theorem sym1Step_trip {i : Nat} (hi : i < 14) :
+theorem sym1Step_trip {i : ℕ} (hi : i < 14) :
     GTrip Sym1Holds (fun s ↦ sym1Step s i) Sym1Holds := by
   refine ⟨fun s ↦ le_refl _,
     fun s a hw hs hp ↦ ⟨a, fun _ _ ↦ rfl, ?_, ⟨hw.1, fun c hc l hl ↦ ?_⟩, hp⟩⟩
@@ -299,7 +299,7 @@ theorem sym1Step_trip {i : Nat} (hi : i < 14) :
       omega
   refine satAll_push hs ?_
   have hv := hp i hi
-  set n : Nat := orbitOfN 0 (1 + 7 * i) + 1 with hn
+  set n : ℕ := orbitOfN 0 (1 + 7 * i) + 1 with hn
   by_cases h2 : i < 2
   · rw [if_pos h2]
     simp only [clauseSat, List.any_cons, List.any_nil, Bool.or_false, litSat]

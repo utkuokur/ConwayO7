@@ -1,7 +1,7 @@
 /-
-Layer L4, first brick — the orbit reduction.
+The orbit reduction.
 
-`sigma0` acts on the 4851 unordered vertex pairs of `Fin 99`.  The encoder
+`sigma0` acts on the `99 choose 2 = 4851` unordered vertex pairs of `Fin 99`.  The encoder
 (`tools/conway_o7.py`, `pair_orbits`) walks the pairs in lexicographic order and
 numbers the orbits `0, 1, 2, …`; one CNF variable per orbit replaces one variable per
 pair.  This file reproduces that computation *exactly* (`orbitOf`, `orbitRep`,
@@ -14,10 +14,9 @@ pair.  This file reproduces that computation *exactly* (`orbitOf`, `orbitRep`,
 On top sits the semantic **orbit reduction** (`invariant_iff_exists_orbitFun`):
 a graph on `Fin 99` is `sigma0`-invariant  ⟺  it is `graphOfOrbits ω` for some
 assignment `ω` of the 693 orbit booleans.  This is the encoder's variable reduction,
-verified; the CNF layer (L4 proper) will connect `ω o` to DIMACS variable `o + 1`.
+verified; the CNF layer will connect `ω o` to DIMACS variable `o + 1`.
 
-The concrete facts are established by `native_decide` (compiled evaluation of the
-same functions, over all 4851 pairs); the bridge theorems are structural.
+The concrete facts are established by `native_decide`; the bridge theorems are structural.
 -/
 import ConwayO7.Canonical
 
@@ -56,11 +55,11 @@ def orbitBuild : Array (Option Nat) × Array (Fin 99 × Fin 99) :=
           st.2.push p))
     (Array.replicate (99 * 99) none, #[])
 
-/-- The encoder's orbit id of a pair (any order of components). -/
+/-- The encoder's orbit id of a pair. -/
 def orbitOf (p : Fin 99 × Fin 99) : Nat :=
   (orbitBuild.1.getD (pairIdx (normalizePair p)) none).getD 100000000
 
-/-- The representative (opening pair) of orbit `o`. -/
+/-- The representative of orbit `o`. -/
 def orbitRep (o : Nat) : Fin 99 × Fin 99 := orbitBuild.2.getD o (0, 0)
 
 /-- The number of pair-orbits. -/

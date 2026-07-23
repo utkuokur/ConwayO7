@@ -1,11 +1,11 @@
 /-
-Layer L3 — the cycle-type lemma (Cesarz–Woldar, arXiv:2308.02978, Lemma 2.2):
+The cycle-type lemma (Cesarz–Woldar, arXiv:2308.02978, Lemma 2.2):
 
   an order-7 automorphism of an srg(99,14,1,2) fixes exactly one vertex,
   hence has cycle type [1, 7¹⁴].
 
 This is the step of T2 that makes the canonical σ₀ = (one fixed vertex + fourteen
-7-cycles) of `tools/conway_o7.py` WLOG.  The proof follows `docs/L3_cycle_type.md`:
+7-cycles) of `tools/conway_o7.py` WLOG.
 
   Step 0  #Fix ≡ 99 ≡ 1 (mod 7), so a fixed vertex x exists            (`card_filter_fixed_modEq`)
   Step 1  λ = 1 gives a σ-equivariant perfect matching on N(x), so the
@@ -16,7 +16,7 @@ This is the step of T2 that makes the canonical σ₀ = (one fixed vertex + four
   Step 3  a second fixed vertex w ∉ N(x) would make σ swap the two
           common neighbours of {x, w}, so σ²(a) = a and σ = (σ²)⁴
           fixes a ∈ N(x) — contradiction
-  Step 4  #Fix = 1, so #support = 98 and the cycle type is [7¹⁴]       (`cycleType_eq_replicate`)
+  Step 4  #Fix = 1, so #support = 98 and the cycle type is [1, 7¹⁴]     (`cycleType_eq_replicate`)
 
 -/
 import Mathlib.Combinatorics.SimpleGraph.StronglyRegular
@@ -185,7 +185,7 @@ theorem mapsTo_commonNeighbors {u v w : V} (h : u ∈ G.commonNeighbors v w) :
 section
 variable [Fintype V] [DecidableRel G.Adj]
 
-/-- **Rigidity** (Step 2): an adjacency-preserving permutation of an srg(99,14,1,2) that
+/-- **Rigidity** : An automorphism of an srg(99,14,1,2) that
 fixes a vertex and all its neighbours is the identity. -/
 theorem eq_one_of_fixes_neighbors (hG : G.IsSRGWith 99 14 1 2) {x : V} (hx : π x = x)
     (hnbr : ∀ u, G.Adj x u → π u = u) : π = 1 := by
@@ -228,8 +228,8 @@ theorem eq_one_of_fixes_neighbors (hG : G.IsSRGWith 99 14 1 2) {x : V} (hx : π 
 
 variable [DecidableEq V]
 
-/-- **L3, fixed-point count** (Cesarz–Woldar Lemma 2.2): an order-7 adjacency-preserving
-permutation of an srg(99,14,1,2) fixes exactly one vertex. -/
+/-- **fixed-point count** (Cesarz–Woldar Lemma 2.2): an order-7 automorphism of
+an srg(99,14,1,2) fixes exactly one vertex. -/
 theorem card_filter_fixed_eq_one
   (hG : G.IsSRGWith 99 14 1 2) (hord : orderOf π = 7) :
     #(univ.filter fun v ↦ π v = v) = 1 := by
@@ -286,7 +286,7 @@ theorem card_filter_fixed_eq_one
     have h2 : (hinv.toPerm f) ^ 2 = 1 := by
       ext a
       simp [sq, hinv a]
-    have hmod2 := card_filter_fixed_modEq (hinv.toPerm f) (by decide) h2 s
+    have hmod2 := card_filter_fixed_modEq (hinv.toPerm f) Nat.prime_two h2 s
       (fun a ha ↦ by rw [Function.Involutive.coe_toPerm]; exact hfs a ha)
     have hempty : (s.filter fun a ↦ (hinv.toPerm f) a = a) = ∅ := by
       rw [filter_eq_empty_iff]
@@ -336,8 +336,8 @@ theorem card_filter_fixed_eq_one
       exact absurd this (notMem_empty v)
     · obtain ⟨a, b, hab, hpair⟩ :=
         commonNeighbors_eq_pair_of_not_adj hG (fun h ↦ hvx h.symm) hva
-      have hmema : a ∈ G.commonNeighbors x v := by rw [hpair]; exact Set.mem_insert a {b}
-      have hmemb : b ∈ G.commonNeighbors x v := by rw [hpair]; exact Set.mem_insert_of_mem a rfl
+      have hmema : a ∈ G.commonNeighbors x v := hpair ▸ (Set.mem_insert a {b})
+      have hmemb : b ∈ G.commonNeighbors x v := hpair ▸ (Set.mem_insert_of_mem a rfl)
       have hinv_cn : ∀ c, c ∈ G.commonNeighbors x v → π c ∈ G.commonNeighbors x v := by
         intro c hc
         have := mapsTo_commonNeighbors hadj (G := G) hc
@@ -391,7 +391,7 @@ an srg(99,14,1,2) has cycle type `[7¹⁴]`
 the canonical shape encoded by `tools/conway_o7.py`. -/
 theorem cycleType_eq_replicate (hG : G.IsSRGWith 99 14 1 2) (hord : orderOf π = 7) :
     π.cycleType = Multiset.replicate 14 7 := by
-  obtain ⟨n, hn⟩ := Equiv.Perm.cycleType_prime_order (by rw [hord]; decide : (orderOf π).Prime)
+  obtain ⟨n, hn⟩ := Equiv.Perm.cycleType_prime_order (hord ▸ Nat.prime_seven)
   rw [hord] at hn
   have hfix := card_filter_fixed_eq_one hadj hG hord
   have htot := card_filter_fixed_add_card_support π
@@ -400,6 +400,7 @@ theorem cycleType_eq_replicate (hG : G.IsSRGWith 99 14 1 2) (hord : orderOf π =
   rw [hn, Multiset.sum_replicate, smul_eq_mul] at hsum
   have : n = 13 := by omega
   rw [hn, this]
+
 
 end
 

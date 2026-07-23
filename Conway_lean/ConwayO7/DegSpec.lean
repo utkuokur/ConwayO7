@@ -1,6 +1,4 @@
 /-
-L4 — the degree-section triple.
-
 `degreeStep u` emits `CardEnc.equals(lits_u, 14, mtotalizer)`: an at-least-14
 constraint (the mtotalizer at-most-84 over the *negated* 98 literals) followed by the
 at-most-14 mtotalizer over the literals themselves.  With the degree invariant
@@ -23,7 +21,7 @@ def degLits (u : Fin 99) : Array Int :=
 theorem degreeStep_eq (s : St) (u : Fin 99) :
     degreeStep s u = encEquals s (degLits u) 14 .mto := rfl
 
-/-- Each vertex has 98 candidate neighbour literals (computed). -/
+/-- Each vertex has 98 candidate neighbour literals. -/
 theorem degLits_size : ∀ u : Fin 99, (degLits u).size = 98 := by native_decide
 
 theorem degLits_bounds (u : Fin 99) :
