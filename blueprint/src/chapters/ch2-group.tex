@@ -177,70 +177,12 @@ of $x$), so $\pi$ swaps them.  Then $\pi^2$ fixes $a$, and
 $\pi = (\pi^2)^4$ fixes $a \in N(x)$ --- contradiction.  So $\Fix\pi = \{x\}$.
 \end{proof}
 
-\begin{theorem}[{Cycle type $[1,7^{14}]$}]\label{thm:grp-cycle-type}
-With $\Gamma$ and $\pi$ as in Theorem~\ref{lem:fixed}, the cycle type of
-$\pi$ is $[7^{14}]$: one fixed vertex and fourteen $7$-cycles.
-\lean{ConwayO7.cycleType_eq_replicate}
-\leanfile{ConwayO7/CycleType.lean}\leanok
-\uses{def:srg, lem:fixed}
-\end{theorem}
-
-\begin{proof}\leanok
-\uses{lem:grp-fix-support}
-Since $\ord\pi = 7$ is prime, the cycle type is $[7^{n+1}]$ for some $n$.  By
-Theorem~\ref{lem:fixed} and Lemma~\ref{lem:grp-fix-support} the support has
-$99 - 1 = 98$ elements, and the cycle lengths sum to the support size, so
-$7(n+1) = 98$ and the cycle type is $[7^{14}]$.
-\end{proof}
-
-\section{The automorphism group}
-
-\begin{definition}[Forgetting an automorphism to a permutation]\label{def:grp-autToPerm}
-For a graph $G$ on a vertex set $V$, the map sending an automorphism
-$\sigma \in \Aut G = (G \simeq_g G)$ to its underlying vertex bijection is a
-monoid homomorphism $\Aut G \to \operatorname{Sym}(V)$.
-\lean{ConwayO7.autToPerm}
-\leanfile{ConwayO7/Aut.lean}\leanok
-\end{definition}
-
-\begin{lemma}[Injectivity]\label{lem:grp-autToPerm-injective}
-The homomorphism of Definition~\ref{def:grp-autToPerm} is injective: an
-automorphism is determined by its action on vertices.
-\lean{ConwayO7.autToPerm_injective}
-\leanfile{ConwayO7/Aut.lean}\leanok
-\uses{def:grp-autToPerm}
-\end{lemma}
-
-\begin{lemma}[Finiteness of the automorphism group]\label{lem:grp-aut-finite}
-If $V$ is finite then $\Aut G$ is a finite group.
-\lean{ConwayO7.instFiniteIso_conwayO7}\leanok
-\uses{def:grp-autToPerm}
-\end{lemma}
-
-\begin{proof}\leanok
-\uses{lem:grp-autToPerm-injective}
-$\Aut G$ injects into the finite group $\operatorname{Sym}(V)$.
-\end{proof}
-
-\begin{lemma}[Cauchy step]\label{lem:cauchy}
-If $7 \mid |\Aut G|$ for a graph $G$ on a finite vertex set, then $\Aut G$
-contains an element of order $7$.
-\lean{ConwayO7.exists_aut_orderOf_eq_seven, exists_prime_orderOf_dvd_card}
-\leanfile{ConwayO7/Aut.lean}\leanok
-\uses{lem:grp-aut-finite}
-\end{lemma}
-
-\begin{proof}\leanok
-Cauchy's theorem for the finite group $\Aut G$
-(mathlib's \texttt{exists\_prime\_orderOf\_dvd\_card}) with the prime $7$.
-\end{proof}
-
 \begin{corollary}[Cycle type of an order-seven automorphism]\label{cor:grp-aut-cycle-type}
 Let $\Gamma$ be an $\srg(99,14,1,2)$ and $\sigma \in \Aut\Gamma$ with
 $\ord\sigma = 7$.  Then the underlying vertex permutation of $\sigma$ has
 cycle type $[7^{14}]$.
 \lean{ConwayO7.cycleType_autToPerm}
-\leanfile{ConwayO7/Aut.lean}\leanok
+\leanfile{ConwayO7/CycleType.lean}\leanok
 \uses{def:srg, def:grp-autToPerm, thm:grp-cycle-type}
 \end{corollary}
 

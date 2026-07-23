@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.15)  23 JUL 2026 20:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.15)  23 JUL 2026 21:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -431,54 +431,55 @@ Overfull \hbox (3.07314pt too wide) in paragraph at lines 155--159
 \T1/lmr/m/it/9 uses: lem:grp-fixed-congruence, lem:grp-unique-triangle, lem:grp-mu-pair, lem:grp-equivariance, lem:grp-rigidity \T1/lmr/m/it/10.95 Step
  []
 
-[6{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-Overfull \hbox (7.85631pt too wide) in paragraph at lines 233--236
-[][]$[]$[]\T1/lmr/m/n/10.95 Cauchy's the-o-rem for the fi-nite group $[] \OML/lmm/m/it/10.95 G$ \T1/lmr/m/n/10.95 (math-lib's \T1/lmtt/m/n/10.95 exists_prime_orderOf_dvd_card\T1/lmr/m/n/10.95 )
- []
 
-[7] [8]
-Overfull \hbox (6.4553pt too wide) in paragraph at lines 367--370
+LaTeX Warning: Reference `thm:grp-cycle-type' on page 6 undefined on input line 193.
+
+[6{/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [7]
+Overfull \hbox (6.4553pt too wide) in paragraph at lines 300--303
 [][]$[]$[]\T1/lmr/m/n/10.95 The iso-mor-phism iden-ti-fies neigh-bour-hoods and com-mon neigh-bour-hoods vertex-by-vertex,
  []
 
-) (./chapters/ch3-encoding.tex [9]
-Chapter 3.
-[10
 
-] [11] [12] [13] [14]
+LaTeX Warning: Reference `lem:cauchy' on page 8 undefined on input line 339.
+
+) (./chapters/ch3-encoding.tex [8]
+Chapter 3.
+[9
+
+] [10] [11] [12] [13]
 Overfull \hbox (19.90012pt too wide) in paragraph at lines 375--382
 [][]$[]$[]\T1/lmr/m/n/10.95 Again in-duc-tion over a bi-nary tree, but each in-ter-nal node now merges two quo-tient/remainder
  []
 
-[15] [16] [17]) (./chapters/ch4-lex.tex [18]
+[14] [15] [16]) (./chapters/ch4-lex.tex [17]
 Chapter 4.
-[19
+[18
 
 ]
 Overfull \hbox (4.63705pt too wide) in paragraph at lines 126--130
-[][]\T1/lmr/bx/n/10.95 Lemma 74 \T1/lmr/m/n/10.95 (Nor-mal-i-sa-tion of the fixed ver-tex's neigh-bour-hood)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 Ev-ery $\OML/lmm/m/it/10.95 ^^[[]$\T1/lmr/m/it/10.95 -invariant $[]\OT1/lmr/m/n/10.95 (99\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 14\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 2)$
+[][]\T1/lmr/bx/n/10.95 Lemma 68 \T1/lmr/m/n/10.95 (Nor-mal-i-sa-tion of the fixed ver-tex's neigh-bour-hood)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 Ev-ery $\OML/lmm/m/it/10.95 ^^[[]$\T1/lmr/m/it/10.95 -invariant $[]\OT1/lmr/m/n/10.95 (99\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 14\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 2)$
  []
 
-[20] [21]
+[19] [20]
 Overfull \hbox (2.78775pt too wide) in paragraph at lines 268--271
-[][]\T1/lmr/bx/n/10.95 Lemma 84 \T1/lmr/m/n/10.95 (Ex-is-tence of a reach-able min-i-mum)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 For ev-ery $\OML/lmm/m/it/10.95 !$ \T1/lmr/m/it/10.95 there is $\OML/lmm/m/it/10.95 ![] \OMS/lmsy/m/n/10.95 2 R\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 !\OT1/lmr/m/n/10.95 )$ \T1/lmr/m/it/10.95 with $[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^T
+[][]\T1/lmr/bx/n/10.95 Lemma 78 \T1/lmr/m/n/10.95 (Ex-is-tence of a reach-able min-i-mum)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 For ev-ery $\OML/lmm/m/it/10.95 !$ \T1/lmr/m/it/10.95 there is $\OML/lmm/m/it/10.95 ![] \OMS/lmsy/m/n/10.95 2 R\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 !\OT1/lmr/m/n/10.95 )$ \T1/lmr/m/it/10.95 with $[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 ![]\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^T
  []
 
-[22]
+[21]
 Overfull \hbox (77.0336pt too wide) in paragraph at lines 338--339
 []\T1/lmtt/m/it/9 Lean: ConwayO7.Encoder.lex_section_trip, ConwayO7.Encoder.specAddLexLeq_trip, ConwayO7.Encoder.specLexAgainst_trip[] 
  []
 
-[23] [24]) (./chapters/ch5-coverage.tex [25]
+[22] [23]) (./chapters/ch5-coverage.tex [24]
 Chapter 5.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 37.
 (/home/uokur/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [26
+) [25
 
 {/home/uokur/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (15.9721pt too wide) in paragraph at lines 103--107
-[]\T1/lmr/m/it/9 uses: lem:cnf-withcube-eval \T1/lmr/m/n/10.95 Any val-u-a-tion sat-is-fy-ing $\OML/lmm/m/it/10.95 F$ \T1/lmr/m/n/10.95 sat-is-fies some $\OML/lmm/m/it/10.95 c[]$\T1/lmr/m/n/10.95 , hence by Lemma []100[]
+Overfull \hbox (10.49712pt too wide) in paragraph at lines 103--107
+[]\T1/lmr/m/it/9 uses: lem:cnf-withcube-eval \T1/lmr/m/n/10.95 Any val-u-a-tion sat-is-fy-ing $\OML/lmm/m/it/10.95 F$ \T1/lmr/m/n/10.95 sat-is-fies some $\OML/lmm/m/it/10.95 c[]$\T1/lmr/m/n/10.95 , hence by Lemma []94[]
  []
 
 
@@ -486,36 +487,40 @@ Overfull \hbox (110.10854pt too wide) in paragraph at lines 120--121
 []\T1/lmtt/m/n/9 Lean: ConwayO7.Dimacs.litOfInt, ConwayO7.Dimacs.parseDimacs, ConwayO7.Dimacs.serializeDimacs, ConwayO7.Dimacs.parseCubes,
  []
 
-[27] [28] [29] [30]) (./chapters/ch6-certificates.tex [31]
+[26] [27] [28] [29]) (./chapters/ch6-certificates.tex [30]
 Chapter 6.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 56.
 (/home/uokur/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [32
+) [31
 
-]) (./chapters/ch7-trustedbase.tex [33])) [34
+]) (./chapters/ch7-trustedbase.tex [32])) [33
 
 ] (/home/uokur/claude_workspace/ConwayO7/blueprint/print/print.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `print.out' has not changed.
-(rerunfilecheck)             Checksum: 0207EBAB7910A4CA71736D9FAF3E143E;6098.
+(rerunfilecheck)             Checksum: D14047DD046088FCC921C1A316411FF5;5927.
  ) 
 Here is how much of TeX's memory you used:
- 11100 strings out of 469086
- 168914 string characters out of 5457830
- 596169 words of memory out of 5000000
- 39723 multiletter control sequences out of 15000+600000
+ 11087 strings out of 469086
+ 168730 string characters out of 5457830
+ 596871 words of memory out of 5000000
+ 39718 multiletter control sequences out of 15000+600000
  736555 words of font info for 117 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  74i,8n,79p,542b,593s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></home/uokur/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/uokur/claude_workspace/ConwayO7/blueprint/print/print.pdf (35 pages, 502474 bytes).
+Output written on /home/uokur/claude_workspace/ConwayO7/blueprint/print/print.pdf (34 pages, 499441 bytes).
 PDF statistics:
- 739 PDF objects out of 1000 (max. 8388607)
- 645 compressed objects within 7 object streams
- 199 named destinations out of 1000 (max. 500000)
- 225 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 716 PDF objects out of 1000 (max. 8388607)
+ 623 compressed objects within 7 object streams
+ 191 named destinations out of 1000 (max. 500000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 

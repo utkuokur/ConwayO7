@@ -19,7 +19,7 @@ Together with L2 (`seven_not_dvd_card_aut_of_no_sigma0_invariant`), this reduces
 
 — which is exactly what `o7.cnf` encodes (layer L4) and T1 + cake_lpr refute.
 -/
-import ConwayO7.Aut
+import ConwayO7.CycleType
 
 open Finset
 
@@ -59,7 +59,7 @@ end Transport
 type of size `f + p * m` has cycle type `[pᵐ]`. -/
 theorem cycleType_eq_replicate_of_fixed {α : Type*} [Fintype α] [DecidableEq α]
     (π : Equiv.Perm α) {p m f : ℕ} (hp : p.Prime) (hπ : π ^ p = 1) (hne : π ≠ 1)
-    (hfix : #(univ.filter fun a ↦ π a = a) = f)
+    (hfix : #{a | π a = a} = f)
     (hcard : Fintype.card α = f + p * m) :
     π.cycleType = Multiset.replicate m p := by
   have horder : orderOf π = p := by

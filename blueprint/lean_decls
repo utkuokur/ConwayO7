@@ -13,12 +13,6 @@ ConwayO7.eq_of_commonNeighbors_eq
 ConwayO7.mapsTo_commonNeighbors
 ConwayO7.eq_one_of_fixes_neighbors
 ConwayO7.card_filter_fixed_eq_one
-ConwayO7.cycleType_eq_replicate
-ConwayO7.autToPerm
-ConwayO7.autToPerm_injective
-ConwayO7.instFiniteIso_conwayO7
-ConwayO7.exists_aut_orderOf_eq_seven
-exists_prime_orderOf_dvd_card
 ConwayO7.cycleType_autToPerm
 ConwayO7.sigma0
 ConwayO7.sigma0Fun

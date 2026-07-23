@@ -19,6 +19,7 @@ This is the step of T2 that makes the canonical σ₀ = (one fixed vertex + four
   Step 4  #Fix = 1, so #support = 98 and the cycle type is [1, 7¹⁴]     (`cycleType_eq_replicate`)
 
 -/
+import Mathlib.Algebra.Order.Group.End
 import Mathlib.Combinatorics.SimpleGraph.StronglyRegular
 import Mathlib.GroupTheory.Perm.Cycle.Type
 
@@ -55,8 +56,7 @@ theorem card_filter_fixed_add_card_support (π : Equiv.Perm α) :
 end
 
 /-- **Fixed-point congruence.**  If `π ^ p = 1` with `p` prime and the finset `s` is
-`π`-invariant, then `#{a ∈ s | π a = a} ≡ #s [MOD p]`.  (Applied with `p = 7` to the
-vertex set and to `N(x)`, and with `p = 2` to the matching involution of Step 1.) -/
+`π`-invariant, then `#{a ∈ s | π a = a} ≡ #s [MOD p]`. -/
 theorem card_filter_fixed_modEq (π : Equiv.Perm α) {p : ℕ} (hp : p.Prime) (hπ : π ^ p = 1)
     (s : Finset α) (hs : ∀ a ∈ s, π a ∈ s) :
     #(s.filter fun a ↦ π a = a) ≡ #s [MOD p] := by
@@ -232,10 +232,10 @@ variable [DecidableEq V]
 an srg(99,14,1,2) fixes exactly one vertex. -/
 theorem card_filter_fixed_eq_one
   (hG : G.IsSRGWith 99 14 1 2) (hord : orderOf π = 7) :
-    #(univ.filter fun v ↦ π v = v) = 1 := by
+    #{v | π v = v} = 1 := by
   have h7 : π ^ 7 = 1 := by rw [← hord]; exact pow_orderOf_eq_one π
   -- Step 0: #Fix ≡ 99 ≡ 1 (mod 7) gives a fixed vertex x
-  have hmod : #(univ.filter fun v ↦ π v = v) ≡ 99 [MOD 7] := by
+  have hmod : #{v | π v = v} ≡ 99 [MOD 7] := by
     have h := card_filter_fixed_modEq π Nat.prime_seven h7 univ (fun a _ ↦ mem_univ _)
     rwa [card_univ, hG.card] at h
   obtain ⟨x, hx⟩ : (univ.filter fun v ↦ π v = v).Nonempty := by
@@ -404,5 +404,40 @@ theorem cycleType_eq_replicate (hG : G.IsSRGWith 99 14 1 2) (hord : orderOf π =
 end
 
 end Automorphism
+
+/-! ### The automorphism group and Cauchy's step (formerly `Aut.lean`) -/
+
+variable {V : Type*} (G : SimpleGraph V)
+
+/-- The forgetful monoid homomorphism from graph automorphisms to vertex permutations. -/
+def autToPerm : (G ≃g G) →* Equiv.Perm V :=
+  MonoidHom.mk' (fun σ ↦ σ.toEquiv) fun _ _ ↦ rfl
+
+theorem autToPerm_injective : Function.Injective (autToPerm G) := fun _ _ h ↦
+  RelIso.ext fun v ↦ Equiv.ext_iff.mp h v
+
+variable [Fintype V]
+
+instance : Finite (G ≃g G) :=
+  Finite.of_injective (autToPerm G) (autToPerm_injective G)
+
+/-- **Cauchy step**: if 7 divides the order of the automorphism group,
+then some automorphism has order exactly 7. -/
+theorem exists_aut_orderOf_eq_seven (h : 7 ∣ Nat.card (G ≃g G)) :
+    ∃ σ : G ≃g G, orderOf σ = 7 := by
+  haveI : Fact (Nat.Prime 7) := ⟨Nat.prime_seven⟩
+  haveI := Fintype.ofFinite (G ≃g G)
+  rw [Nat.card_eq_fintype_card] at h
+  exact exists_prime_orderOf_dvd_card 7 h
+
+variable [DecidableEq V] [DecidableRel G.Adj]
+/-- An order-7 automorphism of an srg(99,14,1,2) moves the 99 vertices in
+one fixed vertex and fourteen 7-cycles — the canonical shape `σ₀` encoded by
+`tools/conway_o7.py` is WLOG. -/
+theorem cycleType_autToPerm (hG : G.IsSRGWith 99 14 1 2) (σ : G ≃g G)
+    (hord : orderOf σ = 7) :
+    (autToPerm G σ).cycleType = Multiset.replicate 14 7 :=
+  cycleType_eq_replicate (fun _ _ ↦ σ.map_adj_iff) hG
+    ((orderOf_injective (autToPerm G) (autToPerm_injective G) σ).trans hord)
 
 end ConwayO7

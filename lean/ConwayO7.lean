@@ -4,7 +4,6 @@
 import ConwayO7.Semantics
 import ConwayO7.Coverage
 import ConwayO7.CycleType
-import ConwayO7.Aut
 import ConwayO7.Canonical
 import ConwayO7.Orbits
 import ConwayO7.CoverageCheck
