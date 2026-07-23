@@ -242,7 +242,7 @@ theorem card_filter_fixed_eq_one
     rw [nonempty_iff_ne_empty]
     intro h
     rw [h, card_empty] at hmod
-    exact absurd hmod (by decide)
+    exact absurd hmod (by unfold Nat.ModEq; omega)
   have hxfix : π x = x := (mem_filter.mp hx).2
   -- Step 1: the fixed neighbours of x, paired by the λ = 1 matching
   set s : Finset V := (G.neighborFinset x).filter (fun u ↦ π u = u) with hs
@@ -304,7 +304,7 @@ theorem card_filter_fixed_eq_one
     have h := card_filter_fixed_modEq π Nat.prime_seven h7 (G.neighborFinset x) hinv_nbr
     rw [G.card_neighborFinset_eq_degree, hG.regular x] at h
     rw [← hs] at h
-    exact Nat.modEq_zero_iff_dvd.mp (h.trans (by decide))
+    exact Nat.modEq_zero_iff_dvd.mp (h.trans (by unfold Nat.ModEq; omega))
   have hsle : #s ≤ 14 := by
     calc #s ≤ #(G.neighborFinset x) := card_filter_le _ _
       _ = 14 := by rw [G.card_neighborFinset_eq_degree, hG.regular x]

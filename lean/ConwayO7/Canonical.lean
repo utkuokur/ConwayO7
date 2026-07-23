@@ -90,15 +90,76 @@ def sigma0InvFun (v : Fin 99) : Fin 99 :=
   ⟨if (v : ℕ) = 0 then 0 else 1 + 7 * (((v : ℕ) - 1) / 7) + (((v : ℕ) - 1) % 7 + 6) % 7, by
     have := v.isLt; split <;> omega⟩
 
-theorem sigma0_leftInverse : ∀ v : Fin 99, sigma0InvFun (sigma0Fun v) = v := by decide
-theorem sigma0_rightInverse : ∀ v : Fin 99, sigma0Fun (sigma0InvFun v) = v := by decide
+theorem sigma0Fun_val (v : Fin 99) : (sigma0Fun v : ℕ)
+    = if (v : ℕ) = 0 then 0
+      else 1 + 7 * (((v : ℕ) - 1) / 7) + (((v : ℕ) - 1) % 7 + 1) % 7 := rfl
+
+theorem sigma0InvFun_val (v : Fin 99) : (sigma0InvFun v : ℕ)
+    = if (v : ℕ) = 0 then 0
+      else 1 + 7 * (((v : ℕ) - 1) / 7) + (((v : ℕ) - 1) % 7 + 6) % 7 := rfl
+
+theorem sigma0_leftInverse : ∀ v : Fin 99, sigma0InvFun (sigma0Fun v) = v := by
+  intro v
+  have hv := v.isLt
+  apply Fin.ext
+  rw [sigma0InvFun_val, sigma0Fun_val]
+  by_cases h0 : (v : ℕ) = 0
+  · rw [if_pos h0, if_pos rfl, h0]
+  · have h7 : ((v : ℕ) - 1) % 7 < 7 := Nat.mod_lt _ (by omega)
+    rw [if_neg h0, if_neg (by omega)]
+    omega
+
+theorem sigma0_rightInverse : ∀ v : Fin 99, sigma0Fun (sigma0InvFun v) = v := by
+  intro v
+  have hv := v.isLt
+  apply Fin.ext
+  rw [sigma0Fun_val, sigma0InvFun_val]
+  by_cases h0 : (v : ℕ) = 0
+  · rw [if_pos h0, if_pos rfl, h0]
+  · have h7 : ((v : ℕ) - 1) % 7 < 7 := Nat.mod_lt _ (by omega)
+    rw [if_neg h0, if_neg (by omega)]
+    omega
 
 /-- The canonical order-7 permutation `σ₀ = (0)(1 … 7)(8 … 14)…(92 … 98)` used by the
 encoder `tools/conway_o7.py` (`build_sigma(99, fixed=1, cyc_len=7)`). -/
 def sigma0 : Equiv.Perm (Fin 99) :=
   ⟨sigma0Fun, sigma0InvFun, sigma0_leftInverse, sigma0_rightInverse⟩
 
-theorem sigma0_iterate_seven : ∀ v : Fin 99, (⇑sigma0)^[7] v = v := by decide
+theorem sigma0_val (v : Fin 99) : ((sigma0 v : Fin 99) : ℕ)
+    = if (v : ℕ) = 0 then 0
+      else 1 + 7 * (((v : ℕ) - 1) / 7) + (((v : ℕ) - 1) % 7 + 1) % 7 := rfl
+
+/-- On a nonzero vertex, `k` applications of `σ₀` keep the block and advance the
+position by `k` modulo `7`. -/
+theorem sigma0_iterate_val (v : Fin 99) (h0 : (v : ℕ) ≠ 0) :
+    ∀ k, (((⇑sigma0)^[k] v : Fin 99) : ℕ)
+      = 1 + 7 * (((v : ℕ) - 1) / 7) + (((v : ℕ) - 1) % 7 + k) % 7
+  | 0 => by
+      have hv := v.isLt
+      have h7 : ((v : ℕ) - 1) % 7 < 7 := Nat.mod_lt _ (by omega)
+      show (v : ℕ) = _
+      omega
+  | k + 1 => by
+      rw [Function.iterate_succ_apply']
+      have ih := sigma0_iterate_val v h0 k
+      have hv := v.isLt
+      have h7 : ((v : ℕ) - 1) % 7 < 7 := Nat.mod_lt _ (by omega)
+      have hne : (((⇑sigma0)^[k] v : Fin 99) : ℕ) ≠ 0 := by
+        rw [ih]; omega
+      show (sigma0Fun ((⇑sigma0)^[k] v) : ℕ) = _
+      rw [sigma0Fun_val, if_neg hne, ih]
+      omega
+
+theorem sigma0_iterate_seven : ∀ v : Fin 99, (⇑sigma0)^[7] v = v := by
+  intro v
+  by_cases h0 : (v : ℕ) = 0
+  · have hfix : sigma0 v = v := Fin.ext (by rw [sigma0_val, if_pos h0, h0])
+    exact Function.iterate_fixed hfix 7
+  · apply Fin.ext
+    rw [sigma0_iterate_val v h0 7]
+    have hv := v.isLt
+    have h7 : ((v : ℕ) - 1) % 7 < 7 := Nat.mod_lt _ (by omega)
+    omega
 
 theorem sigma0_pow_seven : sigma0 ^ 7 = 1 := by
   apply Equiv.ext
@@ -106,12 +167,37 @@ theorem sigma0_pow_seven : sigma0 ^ 7 = 1 := by
   rw [← Equiv.Perm.iterate_eq_pow, Equiv.Perm.one_apply]
   exact sigma0_iterate_seven v
 
+/-- The fixed points of `σ₀` are exactly vertex `0`: on a nonzero vertex the
+position advances, and `(r+1) % 7 = r` is impossible. -/
+theorem sigma0_fixed_iff (v : Fin 99) : sigma0 v = v ↔ (v : ℕ) = 0 := by
+  constructor
+  · intro h
+    by_contra h0
+    have hval := congrArg Fin.val h
+    rw [sigma0_val, if_neg h0] at hval
+    have hv := v.isLt
+    have h7 : ((v : ℕ) - 1) % 7 < 7 := Nat.mod_lt _ (by omega)
+    omega
+  · intro h0
+    exact Fin.ext (by rw [sigma0_val, if_pos h0, h0])
+
+theorem sigma0_ne_one : sigma0 ≠ 1 := by
+  intro h
+  have h1 : sigma0 ⟨1, by omega⟩ = ⟨1, by omega⟩ := by rw [h]; rfl
+  exact Nat.one_ne_zero ((sigma0_fixed_iff _).mp h1)
+
 theorem sigma0_fixed_card :
-  #{ v : Fin 99 | sigma0 v = v} = 1 := by decide
+  #{ v : Fin 99 | sigma0 v = v} = 1 := by
+  have hset : ({v : Fin 99 | sigma0 v = v} : Finset _) = {0} := by
+    ext v
+    rw [Finset.mem_filter, Finset.mem_singleton]
+    exact ⟨fun ⟨_, hfix⟩ ↦ Fin.ext ((sigma0_fixed_iff v).mp hfix),
+      fun h ↦ ⟨Finset.mem_univ _, (sigma0_fixed_iff v).mpr (congrArg Fin.val h)⟩⟩
+  rw [hset, Finset.card_singleton]
 
 /-- σ₀ has the cycle type `[1, 7¹⁴]` of the L3 lemma. -/
 theorem sigma0_cycleType : sigma0.cycleType = Multiset.replicate 14 7 :=
-  cycleType_eq_replicate_of_fixed sigma0 Nat.prime_seven sigma0_pow_seven (by decide)
+  cycleType_eq_replicate_of_fixed sigma0 Nat.prime_seven sigma0_pow_seven sigma0_ne_one
     sigma0_fixed_card (by simp)
 
 /-! ### Step 5: any order-7 automorphism relabels onto σ₀ -/

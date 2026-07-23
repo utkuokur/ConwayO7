@@ -231,7 +231,7 @@ theorem sym1_seed (ω : Nat → Bool) (hsrg : (graphOfOrbits ω).IsSRGWith 99 14
   set σ : Equiv.Perm (Fin 14) := (Equiv.swap 1 d₂).trans (Equiv.swap 0 d₁) with hσdef
   have hσ0 : σ 0 = d₁ := by
     show (Equiv.swap 0 d₁) ((Equiv.swap 1 d₂) 0) = d₁
-    rw [Equiv.swap_apply_of_ne_of_ne (by decide) (Ne.symm hd0)]
+    rw [Equiv.swap_apply_of_ne_of_ne zero_ne_one (Ne.symm hd0)]
     exact Equiv.swap_apply_left 0 d₁
   have hσ1 : σ 1 = d₂ := by
     show (Equiv.swap 0 d₁) ((Equiv.swap 1 d₂) 1) = d₂
