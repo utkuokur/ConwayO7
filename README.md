@@ -23,4 +23,3 @@ The proof archives (~77 GB) and the container image are distributed via the
 Zenodo deposit (DOI in the paper), not this repository; everything needed to
 *rebuild* them from the pinned sources is here.
 
-Paper: `paper/conway_aut_seven.tex`.
