@@ -56,6 +56,23 @@ Memory: ~2 GB per parallel job. The run is resumable: re-invoking
 `cake_verify.sh` skips everything already `OK` in `cake_report.txt`.
 The Lean build is ~1–2 h (first run; native checks included).
 
+## Optional: coverage, double-checked by cake_lpr
+
+Lean already proves the 98,536 cells tile the whole valuation space
+(`o7Tiling_checkCover`). The artifact additionally ships an independent
+certificate of the same fact: the formula with one clause per cube — its
+negation — is unsatisfiable exactly when the cubes cover every valuation.
+
+```bash
+cd artifact/coverage_cert
+./mk_cover_cnf.sh > /tmp/cover.cnf
+zstd -d cover.lrat.zst -o /tmp/cover.lrat
+apptainer exec ../cake_lpr.sif cake_lpr /tmp/cover.cnf /tmp/cover.lrat
+# expect: s VERIFIED UNSAT
+```
+
+The two verifications share only `cubes_all.txt` itself.
+
 ## Integrity
 
 `SHA256SUMS` pins every file in this artifact (98,548 entries); verify with
