@@ -23,3 +23,11 @@ The proof archives (~77 GB) and the container image are distributed via the
 Zenodo deposit (DOI in the paper), not this repository; everything needed to
 *rebuild* them from the pinned sources is here.
 
+
+## Verification artifact
+
+The frozen artifact (34 GB: proofs, CNF, cubes, container, coverage certificate;
+SHA-256 `8017dd65bf9a0aba535cdb21d76601a6c26b6b091d59d710eba0d50c4d3ef982`) is
+archived on Zenodo: [doi:10.5281/zenodo.21549800](https://doi.org/10.5281/zenodo.21549800)
+(restricted until the arXiv preprint is public).
+
